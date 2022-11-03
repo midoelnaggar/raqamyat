@@ -1,0 +1,79 @@
+.hero {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 70px;
+  margin-inline: 90px;
+  align-items: center;
+}
+
+.leftSection{
+    display: flex;
+    flex-direction: column;
+}
+
+.headline   {
+  font-weight: 800;
+  font-size: 75px;
+  color: #000000;
+}
+.headline  > span {
+
+  color: #0093de;
+}
+
+.marked1 {
+  position: relative;
+}
+.marked2 {
+    position: relative;
+  }
+.mark1 {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+}
+.mark2 {
+    position: absolute;
+    top: 0px;
+    left: 60px;
+  }
+
+  .smallParagraph {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: -50px;
+    color:#6D6D6D;
+    line-height: 120%;
+  }
+  .smallParagraph > span {
+    font-weight: 600;
+    color:  #0093de;
+}
+
+.kmbtn {
+    width: 180px;
+    height: 50px;
+    background: linear-gradient(to left, #0093de, #3c6fae);
+    color: white;
+    font-family: "Gotham";
+    font-size: large;
+    font-weight: 400;
+    border-radius: 30px;
+    border-style: hidden;
+    opacity: 1;
+    box-shadow: 10px 10px 35px #0093DE80;
+
+    
+  }
+  
+  .kmbtn > a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-self: center;
+    padding-left: 16px;
+  }
+  .kmbtn > a > img {
+    align-self: center;
+    padding-left: 10px;
+  }
