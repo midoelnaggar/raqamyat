@@ -1,5 +1,27 @@
 .app {
   font-family: "Gotham";
-  background: transparent url(./img/heroBg.png) no-repeat;
   padding: 0px;
+  background: linear-gradient(315deg, rgb(240, 239, 255) 1%, rgb(255, 255, 255) 81%);
+}
+@media only screen and (max-width: 600px)  {
+  /* For mobiles: */
+.header{
+  visibility: hidden;
+}
+.headline{
+  font-size: 50px !important;
+}
+.hero {
+  margin-inline: 30px !important ;
+}
+.smallParagraph{
+  font-size: 12px !important; 
+}
+}
+
+@media only screen and (max-width: 1500px) {
+  /* For tablet: */
+  .header{
+    visibility: hidden !important;
+  }
 }

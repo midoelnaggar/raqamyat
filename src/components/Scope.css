@@ -1,0 +1,109 @@
+.scope {
+  position: relative;
+  height: 535px;
+  background-color: white;
+}
+.scope > .shapes {
+  position: absolute;
+  top: 21px;
+  left: 174px;
+}
+.scope > .head {
+  position: relative;
+  align-self: center;
+  padding-top: 50px;
+}
+
+.scope > .head > h1 {
+  text-align: center;
+  position: relative;
+  letter-spacing: -2.02px;
+  line-height: 50px;
+  font-size: 45px;
+  font-weight: 600;
+  z-index: 1;
+}
+.scope > .head > h1 > span {
+  position: relative;
+  letter-spacing: -0.5px;
+  font-size: 45px;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.scope > .head > h1 > span > span {
+  position: absolute;
+  background-color: #0093de;
+  opacity: 55%;
+  height: 25px;
+  width: 102.5px;
+  bottom: 1px;
+  right: 0px;
+  z-index: -1;
+}
+
+.scope > .cards {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 390px;
+}
+
+.scope > .cards >.card{
+  width: 362px;
+  height: 255px;
+  background: transparent linear-gradient(304deg, #ffffff 0%, #effaff 100%) 0%
+    0% no-repeat padding-box;
+  box-shadow: -10px 10px 50px #0093de1a;
+  border-radius: 50px 25px;
+  z-index: 2;
+  text-align: center;
+  
+}
+
+.scope > .cards > .middle{
+    margin-top:52px
+}
+
+.scope > .cards > .card> img{
+    margin-top: 29px;
+}
+.scope > .cards > .card> h1{
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    color:#2A2A2A
+}
+
+.scope > .cards > .card> p{
+    margin-top: 6.5px;
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #A2A2A2
+}
+.lmbtn {
+    width: 208px;
+    height: 50px;
+    background: linear-gradient(to left, #0093de, #3c6fae);
+    color: white;
+    font-family: "Gotham";
+    font-size: 18px;
+    letter-spacing: -0.45px;
+    font-weight: 300;
+    border-radius: 40px;
+    border-style: hidden;
+
+    
+  }
+  
+  .lmbtn > a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+  }
+  .lmbtn > a > img {
+    align-self: center;
+    padding-left: 10px;
+  }

@@ -1,0 +1,131 @@
+.articles {
+  background-color: #f0f6ff;
+  padding-top: 170px;
+  padding-bottom: 170px;
+}
+
+.articles > h1 {
+  position: relative;
+  text-align: center;
+  font-size: 45px;
+  letter-spacing: -2.02px;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.articles > h1 > span {
+  position: relative;
+}
+.articles > h1 > span > span {
+  position: absolute;
+  background-color: #0093de;
+  opacity: 55%;
+  height: 25px;
+  width: 102.5px;
+  bottom: 2px;
+  right: 0px;
+  z-index: -1;
+}
+.articles > .posts  {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: -130px;
+}
+.articles > .posts > .post {
+    flex-basis: content;
+  position: relative;
+  width: 474px;
+  height: 504px;
+  background: transparent linear-gradient(334deg, #ffffff 0%, #effaff 100%) 0%
+    0% no-repeat padding-box;
+  box-shadow: 0px 20px 50px #0093de17;
+  border-radius: 25px;
+}
+
+.articles > .posts > .post > .tag {
+  position: absolute;
+  background-color: #ff6b7e;
+  padding-inline: 11px;
+  left: 17px;
+  top: 19px;
+  width: 106px;
+  height: 20px;
+  border-radius: 8px;
+}
+
+.articles > .posts > .post > h5 {
+  position: absolute;
+  left: 31px;
+  top: 2px;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+  font-weight: 400;
+  color: white;
+}
+
+.articles > .posts > .post > .date {
+  color: #a2a2a2;
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 40px;
+  padding-top: 31px;
+}
+
+.articles > .posts > .post > .title {
+  max-width: 264px;
+  color: #2a2a2a;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 25px;
+  margin-left: 40px;
+  padding-top: 10px;
+}
+.articles > .posts > .post > .caption {
+  max-width: 394px;
+  color: #a2a2a2;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 15px;
+  margin-left: 40px;
+  padding-top: 10px;
+}
+
+.articles > .posts > .post > .footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.articles > .posts > .post > .footer > div > .by {
+  margin-top: 20px;
+
+  color: #a2a2a2;
+  font-size: 12px;
+  margin-left: 40px;
+  font-weight: 400;
+}
+.articles > .posts > .post > .footer > div > .auther {
+  color: #2a2a2a;
+  font-size: 12px;
+  margin-left: 40px;
+  font-weight: 500;
+}
+
+.articles > .posts > .post > .footer > .rmb {
+  display: flex;
+  align-items: center;
+  padding-right: 40px;
+  text-decoration: none;
+}
+
+.articles > .posts > .post > .footer > .rmb > .readmore {
+  color: #027ab7;
+  font-size: 14px;
+  font-weight: 400;
+  padding-right: 5px;
+}
+.articles > .posts > .post > .footer > .rmb > .arrow {
+  width: 14px;
+  height: 9px;
+  padding-top: 2px;
+}

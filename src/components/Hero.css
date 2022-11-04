@@ -1,9 +1,10 @@
 .hero {
   display: flex;
-  flex-wrap: nowrap;
-  margin-top: 70px;
-  margin-inline: 90px;
+  flex-wrap: wrap ;
+  padding-inline: 138px;
+  padding-top: 100px;
   align-items: center;
+ position: relative;
 }
 
 .leftSection{
@@ -43,7 +44,7 @@
     font-weight: 400;
     margin-top: -50px;
     color:#6D6D6D;
-    line-height: 120%;
+    line-height: 150%;
   }
   .smallParagraph > span {
     font-weight: 600;
@@ -51,16 +52,16 @@
 }
 
 .kmbtn {
-    width: 180px;
-    height: 50px;
+    width: 190px;
+    height: 60px;
     background: linear-gradient(to left, #0093de, #3c6fae);
     color: white;
     font-family: "Gotham";
-    font-size: large;
-    font-weight: 400;
-    border-radius: 30px;
+    font-size: 19px;
+    letter-spacing: -0.47px;
+    font-weight: 300;
+    border-radius: 50px;
     border-style: hidden;
-    opacity: 1;
     box-shadow: 10px 10px 35px #0093DE80;
 
     
@@ -70,10 +71,16 @@
     color: white;
     text-decoration: none;
     display: flex;
-    align-self: center;
-    padding-left: 16px;
+    justify-content: center;
   }
   .kmbtn > a > img {
     align-self: center;
     padding-left: 10px;
+  }
+
+  .rightSection {
+    position: absolute;
+    right: 150px;
+    top: 140px;
+    
   }

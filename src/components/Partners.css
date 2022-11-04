@@ -1,0 +1,20 @@
+.partners {
+  margin-top: 230px;
+}
+.partnersBackground {
+  width: 645px;
+  height: 95px;
+  background-color: white;
+  padding-inline-start: 138px;
+  position: relative;
+  clip-path: polygon(95% 0, 100% 40%, 100% 100%, 0 100%, 0 0);
+}
+
+.partnersGroup {
+position:absolute;
+top: 40%;
+}
+
+.partnersGroup > img {
+  padding-inline-end: 35px;
+}

@@ -1,0 +1,81 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  padding: 170px 400px 170px 400px;
+}
+
+.top {
+  display: flex;
+}
+.top > h1 {
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2.02px;
+  margin-inline-end: 110px;
+}
+.top > h1 > span {
+  position: relative;
+  z-index: 1;
+}
+
+.top > h1 > span > span {
+  position: absolute;
+  background-color: #0093de;
+  opacity: 55%;
+  height: 25px;
+  width: 102.5px;
+  bottom: 4px;
+  right: 0px;
+  z-index: -1;
+}
+
+.top > p {
+  max-width: 669px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.bottom {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.maskImage {
+    position: relative;
+  background: transparent linear-gradient(311deg, #ffffff 0%, #effaff 100%) 0%
+    0% no-repeat padding-box;
+  box-shadow: -10px 10px 50px #0093de1a;
+  border-radius: 50px 25px;
+  margin-inline: -6.5px;
+  height: 328px;
+  width: 362px;
+}
+
+.maskImage > .back {
+    position:absolute;
+}
+.maskImage > .ico {
+    margin-top: 50px;
+    margin-left: 30px;
+}
+.maskImage > h1 {
+    color: #0093DE;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-left: 30px;
+    
+}
+.maskImage > p{
+    color:#2A2A2A;
+    max-width: 302px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-left: 30px;
+    
+}

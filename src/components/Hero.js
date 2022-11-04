@@ -3,6 +3,8 @@ import "./Hero.css";
 import mark1 from "../img/circle-note.png";
 import mark2 from "../img/line.png";
 import arrow from "../img/Icon ionic-ios-arrow-round-forward.png"
+import imagesGroup from "../img/Group 162853.png"
+import lines from "../img/(lines).png"
 
 function Hero() {
   return (
@@ -27,7 +29,11 @@ function Hero() {
           shareholding company licensed under the Egyptian <br />
           General Authority for Investment & Free Zones (GAFI).
         </p>
-        <button className="kmbtn"><Link to="#contact-us" >Know More<img src={arrow}/></Link></button>
+        <button className="kmbtn"><Link to="#contact-us" >Know More<img alt="ar" src={arrow}/></Link></button>
+      </div>
+      <div >
+      <img alt="l" src={lines} className="rightSection" />
+        <img alt="i" src={imagesGroup} className="rightSection" />
       </div>
     </div>
   );

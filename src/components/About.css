@@ -1,0 +1,61 @@
+.about {
+  display: flex;
+  position: relative;
+  background-color: white;
+  margin-right: 138px;
+  padding-bottom: 80px;
+  border-top-right-radius: 5em;
+  border-bottom-right-radius: 5em;
+
+}
+
+.leftComp {
+  margin-left: 278px;
+}
+.leftComp > p {
+  max-width: 438px;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.1px;
+  line-height: 20px;
+}
+.rightComp {
+  display: flex;
+  flex-direction: column;
+  padding-top: 75px;
+  padding-left: 50px;
+}
+
+.rightComp > h1 {
+    position: relative;
+  letter-spacing: -0.5px;
+  font-size: 45px;
+  font-weight: 600;
+  z-index: 1;
+}
+.rightComp > h1>span {
+    position: relative;
+  letter-spacing: -0.5px;
+  font-size: 45px;
+  font-weight: 600;
+  z-index: 1;
+}
+.rightComp > h1 > span>span {
+  position: absolute;
+  background-color: #0093de;
+  opacity: 55%;
+  height: 25px;
+  width: 102.5px;
+  bottom: -5px;
+  right: 0px;
+  z-index: -1;
+}
+
+.rightComp >p {
+    padding-top:-100px;
+    max-width: 867px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;   
+}
