@@ -1,11 +1,11 @@
 import "./Articles.css";
 import { Link } from "react-router-dom";
 import PostImage from "../img/Rectangle 147627.png";
-import BlueArrow from "../img/Icon ionic-ios-arrow-round-forward.png";
+import BlueArrow from "../img/Icon ionic-ios-arrow-round-forwardb.png";
 
-function Post() {
+function Post({edged}) {
   return (
-    <div className="post">
+    <div className={"post "+edged}>
       <img src={PostImage} alt="post" />
       <div className="tag"></div>
       <h5>E COMMERCE</h5>
@@ -42,11 +42,12 @@ function Articles() {
         </span>
       </h1>
       <div className="posts">
+        <Post edged="edged" />
         <Post />
         <Post />
-        <Post />
-        <Post />
+        <Post edged="edged" />
       </div>
+      <div className="kmbtn"><Link><p>Know More</p><div alt="ar"/></Link></div>
     </div>
   );
 }

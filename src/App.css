@@ -1,27 +1,11 @@
 .app {
   font-family: "Gotham";
   padding: 0px;
-  background: linear-gradient(315deg, rgb(240, 239, 255) 1%, rgb(255, 255, 255) 81%);
+  background-color:#F0F6FF;
+  max-width: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
 }
-@media only screen and (max-width: 600px)  {
-  /* For mobiles: */
-.header{
-  visibility: hidden;
-}
-.headline{
-  font-size: 50px !important;
-}
-.hero {
-  margin-inline: 30px !important ;
-}
-.smallParagraph{
-  font-size: 12px !important; 
-}
-}
-
-@media only screen and (max-width: 1500px) {
-  /* For tablet: */
-  .header{
-    visibility: hidden !important;
-  }
+.app >.gred {
+  background: linear-gradient(160deg, rgba(255,255,255,1) 0%, rgba(241,239,255,1) 50%, rgba(240,246,255,1) 100%);
 }

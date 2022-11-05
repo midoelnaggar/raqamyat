@@ -1,0 +1,86 @@
+.subscribe {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(246, 249, 255, 1) 50%, rgba(240, 246, 255, 1) 100%);
+    display: flex;
+    justify-content: center;
+}
+
+.subscribe>.subcard {
+    width: 1364px;
+    height: 180px;
+    background: #F0F6FF 0% 0% no-repeat padding-box;
+    box-shadow: 10px -10px 50px #0093DE17;
+    align-self: center;
+    position: relative;
+    display: flex;
+}
+
+.subscribe>.subcard>.bg {
+    position: absolute;
+    width: 1204px;
+    height: 147px;
+    top: 10px;
+    left: 102px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    background: url('../img/shapes2.png');
+}
+
+.subscribe>.subcard>.label {
+    width: 365px;
+    margin-top: 66px;
+    margin-inline-start: 220px;
+    color: #000000DE;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.subscribe>.subcard>.email {
+    position: relative;
+    margin-top: 54px;
+    margin-inline-start: 78px;
+}
+
+.subscribe>.subcard>.email>input {
+    width: 301px;
+    height: 73px;
+    border-radius: 99px;
+    border-style: none;
+    font-family: "Gotham";
+    padding-inline-start: 20px;
+    padding-inline-end: 180px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.subscribe>.subcard>.email>input:focus{
+    outline: none;
+}
+
+.subscribe>.subcard>.email>input::placeholder{
+    color: #ACACAC;
+}
+
+
+
+.subscribe>.subcard>.email>.sbtn {
+    position: absolute;
+    background: linear-gradient(249deg, #0093de, #3c6fae);
+    color: white;
+    font-size: 19px;
+    letter-spacing: 0.47px;
+    font-weight: 300;
+    border-radius: 30px;
+    width: 150px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    right: 7px;
+    top:7px;
+}
+
+.subscribe>.subcard>.email>.sbtn>a {
+    text-decoration: none;
+    color: white;
+}

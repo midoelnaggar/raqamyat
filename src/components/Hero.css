@@ -1,23 +1,24 @@
 .hero {
   display: flex;
-  flex-wrap: wrap ;
+  flex-wrap: wrap;
   padding-inline: 138px;
   padding-top: 100px;
   align-items: center;
- position: relative;
+  position: relative;
 }
 
-.leftSection{
-    display: flex;
-    flex-direction: column;
+.leftSection {
+  display: flex;
+  flex-direction: column;
 }
 
-.headline   {
+.headline {
   font-weight: 800;
   font-size: 75px;
   color: #000000;
 }
-.headline  > span {
+
+.headline>span {
 
   color: #0093de;
 }
@@ -25,62 +26,72 @@
 .marked1 {
   position: relative;
 }
+
 .marked2 {
-    position: relative;
-  }
+  position: relative;
+}
+
 .mark1 {
   position: absolute;
   left: 0px;
   right: 0px;
 }
-.mark2 {
-    position: absolute;
-    top: 0px;
-    left: 60px;
-  }
 
-  .smallParagraph {
-    font-size: 18px;
-    font-weight: 400;
-    margin-top: -50px;
-    color:#6D6D6D;
-    line-height: 150%;
-  }
-  .smallParagraph > span {
-    font-weight: 600;
-    color:  #0093de;
+.mark2 {
+  position: absolute;
+  top: 0px;
+  left: 60px;
+}
+
+.smallParagraph {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: -50px;
+  color: #6D6D6D;
+  line-height: 150%;
+}
+
+.smallParagraph>span {
+  font-weight: 600;
+  color: #0093de;
 }
 
 .kmbtn {
-    width: 190px;
-    height: 60px;
-    background: linear-gradient(to left, #0093de, #3c6fae);
-    color: white;
-    font-family: "Gotham";
-    font-size: 19px;
-    letter-spacing: -0.47px;
-    font-weight: 300;
-    border-radius: 50px;
-    border-style: hidden;
-    box-shadow: 10px 10px 35px #0093DE80;
+  width: 200px;
+  height: 60px;
+  background: linear-gradient(249deg, #0093de, #3c6fae);
+  color: white;
+  font-family: "Gotham";
+  font-size: 19px;
+  letter-spacing: -0.47px;
+  font-weight: 300;
+  border-radius: 50px;
+  border-style: hidden;
+  box-shadow: 10px 10px 35px #0093DE80;
+  margin-top: 30px;
 
-    
-  }
-  
-  .kmbtn > a {
-    color: white;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-  }
-  .kmbtn > a > img {
-    align-self: center;
-    padding-left: 10px;
-  }
+}
 
-  .rightSection {
-    position: absolute;
-    right: 150px;
-    top: 140px;
-    
-  }
+.kmbtn>a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+}
+
+.kmbtn>a>p {
+margin-right: 10px;}
+
+.kmbtn>a>div {
+  align-self: center;
+  width: 25px;
+  height: 16px;
+  background: transparent url('../img/Icon ionic-ios-arrow-round-forward.png') 0% 0% no-repeat padding-box;
+}
+
+.rightSection {
+  position: absolute;
+  right: 150px;
+  top: 140px;
+
+}
