@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./Hero.css";
 import mark1 from "../img/circle-note.png";
 import mark2 from "../img/line.png";
@@ -28,7 +27,7 @@ function Hero() {
           shareholding company licensed under the Egyptian <br />
           General Authority for Investment & Free Zones (GAFI).
         </p>
-        <div className="kmbtn"><Link to="/"><p>Know More</p><div alt="ar"/></Link></div>
+        <div className="kmbtn"><a href="/"><p>Know More</p><div alt="ar"/></a></div>
       </div>
       <div >
       <img alt="l" src={lines} className="rightSection" />
