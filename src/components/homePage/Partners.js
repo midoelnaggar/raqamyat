@@ -5,9 +5,6 @@ import fawry from '../../img/fawry.png'
 import kashier from '../../img/kashier.png'
 import opay from '../../img/oPay.png'
 
-
-
-
 function Partners() {
   return <div className="partners">
     <div className="partnersBackground">

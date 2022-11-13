@@ -1,32 +1,29 @@
 import "./Hero.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { HomeContext } from "../../context/HomeContext";
+import { LoadingContext } from "../../context/LoadingContext";
+
 import mark1 from "../../img/circle-note.png";
 import mark2 from "../../img/line.png";
 import imagesGroup from "../../img/Group 162853.png";
 import lines from "../../img/(lines).png";
 
 function Hero() {
-  const [data, setData] = useState(null);
+  const homeData = useContext(HomeContext);
+  const {loading,setLoading} = useContext(LoadingContext);
+
   const [first, setFirst] = useState("");
   const [rem, setRem] = useState("");
 
   useEffect(() => {
-     axios
-      .get("https://newraq.raqamyat.com/public/api/home")
-      .then((response) => {
-      setData( response.data.data);
-      });
-  }, []);
-
-  useEffect(() => {
-   if (data) {
-      setFirst( data?.hero?.description?.split(" ")[0]);
-    const words =  data?.hero?.description?.split(" ");
-     words[0]=" "
-    setRem( words.join(" "));
-  }
-  }, [data]);
+    if (homeData) {
+      setFirst(homeData?.hero?.description?.split(" ")[0]);
+      const words = homeData?.hero?.description?.split(" ");
+      words[0] = " ";
+      setRem(words.join(" "));
+    }
+    console.log(loading)
+  }, [homeData]);
 
   return (
     <div className="hero">
@@ -42,18 +39,10 @@ function Hero() {
             Revenues<img className="mark2" src={mark2} alt="mark2"></img>
           </span>
         </p>
-        {data ? (
-          <p className="smallParagraph">
-            <span>{first}</span>
-            {rem}
-          </p>
-        ) : (
-          <p className="smallParagraph">
-            <span>Raqamyat</span> is an Egyptian multimillion Fintech
-            shareholding company licensed under the Egyptian General Authority
-            for Investment & Free Zones (GAFI).
-          </p>
-        )}
+        <p className="smallParagraph">
+          <span>{first}</span>
+          {rem}
+        </p>
         <div className="kmbtn">
           <a href="/">
             <p>Know More</p>
