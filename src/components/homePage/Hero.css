@@ -16,10 +16,10 @@
   font-weight: 800;
   font-size: 75px;
   color: #000000;
+  max-width: 900px;
 }
 
-.headline>span {
-
+.headline > span {
   color: #0093de;
 }
 
@@ -47,14 +47,16 @@
   font-size: 18px;
   font-weight: 400;
   margin-top: -50px;
-  color: #6D6D6D;
+  color: #6d6d6d;
   line-height: 150%;
+  max-width: 491px;
 }
 
-.smallParagraph>span {
+.smallParagraph > span {
   font-weight: 600;
   color: #0093de;
 }
+
 
 .kmbtn {
   width: 200px;
@@ -67,31 +69,70 @@
   font-weight: 300;
   border-radius: 50px;
   border-style: hidden;
-  box-shadow: 10px 10px 35px #0093DE80;
+  box-shadow: 10px 10px 35px #0093de80;
   margin-top: 30px;
-z-index: 1;
+  z-index: 1;
 }
 
-.kmbtn>a {
+.kmbtn > a {
   display: flex;
   justify-content: center;
   text-decoration: none;
   color: white;
 }
 
-.kmbtn>a>p {
-margin-right: 10px;}
+.kmbtn > a > p {
+  margin-right: 10px;
+}
 
-.kmbtn>a>div {
+.kmbtn > a > div {
   align-self: center;
   width: 25px;
   height: 16px;
-  background: transparent url('../img/Icon ionic-ios-arrow-round-forward.png') 0% 0% no-repeat padding-box;
+  background: transparent
+    url("../../img/Icon ionic-ios-arrow-round-forward.png") 0% 0% no-repeat
+    padding-box;
+}
+
+@media (max-width: 1622px) {
+  .fourImages {
+    display: none;
+  }
+  .hero {
+    padding-top: 0px;
+    padding-inline: 5vw;
+    margin-bottom: -150px;
+  }
+  .headline {
+    max-width: none;
+  }
+}
+
+@media (max-width: 629px) {
+  .headline {
+    font-size: 50px;
+    word-spacing: 2px;
+  }
+  .mark1 {
+    width: 100%;
+  }
+  .mark2 {
+    width: 76%;
+  }
+  .smallParagraph {
+    margin-top: 0px;
+    font-size: 15px;
+  }
+  .kmbtn {
+    margin-top: 0px;
+    width: 40vw;
+    height: 12.5vw;
+    font-size: 15px;
+  }
 }
 
 .rightSection {
   position: absolute;
   right: 150px;
   top: 140px;
-
 }

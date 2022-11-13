@@ -1,8 +1,8 @@
 import "./Profile.css";
-import Back from "../img/Mask Group 2.png";
-import Eye from "../img/Group 226.png";
-import Target from "../img/Group 229.png";
-import Lamp from "../img/Group 233.png";
+import Back from "../../img/Mask Group 2.png";
+import Eye from "../../img/Group 226.png";
+import Target from "../../img/Group 229.png";
+import Lamp from "../../img/Group 233.png";
 
 function Profile() {
   return (

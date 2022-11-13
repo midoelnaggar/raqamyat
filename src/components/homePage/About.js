@@ -1,5 +1,5 @@
 import "./About.css";
-import coimage from "../img/Image.png";
+import coimage from "../../img/Image.png";
 function About() {
   return (
     <div className="about">

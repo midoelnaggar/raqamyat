@@ -1,9 +1,9 @@
 import "./Partners.css";
-import paymob from '../img/paymob.png'
-import paysky from '../img/paySky.png'
-import fawry from '../img/fawry.png'
-import kashier from '../img/kashier.png'
-import opay from '../img/oPay.png'
+import paymob from '../../img/paymob.png'
+import paysky from '../../img/paySky.png'
+import fawry from '../../img/fawry.png'
+import kashier from '../../img/kashier.png'
+import opay from '../../img/oPay.png'
 
 
 

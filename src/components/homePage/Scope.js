@@ -1,10 +1,10 @@
 import "./Scope.css";
-import Shapes from "../img/shapes.png";
+import Shapes from "../../img/shapes.png";
 import { Link } from "react-router-dom";
-import Operations from "../img/Path 83184.png";
-import Marketing from "../img/Group 162668.png";
-import Development from "../img/Group 162665.png";
-import arrow from "../img/Icon ionic-ios-arrow-round-forward.png"
+import Operations from "../../img/Path 83184.png";
+import Marketing from "../../img/Group 162668.png";
+import Development from "../../img/Group 162665.png";
+import arrow from "../../img/Icon ionic-ios-arrow-round-forward.png"
 
 function Scope() {
   return (

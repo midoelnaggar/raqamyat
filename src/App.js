@@ -1,31 +1,17 @@
-import "./App.css"
-import About from "./components/About";
-import Articles from "./components/Articles";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Partners from "./components/Partners";
-import Profile from "./components/Profile";
-import Scope from "./components/Scope";
-import Subscribe from "./components/Subscribe";
+import "./App.css";
+import Footer from "./components/headerAndFooter/Footer";
+import Header from "./components/headerAndFooter/Header";
+import MobileHeader from "./components/headerAndFooter/MobileHeader";
+import HomePage from "./components/homePage";
 
 function App() {
   return (
-
     <div className="app">
-      <div className="gred">
-        <Header />
-        <Hero />
-        <Partners />
-      </div>
-      <About />
-      <Profile />
-      <Scope />
-      <Articles />
-      <Subscribe />
+      <Header />
+      <MobileHeader />
+      <HomePage />
       <Footer />
     </div>
-
   );
 }
 

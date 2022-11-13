@@ -6,15 +6,30 @@
   height: 95px;
   background-color: white;
   padding-inline-start: 138px;
-  position: relative;
   clip-path: polygon(95% 0, 100% 40%, 100% 100%, 0 100%, 0 0);
 }
 
 .partnersGroup {
-position:absolute;
-top: 40%;
+  padding-top:35px;
+  display: flex;
+
 }
 
 .partnersGroup > img {
   padding-inline-end: 35px;
+
+}
+
+@media (max-width:763px) {
+  .partners {
+    margin-top: 230px;
+  }
+  .partnersBackground {
+    padding-inline: 5vw;
+  }
+  .partnersGroup > img {
+    padding-inline-end: 10px;
+    width: 16vw;
+  
+  }
 }

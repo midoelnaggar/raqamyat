@@ -1,13 +1,13 @@
 import React from "./Footer.css";
-import logo from "../img/logo.png";
-import li from "../img/Mask Group 5.png";
-import fb from "../img/Mask Group 6.png";
-import tw from "../img/Mask Group 7.png";
-import ig from "../img/Mask Group 11.png";
-import yt from "../img/Mask Group 10.png";
-import em from "../img/Path 83682.png";
-import ph from "../img/phone.png";
-import lo from "../img/Group 162676.png";
+import logo from "../../img/logo.png";
+import li from "../../img/Mask Group 5.png";
+import fb from "../../img/Mask Group 6.png";
+import tw from "../../img/Mask Group 7.png";
+import ig from "../../img/Mask Group 11.png";
+import yt from "../../img/Mask Group 10.png";
+import em from "../../img/Path 83682.png";
+import ph from "../../img/phone.png";
+import lo from "../../img/Group 162676.png";
 
 function Footer() {
   return (

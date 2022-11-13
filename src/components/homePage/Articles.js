@@ -1,7 +1,7 @@
 import "./Articles.css";
 import { Link } from "react-router-dom";
-import PostImage from "../img/Rectangle 147627.png";
-import BlueArrow from "../img/Icon ionic-ios-arrow-round-forwardb.png";
+import PostImage from "../../img/Rectangle 147627.png";
+import BlueArrow from "../../img/Icon ionic-ios-arrow-round-forwardb.png";
 
 function Post({edged}) {
   return (
