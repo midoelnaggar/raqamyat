@@ -7,25 +7,25 @@ import imagesGroup from "../../img/Group 162853.png";
 import lines from "../../img/(lines).png";
 
 function Hero() {
-  const [data, setData] = useState({});
-  const [first, setFirst] = useState();
-  const [rem, setRem] = useState();
+  const [data, setData] = useState(null);
+  const [first, setFirst] = useState("");
+  const [rem, setRem] = useState("");
 
   useEffect(() => {
-    axios
+     axios
       .get("https://newraq.raqamyat.com/public/api/home")
-      .then( (response) => {
-        setData( response.data);
-        console.log(data)
+      .then((response) => {
+      setData( response.data.data);
       });
   }, []);
 
-  useEffect(async() => {
-     setFirst(await data?.hero?.description.split(" ")[0]);
-    const words = data?.hero?.description?.split(" ");
-    console.log(words);
-    delete words[1];
-    setRem(await words.join(" "));
+  useEffect(() => {
+   if (data) {
+      setFirst( data?.hero?.description?.split(" ")[0]);
+    const words =  data?.hero?.description?.split(" ");
+     words[0]=" "
+    setRem( words.join(" "));
+  }
   }, [data]);
 
   return (
