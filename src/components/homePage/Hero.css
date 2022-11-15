@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   padding-inline: 138px;
   padding-top: 100px;
+  padding-bottom: 230px;
   align-items: center;
   position: relative;
 }
@@ -125,8 +126,8 @@
   }
   .kmbtn {
     margin-top: 0px;
-    width: 40vw;
-    height: 12.5vw;
+    width: 156px;
+    height: 48px;
     font-size: 15px;
   }
 }

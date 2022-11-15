@@ -1,29 +1,22 @@
 import "./Hero.css";
-import { useEffect, useState, useContext } from "react";
-import { HomeContext } from "../../context/HomeContext";
-import { LoadingContext } from "../../context/LoadingContext";
+import { useEffect, useState } from "react";
 
 import mark1 from "../../img/circle-note.png";
 import mark2 from "../../img/line.png";
-import imagesGroup from "../../img/Group 162853.png";
 import lines from "../../img/(lines).png";
 
-function Hero() {
-  const homeData = useContext(HomeContext);
-  const {loading,setLoading} = useContext(LoadingContext);
-
+function Hero({data}) {
   const [first, setFirst] = useState("");
   const [rem, setRem] = useState("");
 
   useEffect(() => {
-    if (homeData) {
-      setFirst(homeData?.hero?.description?.split(" ")[0]);
-      const words = homeData?.hero?.description?.split(" ");
+    if (data) {
+      setFirst(data?.description?.split(" ")[0]);
+      const words = data?.description?.split(" ");
       words[0] = " ";
       setRem(words.join(" "));
     }
-    console.log(loading)
-  }, [homeData]);
+  }, [data]);
 
   return (
     <div className="hero">
@@ -52,7 +45,7 @@ function Hero() {
       </div>
       <div>
         <img alt="l" src={lines} className="rightSection" />
-        <img alt="i" src={imagesGroup} className="rightSection fourImages" />
+        <img alt="i" src={data?.image} className="rightSection fourImages" />
       </div>
     </div>
   );

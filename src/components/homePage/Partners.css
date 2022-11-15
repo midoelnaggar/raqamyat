@@ -1,6 +1,4 @@
-.partners {
-  margin-top: 230px;
-}
+
 .partnersBackground {
   width: 645px;
   height: 95px;
@@ -20,7 +18,43 @@
 
 }
 
-@media (max-width:763px) {
+@media (max-width:600px) {
+  .partners {
+    margin-top: 230px;
+  }
+  .partnersBackground {
+    padding-inline: 5vw;
+  }
+  .partnersGroup > img {
+    padding-inline-end: 10px;
+    width: 16vw;
+  
+  }
+}
+
+@media (max-width:1300px) {
+  .partners {
+    margin-top: 230px;
+  }
+
+  .partnersGroup {
+    padding-top:30px;
+    display: flex;
+  
+  }
+
+  .partnersBackground {
+    padding-inline: 5vw;
+  }
+
+  .partnersGroup > img {
+    padding-inline-end: 20px;
+    width: 110px;
+  
+  }
+}
+
+@media (max-width:600px) {
   .partners {
     margin-top: 230px;
   }

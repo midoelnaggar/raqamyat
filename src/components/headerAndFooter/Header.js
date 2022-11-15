@@ -4,24 +4,23 @@ import logo from "../../img/logo.png";
 
 function Header() {
   let location = useLocation();
-
   return (
     <div className="header">
       <div className="navList">
         <Link
           className={`${
-            location?.hash === "" ? "activeLink" : "inactiveLink"
+            location?.pathname === "/" ? "activeLink" : "inactiveLink"
           } `}
-          to=""
+          to="/"
         >
           Home
         </Link>
         <span className="dot"></span>
         <Link
           className={`${
-            location?.hash === "#about" ? "activeLink" : "inactiveLink"
+            location?.pathname === "/about-us" ? "activeLink" : "inactiveLink"
           }  aboutbtn`}
-          to="#about"
+          to="/about-us"
         >
           About
           <div className="aboutmenu">
@@ -29,56 +28,56 @@ function Header() {
               <div className="mencol">
                 <div className="menti">Our Company</div>
                 <div>
-                  <a href="/">Who we are? </a>
+                  <Link to="/about-us">Who we are?</Link>
                 </div>
                 <div>
-                  <a href="/">Stakeholders </a>
+                  <Link to="/about-us/our-company/stakeholders">Stakeholders </Link>
                 </div>
                 <div>
-                  <a href="/">Our Partners </a>
+                  <Link to="/">Our Partners </Link>
                 </div>
                 <div>
-                  <a href="/">Successful Cases </a>
+                  <Link to="/">Successful Cases </Link>
                 </div>
                 <div>
-                  <a href="/">Contact Us </a>
+                  <Link to="/">Contact Us </Link>
                 </div>
               </div>
               <span className="seperator" />
               <div className="mencol">
                 <div className="menti">News</div>
                 <div>
-                  <a href="/">Press </a>
+                  <Link to="/">Press </Link>
                 </div>
                 <div>
-                  <a href="/">Events </a>
+                  <Link to="/">Events </Link>
                 </div>
                 <div>
-                  <a href="/">Webinars </a>
+                  <Link to="/">Webinars </Link>
                 </div>
                 <div>
-                  <a href="/">Projects </a>
+                  <Link to="/">Projects </Link>
                 </div>
               </div>
               <span className="seperator" />
               <div className="mencol">
                 <div className="menti">Careers</div>
                 <div>
-                  <a href="/">Jobs </a>
+                  <Link to="/">Jobs </Link>
                 </div>
                 <div>
-                  <a href="/">Internships </a>
+                  <Link to="/">Internships </Link>
                 </div>
               </div>
             </div>
-          </div>
+          </div>  
         </Link>
         <span className="dot"></span>
         <Link
           className={`${
-            location?.hash === "#services" ? "activeLink" : "inactiveLink"
+            location?.pathname === "/services" ? "activeLink" : "inactiveLink"
           }  servicesbtn`}
-          to="#services"
+          to="/services"
         >
           Services
           <div className="servicesmenu">
@@ -89,63 +88,63 @@ function Header() {
               <div className="mencol">
                 <div className="menti">Development</div>
                 <div>
-                  <a href="/">Online Stores Development </a>
+                  <Link to="/">Online Stores Development </Link>
                 </div>
                 <div>
-                  <a href="/">Consultation & Support </a>
+                  <Link to="/">Consultation & Support </Link>
                 </div>
                 <div>
-                  <a href="/">Outsourcing </a>
+                  <Link to="/">Outsourcing </Link>
                 </div>
                 <div>
-                  <a href="/">E-Payment Integrations </a>
+                  <Link to="/">E-Payment Integrations </Link>
                 </div>
               </div>
               <span className="seperator" />
               <div className="mencol">
                 <div className="menti">Operations</div>
                 <div>
-                  <a href="/">Operations Solutions </a>
+                  <Link to="/">Operations Solutions </Link>
                 </div>
                 <div>
-                  <a href="/">Technical Support Agents </a>
+                  <Link to="/">Technical Support Agents </Link>
                 </div>
                 <div>
-                  <a href="/">Projects Operations (BOT) </a>
+                  <Link to="/">Projects Operations (BOT) </Link>
                 </div>
                 <div>
-                  <a href="/">Logistics Management </a>
+                  <Link to="/">Logistics Management </Link>
                 </div>
               </div>
               <span className="seperator" />
               <div className="mencol">
                 <div className="menti">Marketing</div>
                 <div>
-                  <a href="/">Content Marketing </a>
+                  <Link to="/">Content Marketing </Link>
                 </div>
                 <div>
-                  <a href="/">Marketing Strategy </a>
+                  <Link to="/">Marketing Strategy </Link>
                 </div>
                 <div>
-                  <a href="/">Market Analysis </a>
+                  <Link to="/">Market Analysis </Link>
                 </div>
                 <div>
-                  <a href="/">Video Production </a>
+                  <Link to="/">Video Production </Link>
                 </div>
               </div>
               <div className="mencol">
                 <div className="menti"></div>
                 <div>
-                  <a href="/">Content Marketing </a>
+                  <Link to="/">Content Marketing </Link>
                 </div>
                 <div>
-                  <a href="/">Product Development </a>
+                  <Link to="/">Product Development </Link>
                 </div>
                 <div>
-                  <a href="/">Integrated Marketing </a>
+                  <Link to="/">Integrated Marketing </Link>
                 </div>
                 <div>
-                  <a href="/">Outsourcing </a>
+                  <Link to="/">Outsourcing </Link>
                 </div>
               </div>
             </div>
@@ -155,19 +154,19 @@ function Header() {
               </div>
               <div className="menlcol">
                 <div>
-                  <a href="/">Retail E-Commerce </a>
+                  <Link to="/">Retail E-Commerce </Link>
                 </div>
                 <div>
-                  <a href="/">FMCG & Restaurants E-Commerce </a>
+                  <Link to="/">FMCG & Restaurants E-Commerce </Link>
                 </div>
                 <div>
-                  <a href="/">Healthcare E-Commerce </a>
+                  <Link to="/">Healthcare E-Commerce </Link>
                 </div>
                 <div>
-                  <a href="/">Education E-Commerce </a>
+                  <Link to="/">Education E-Commerce </Link>
                 </div>
                 <div>
-                  <a href="/">E-Commerce for Special Projects </a>
+                  <Link to="/">E-Commerce for Special Projects </Link>
                 </div>
               </div>
             </div>
@@ -176,28 +175,30 @@ function Header() {
         <span className="dot"></span>
         <Link
           className={`${
-            location?.hash === "#blog" ? "activeLink" : "inactiveLink"
+            location?.pathname === "/blog" ? "activeLink" : "inactiveLink"
           } `}
-          to="#blog"
+          to="/blog"
         >
           Blog
         </Link>
         <span className="dot"></span>
         <Link
           className={`${
-            location?.hash === "#media" ? "activeLink" : "inactiveLink"
+            location?.pathname === "/media" ? "activeLink" : "inactiveLink"
           } `}
-          to="#media"
+          to="/media"
         >
           Media
         </Link>
       </div>
       <div className="logo">
+        <Link to="/">
         <img alt="logo" className="logo-img" src={logo} />
+        </Link>
       </div>
       <div className="contact-us">
         <button className="cubtn">
-          <Link to="#contact-us">Contact Us</Link>
+          <Link to="/contact-us">Contact Us</Link>
         </button>
       </div>
     </div>

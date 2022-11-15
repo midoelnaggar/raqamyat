@@ -12,94 +12,12 @@
   }
 }
 
-.menuButton {
-  color : #027ab7
-}
-
 .mobileNavList {
   flex: 40%;
   font-size: large;
   font-weight: 200;
 }
 
-.mobileNavList > a:hover {
-  text-decoration: none;
-  color: #027ab7;
-  font-weight: 500;
-  margin-inline-end: 20px;
-  border-bottom: 3px solid;
-  border-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 30%,
-    rgba(239, 2, 32, 1) 30%,
-    rgba(239, 2, 32, 1) 50%,
-    rgba(239, 2, 32, 1) 70%,
-    rgba(255, 255, 255, 1) 70%
-  );
-  animation-name: fontChange;
-  animation-duration: 1s;
-  border-image-slice: 1;
-  padding-bottom: 3px;
-  @keyframes fontChange {
-    0% {
-      font-weight: 300;
-    }
-    100% {
-      font-weight: 500;
-    }
-  }
-}
-
-.activeLink {
-  text-decoration: none;
-  color: #027ab7;
-  font-weight: 500;
-  margin-inline-end: 20px;
-  border-bottom: 3px solid;
-  border-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 30%,
-    rgba(239, 2, 32, 1) 30%,
-    rgba(239, 2, 32, 1) 50%,
-    rgba(239, 2, 32, 1) 70%,
-    rgba(255, 255, 255, 1) 70%
-  );
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  border-image-slice: 1;
-  padding-bottom: 3px;
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-}
-@keyframes fadeIn {
-  0% {
-    color: white;
-  }
-  100% {
-    color: #027ab7;
-  }
-}
-.inactiveLink {
-  text-decoration: none;
-  color: #656565;
-  font-weight: 300;
-  margin-inline-end: 20px;
-}
-.dot {
-  height: 5px;
-  width: 5px;
-  background-color: #0093de;
-  border-radius: 50%;
-  display: inline-block;
-  margin-bottom: 2px;
-  margin-inline-end: 20px;
-}
 
 .mobileLogo {
   flex: 20%;

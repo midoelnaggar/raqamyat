@@ -1,6 +1,6 @@
 .articles {
   background-color: #f0f6ff;
-  padding-top: 170px;
+  margin-top: 170px;
   padding-bottom: 170px;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,6 @@
 }
 
 .articles>.posts>.post {
-  flex-basis: content;
   position: relative;
   width: 474px;
   height: 504px;
@@ -51,20 +50,17 @@
 .articles>.posts>.post>.tag {
   position: absolute;
   background-color: #ff6b7e;
+  padding-top: -110px;
   padding-inline: 11px;
   left: 17px;
   top: 19px;
-  width: 106px;
-  height: 20px;
   border-radius: 8px;
 }
 
-.articles>.posts>.post>h5 {
-  position: absolute;
-  left: 31px;
-  top: 2px;
+.articles>.posts>.post>.tag>h1 {
+  text-transform: uppercase;
   letter-spacing: 1.5px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 400;
   color: white;
 }

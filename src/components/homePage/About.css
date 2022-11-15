@@ -59,3 +59,15 @@
     font-weight: 400;
     line-height: 30px;   
 }
+
+@media (max-width:1300px){
+
+  .about{
+    margin-right: 0px;
+  }
+
+  .leftComp  {
+    margin-inline: 5vw;
+
+  }
+}

@@ -1,7 +1,7 @@
 .profile {
   display: flex;
   flex-direction: column;
-  padding: 170px 400px 170px 400px;
+  padding: 170px 380px;
 }
 
 .top {

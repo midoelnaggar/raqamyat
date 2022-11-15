@@ -1,0 +1,54 @@
+.ecommerce {
+  display: flex;
+  padding: 80px 400px;
+  justify-content: space-between;
+}
+
+.ecommerce-left>img {
+margin-inline:-90px;
+}
+
+.ecommerce-right > h1 {
+  padding-top: 30px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: -1.44px;
+  margin-inline-end: 110px;
+}
+.ecommerce-right > h1 > span {
+  position: relative;
+  z-index: 1;
+}
+
+.ecommerce-right > h1 > span > span {
+  position: absolute;
+  background-color: #0093de;
+  opacity: 55%;
+  height: 20px;
+  width: 102.5px;
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+}
+
+.ecommerce-right > .sp {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #656565;
+  max-width: 434px;
+}
+
+
+.ecommerce-right > .lp {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #2A2A2A;
+  max-width: 331px;
+}
+
+.ecommerce-right > button {
+  margin-top: 30px;
+}
