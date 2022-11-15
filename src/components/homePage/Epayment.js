@@ -1,4 +1,4 @@
-import "./Epayment.css";
+import "../../styles/Epayment.css";
 import { Link } from "react-router-dom";
 import Shapes from "../../img/shapes.png";
 import arrow from "../../img/Icon ionic-ios-arrow-round-forward.png";

@@ -1,4 +1,4 @@
-import "./Hero.css";
+import "../../styles/Hero.css";
 import { useEffect, useState } from "react";
 
 import mark1 from "../../img/circle-note.png";

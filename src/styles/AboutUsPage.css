@@ -1,15 +1,16 @@
 .about_us_page{
-    margin-top: 95px;
 
 }
 
 
 .page_header {
+    position: relative;
     text-align: center;
+    margin-top: 95px;
 }
 
 
-.page_title{
+.page_title>h1{
     font-size: 55px;
     font-weight: 600;
     letter-spacing: -2.48px;
@@ -20,6 +21,7 @@ display: flex;
 justify-content: center;
 padding-top: 8px;
 padding-bottom: 70px;
+
 }
 
 
@@ -27,6 +29,7 @@ padding-bottom: 70px;
     color: #656565;
     font-size: 14px;
     text-decoration: none;
+
 }
 
 .breadcrumbs > div {

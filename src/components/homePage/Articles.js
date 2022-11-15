@@ -1,10 +1,10 @@
-import "./Articles.css";
+import "../../styles/Articles.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import BlueArrow from "../../img/Icon ionic-ios-arrow-round-forwardb.png";
 import axios from "axios";
 
-function Articles({}) {
+function Articles() {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
     axios("https://newraq.raqamyat.com/public/api/blogs").then((response) => {

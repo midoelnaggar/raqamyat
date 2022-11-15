@@ -16,6 +16,7 @@
   flex: 40%;
   font-size: large;
   font-weight: 200;
+  z-index: 3;
 }
 
 .navList > a:hover {
@@ -92,11 +93,14 @@
 .logo {
   flex: 20%;
   text-align: center;
+  z-index: 3;
 }
 
 .contact-us {
   flex: 40%;
   text-align: right;
+  z-index: 5;
+
 }
 .cubtn {
   width: 150px;
@@ -113,11 +117,15 @@
 .cubtn > a {
   color: white;
   text-decoration: none;
+  padding: 10px;
+  z-index: 5;
+
 }
 
 .aboutbtn {
   position: relative;
 }
+
 .aboutmenu {
   display: none;
   position: absolute;
@@ -127,7 +135,7 @@
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 20px 50px #00000026;
   border-radius: 25px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .aboutbtn:hover .aboutmenu {

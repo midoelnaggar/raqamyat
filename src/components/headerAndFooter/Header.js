@@ -1,4 +1,4 @@
-import "./Header.css";
+import "../../styles/Header.css";
 import { useLocation, Link } from "react-router-dom";
 import logo from "../../img/logo.png";
 

@@ -1,4 +1,4 @@
-import "./MobileHeader.css";
+import "../../styles/MobileHeader.css";
 import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
 import menu from "../../img/Hamburger_icon.svg";

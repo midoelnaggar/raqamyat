@@ -1,4 +1,4 @@
-import React from "./Footer.css";
+import "../../styles/Footer.css";
 import logo from "../../img/logo.png";
 import li from "../../img/Mask Group 5.png";
 import fb from "../../img/Mask Group 6.png";

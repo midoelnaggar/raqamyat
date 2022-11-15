@@ -1,0 +1,155 @@
+
+.formandinfo {
+  display: flex;
+  margin-inline: 300px;
+}
+.formandinfo>.info {
+  padding-inline-start: 86px;
+}
+
+.contactform {
+  position: relative;
+  height: 690px;
+  width: 475px;
+  background-color: #f0f6ff;
+  box-shadow: 0px 20px 50px #0093de17;
+  border: 25px solid #f0f6ff;
+  padding-inline: 77px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contactform > img {
+  left: 0;
+  top: 0;
+  position: absolute;
+  opacity: 0.14;
+}
+
+.contactform > .head {
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.contactform > .head > h1 {
+  text-align: left;
+  position: relative;
+  letter-spacing: -1.71px;
+  line-height: 50px;
+  font-size: 38px;
+  font-weight: 600;
+}
+.contactform > .head > h1 > span {
+  position: relative;
+  letter-spacing: -0.5px;
+  letter-spacing: -1.71px;
+  line-height: 50px;
+  font-size: 38px;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.contactform > .head > h1 > span > span {
+  position: absolute;
+  background-color: #0093de;
+  opacity: 55%;
+  height: 25px;
+  width: 102.5px;
+  bottom: 1px;
+  right: 0px;
+  z-index: -1;
+}
+
+.contactform > .sbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;  background: linear-gradient(249deg, #0093de, #3c6fae);
+  border: none;
+  border-radius: 30px;
+  width: 165px;
+  height: 50px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.contactform > .sbtn> div {
+  text-align: center;
+  color: white;
+  font-size: 19px;
+  letter-spacing: 0.47px;
+  font-weight: 200;
+}
+
+.formandinfo > .info{
+  z-index: 1;
+} 
+.info > .head {
+  position: relative;
+  padding-top: 50px;
+  max-width: 540px;
+}
+
+.info > .head > h1 {
+  text-align: left;
+  position: relative;
+  letter-spacing: -1.71px;
+  line-height: 50px;
+  font-size: 38px;
+  font-weight: 600;
+}
+.info > .head > h1 > span {
+  position: relative;
+  letter-spacing: -0.5px;
+  letter-spacing: -1.71px;
+  line-height: 50px;
+  font-size: 38px;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.info > .head > h1 > span > span {
+  position: absolute;
+  background-color: #0093de;
+  opacity: 55%;
+  height: 25px;
+  width: 102.5px;
+  bottom: 1px;
+  right: 0px;
+  z-index: -1;
+}
+
+.info > .contact {
+  display: flex;
+  padding-block: 15px;
+}
+
+.info >.contact> div {
+padding-inline-start: 16px;
+max-width: 285px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+justify-content: center;
+}
+
+.info >.contact> div>div {
+  color:#2A2A2A ;
+  font-size:18px ;
+  font-weight:600 ;
+  line-height:24px ;
+
+}
+
+.info >.contact> div>a {
+  text-decoration: none;
+  color:#2A2A2A ;
+  font-size:16px ;
+  font-weight:400 ;
+  line-height:18px ;
+
+}
+
+.map {
+  margin-top: -200px;
+  margin-bottom: -100px;
+}

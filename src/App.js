@@ -10,7 +10,8 @@ import Header from "./components/headerAndFooter/Header";
 import MobileHeader from "./components/headerAndFooter/MobileHeader";
 import HomePage from "./components/homePage";
 import AboutUsPage from "./components/AboutUsPage";
-
+import ContactUsPage from "./components/ContactUsPage";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   let location = useLocation();
@@ -34,6 +35,9 @@ function App() {
       case "/about-us":
         SetBgColor("aboutbg");
         break;
+      case "/contact-us":
+        SetBgColor("contactbg");
+        break;
       default:
         SetBgColor("");
     }
@@ -41,18 +45,26 @@ function App() {
 
   return (
     <div className="app">
-      <div className={bgColor}>
-        <Header />
-        <MobileHeader />
-        <LoadingContext.Provider value={{ loading, setLoading }} />
-        <HomeContext.Provider value={data}>
-          <Routes>
-        <Route  path="/"  element={loading ? <Loading /> : <HomePage />} />
-        <Route  path="/about-us"  element={loading ? <Loading /> : <AboutUsPage />} />
-        </Routes>
-        </HomeContext.Provider>
-        <Footer />
-      </div>
+      <div className={bgColor}></div>
+      <Header />
+      <MobileHeader />
+      <LoadingContext.Provider value={{ loading, setLoading }} />
+      <HomeContext.Provider value={data}>
+        <AnimatePresence>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={loading ? <Loading /> : <HomePage />} />
+            <Route
+              path="/about-us"
+              element={loading ? <Loading /> : <AboutUsPage />}
+            />
+            <Route
+              path="/contact-us"
+              element={loading ? <Loading /> : <ContactUsPage />}
+            />
+          </Routes>
+        </AnimatePresence>
+      </HomeContext.Provider>
+      <Footer />
     </div>
   );
 }

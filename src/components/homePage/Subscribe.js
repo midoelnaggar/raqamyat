@@ -1,4 +1,4 @@
-import "./Subscribe.css";
+import "../../styles/Subscribe.css";
 function Subscribe() {
   return (
     <div className="subscribe">

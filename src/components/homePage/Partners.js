@@ -1,4 +1,4 @@
-import "./Partners.css";
+import "../../styles/Partners.css";
 import paymob from '../../img/paymob.png'
 import paysky from '../../img/paySky.png'
 import fawry from '../../img/fawry.png'

@@ -1,14 +1,88 @@
 .app {
+  position: relative;
   font-family: "Gotham";
   padding: 0px;
-  background-color:#F0F6FF;
-  max-width: 100%;
-  min-width: 100%;
-  overflow-x: hidden;
+  background-color: #f0f6ff;
+  min-width: 1900px;
+  overflow-x:hidden;
 }
 .homebg {
-  background: linear-gradient(162deg, rgba(255,255,255,1) 0%, rgba(240,239,255,1) 16%,rgba(240,239,255,1) 48%, rgba(240,246,255,1) 100%);
+  background: linear-gradient(
+    162deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(240, 239, 255, 1) 80%,
+    rgba(240, 246, 255, 1) 100%
+  );
+  position: absolute;
+  height: 1200px;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  animation-name: bg_fadein;
+  animation-duration: 2s;
 }
 .aboutbg {
-  background-color: #F0F6FF;
+  background-color: #f0f6ff;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+
+
+.contactbg {
+  background-image: radial-gradient(
+    circle at 58% 50%,
+    rgba(251, 237, 255, 20) 8%,
+    rgba(255, 255, 255, 1) 18%,
+    rgba(255, 255, 255, 1) 56%
+  );
+  border-radius: 0px 0px 180px 180px;
+  position: absolute;
+  height: 1080px;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  animation: 0.4s ease-out cu_bg_fadin 1;
+}
+
+.insidebg {
+  background-image: radial-gradient(
+    circle at 58% 20%,
+    rgba(251, 237, 255, 20) 8%,
+    rgba(255, 255, 255, 1) 18%,
+    rgba(255, 255, 255, 1) 56%
+  );
+  border-radius: 0px 0px 180px 180px;
+  position: absolute;
+  height: 1080px;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: 0.25s ease-out cu_bg_fadin 1;
+}
+
+
+@keyframes bg_fadin {
+  0% {
+    height: 0;
+
+  }
+  100% {
+    height: 100vh;
+
+  }
+}
+
+@keyframes cu_bg_fadin {
+  0% {
+    height: 0;
+
+  }
+  100% {
+    height: 1080px;
+
+  }
 }
