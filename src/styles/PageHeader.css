@@ -1,0 +1,23 @@
+.page_header {
+    position: relative;
+    text-align: center;
+    margin-top: 95px;
+}
+
+
+.page_title{
+    font-size: 55px;
+    font-weight: 600;
+    letter-spacing: -2.48px;
+}
+
+.breadcrumbs {
+display: flex;
+justify-content: center;
+padding-top: 20px;
+padding-bottom: 70px;
+padding-inline: 8px;
+color: #656565;
+font-size: 14px;
+}
+

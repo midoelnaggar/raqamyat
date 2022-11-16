@@ -26,7 +26,7 @@ function Epayment ({ data }) {
         </button>
       </div>
       <div className="epayment-right">
-        <img src={data.image} alt="back" />
+        <img src={data?.image} alt="back" />
       </div>
     </div>
   );

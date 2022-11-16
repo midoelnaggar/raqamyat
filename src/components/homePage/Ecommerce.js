@@ -6,7 +6,7 @@ function Ecommerce({ data }) {
   return (
     <div className="ecommerce">
       <div className="ecommerce-left">
-        <img src={data.image} alt="back" />
+        <img src={data?.image} alt="back" />
       </div>
       <div className="ecommerce-right">
         <h1>

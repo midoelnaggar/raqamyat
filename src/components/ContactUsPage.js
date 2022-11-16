@@ -1,30 +1,18 @@
 import "../styles/ContactUsPage.css";
+
 import { TextField, FormControl } from "@mui/material";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import Subscribe from "./homePage/Subscribe";
 import formbg from "../img/Group 162805.png";
 import img1 from "../img/Group 162642.png";
 import img2 from "../img/Group 162643.png";
 import img3 from "../img/Group 162641.png";
 import map from "../img/Mask Group 3.png";
+import PageHeader from "./PageHeader";
+import Motion from "./Motion";
 
-function ContactUsPage() {
+function ContactUsPage({data}) {
   return (
-    <motion.div
-      className="contact_us_page"
-      initial={{ width: 0 }}
-      animate={{ width: "100%" }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.18 } }}
-    >
-      <div className="page_header">
-        <div className="page_title"><h1>Contact Us</h1></div>
-        <div className="breadcrumbs">
-          <Link to="/">Home</Link>
-          <div>/</div>
-          <Link to="/contact-us">Contact Us</Link>
-        </div>
-      </div>
+    <Motion>
+      <PageHeader title="Contact Us" breadcrumbs="Home  /  Contact Us" />
       <div className="formandinfo">
         <div className="contactform">
           <img src={formbg} alt="bg" />
@@ -96,7 +84,7 @@ function ContactUsPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                1D/4 AlNasr Road New Maadi Cairo, Cairo 11728, EG
+                {data?.address}
               </a>
             </div>
           </div>
@@ -105,11 +93,11 @@ function ContactUsPage() {
             <div>
               <div>Our Email</div>
               <a
-                href="mailto:info@raqamyat.com"
+                href={`mailto:${data?.email}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                info@raqamyat.com
+                {data?.email}
               </a>
             </div>
           </div>
@@ -118,11 +106,11 @@ function ContactUsPage() {
             <div>
               <div>Our Telephone</div>
               <a
-                href="tel:+201050859295"
+                href={`tel:${data?.mobile}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                00201050859295
+                {data?.mobile}
               </a>
             </div>
           </div>
@@ -135,8 +123,7 @@ function ContactUsPage() {
       >
         <img src={map} className="map" alt="map" />
       </a>
-      <Subscribe />
-    </motion.div>
+    </Motion>
   );
 }
 

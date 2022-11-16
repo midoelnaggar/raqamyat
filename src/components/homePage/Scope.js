@@ -21,9 +21,9 @@ function Scope({ data }) {
         {data?.sub.map((card) => {
           return (
             <div className="card">
-              <img src={card.image} alt="Operations" />
-              <h1>{card.title}</h1>
-              <p>{card.description}</p>
+              <img src={card?.image} alt="Operations" />
+              <h1>{card?.title}</h1>
+              <p>{card?.description}</p>
               <button className="lmbtn">
                 <Link to="">
                   Learn More
