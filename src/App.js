@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect, } from "react";
 import axios from "axios";
-import { Route, Routes, useLocation, useHref } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import LoadingContext from "./context/LoadingContext";
 import Loading from "./Loading";
 import Footer from "./components/headerAndFooter/Footer";
@@ -15,7 +15,6 @@ import StakeholdersPage from "./components/StakeholdersPage";
 
 function App() {
   const location = useLocation();
-  const href = useHref();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [bgColor, SetBgColor] = useState("homebg");

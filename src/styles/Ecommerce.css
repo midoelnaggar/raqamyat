@@ -18,7 +18,7 @@ margin-inline:-90px;
 }
 .ecommerce-right > h1 > span {
   position: relative;
-  z-index: 1;
+  z-index: -1;
 }
 
 .ecommerce-right > h1 > span > span {

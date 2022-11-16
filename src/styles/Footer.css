@@ -41,7 +41,7 @@
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 27px;
-  z-index: 1;
+  z-index: 0;        
 }
 .footer > .fourcols > div > .footertitle > span {
     position: absolute;

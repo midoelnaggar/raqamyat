@@ -16,7 +16,8 @@
 }
 .top > h1 > span {
   position: relative;
-  z-index: 1;
+  z-index: 0;
+
 }
 
 .top > h1 > span > span {

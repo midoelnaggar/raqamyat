@@ -21,14 +21,16 @@
   line-height: 50px;
   font-size: 45px;
   font-weight: 600;
-  z-index: 1;
+  
 }
 .scope > .head > h1 > span {
   position: relative;
   letter-spacing: -0.5px;
   font-size: 45px;
   font-weight: 600;
-  z-index: 1;
+  z-index: 0;
+
+  
 }
 
 .scope > .head > h1 > span > span {
@@ -55,7 +57,7 @@
     0% no-repeat padding-box;
   box-shadow: -10px 10px 50px #0093de1a;
   border-radius: 50px 25px;
-  z-index: 2;
+  
   text-align: center;
   
 }

@@ -1,3 +1,7 @@
+.about_section_bg{
+
+}
+
 .about {
   display: flex;
   position: relative;
@@ -6,6 +10,7 @@
   padding-bottom: 80px;
   border-top-right-radius: 5em;
   border-bottom-right-radius: 5em;
+
 
 }
 
@@ -25,21 +30,22 @@
   flex-direction: column;
   padding-top: 75px;
   padding-left: 50px;
+
 }
 
 .rightComp > h1 {
-    position: relative;
-  letter-spacing: -0.5px;
+    position: relative;  letter-spacing: -0.5px;
   font-size: 45px;
   font-weight: 600;
-  z-index: 1;
 }
 .rightComp > h1>span {
     position: relative;
   letter-spacing: -0.5px;
   font-size: 45px;
   font-weight: 600;
-  z-index: 1;
+  z-index: 0;
+
+
 }
 .rightComp > h1 > span>span {
   position: absolute;

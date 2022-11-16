@@ -18,7 +18,7 @@ function Header() {
         <span className="dot"></span>
         <Link
           className={`${
-            location?.pathname === "/about-us" ? "activeLink" : "inactiveLink"
+            location?.pathname.startsWith("/about-us") ? "activeLink" : "inactiveLink"
           }  aboutbtn`}
           to="/about-us"
         >

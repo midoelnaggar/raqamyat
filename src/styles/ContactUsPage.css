@@ -1,4 +1,13 @@
+.cupage{
+  background-image: radial-gradient(
+    circle at 58% 35%,
+    rgba(251, 237, 255, 20) 8%,
+    rgba(255, 255, 255, 1) 18%,
+    rgba(255, 255, 255, 1) 56%
+  );
+  margin-bottom: -150px;
 
+}
 .formandinfo {
   display: flex;
   margin-inline: 300px;
@@ -46,7 +55,7 @@
   line-height: 50px;
   font-size: 38px;
   font-weight: 600;
-  z-index: 1;
+  z-index: 0;
 }
 
 .contactform > .head > h1 > span > span {
@@ -80,9 +89,7 @@
   font-weight: 200;
 }
 
-.formandinfo > .info{
-  z-index: 1;
-} 
+
 .info > .head {
   position: relative;
   padding-top: 50px;
@@ -104,7 +111,7 @@
   line-height: 50px;
   font-size: 38px;
   font-weight: 600;
-  z-index: 1;
+  z-index: 0;
 }
 
 .info > .head > h1 > span > span {
@@ -149,7 +156,6 @@ justify-content: center;
 
 }
 
-.map {
-  margin-top: -200px;
+.map{
   margin-bottom: -100px;
 }

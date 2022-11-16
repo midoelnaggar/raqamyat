@@ -1,5 +1,4 @@
 .articles {
-  background-color: #f0f6ff;
   margin-top: 170px;
   padding-bottom: 170px;
   display: flex;
@@ -13,11 +12,11 @@
   font-size: 45px;
   letter-spacing: -2.02px;
   font-weight: 600;
-  z-index: 1;
 }
 
 .articles>h1>span {
   position: relative;
+  z-index: 0;
 }
 
 .articles>h1>span>span {
