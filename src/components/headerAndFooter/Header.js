@@ -41,7 +41,7 @@ function Header() {
                   <Link to="/">Successful Cases </Link>
                 </div>
                 <div>
-                  <Link to="/">Contact Us </Link>
+                  <Link to="/contact-us">Contact Us </Link>
                 </div>
               </div>
               <span className="seperator" />

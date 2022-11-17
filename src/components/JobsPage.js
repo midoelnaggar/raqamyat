@@ -7,14 +7,14 @@ import image from "../img/Group 7.png";
 function JobsPage({ data }) {
   return (
     <>
-      {data && (
+      
         <Motion>
           <div className="jobsPage">
             <PageHeader
               title="Jobs"
               breadcrumbs="Home / About Us / Careers / Jobs"
             />
-            <div className="jobs">
+            <div className="jobsTop">
               <div className="jobs-left">
                 <h1>
                   <span>
@@ -52,10 +52,24 @@ function JobsPage({ data }) {
                 you’re looking for an opportunity that will lead you to the next
                 level of your career, you’ve come to the right place.
               </p>
+              <div className="jobs">
+                { Array.isArray(data) ? data.map((job) => {
+                  return (
+                    <div className="job">
+                      <h1>{job?.title}</h1>
+                      <p>Please click Apply Now for more details.</p>
+                      <Link to={`/about-us/careers/job/${job?.job_slug}`}>
+                        <div className="btn">
+                          Apply Now <img src={arrow} alt="arrow" />
+                        </div>
+                      </Link>
+                    </div>
+                  );
+                }):<h1>Error Fetching Jobs!</h1>}
+              </div>
             </div>
           </div>
         </Motion>
-      )}
     </>
   );
 }

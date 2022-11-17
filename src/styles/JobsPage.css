@@ -10,14 +10,14 @@
   );
   border-radius: 0px 0px 180px 180px;
   animation: 0.4s ease-out 1;
-  padding-top:100px;
+  padding-top: 100px;
   padding-bottom: 86px;
 }
 
-.jobs-right  {
+.jobs-right {
   height: 557px;
 }
-a{
+a {
   cursor: pointer;
 }
 .jobs-left > h1 {
@@ -62,14 +62,13 @@ a{
 }
 .sub_container {
   padding: 80px 400px;
-
 }
 
 .sub-right > {
   margin-inline: -90px;
 }
 
-.jobsPage> .sub_container > h1 {
+.jobsPage > .sub_container > h1 {
   padding-top: 30px;
   font-size: 38px;
   font-weight: 600;
@@ -77,12 +76,12 @@ a{
   letter-spacing: -1.44px;
   margin-inline-end: 110px;
 }
-.jobsPage> .sub_container> h1 > span  {
+.jobsPage > .sub_container > h1 > span {
   position: relative;
   z-index: 0;
 }
 
-.jobsPage> .sub_container> h1 > span > span {
+.jobsPage > .sub_container > h1 > span > span {
   position: absolute;
   background-color: #0093de;
   opacity: 55%;
@@ -93,7 +92,7 @@ a{
   z-index: -1;
 }
 
-.jobsPage> .sub_container> .lp {
+.jobsPage > .sub_container > .lp {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
@@ -101,4 +100,63 @@ a{
   max-width: 940px;
 }
 
+ .jobs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+.jobs > .job {
+  display: flex;
+  flex-direction: column;
+  width: 434px;
+  background: transparent linear-gradient(295deg, #ffffff 0%, #effaff 100%) 0%
+    0% no-repeat padding-box;
+  padding: 50px;
+  box-shadow: -10px 10px 50px #0093de1a;
+  border-radius: 50px 25px;
+  margin-block-start: 52px;
+  justify-content: space-around ;
+}
+
+.jobs > .job  > h1 {
+  margin: 0;
+  color: #2A2A2A;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+
+.jobs > .job  > p {
+  color: #5A5A5A;
+  font-size: 16px;
+  padding-bottom: 19px;
+  font-weight: 400;
+}
+
+
+.jobs > .job > a{
+  text-decoration: none;
+
+}
+
+.jobs > .job > a >.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 192px;
+  height: 59px;
+  background: linear-gradient(249deg, #0093de, #3c6fae);
+  border-radius: 30px;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: -0.45px;
+  text-decoration: none;
+}
+
+.jobs > .job > a>.btn > img {
+  width: 25px;
+  height: 16px;
+  padding-inline-start: 10px;
+}

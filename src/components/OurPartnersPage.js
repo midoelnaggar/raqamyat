@@ -6,8 +6,8 @@ function OurPartnersPage({ data }) {
   return (
     <Motion className="partners_page">
       <PageHeader
-        title="OurPartners"
-        breadcrumbs="Home / About Us / Our Company / OurPartners"
+        title="Our Partners"
+        breadcrumbs="Home / About Us / Our Company / Our Partners"
       />
       <div className="ourPartners">
         <div className="ourPartners-left">

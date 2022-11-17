@@ -12,6 +12,14 @@ import Motion from "./Motion";
 function ContactUsPage({ data }) {
   return (
     <Motion>
+      <div className="cupbg">
+      <a
+        href="https://goo.gl/maps/PxFQEiH1qgMzuHfu8"
+        target="_blank"
+        rel="noopener noreferrer"
+  >
+        <img src={map} className="map" alt="map" />
+      </a>
       <PageHeader title="Contact Us" breadcrumbs="Home  /  Contact Us" />
       <div className="cupage">
         <div className="formandinfo">
@@ -118,13 +126,7 @@ function ContactUsPage({ data }) {
           </div>
         </div>
       </div>
-      <a
-        href="https://goo.gl/maps/PxFQEiH1qgMzuHfu8"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src={map} className="map" alt="map" />
-      </a>
+      </div>
     </Motion>
   );
 }

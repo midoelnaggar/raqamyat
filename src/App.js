@@ -22,8 +22,7 @@ function App() {
   const [apiUrl, setApiUrl] = useState("");
 
   useEffect(() => {
-    console.log("test")
-    const routing =  () => {
+    const routing = () => {
       if (location.pathname === "/") {
         setLoading(true);
         setApiUrl("https://newraq.raqamyat.com/public/api/home");
@@ -34,56 +33,51 @@ function App() {
         setApiUrl("https://newraq.raqamyat.com/public/api/about");
         SetBgColor("aboutbg");
         document.title = "About Us";
-      } else if (location.pathname === "/contact-us") {
+      }
+      if (location.pathname === "/contact-us") {
         setLoading(true);
         setApiUrl("https://newraq.raqamyat.com/public/api/contact");
         SetBgColor("contactbg");
         document.title = "Contact Us";
-      } else if (location.pathname === "/about-us/our-company/stakeholders") {
+      }
+      if (location.pathname === "/about-us/our-company/stakeholders") {
         setLoading(true);
         setApiUrl("https://newraq.raqamyat.com/public/api/stakeholders");
         SetBgColor("contactbg");
         document.title = "Stakeholders";
-      } else if (location.pathname === "/about-us/our-company/our-partners") {
+      }
+      if (location.pathname === "/about-us/our-company/our-partners") {
         setLoading(true);
         setApiUrl("https://newraq.raqamyat.com/public/api/partners");
         SetBgColor("contactbg");
         document.title = "Our Partners";
-      } else if (location.pathname === "/about-us/careers/jobs") {
+      }
+      if (location.pathname === "/about-us/careers/jobs") {
         setLoading(true);
         setApiUrl("https://newraq.raqamyat.com/public/api/jobs");
         SetBgColor("contactbg");
         document.title = "Jobs";
       }
-      else{
-
-      }
     };
     routing();
-  }, [location]);
+  }, [location.pathname]);
 
   useEffect(() => {
     const getData = async () => {
       try {
         let res = await axios.get(apiUrl);
         if (res.status === 200) {
-          setData(await res.data.data);
+          setData(res.data.data);
         }
       } catch (err) {
         console.error(err);
       }
     };
     getData();
-    console.log("ue2");
   }, [apiUrl]);
-
   useEffect(() => {
-    const allowRoute = async () => {
-      setLoading(false);
-    };
-    allowRoute();
-  }, [apiUrl, data, location]);
-
+    setLoading(false);
+  }, [data]);
   return (
     <div className="app">
       <div className={bgColor}></div>
@@ -118,7 +112,9 @@ function App() {
               />
               <Route
                 path="/about-us/careers/jobs"
-                element={loading ? <Loading /> : <JobsPage data={data} />}
+                element={
+                  loading ? <Loading /> : <JobsPage data={data} />
+                }
               />
             </Routes>
           </div>
