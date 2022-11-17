@@ -1,0 +1,679 @@
+{
+	"info": {
+		"_postman_id": "ff423e2f-100b-4a13-9b52-641a7c6868a1",
+		"name": "Raqamyat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24457442"
+	},
+	"item": [
+		{
+			"name": "jobs",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://newraq.raqamyat.com/public/api/jobs",
+							"protocol": "https",
+							"host": [
+								"newraq",
+								"raqamyat",
+								"com"
+							],
+							"path": [
+								"public",
+								"api",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://newraq.raqamyat.com/public/api/jobs/show?slug=job-15",
+							"protocol": "https",
+							"host": [
+								"newraq",
+								"raqamyat",
+								"com"
+							],
+							"path": [
+								"public",
+								"api",
+								"jobs",
+								"show"
+							],
+							"query": [
+								{
+									"key": "slug",
+									"value": "job-15"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "internship",
+			"item": [
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "sdfasd",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "2022-05-31",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "asdfasd@sds.dsdsd",
+									"type": "text"
+								},
+								{
+									"key": "current_address",
+									"value": "dfsdfsdf",
+									"type": "text"
+								},
+								{
+									"key": "cell_number",
+									"value": "01111216938",
+									"type": "text"
+								},
+								{
+									"key": "current_level_of_education",
+									"value": "Bachelor degree of education",
+									"type": "text"
+								},
+								{
+									"key": "school_university",
+									"value": "Zagazig",
+									"type": "text"
+								},
+								{
+									"key": "gpa",
+									"value": "79",
+									"type": "text"
+								},
+								{
+									"key": "degree",
+									"value": "Good",
+									"type": "text"
+								},
+								{
+									"key": "major_subjects",
+									"value": "digital marketing",
+									"type": "text"
+								},
+								{
+									"key": "select_position",
+									"value": "digital_marketing",
+									"type": "text"
+								},
+								{
+									"key": "question",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "question_1",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "question_2",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "question_3",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://newraq.raqamyat.com/public/api/internship",
+							"protocol": "https",
+							"host": [
+								"newraq",
+								"raqamyat",
+								"com"
+							],
+							"path": [
+								"public",
+								"api",
+								"internship"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://newraq.raqamyat.com/public/api/home",
+					"protocol": "https",
+					"host": [
+						"newraq",
+						"raqamyat",
+						"com"
+					],
+					"path": [
+						"public",
+						"api",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Blogs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://newraq.raqamyat.com/public/api/blogs",
+					"protocol": "https",
+					"host": [
+						"newraq",
+						"raqamyat",
+						"com"
+					],
+					"path": [
+						"public",
+						"api",
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stakeholders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://newraq.raqamyat.com/public/api/home",
+					"protocol": "https",
+					"host": [
+						"newraq",
+						"raqamyat",
+						"com"
+					],
+					"path": [
+						"public",
+						"api",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Partners",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://newraq.raqamyat.com/public/api/partners",
+					"protocol": "https",
+					"host": [
+						"newraq",
+						"raqamyat",
+						"com"
+					],
+					"path": [
+						"public",
+						"api",
+						"partners"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contact",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://newraq.raqamyat.com/public/api/contact",
+					"protocol": "https",
+					"host": [
+						"newraq",
+						"raqamyat",
+						"com"
+					],
+					"path": [
+						"public",
+						"api",
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contactStore",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "ahmed",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "email@email.com",
+							"type": "text"
+						},
+						{
+							"key": "subject",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://newraq.raqamyat.com/public/api/contactStore",
+					"protocol": "https",
+					"host": [
+						"newraq",
+						"raqamyat",
+						"com"
+					],
+					"path": [
+						"public",
+						"api",
+						"contactStore"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bookStore",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "name",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "01111216938",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "aaaahmed91@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://newraq.raqamyat.com/public/api/bookStore",
+					"protocol": "https",
+					"host": [
+						"newraq",
+						"raqamyat",
+						"com"
+					],
+					"path": [
+						"public",
+						"api",
+						"bookStore"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "webinars",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://newraq.raqamyat.com/public/api/webinars",
+					"protocol": "https",
+					"host": [
+						"newraq",
+						"raqamyat",
+						"com"
+					],
+					"path": [
+						"public",
+						"api",
+						"webinars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "webinarStore",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "ahmed",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "khaled",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "aaaahmed91@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "01111216938",
+							"type": "text"
+						},
+						{
+							"key": "webinar_id",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "job_title",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://newraq.raqamyat.com/public/api/webinarStore",
+					"protocol": "https",
+					"host": [
+						"newraq",
+						"raqamyat",
+						"com"
+					],
+					"path": [
+						"public",
+						"api",
+						"webinarStore"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "about",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://newraq.raqamyat.com/public/api/about",
+					"protocol": "https",
+					"host": [
+						"newraq",
+						"raqamyat",
+						"com"
+					],
+					"path": [
+						"public",
+						"api",
+						"about"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

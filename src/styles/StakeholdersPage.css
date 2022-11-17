@@ -1,12 +1,8 @@
-.page {
-  display: grid;
-  grid-template-columns: (1,1fr);
-}
 .stakeholders {
     display: flex;
   padding-inline: 277px;
   padding-block: 90px;
-  justify-content: space-between;
+  align-items: center;
   background-image: radial-gradient(
     circle at 58% 35%,
     rgba(251, 237, 255, 20) 8%,

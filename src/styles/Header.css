@@ -1,9 +1,14 @@
 .header {
+  position: absolute;
+  width: 85vw;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  align-self: center;
   display: flex;
   flex-wrap: nowrap;
   padding-top: 70px;
-  padding-inline: 138px;
   align-items: center;
+  z-index: 1;
 }
 
 @media only screen and (max-width:1490px) {
@@ -130,12 +135,11 @@
   position: absolute;
   width: 831px;
   height: 362px;
-  margin-top: 10px;
+  margin-top: 6px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 20px 50px #00000026;
   border-radius: 25px;
   z-index: 1;
-  
 }
 
 .aboutbtn:hover .aboutmenu {
@@ -148,7 +152,7 @@
   position: absolute;
   width: 1640px;
   height: 644px;
-  margin-top: 10px;
+  margin-top: 6px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 20px 50px #00000026;
   border-radius: 25px;

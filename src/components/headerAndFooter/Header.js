@@ -4,6 +4,7 @@ import logo from "../../img/logo.png";
 
 function Header() {
   let location = useLocation();
+    
   return (
     <div className="header">
       <div className="navList">
@@ -34,7 +35,7 @@ function Header() {
                   <Link to="/about-us/our-company/stakeholders">Stakeholders </Link>
                 </div>
                 <div>
-                  <Link to="/">Our Partners </Link>
+                  <Link to="/about-us/our-company/our-partners">Our Partners </Link>
                 </div>
                 <div>
                   <Link to="/">Successful Cases </Link>
@@ -58,12 +59,15 @@ function Header() {
                 <div>
                   <Link to="/">Projects </Link>
                 </div>
+                <div>
+                  <Link to="/">Projects </Link>
+                </div>
               </div>
               <span className="seperator" />
               <div className="mencol">
                 <div className="menti">Careers</div>
                 <div>
-                  <Link to="/">Jobs </Link>
+                  <Link to="/about-us/careers/jobs">Jobs </Link>
                 </div>
                 <div>
                   <Link to="/">Internships </Link>
@@ -94,7 +98,7 @@ function Header() {
                   <Link to="/">Consultation & Support </Link>
                 </div>
                 <div>
-                  <Link to="/">Outsourcing </Link>
+                  <Link  to="/">Outsourcing </Link>
                 </div>
                 <div>
                   <Link to="/">E-Payment Integrations </Link>

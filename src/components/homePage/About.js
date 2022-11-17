@@ -7,7 +7,7 @@ function About({data}) {
       <div className="leftComp">
         <img src={data?.image} alt="coimage" className="coimage" />
         <p>
-        {data?.sub_description}
+        {data?.sub_title}
         </p>
       </div>
       <div className="rightComp">

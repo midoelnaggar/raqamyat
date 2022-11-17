@@ -4,6 +4,9 @@
   padding: 0px;
   overflow-x: hidden;
 }
+.outlet{
+  padding-top: 140px;
+}
 .homebg {
   background: linear-gradient(
     157deg,

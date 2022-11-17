@@ -5,9 +5,8 @@ function Motion({children}) {
   return (
 <motion.div
       className="contact_us_page"
-      initial={{ width: 0 }}
-      animate={{ width: "100%" }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.18 } }}>
+      initial={{ scale: 0 }}
+      animate={{ scale: 1,transition:{duration:1} }}>
         {children}
       </motion.div>  )
 }
