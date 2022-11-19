@@ -20,7 +20,7 @@ function Scope({ data }) {
       <div className="cards">
         {data?.sub.map((card) => {
           return (
-            <div className="card">
+            <div key={card?.title} className="card">
               <img src={card?.image} alt="Operations" />
               <h1>{card?.title}</h1>
               <p>{card?.description}</p>

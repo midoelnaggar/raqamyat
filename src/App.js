@@ -13,111 +13,145 @@ import { AnimatePresence } from "framer-motion";
 import StakeholdersPage from "./components/StakeholdersPage";
 import OurPartnersPage from "./components/OurPartnersPage";
 import JobsPage from "./components/JobsPage";
+import EBookPage from "./components/EBookPage";
+import BlogPage from "./components/BlogPage";
+import PressPage from "./components/PressPage";
 
 function App() {
   const location = useLocation();
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [bgColor, SetBgColor] = useState("homebg");
-  const [apiUrl, setApiUrl] = useState("");
+  const [data, setData] = useState([]);
+  const [isFetching, setIsFetching] = useState(null);
+  const [loading, setLoading] = useState(null);
+  const [bgColor, SetBgColor] = useState(null);
+  const [apiUrl, setApiUrl] = useState(null);
+
+  useEffect(() => {}, []);
 
   useEffect(() => {
-    const routing = () => {
-      if (location.pathname === "/") {
-        setLoading(true);
-        setApiUrl("https://newraq.raqamyat.com/public/api/home");
-        SetBgColor("homebg");
-        document.title = "Raqamyat";
-      } else if (location.pathname === "/about-us") {
-        setLoading(true);
-        setApiUrl("https://newraq.raqamyat.com/public/api/about");
-        SetBgColor("aboutbg");
-        document.title = "About Us";
-      }
-      if (location.pathname === "/contact-us") {
-        setLoading(true);
-        setApiUrl("https://newraq.raqamyat.com/public/api/contact");
-        SetBgColor("contactbg");
-        document.title = "Contact Us";
-      }
-      if (location.pathname === "/about-us/our-company/stakeholders") {
-        setLoading(true);
-        setApiUrl("https://newraq.raqamyat.com/public/api/stakeholders");
-        SetBgColor("contactbg");
-        document.title = "Stakeholders";
-      }
-      if (location.pathname === "/about-us/our-company/our-partners") {
-        setLoading(true);
-        setApiUrl("https://newraq.raqamyat.com/public/api/partners");
-        SetBgColor("contactbg");
-        document.title = "Our Partners";
-      }
-      if (location.pathname === "/about-us/careers/jobs") {
-        setLoading(true);
-        setApiUrl("https://newraq.raqamyat.com/public/api/jobs");
-        SetBgColor("contactbg");
-        document.title = "Jobs";
-      }
+    if (location.pathname === "/") {
+      setApiUrl("https://newraq.raqamyat.com/public/api/home");
+      setLoading(true);
+      setIsFetching(true);
+      SetBgColor("homebg");
+      document.title = "Raqamyat";
+    } else if (location.pathname === "/about") {
+      setApiUrl("https://newraq.raqamyat.com/public/api/about");
+      setLoading(true);
+      setIsFetching(true);
+      SetBgColor("aboutbg");
+      document.title = "About Us";
+    }
+    if (location.pathname === "/contact-us") {
+      setApiUrl("https://newraq.raqamyat.com/public/api/contact");
+      setLoading(true);
+      setIsFetching(true);
+      SetBgColor("contactbg");
+      document.title = "Contact Us";
+    }
+    if (location.pathname === "/about/our-company/stakeholders") {
+      setApiUrl("https://newraq.raqamyat.com/public/api/stakeholders");
+      setLoading(true);
+      setIsFetching(true);
+      SetBgColor("contactbg");
+      document.title = "Stakeholders";
+    }
+    if (location.pathname === "/about/our-company/our-partners") {
+      setApiUrl("https://newraq.raqamyat.com/public/api/partners");
+      setLoading(true);
+      setIsFetching(true);
+      SetBgColor("contactbg");
+      document.title = "Our Partners";
+    }
+    if (location.pathname === "/about/careers/jobs") {
+      setApiUrl("https://newraq.raqamyat.com/public/api/jobs");
+      setIsFetching(true);
+      setLoading(true);
+      SetBgColor("contactbg");
+      document.title = "Jobs";
+    }
+    if (location.pathname === "/blog") {
+      setApiUrl("https://newraq.raqamyat.com/public/api/blogs");
+      setIsFetching(true);
+      setLoading(true);
+      SetBgColor("insidebg");
+      document.title = "Blog";
+    }
+    if (location.pathname === "/about/news/e-book") {
+      SetBgColor("contactbg");
+      document.title = "E-Book";
+    }
+    if (location.pathname === "/about/news/press") {
+      setApiUrl("https://newraq.raqamyat.com/public/api/blogs");
+      setIsFetching(true);
+      setLoading(true);
+      SetBgColor("insidebg");
+      document.title = "Press";
+    }
+    return function () {
+      setData(null);
     };
-    routing();
   }, [location.pathname]);
 
   useEffect(() => {
-    const getData = async () => {
+    if (apiUrl !== null) {
       try {
-        let res = await axios.get(apiUrl);
-        if (res.status === 200) {
-          setData(res.data.data);
-        }
+        axios.get(apiUrl, { timeout: 500000 }).then((res) => {
+          if (res.data.data) {
+            setData(res.data.data);
+            setIsFetching(false);
+          }
+        });
       } catch (err) {
         console.error(err);
       }
-    };
-    getData();
+    }
   }, [apiUrl]);
+
   useEffect(() => {
-    setLoading(false);
-  }, [data]);
+    if (isFetching === false) {
+      setLoading(false);
+    }
+  }, [isFetching]);
+
   return (
     <div className="app">
       <div className={bgColor}></div>
       <Header />
       <LoadingContext.Provider value={setLoading}>
         <AnimatePresence>
-          <div className="outlet">
-            <Routes location={location} key={location.pathname}>
-              <Route
-                path="/"
-                element={loading ? <Loading /> : <HomePage data={data} />}
-              />
-              <Route
-                path="/contact-us"
-                element={loading ? <Loading /> : <ContactUsPage data={data} />}
-              />
-              <Route
-                path="/about-us"
-                element={loading ? <Loading /> : <AboutUsPage data={data} />}
-              />
-              <Route
-                path="/about-us/our-company/stakeholders"
-                element={
-                  loading ? <Loading /> : <StakeholdersPage data={data} />
-                }
-              />
-              <Route
-                path="/about-us/our-company/our-partners"
-                element={
-                  loading ? <Loading /> : <OurPartnersPage data={data} />
-                }
-              />
-              <Route
-                path="/about-us/careers/jobs"
-                element={
-                  loading ? <Loading /> : <JobsPage data={data} />
-                }
-              />
-            </Routes>
-          </div>
+          {loading ? (
+            <Loading />
+          ) : (
+            <div className="outlet">
+              <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<HomePage data={data}></HomePage>} />
+                <Route path="*" element={<h1>404</h1>} />
+                <Route
+                  path="/contact-us"
+                  element={<ContactUsPage data={data} />}
+                />
+                <Route path="/about" element={<AboutUsPage data={data} />} />
+                <Route
+                  path="/about/our-company/stakeholders"
+                  element={<StakeholdersPage data={data} />}
+                />
+                <Route
+                  path="/about/our-company/our-partners"
+                  element={<OurPartnersPage data={data} />}
+                />
+                <Route
+                  path="/about/news/press"
+                  element={<PressPage data={data} />}
+                />
+                <Route path="/about/news/e-book" element={<EBookPage />} />
+                <Route
+                  path="/about/careers/jobs"
+                  element={<JobsPage data={data} />}
+                />
+                <Route path="/blog" element={<BlogPage data={data} />} />
+              </Routes>
+            </div>
+          )}
         </AnimatePresence>
       </LoadingContext.Provider>
       <Footer />

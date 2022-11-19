@@ -18,12 +18,15 @@
 }
 
 .navList {
+  position: relative;
   flex: 40%;
   font-size: large;
   font-weight: 200;
+  display: flex;
+  align-items: center;
 }
 
-.navList > a:hover {
+.navList >div > a:hover {
   text-decoration: none;
   color: #027ab7;
   font-weight: 500;
@@ -126,13 +129,11 @@
 
 }
 
-.aboutbtn {
-  position: relative;
-}
 
 .aboutmenu {
   display: none;
   position: absolute;
+  left: 0;
   width: 831px;
   height: 362px;
   margin-top: 6px;
@@ -142,14 +143,14 @@
   z-index: 1;
 }
 
-.aboutbtn:hover .aboutmenu {
+.aboutcontainer:hover .aboutmenu {
   display: block;
 }
-
 
 .servicesmenu {
   display: none;
   position: absolute;
+  left: 0;
   width: 1640px;
   height: 644px;
   margin-top: 6px;
@@ -160,11 +161,9 @@
   
 }
 
-.servicesbtn {
-  position: relative;
-}
 
-.servicesbtn:hover .servicesmenu {
+
+.servicescontainer:hover .servicesmenu {
   display: block;
 }
 

@@ -18,7 +18,7 @@ function Profile({data}) {
       <div className="bottom">
         { data?.sub.map((a) => {
           return(
-          <div className="maskImage">
+          <div key={a?.title} className="maskImage">
             <img src={Back} alt="back" className="back" />
             <img className="ico" src={a.image} alt="ico" />
             <h1>{a.title}</h1>

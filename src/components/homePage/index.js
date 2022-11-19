@@ -8,8 +8,8 @@ import Ecommerce from "./Ecommerce";
 import Epayment from "./Epayment";
 import Motion from "../Motion";
 
-const HomePage = ({ data }) => {
-
+const HomePage = ({ data, setData,setLoading }) => {
+  
   return (
     <Motion>
       <Hero data={data?.hero} />

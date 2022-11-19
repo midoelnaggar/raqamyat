@@ -23,7 +23,7 @@ function Articles() {
       <div className="posts">
         {articles.map((post) => {
           return (
-            <div className={"post"}>
+            <div key={post?.title} className={"post"}>
               <img src={post.image} alt="post" />
               <div className="tag">
                 <h1>{post.type}</h1>
@@ -45,7 +45,7 @@ function Articles() {
               </div>
             </div>
           );
-        })}{" "}
+        })}
       </div>
       <div className="kmbtn">
         <Link>

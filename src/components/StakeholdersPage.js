@@ -28,7 +28,7 @@ function StakeholdersPage({ data }) {
       <div className="sub_container">
         {data?.sub?.map((sub, index) => {
           return (
-            <div className={(index + 1) % 2 === 0 ? "sub" : "sub_inverted"}>
+            <div key={sub?.title} className={(index + 1) % 2 === 0 ? "sub" : "sub_inverted"}>
               <div className="sub-left">
                 <h1>
                   <span>

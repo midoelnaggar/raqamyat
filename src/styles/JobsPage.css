@@ -57,10 +57,10 @@ a {
   margin-top: 30px;
 }
 
-.sub_container .page {
+.jobsPage> .sub_container .page {
   grid-column: 1/2;
 }
-.sub_container {
+.jobsPage> .sub_container {
   padding: 80px 400px;
 }
 

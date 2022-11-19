@@ -4,38 +4,48 @@ import logo from "../../img/logo.png";
 
 function Header() {
   let location = useLocation();
-    
+
   return (
     <div className="header">
       <div className="navList">
-        <Link
-          className={`${
-            location?.pathname === "/" ? "activeLink" : "inactiveLink"
-          } `}
-          to="/"
-        >
-          Home
-        </Link>
+        <div>
+          <Link
+            className={`${
+              location?.pathname === "/" ? "activeLink" : "inactiveLink"
+            } `}
+            to="/"
+          >
+            Home
+          </Link>
+        </div>
         <span className="dot"></span>
-        <Link
-          className={`${
-            location?.pathname.startsWith("/about-us") ? "activeLink" : "inactiveLink"
-          }  aboutbtn`}
-          to="/about-us"
-        >
-          About
+        <div className="aboutcontainer">
+          <Link
+            className={`${
+              location?.pathname.startsWith("/about")
+                ? "activeLink"
+                : "inactiveLink"
+            }  aboutbtn`}
+            to="/about"
+          >
+            About
+          </Link>
           <div className="aboutmenu">
             <div className="smcontent">
               <div className="mencol">
                 <div className="menti">Our Company</div>
                 <div>
-                  <Link to="/about-us">Who we are?</Link>
+                  <Link to="/about">Who we are?</Link>
                 </div>
                 <div>
-                  <Link to="/about-us/our-company/stakeholders">Stakeholders </Link>
+                  <Link to="/about/our-company/stakeholders">
+                    Stakeholders{" "}
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/about-us/our-company/our-partners">Our Partners </Link>
+                  <Link to="/about/our-company/our-partners">
+                    Our Partners{" "}
+                  </Link>
                 </div>
                 <div>
                   <Link to="/">Successful Cases </Link>
@@ -48,7 +58,7 @@ function Header() {
               <div className="mencol">
                 <div className="menti">News</div>
                 <div>
-                  <Link to="/">Press </Link>
+                  <Link to="/about/news/press">Press </Link>
                 </div>
                 <div>
                   <Link to="/">Events </Link>
@@ -60,30 +70,32 @@ function Header() {
                   <Link to="/">Projects </Link>
                 </div>
                 <div>
-                  <Link to="/">Projects </Link>
+                  <Link to="/about/news/e-book">E-Book </Link>
                 </div>
               </div>
               <span className="seperator" />
               <div className="mencol">
                 <div className="menti">Careers</div>
                 <div>
-                  <Link to="/about-us/careers/jobs">Jobs </Link>
+                  <Link to="/about/careers/jobs">Jobs </Link>
                 </div>
                 <div>
                   <Link to="/">Internships </Link>
                 </div>
               </div>
             </div>
-          </div>  
-        </Link>
+          </div>
+        </div>
         <span className="dot"></span>
-        <Link
-          className={`${
-            location?.pathname === "/services" ? "activeLink" : "inactiveLink"
-          }  servicesbtn`}
-          to="/services"
-        >
-          Services
+        <div className="servicescontainer">
+          <Link
+            className={`${
+              location?.pathname === "/services" ? "activeLink" : "inactiveLink"
+            }  servicesbtn`}
+            to="/services"
+          >
+            Services
+          </Link>
           <div className="servicesmenu">
             <div className="smcontent">
               <div className="mencol">
@@ -98,7 +110,7 @@ function Header() {
                   <Link to="/">Consultation & Support </Link>
                 </div>
                 <div>
-                  <Link  to="/">Outsourcing </Link>
+                  <Link to="/">Outsourcing </Link>
                 </div>
                 <div>
                   <Link to="/">E-Payment Integrations </Link>
@@ -175,29 +187,33 @@ function Header() {
               </div>
             </div>
           </div>
-        </Link>
+        </div>
         <span className="dot"></span>
-        <Link
-          className={`${
-            location?.pathname === "/blog" ? "activeLink" : "inactiveLink"
-          } `}
-          to="/blog"
-        >
-          Blog
-        </Link>
+        <div>
+          <Link
+            className={`${
+              location?.pathname === "/blog" ? "activeLink" : "inactiveLink"
+            } `}
+            to="/blog"
+          >
+            Blog
+          </Link>
+        </div>
         <span className="dot"></span>
-        <Link
-          className={`${
-            location?.pathname === "/media" ? "activeLink" : "inactiveLink"
-          } `}
-          to="/media"
-        >
-          Media
-        </Link>
+        <div>
+          <Link
+            className={`${
+              location?.pathname === "/media" ? "activeLink" : "inactiveLink"
+            } `}
+            to="/media"
+          >
+            Media
+          </Link>
+        </div>
       </div>
       <div className="logo">
         <Link to="/">
-        <img alt="logo" className="logo-img" src={logo} />
+          <img alt="logo" className="logo-img" src={logo} />
         </Link>
       </div>
       <div className="contact-us">

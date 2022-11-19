@@ -1,0 +1,138 @@
+.ebook_bg > .page_header {
+  padding-bottom: 160px;
+  background-color: white;
+}
+.ebook_page {
+  position: relative;
+  background-image: radial-gradient(
+    circle at 58% 35%,
+    rgba(251, 237, 255, 20) 8%,
+    rgba(255, 255, 255, 1) 18%,
+    rgba(255, 255, 255, 1) 56%
+  );
+  border-radius: 0px 0px 180px 180px;
+  margin-bottom: 280px;
+}
+.ebook_page > .formandinfo {
+  display: flex;
+  margin-inline: 300px;
+}
+.formandinfo > .info {
+  padding-inline-start: 86px;
+}
+.ebook_title {
+  position: relative;
+  letter-spacing: -2.02px;
+  line-height: 50px;
+  font-size: 45px;
+  font-weight: 600;
+}
+.ebook_version {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #0093de;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 0px;
+  letter-spacing: 0px;
+  color: white;
+  border-radius: 8px;
+  padding: 17.5px 15px;
+  margin: 7px 15px;
+}
+.ebook_subtitle {
+  padding-top: 15px;
+  padding-bottom: 50px;
+  color: #2a2a2a;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 24px;
+  max-width: 650px;
+}
+
+.ebook {
+  text-align: left;
+  position: relative;
+  letter-spacing: -1.71px;
+  line-height: 50px;
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.ebook > .contactform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 524px;
+  height: 503px;
+  background-color: #f0f6ff;
+  box-shadow: 0px 20px 50px #0093de17;
+  border: 25px solid #f0f6ff;
+  padding-inline: 77px;
+  margin-bottom: -50px;
+}
+.ebook > .contactform > img {
+  position: absolute;
+  height: 553px;
+  left: 0px;
+  bottom: 0px;
+  margin-top: -20px;
+  scale: 0.9;
+  opacity: 0.14;
+}
+
+.ebook > .contactform > .head {
+  padding-bottom: 60px;
+}
+
+.ebook > .contactform > .head > h1 > span {
+  position: relative;
+  letter-spacing: -1.53px;
+  line-height: 45px;
+  font-size: 34px;
+  font-weight: 600;
+  z-index: 0;
+}
+
+.ebook > .contactform > .head > h1 > span > span {
+  position: absolute;
+  background-color: #0093de;
+  opacity: 55%;
+  height: 25px;
+  width: 102.5px;
+  bottom: 1px;
+  right: 0px;
+  z-index: -1;
+}
+
+.ebook > .contactform > .sbtn {
+  display: flex;
+  background: linear-gradient(249deg, #0093de, #3c6fae);
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 30px;
+  width: 193px;
+  height: 59px;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.ebook > .contactform > .sbtn > div {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+}
+
+.ebook_img {
+  width: 570px;
+  height: 395px;
+  padding-inline-start: 45px;
+}
