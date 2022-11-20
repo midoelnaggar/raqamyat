@@ -1,0 +1,115 @@
+.head_bg {
+  position: relative;
+  background-image: radial-gradient(
+    circle at 58% 35%,
+    rgba(251, 237, 255, 20) 8%,
+    rgba(255, 255, 255, 1) 18%,
+    rgba(255, 255, 255, 1) 56%
+  );
+  border-radius: 0px 0px 180px 180px;
+  margin-top: -240px;
+  padding-top: 240px;
+  padding-bottom: 58px;
+}
+.ss_page > .page_content {
+  margin-block: 170px;
+}
+
+.ss_page > .page_content > .page_subtitle {
+  display: flex;
+  justify-content: center;
+  color: #000000;
+  margin-block: 170px;
+}
+.ss_page > .page_content > .page_subtitle > div {
+  text-align: center;
+  font-size: 38px;
+  letter-spacing: -1.71px;
+  line-height: 50px;
+  font-weight: 600;
+  max-width: 858px;
+}
+
+.ss_page > .page_content > .cases > .case {
+  display: flex;
+}
+.ss_page > .page_content > .cases > .case_inverted {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.case_image {
+  width: 49.6vw;
+}
+
+.case_info {
+  padding: 122px 100px;
+  max-width: 420px;
+}
+
+.case_title {
+  font-size: 45px;
+  font-weight: 600;
+  letter-spacing: -2px;
+}
+
+.case_type {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.case_desc {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+.case_keywords {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.case_keyword {
+  margin-bottom: 8px;
+  cursor: pointer;
+  margin-inline-end: 10px;
+  padding: 5px 15px;
+  border: 1px solid #0034de;
+  border-radius: 99px;
+}
+.case_keyword > .case_keyword_name {
+  color: #0034de;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.case_btn {
+  display: flex;
+  background: linear-gradient(249deg, #0093de, #3c6fae);
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 30px;
+  width: 193px;
+  height: 59px;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.case_btn > div {
+  display: flex;
+  text-align: center;
+}
+.case_btn > div>div {
+  color: white;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.case_btn > div>img {
+margin-left: 10px;
+scale: 0.9;
+}

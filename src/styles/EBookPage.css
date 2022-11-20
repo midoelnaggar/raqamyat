@@ -85,7 +85,7 @@
 }
 
 .ebook > .contactform > .head {
-  padding-bottom: 60px;
+  padding-bottom: 30px;
 }
 
 .ebook > .contactform > .head > h1 > span {
@@ -108,7 +108,7 @@
   z-index: -1;
 }
 
-.ebook > .contactform > .sbtn {
+.ebook > .contactform >div >.sbtn {
   display: flex;
   background: linear-gradient(249deg, #0093de, #3c6fae);
   justify-content: center;
@@ -119,16 +119,15 @@
   height: 59px;
   justify-content: center;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.ebook > .contactform > .sbtn > div {
+.ebook > .contactform > div >.sbtn > div {
   text-align: center;
   color: white;
   font-size: 18px;
-  letter-spacing: -0.45px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .ebook_img {

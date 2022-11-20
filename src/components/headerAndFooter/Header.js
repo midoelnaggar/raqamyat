@@ -48,7 +48,7 @@ function Header() {
                   </Link>
                 </div>
                 <div>
-                  <Link to="/">Successful Cases </Link>
+                  <Link to="/about/our-company/successful-cases">Successful Cases </Link>
                 </div>
                 <div>
                   <Link to="/contact-us">Contact Us </Link>

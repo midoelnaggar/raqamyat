@@ -1,5 +1,5 @@
 import "../styles/EBookPage.css";
-import {useState} from 'react'
+import { useState } from "react";
 import { TextField, FormControl } from "@mui/material";
 import { MuiTelInput } from "mui-tel-input";
 import formbg from "../img/Group 162805.png";
@@ -8,10 +8,10 @@ import PageHeader from "./PageHeader";
 import Motion from "./Motion";
 
 function EBookPage({ data }) {
-  const [phone, setPhone] = useState('')
+  const [phone, setPhone] = useState("");
   const handlePhoneChange = (newPhone) => {
-    setPhone(newPhone)
-  }
+    setPhone(newPhone);
+  };
   return (
     <Motion>
       <div className="ebook_bg">
@@ -61,12 +61,13 @@ function EBookPage({ data }) {
                     label="Mobile Number"
                     variant="standard"
                     defaultCountry="EG"
-                    value={phone} onChange={handlePhoneChange}
+                    value={phone}
+                    onChange={handlePhoneChange}
                   />
+                  <button className="sbtn">
+                    <div>Download Now</div>
+                  </button>
                 </FormControl>
-                <div className="sbtn">
-                  <div>Download Now</div>
-                </div>
               </div>
               <div className="ebook_right"></div>
             </div>

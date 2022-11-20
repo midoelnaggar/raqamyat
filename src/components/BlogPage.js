@@ -4,6 +4,7 @@ import PageHeader from "./PageHeader";
 import { Link } from "react-router-dom";
 import BlueArrow from "../img/Icon ionic-ios-arrow-round-forwardb.png";
 import seachIcon from "../img/search-icon.svg";
+import Motion from "./Motion";
 
 function BlogPage({ data }) {
   const keywords = [
@@ -22,6 +23,7 @@ function BlogPage({ data }) {
   ];
 
   return (
+    <Motion>
     <div className="blog_page">
       <div className="head_bg">
         <PageHeader title="Blog" breadcrumbs="Home / Blog" />
@@ -141,6 +143,7 @@ function BlogPage({ data }) {
         </div>
       </div>
     </div>
+    </Motion>
   );
 }
 

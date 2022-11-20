@@ -16,84 +16,85 @@ import JobsPage from "./components/JobsPage";
 import EBookPage from "./components/EBookPage";
 import BlogPage from "./components/BlogPage";
 import PressPage from "./components/PressPage";
+import SuccessfulCasesPage from "./components/SuccessfulCasesPage";
 
 function App() {
   const location = useLocation();
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [isFetching, setIsFetching] = useState(null);
   const [loading, setLoading] = useState(null);
   const [bgColor, SetBgColor] = useState(null);
   const [apiUrl, setApiUrl] = useState(null);
 
-  useEffect(() => {}, []);
-
   useEffect(() => {
     if (location.pathname === "/") {
-      setApiUrl("https://newraq.raqamyat.com/public/api/home");
       setLoading(true);
+      setApiUrl("https://newraq.raqamyat.com/public/api/home");
       setIsFetching(true);
       SetBgColor("homebg");
       document.title = "Raqamyat";
-    } else if (location.pathname === "/about") {
-      setApiUrl("https://newraq.raqamyat.com/public/api/about");
+    }
+     else if (location.pathname === "/about") {
       setLoading(true);
+      setApiUrl("https://newraq.raqamyat.com/public/api/about");
       setIsFetching(true);
       SetBgColor("aboutbg");
       document.title = "About Us";
     }
-    if (location.pathname === "/contact-us") {
-      setApiUrl("https://newraq.raqamyat.com/public/api/contact");
+     else if (location.pathname === "/contact-us") {
       setLoading(true);
+      setApiUrl("https://newraq.raqamyat.com/public/api/contact");
       setIsFetching(true);
       SetBgColor("contactbg");
       document.title = "Contact Us";
     }
-    if (location.pathname === "/about/our-company/stakeholders") {
-      setApiUrl("https://newraq.raqamyat.com/public/api/stakeholders");
+     else if (location.pathname === "/about/our-company/stakeholders") {
       setLoading(true);
+      setApiUrl("https://newraq.raqamyat.com/public/api/stakeholders");
       setIsFetching(true);
       SetBgColor("contactbg");
       document.title = "Stakeholders";
     }
-    if (location.pathname === "/about/our-company/our-partners") {
-      setApiUrl("https://newraq.raqamyat.com/public/api/partners");
+     else if (location.pathname === "/about/our-company/our-partners") {
       setLoading(true);
+      setApiUrl("https://newraq.raqamyat.com/public/api/partners");
       setIsFetching(true);
       SetBgColor("contactbg");
       document.title = "Our Partners";
     }
-    if (location.pathname === "/about/careers/jobs") {
+     else if (location.pathname === "/about/careers/jobs") {
+      setLoading(true);
       setApiUrl("https://newraq.raqamyat.com/public/api/jobs");
       setIsFetching(true);
-      setLoading(true);
       SetBgColor("contactbg");
       document.title = "Jobs";
     }
-    if (location.pathname === "/blog") {
+     else if (location.pathname === "/blog") {
+      setLoading(true);
       setApiUrl("https://newraq.raqamyat.com/public/api/blogs");
       setIsFetching(true);
-      setLoading(true);
       SetBgColor("insidebg");
       document.title = "Blog";
-    }
-    if (location.pathname === "/about/news/e-book") {
+    } 
+    else if (location.pathname === "/about/news/e-book") {
       SetBgColor("contactbg");
       document.title = "E-Book";
-    }
-    if (location.pathname === "/about/news/press") {
+    } 
+    else if (location.pathname === "/about/news/press") {
+      setLoading(true);
       setApiUrl("https://newraq.raqamyat.com/public/api/blogs");
       setIsFetching(true);
-      setLoading(true);
       SetBgColor("insidebg");
       document.title = "Press";
-    }
-    return function () {
-      setData(null);
-    };
+    } 
+    else if (location.pathname === "/about/our-company/successful-cases") {
+      SetBgColor("insidebg");
+      document.title = "Successful Cases";
+    } 
   }, [location.pathname]);
 
   useEffect(() => {
-    if (apiUrl !== null) {
+    if (apiUrl != null) {
       try {
         axios.get(apiUrl, { timeout: 500000 }).then((res) => {
           if (res.data.data) {
@@ -104,8 +105,9 @@ function App() {
       } catch (err) {
         console.error(err);
       }
+    } else {
     }
-  }, [apiUrl]);
+  }, [apiUrl, loading]);
 
   useEffect(() => {
     if (isFetching === false) {
@@ -138,6 +140,10 @@ function App() {
                 <Route
                   path="/about/our-company/our-partners"
                   element={<OurPartnersPage data={data} />}
+                />
+                <Route
+                  path="/about/our-company/successful-cases"
+                  element={<SuccessfulCasesPage data={data} />}
                 />
                 <Route
                   path="/about/news/press"
