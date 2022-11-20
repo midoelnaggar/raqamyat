@@ -1,0 +1,74 @@
+.webinar_back{
+  display: flex;
+  align-items: center;
+  color: #0093DE;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  padding-bottom: 15px;
+
+}
+
+.webinar_page
+> .page_content 
+> .webinar_zoom{
+color: #2A2A2A;
+font-size:  18px;
+font-weight: 600;
+padding-top: 15px;
+}
+
+.webinar_page
+> .page_content 
+> .webinar_title{
+max-width: 958px;
+font-size:  65px;
+font-weight: 600;
+line-height: 72px;
+letter-spacing: -3px;
+padding-top: 15px;
+
+}
+
+.webinar_page > .page_content > div  > .contactform  {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 475px;
+  margin: 0;
+  height: 467px; 
+  box-shadow: none;
+  border-radius: 8%;
+  padding-top: 40px;
+  padding-bottom: 10px;
+
+}
+
+.webinar_page > .page_content > div  > .contactform > div>h1 {
+margin: 0;
+padding: 0;
+}
+
+.webinar_page > .page_content > div  > .contactform >div >.sbtn {
+  display: flex;
+  background: linear-gradient(249deg, #0093de, #3c6fae);
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 30px;
+  width: 161px;
+  height: 59px;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Gotham";
+}
+
+.webinar_page > .page_content > div  > .contactform > div >.sbtn > div {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+}
+

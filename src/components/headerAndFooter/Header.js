@@ -48,7 +48,9 @@ function Header() {
                   </Link>
                 </div>
                 <div>
-                  <Link to="/about/our-company/successful-cases">Successful Cases </Link>
+                  <Link to="/about/our-company/successful-cases">
+                    Successful Cases{" "}
+                  </Link>
                 </div>
                 <div>
                   <Link to="/contact-us">Contact Us </Link>
@@ -61,10 +63,7 @@ function Header() {
                   <Link to="/about/news/press">Press </Link>
                 </div>
                 <div>
-                  <Link to="/">Events </Link>
-                </div>
-                <div>
-                  <Link to="/">Webinars </Link>
+                  <Link to="/about/webinars">Webinars </Link>
                 </div>
                 <div>
                   <Link to="/">Projects </Link>
