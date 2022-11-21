@@ -1,0 +1,120 @@
+.service {
+  padding-inline: 278px;
+  align-items: center;
+  background-image: radial-gradient(
+    circle at 58% 35%,
+    rgba(251, 237, 255, 20) 8%,
+    rgba(255, 255, 255, 1) 18%,
+    rgba(255, 255, 255, 1) 56%
+  );
+  border-radius: 0px 0px 180px 180px;
+  padding-top: 100px;
+  padding-bottom: 86px;
+  animation: 2s headanimation ease-in-out;
+}
+
+.service_hero {
+  display: flex;
+  align-items: center;
+}
+
+
+.service-right {
+  height: 557px;
+}
+a {
+  cursor: pointer;
+}
+
+
+.service-left  > span {
+  position: relative;
+  padding-top: 30px;
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  max-width: 303px;
+  z-index: 0;
+}
+
+.service-left  > span > span {
+  position: absolute;
+  background-color: #0093de;
+  opacity: 55%;
+  height: 20px;
+  width: 102.5px;
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+}
+
+.service-left > .lp {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #2a2a2a;
+  max-width: 630px;
+  margin-inline-end: 167px;
+}
+
+.service-left > button {
+  margin-top: 30px;
+}
+
+.service_desc {
+  margin-inline-start: 126px;
+  color: #2a2a2a;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 24px;
+  font-weight: 500;
+  max-width: 674px;
+}
+
+
+.service_subs {
+  display: flex;
+  margin-inline: -55px;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.border {
+  width: 183px;
+  height: 179px;
+  background: transparent linear-gradient(180deg, #0034DE 0%, #0093DE 100%) 0% 0% no-repeat padding-box;
+  border-radius: 60px 20px;
+  margin-inline: 55px;
+  padding: 2px;
+}
+.service_sub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  width: 183px;
+  height: 179px;
+  background-color: #F0F6FF;
+  border-radius: 60px 20px;
+}
+
+.service_sub > img {
+  margin-block: 30px;
+  width: 56px;
+}
+
+.service_sub > div {
+    align-self: center;
+    text-align: center;
+  color: #2a2a2a;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 500;
+  max-width: 130px;
+}
+
+.service-left > .lmbtn {
+  margin-top: 10px;
+  width: 180px;
+height: 59px;
+}

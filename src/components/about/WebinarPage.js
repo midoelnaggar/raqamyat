@@ -1,17 +1,17 @@
-import "../styles/WebinarPage.css";
-import Motion from "./Motion";
+import "../../styles/WebinarPage.css";
+import Motion from "../Motion";
 import { useState } from "react";
 import axios from "axios";
 import { useSnackbar } from "notistack";
 import { TextField, FormControl } from "@mui/material";
 import { MuiTelInput } from "mui-tel-input";
-import formbg from "../img/Group 162805.png";
+import formbg from "../../img/Group 162805.png";
 import moment from "moment";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import DateRangeIcon from "@mui/icons-material/DateRange";
-import PageHeader from "./PageHeader";
+import PageHeader from "../PageHeader";
 import { useNavigate } from "react-router-dom";
-import avatar from "../img/avatar.png";
+import avatar from "../../img/avatar.png";
 
 function WebinarsPage({ data }) {
   const navigate = useNavigate();

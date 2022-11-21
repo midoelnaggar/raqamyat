@@ -10,6 +10,16 @@
   margin-top: -240px;
   padding-top: 240px;
   padding-bottom: 58px;
+  animation: 2s headanimation ease-in-out;
+}
+
+@keyframes headanimation {
+  0% {
+    background-size: 150%;
+  }
+  100% {
+    background-size: 100%;
+  }
 }
 .ss_page > .page_content {
   margin-block: 170px;
@@ -103,13 +113,13 @@
   display: flex;
   text-align: center;
 }
-.case_btn > div>div {
+.case_btn > div > div {
   color: white;
   font-size: 18px;
   font-weight: 200;
 }
 
-.case_btn > div>img {
-margin-left: 10px;
-scale: 0.9;
+.case_btn > div > img {
+  margin-left: 10px;
+  scale: 0.9;
 }

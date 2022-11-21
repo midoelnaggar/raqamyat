@@ -1,11 +1,11 @@
 import { useState, useEffect, useContext } from "react";
-import WebinarContext from "../context/WebinarContext";
+import WebinarContext from "../../context/WebinarContext";
 import moment from "moment";
 import { Link } from "react-router-dom";
-import "../styles/WebinarsPage.css";
-import PageHeader from "./PageHeader";
+import "../../styles/WebinarsPage.css";
+import PageHeader from "../PageHeader";
 import DateRangeIcon from "@mui/icons-material/DateRange";
-import Motion from "./Motion";
+import Motion from "../Motion";
 
 function WebinarsPage({ data }) {
   const { setWebinar } = useContext(WebinarContext);
@@ -40,7 +40,7 @@ function WebinarsPage({ data }) {
               Trending Skills And Technologies
             </div>
           </div>
-          {upcomingWebinars.length > 0 ? (
+          {upcomingWebinars.length > 0 && (
             <div style={{ paddingBlock: "75px", paddingInline: "260px" }}>
               <span>
                 Upcoming Webinars
@@ -50,8 +50,7 @@ function WebinarsPage({ data }) {
                 <div className="webinars">
                   {upcomingWebinars.map((webinar) => {
                     return (
-                      <>
-                        <div className="webinar">
+                        <div className="webinar" key={webinar?.id}>
                           <img src={webinar?.image} alt={webinar?.name} />
                           <div>
                             <div>
@@ -109,16 +108,13 @@ function WebinarsPage({ data }) {
                             </div>
                           </div>
                         </div>
-                      </>
                     );
                   })}
                 </div>
               </div>
             </div>
-          ) : (
-            <></>
           )}
-          {previousWebinars.length > 0 ? (
+          {previousWebinars.length > 0 && (
             <div
               style={{
                 backgroundColor: "white",
@@ -133,8 +129,7 @@ function WebinarsPage({ data }) {
               <div className="webinars">
                 {previousWebinars.map((webinar) => {
                   return (
-                    <>
-                      <div className="webinar">
+                      <div className="webinar"  key={webinar?.id}>
                         <img src={webinar?.image} alt={webinar?.name} />
                         <div>
                           <div>
@@ -189,13 +184,10 @@ function WebinarsPage({ data }) {
                           </div>
                         </div>
                       </div>
-                    </>
                   );
                 })}
               </div>
             </div>
-          ) : (
-            <></>
           )}
         </div>
       </div>

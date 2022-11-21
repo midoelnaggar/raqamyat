@@ -1,9 +1,9 @@
 import React from "react";
-import "../styles/SuccessfulCasesPage.css";
-import PageHeader from "./PageHeader";
-import Motion from "./Motion";
-import case_image from "../img/case.png";
-import arrow from "../img/Icon ionic-ios-arrow-round-forward.png";
+import "../../styles/SuccessfulCasesPage.css";
+import PageHeader from "../PageHeader";
+import Motion from "../Motion";
+import case_image from "../../img/case.png";
+import arrow from "../../img/Icon ionic-ios-arrow-round-forward.png";
 
 function SuccessfulCasesPage({ data }) {
   const cases = [
@@ -13,18 +13,21 @@ function SuccessfulCasesPage({ data }) {
       desc: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
       keywords: ["Ecommerce", "Online Payment", "Mobile App"],
       image: "../img/case.png",
+      id:1
     },
     {
       title: "Project Name",
       type: "Project Type",
       desc: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
       keywords: ["Ecommerce", "Online Payment", "Mobile App"],
-    },
+      id:2
+        },
     {
       title: "Project Name",
       type: "Project Type",
       desc: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
       keywords: ["Ecommerce", "Online Payment", "Mobile App"],
+      id:3
     },
   ];
 
@@ -48,7 +51,7 @@ function SuccessfulCasesPage({ data }) {
             {Array.isArray(cases) &&
               cases.map((c, index) => {
                 return (
-                  <div
+                  <div key={c.id}
                     className={(index + 1) % 2 === 0 ? "case_inverted" : "case"}
                   >
                     <img className="case_image" src={case_image} alt="case" />
@@ -60,7 +63,7 @@ function SuccessfulCasesPage({ data }) {
                         {Array.isArray(c.keywords) &&
                           c.keywords.map((k) => {
                             return (
-                              <div className="case_keyword">
+                              <div className="case_keyword" key={k}>
                                 <div className="case_keyword_name">{k}</div>
                               </div>
                             );

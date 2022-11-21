@@ -1,11 +1,11 @@
-import "../styles/EBookPage.css";
+import "../../styles/EBookPage.css";
 import { useState } from "react";
 import { TextField, FormControl } from "@mui/material";
 import { MuiTelInput } from "mui-tel-input";
-import formbg from "../img/Group 162805.png";
-import ebook from "../img/e-book.png";
-import PageHeader from "./PageHeader";
-import Motion from "./Motion";
+import formbg from "../../img/Group 162805.png";
+import ebook from "../../img/e-book.png";
+import PageHeader from "../PageHeader";
+import Motion from "../Motion";
 import axios from "axios";
 import { useSnackbar } from "notistack";
 
@@ -113,7 +113,7 @@ function EBookPage() {
                       onChange={handleMobileChange}
                     />
                     <button type="submit" className="sbtn" onClick={submit}>
-                      <div>Request E-book</div>
+                      <div style={{fontFamily:"Gotham"}}>Request E-book</div>
                     </button>
                   </FormControl>
                 </div>

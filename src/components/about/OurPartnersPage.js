@@ -1,27 +1,25 @@
-import "../styles/StakeholdersPage.css";
-import PageHeader from "./PageHeader";
-import Motion from "./Motion";
-import { Link } from "react-router-dom";
-import arrow from "../img/Icon ionic-ios-arrow-round-forward.png";
+import "../../styles/OurPartnersPage.css";
+import PageHeader from "../PageHeader";
+import Motion from "../Motion";
 
-function StakeholdersPage({ data }) {
+function OurPartnersPage({ data }) {
   return (
-    <Motion className="stakeholders_page">
+    <Motion className="partners_page">
       <PageHeader
-        title="Stakeholders"
-        breadcrumbs="Home / About Us / Our Company / Stakeholders"
+        title="Our Partners"
+        breadcrumbs="Home / About Us / Our Company / Our Partners"
       />
-      <div className="stakeholders">
-        <div className="stakeholders-left">
+      <div className="ourPartners">
+        <div className="ourPartners-left">
           <h1>
             <span>
-              Stakeholders
+              Our Partners
               <span />
             </span>
           </h1>
           <p className="lp">{data?.description}</p>
         </div>
-        <div className="stakeholders-right">
+        <div className="ourPartners-right">
           <img src={data?.image} alt="back" />
         </div>
       </div>
@@ -33,15 +31,10 @@ function StakeholdersPage({ data }) {
                 <h1>
                   <span>
                     {sub?.title}
-                    <span />
+                    <span className="ops"/>
                   </span>
                 </h1>
                 <p className="lp">{sub?.description}</p>
-                <button className="lmbtn">
-                  <Link to="">
-                    Let’s Talk! <img alt="ar" src={arrow} />
-                  </Link>
-                </button>
               </div>
               <div className="sub-right">
                 <img src={sub?.image} alt="back" />
@@ -54,4 +47,4 @@ function StakeholdersPage({ data }) {
   );
 }
 
-export default StakeholdersPage;
+export default OurPartnersPage;

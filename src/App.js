@@ -1,26 +1,29 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Route, Routes, useLocation, useParams } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import WebinarContext from "./context/WebinarContext";
 import Loading from "./Loading";
 import Footer from "./components/headerAndFooter/Footer";
 import Header from "./components/headerAndFooter/Header";
 import HomePage from "./components/homePage";
-import AboutUsPage from "./components/AboutUsPage";
+import AboutUsPage from "./components/about/AboutUsPage";
 import ContactUsPage from "./components/ContactUsPage";
 import { AnimatePresence } from "framer-motion";
-import StakeholdersPage from "./components/StakeholdersPage";
-import OurPartnersPage from "./components/OurPartnersPage";
-import JobsPage from "./components/JobsPage";
-import EBookPage from "./components/EBookPage";
+import StakeholdersPage from "./components/about/StakeholdersPage";
+import OurPartnersPage from "./components/about/OurPartnersPage";
+import JobsPage from "./components/about/JobsPage";
+import EBookPage from "./components/about/EBookPage";
 import BlogPage from "./components/BlogPage";
-import PressPage from "./components/PressPage";
-import SuccessfulCasesPage from "./components/SuccessfulCasesPage";
+import PressPage from "./components/about/PressPage";
+import SuccessfulCasesPage from "./components/about/SuccessfulCasesPage";
 import { SnackbarProvider } from "notistack";
-import WebinarsPage from "./components/WebinarsPage";
-import WebinarPage from "./components/WebinarPage";
+import WebinarsPage from "./components/about/WebinarsPage";
+import WebinarPage from "./components/about/WebinarPage";
 import NoPage from "./components/NoPage";
+import DevelopmentPage from "./components/services/solutions/development/DevelopmentPage";
+import OperationPage from "./components/services/solutions/operation/OperationPage";
+import OnlineStoresDevelopmentPage from "./components/services/solutions/development/OnlineStoresDevelopmentPage";
 
 function App() {
   const location = useLocation();
@@ -92,10 +95,36 @@ function App() {
       setIsFetching(true);
       SetBgColor("insidebg");
       document.title = "Webinars";
-    }
-    else if (location.pathname === "/about/news/e-book") {
+    } else if (location.pathname === "/about/news/e-book") {
       SetBgColor("contactbg");
       document.title = "E-Book";
+    }
+    //services
+    ////development
+    else if (location.pathname === "/services/solutions/development") {
+      setLoading(true);
+      setApiUrl(
+        "https://newraq.raqamyat.com/public/api/services?slug=development"
+      );
+      setIsFetching(true);
+      SetBgColor("insidebg");
+    } else if (
+      location.pathname === "/services/solutions/development/online-stores-development") {
+      setLoading(true);
+      setApiUrl(
+        "https://newraq.raqamyat.com/public/api/services?slug=online-stores-development"
+      );
+      setIsFetching(true);
+      SetBgColor("contactbg");
+    }
+    ////operation
+    else if (location.pathname === "/services/solutions/operation") {
+      setLoading(true);
+      setApiUrl(
+        "https://newraq.raqamyat.com/public/api/services?slug=operation"
+      );
+      setIsFetching(true);
+      SetBgColor("insidebg");
     }
   }, [location.pathname]);
 
@@ -123,53 +152,94 @@ function App() {
 
   return (
     <div className="app">
-      <div className={bgColor}></div>
+      <div className={bgColor} />
       <Header />
-      <WebinarContext.Provider value={{setWebinar}}>
+      <WebinarContext.Provider value={{ setWebinar }}>
         <AnimatePresence>
           <SnackbarProvider>
             {loading ? (
               <Loading />
             ) : (
               <div className="outlet">
-                <Routes location={location} key={location.pathname}>
-                  <Route path="/" element={<HomePage data={data}></HomePage>} />
-                  <Route path="*" element={<NoPage />} />
-                  <Route
-                    path="/contact-us"
-                    element={<ContactUsPage data={data} />}
-                  />
-                  <Route path="/about" element={<AboutUsPage data={data} />} />
-                  <Route
-                    path="/about/our-company/stakeholders"
-                    element={<StakeholdersPage data={data} />}
-                  />
-                  <Route
-                    path="/about/our-company/our-partners"
-                    element={<OurPartnersPage data={data} />}
-                  />
-                  <Route
-                    path="/about/our-company/successful-cases"
-                    element={<SuccessfulCasesPage data={data} />}
-                  />
-                  <Route
-                    path="/about/news/press"
-                    element={<PressPage data={data} />}
-                  />
-                  <Route
-                    path="/about/webinars"
-                    element={<WebinarsPage data={data} />}
-                  />
-                  <Route
-                    path="/about/webinars/:webinarName"
-                    element={<WebinarPage data={webinar} />}
-                  />
-                  <Route path="/about/news/e-book" element={<EBookPage />} />
-                  <Route
-                    path="/about/careers/jobs"
-                    element={<JobsPage data={data} />}
-                  />
-                  <Route path="/blog" element={<BlogPage data={data} />} />
+                <Routes>
+                  <Route location={location} key={location.pathname}>
+                    <Route index element={<HomePage data={data}></HomePage>} />
+                    <Route path="*" element={<NoPage />} />
+                    <Route
+                      path="contact-us"
+                      element={<ContactUsPage data={data} />}
+                    />
+                    <Route path="blog" element={<BlogPage data={data} />} />
+                  </Route>
+                  <Route path="about">
+                    <Route index element={<AboutUsPage data={data} />} />
+                    <Route
+                      path="our-company/stakeholders"
+                      element={<StakeholdersPage data={data} />}
+                    />
+                    <Route
+                      path="our-company/our-partners"
+                      element={<OurPartnersPage data={data} />}
+                    />
+                    <Route
+                      path="our-company/successful-cases"
+                      element={<SuccessfulCasesPage data={data} />}
+                    />
+                    <Route
+                      path="news/press"
+                      element={<PressPage data={data} />}
+                    />
+                    <Route
+                      path="webinars"
+                      element={<WebinarsPage data={data} />}
+                    />
+                    <Route
+                      path="webinars/:webinarName"
+                      element={<WebinarPage data={webinar} />}
+                    />
+                    <Route path="news/e-book" element={<EBookPage />} />
+                    <Route
+                      path="careers/jobs"
+                      element={<JobsPage data={data} />}
+                    />
+                  </Route>
+                  <Route path="services">
+                    <Route path="development"></Route>
+                  </Route>
+                  <Route path="services">
+                    <Route path="solutions">
+                      <Route path="development">
+                        <Route
+                          index
+                          element={<DevelopmentPage data={data} />}
+                        />
+                        <Route
+                          path="online-stores-development"
+                          element={<OnlineStoresDevelopmentPage data={data} />}
+                        />
+                        <Route path="consultation-and-maintenance" />
+                        <Route path="outsourcing" />
+                        <Route path="e-payment-integrations" />
+                      </Route>
+                      <Route path="operation">
+                        <Route index element={<OperationPage data={data} />} />
+                        <Route path="operations-solutions" />
+                        <Route path="technical-support-agents" />
+                        <Route path="projects-operations-bot" />
+                        <Route path="logistics-management" />
+                      </Route>
+                      <Route path="marketing">
+                        <Route path="content-marketing" />
+                        <Route path="marketing-strategy" />
+                        <Route path="market-analysis" />
+                        <Route path="video-production" />
+                        <Route path="integrated-marketing">
+                          <Route path="integrated-marketing" />
+                          <Route path="outsourcing" />
+                        </Route>
+                      </Route>
+                    </Route>
+                  </Route>
                 </Routes>
               </div>
             )}

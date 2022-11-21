@@ -42,7 +42,6 @@
   );
   animation-name: fontChange;
   animation-duration: 1s;
-  border-image-slice: 1;
   padding-bottom: 3px;
   @keyframes fontChange {
     0% {
@@ -203,6 +202,13 @@
   height: 18px;
 }
 
+.menti >.mentihe {
+  color: #027ab7;
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 25px;
+  height: 18px;
+}
 .menmti {
   color: #2a2a2a;
   font-size: 16px;

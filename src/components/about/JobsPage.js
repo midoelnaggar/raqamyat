@@ -1,9 +1,9 @@
-import "../styles/JobsPage.css";
-import PageHeader from "./PageHeader";
-import Motion from "./Motion";
+import "../../styles/JobsPage.css";
+import PageHeader from "../PageHeader";
+import Motion from "../Motion";
 import { Link } from "react-router-dom";
-import arrow from "../img/Icon ionic-ios-arrow-round-forward.png";
-import image from "../img/Group 7.png";
+import arrow from "../../img/Icon ionic-ios-arrow-round-forward.png";
+import image from "../../img/Group 7.png";
 function JobsPage({ data }) {
   return (
     <>

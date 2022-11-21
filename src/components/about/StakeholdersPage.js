@@ -1,25 +1,27 @@
-import "../styles/OurPartnersPage.css";
-import PageHeader from "./PageHeader";
-import Motion from "./Motion";
+import "../../styles/StakeholdersPage.css";
+import PageHeader from "../PageHeader";
+import Motion from "../Motion";
+import { Link } from "react-router-dom";
+import arrow from "../../img/Icon ionic-ios-arrow-round-forward.png";
 
-function OurPartnersPage({ data }) {
+function StakeholdersPage({ data }) {
   return (
-    <Motion className="partners_page">
+    <Motion className="stakeholders_page">
       <PageHeader
-        title="Our Partners"
-        breadcrumbs="Home / About Us / Our Company / Our Partners"
+        title="Stakeholders"
+        breadcrumbs="Home / About Us / Our Company / Stakeholders"
       />
-      <div className="ourPartners">
-        <div className="ourPartners-left">
+      <div className="stakeholders">
+        <div className="stakeholders-left">
           <h1>
             <span>
-              Our Partners
+              Stakeholders
               <span />
             </span>
           </h1>
           <p className="lp">{data?.description}</p>
         </div>
-        <div className="ourPartners-right">
+        <div className="stakeholders-right">
           <img src={data?.image} alt="back" />
         </div>
       </div>
@@ -31,10 +33,15 @@ function OurPartnersPage({ data }) {
                 <h1>
                   <span>
                     {sub?.title}
-                    <span className="ops"/>
+                    <span />
                   </span>
                 </h1>
                 <p className="lp">{sub?.description}</p>
+                <button className="lmbtn">
+                  <Link to="">
+                    Let’s Talk! <img alt="ar" src={arrow} />
+                  </Link>
+                </button>
               </div>
               <div className="sub-right">
                 <img src={sub?.image} alt="back" />
@@ -47,4 +54,4 @@ function OurPartnersPage({ data }) {
   );
 }
 
-export default OurPartnersPage;
+export default StakeholdersPage;

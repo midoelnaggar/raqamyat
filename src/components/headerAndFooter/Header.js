@@ -66,7 +66,7 @@ function Header() {
                   <Link to="/about/webinars">Webinars </Link>
                 </div>
                 <div>
-                  <Link to="/">Projects </Link>
+                  <Link to="/about/projects">Projects </Link>
                 </div>
                 <div>
                   <Link to="/about/news/e-book">E-Book </Link>
@@ -79,7 +79,7 @@ function Header() {
                   <Link to="/about/careers/jobs">Jobs </Link>
                 </div>
                 <div>
-                  <Link to="/">Internships </Link>
+                  <Link to="/about/careers/internships">Internships </Link>
                 </div>
               </div>
             </div>
@@ -89,9 +89,9 @@ function Header() {
         <div className="servicescontainer">
           <Link
             className={`${
-              location?.pathname === "/services" ? "activeLink" : "inactiveLink"
+              location?.pathname.startsWith("/services")  ? "activeLink" : "inactiveLink"
             }  servicesbtn`}
-            to="/services"
+            to=""
           >
             Services
           </Link>
@@ -101,65 +101,65 @@ function Header() {
                 <div className="menmti">Solutions</div>
               </div>
               <div className="mencol">
-                <div className="menti">Development</div>
+                <div className="menti"><Link to="/services/solutions/development" className="mentihe">Development</Link></div>
                 <div>
-                  <Link to="/">Online Stores Development </Link>
+                  <Link to="/services/solutions/development/online-stores-development">Online Stores Development </Link>
                 </div>
                 <div>
-                  <Link to="/">Consultation & Support </Link>
+                  <Link to="/services/solutions/development/consultation-and-maintenance">Consultation & Support </Link>
                 </div>
                 <div>
-                  <Link to="/">Outsourcing </Link>
+                  <Link to="/services/solutions/development/outsourcing">Outsourcing </Link>
                 </div>
                 <div>
-                  <Link to="/">E-Payment Integrations </Link>
-                </div>
-              </div>
-              <span className="seperator" />
-              <div className="mencol">
-                <div className="menti">Operations</div>
-                <div>
-                  <Link to="/">Operations Solutions </Link>
-                </div>
-                <div>
-                  <Link to="/">Technical Support Agents </Link>
-                </div>
-                <div>
-                  <Link to="/">Projects Operations (BOT) </Link>
-                </div>
-                <div>
-                  <Link to="/">Logistics Management </Link>
+                  <Link to="/services/solutions/development/e-payment-integrations">E-Payment Integrations </Link>
                 </div>
               </div>
               <span className="seperator" />
               <div className="mencol">
-                <div className="menti">Marketing</div>
+                <div className="menti"><Link to="/services/solutions/operation" className="mentihe">Operation</Link></div>
                 <div>
-                  <Link to="/">Content Marketing </Link>
+                  <Link to="/services/solutions/operation/operations-solutions">Operations Solutions </Link>
                 </div>
                 <div>
-                  <Link to="/">Marketing Strategy </Link>
+                  <Link to="/services/solutions/operation/technical-support-agents">Technical Support Agents </Link>
                 </div>
                 <div>
-                  <Link to="/">Market Analysis </Link>
+                  <Link to="/services/solutions/operation/projects-operations-bot">Projects Operations (BOT) </Link>
                 </div>
                 <div>
-                  <Link to="/">Video Production </Link>
+                  <Link to="/services/solutions/operation/logistics-management">Logistics Management </Link>
+                </div>
+              </div>
+              <span className="seperator" />
+              <div className="mencol">
+                <div className="menti"><Link to="/services/solutions/marketing"  className="mentihe">Marketing</Link></div>
+                <div>
+                  <Link to="/services/solutions/marketing/content-marketing">Content Marketing </Link>
+                </div>
+                <div>
+                  <Link to="/services/solutions/marketing/marketing-strategy">Marketing Strategy </Link>
+                </div>
+                <div>
+                  <Link to="/services/solutions/marketing/market-analysis">Market Analysis </Link>
+                </div>
+                <div>
+                  <Link to="/services/solutions/marketing/video-production">Video Production </Link>
                 </div>
               </div>
               <div className="mencol">
                 <div className="menti"></div>
                 <div>
-                  <Link to="/">Content Marketing </Link>
+                  <Link to="/services/solutions/marketing/product-development">Content Marketing </Link>
                 </div>
                 <div>
-                  <Link to="/">Product Development </Link>
+                  <Link to="/services/solutions/marketing/integrated-marketing">Product Development </Link>
                 </div>
                 <div>
-                  <Link to="/">Integrated Marketing </Link>
+                  <Link to="/services/solutions/marketing/integrated-marketing">Integrated Marketing </Link>
                 </div>
                 <div>
-                  <Link to="/">Outsourcing </Link>
+                  <Link to="/services/solutions/marketing/outsourcing">Outsourcing </Link>
                 </div>
               </div>
             </div>
@@ -169,19 +169,19 @@ function Header() {
               </div>
               <div className="menlcol">
                 <div>
-                  <Link to="/">Retail E-Commerce </Link>
+                  <Link to="/services/business-type/business-type/retail-e-commerce">Retail E-Commerce </Link>
                 </div>
                 <div>
-                  <Link to="/">FMCG & Restaurants E-Commerce </Link>
+                  <Link to="/services/business-type/business-type/fmcg-and-restaurats-e-commerce">FMCG & Restaurants E-Commerce </Link>
                 </div>
                 <div>
-                  <Link to="/">Healthcare E-Commerce </Link>
+                  <Link to="/services/business-type/business-type/healthcare-e-commerce">Healthcare E-Commerce </Link>
                 </div>
                 <div>
-                  <Link to="/">Education E-Commerce </Link>
+                  <Link to="/services/business-type/business-type/education-e-commerce">Education E-Commerce </Link>
                 </div>
                 <div>
-                  <Link to="/">E-Commerce for Special Projects </Link>
+                  <Link to="/services/business-type/business-type/e-commerce-for-special-projects">E-Commerce for Special Projects </Link>
                 </div>
               </div>
             </div>

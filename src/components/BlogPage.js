@@ -9,12 +9,6 @@ import Motion from "./Motion";
 function BlogPage({ data }) {
   const keywords = [
     "Retail Ecommerce",
-    "Retail Ecommerce",
-    "Online Shopping",
-    "Fintech Investment",
-    "Epayment",
-    "Mobile Wallets",
-    "Retail Ecommerce",
     "Ecommerce Trends",
     "Online Shopping",
     "Fintech Investment",
@@ -133,7 +127,7 @@ function BlogPage({ data }) {
             <div className="keywords_list">
               {keywords.map((k) => {
                 return (
-                  <div className="keyword">
+                  <div className="keyword" key={k}>
                     <div className="keyword_name">{k}</div>
                   </div>
                 );

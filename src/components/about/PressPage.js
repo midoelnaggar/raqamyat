@@ -1,19 +1,13 @@
 import React from "react";
-import "../styles/BlogPage.css";
-import PageHeader from "./PageHeader";
+import "../../styles/BlogPage.css";
+import PageHeader from "../PageHeader";
 import { Link } from "react-router-dom";
-import BlueArrow from "../img/Icon ionic-ios-arrow-round-forwardb.png";
-import seachIcon from "../img/search-icon.svg";
-import Motion from "./Motion";
+import BlueArrow from "../../img/Icon ionic-ios-arrow-round-forwardb.png";
+import seachIcon from "../../img/search-icon.svg";
+import Motion from "../Motion";
 
 function PressPage({ data }) {
   const keywords = [
-    "Retail Ecommerce",
-    "Retail Ecommerce",
-    "Online Shopping",
-    "Fintech Investment",
-    "Epayment",
-    "Mobile Wallets",
     "Retail Ecommerce",
     "Ecommerce Trends",
     "Online Shopping",
@@ -136,7 +130,7 @@ function PressPage({ data }) {
               <div className="keywords_list">
                 {keywords.map((k) => {
                   return (
-                    <div className="keyword">
+                    <div className="keyword" key={k}>
                       <div className="keyword_name">{k}</div>
                     </div>
                   );

@@ -1,16 +1,4 @@
-.head_bg {
-  position: relative;
-  background-image: radial-gradient(
-    circle at 58% 35%,
-    rgba(251, 237, 255, 20) 8%,
-    rgba(255, 255, 255, 1) 18%,
-    rgba(255, 255, 255, 1) 56%
-  );
-  border-radius: 0px 0px 180px 180px;
-  margin-top: -240px;
-  padding-top: 240px;
-  padding-bottom: 58px;
-}
+
 .webinar_page > .page_content {
   padding-block: 79px;
 padding-inline: 270px;
@@ -141,8 +129,9 @@ padding-inline: 270px;
   cursor: pointer;
   text-align: center;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
+  font-family: "Gotham";
 }
 
 

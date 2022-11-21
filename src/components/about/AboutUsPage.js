@@ -1,8 +1,8 @@
-import "./../styles/AboutUsPage.css";
-import About from "./homePage/About";
-import Profile from "./homePage/Profile";
-import Motion from "./Motion";
-import PageHeader from "./PageHeader";
+import "./../../styles/AboutUsPage.css";
+import About from "../homePage/About";
+import Profile from "../homePage/Profile";
+import Motion from "../Motion";
+import PageHeader from "../PageHeader";
 
 function AboutUsPage({ data }) {
   return (
