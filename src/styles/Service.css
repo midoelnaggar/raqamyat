@@ -18,7 +18,6 @@
   align-items: center;
 }
 
-
 .service-right {
   height: 557px;
 }
@@ -26,8 +25,7 @@ a {
   cursor: pointer;
 }
 
-
-.service-left  > span {
+.service-left > span {
   position: relative;
   padding-top: 30px;
   font-size: 45px;
@@ -38,7 +36,7 @@ a {
   z-index: 0;
 }
 
-.service-left  > span > span {
+.service-left > span > span {
   position: absolute;
   background-color: #0093de;
   opacity: 55%;
@@ -72,7 +70,6 @@ a {
   max-width: 674px;
 }
 
-
 .service_subs {
   display: flex;
   margin-inline: -55px;
@@ -83,18 +80,19 @@ a {
 .border {
   width: 183px;
   height: 179px;
-  background: transparent linear-gradient(180deg, #0034DE 0%, #0093DE 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #0034de 0%, #0093de 100%) 0%
+    0% no-repeat padding-box;
   border-radius: 60px 20px;
   margin-inline: 55px;
   padding: 2px;
 }
 .service_sub {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 183px;
   height: 179px;
-  background-color: #F0F6FF;
+  background-color: #f0f6ff;
   border-radius: 60px 20px;
 }
 
@@ -104,8 +102,8 @@ a {
 }
 
 .service_sub > div {
-    align-self: center;
-    text-align: center;
+  align-self: center;
+  text-align: center;
   color: #2a2a2a;
   font-size: 14px;
   line-height: 19px;
@@ -116,5 +114,5 @@ a {
 .service-left > .lmbtn {
   margin-top: 10px;
   width: 180px;
-height: 59px;
+  height: 59px;
 }

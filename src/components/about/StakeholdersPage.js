@@ -44,7 +44,7 @@ function StakeholdersPage({ data }) {
                 </button>
               </div>
               <div className="sub-right">
-                <img src={sub?.image} alt="back" />
+                <img src={sub?.image} alt={sub?.title} />
               </div>
             </div>
           );

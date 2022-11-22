@@ -11,7 +11,7 @@
   z-index: 1;
 }
 
-@media only screen and (max-width:1490px) {
+@media only screen and (max-width: 1490px) {
   .header {
     display: none;
   }
@@ -26,8 +26,7 @@
   align-items: center;
 }
 
-.navList >div > a:hover {
-  text-decoration: none;
+.navList > div > .menu_btn:hover {
   color: #027ab7;
   font-weight: 500;
   margin-inline-end: 20px;
@@ -40,19 +39,19 @@
     rgba(239, 2, 32, 1) 70%,
     rgba(255, 255, 255, 0) 70%
   );
-  animation-name: fontChange;
-  animation-duration: 1s;
+
+  border-image-slice: 1;
   padding-bottom: 3px;
-  @keyframes fontChange {
-    0% {
-      font-weight: 300;
-    }
-    100% {
-      font-weight: 500;
-    }
-  }
 }
 
+@keyframes fadeIn {
+  0% {
+    color: white;
+  }
+  100% {
+    color: #027ab7;
+  }
+}
 .activeLink {
   text-decoration: none;
   color: #027ab7;
@@ -67,19 +66,11 @@
     rgba(239, 2, 32, 1) 70%,
     rgba(255, 255, 255, 0) 70%
   );
-  animation-name: fadeIn;
-  animation-duration: 1s;
+
   border-image-slice: 1;
   padding-bottom: 3px;
 }
-@keyframes fadeIn {
-  0% {
-    color: white;
-  }
-  100% {
-    color: #027ab7;
-  }
-}
+
 .inactiveLink {
   text-decoration: none;
   color: #656565;
@@ -99,14 +90,11 @@
 .logo {
   flex: 20%;
   text-align: center;
-  
 }
 
 .contact-us {
   flex: 40%;
   text-align: right;
-  
-
 }
 .cubtn {
   width: 150px;
@@ -124,11 +112,7 @@
   color: white;
   text-decoration: none;
   padding: 10px;
-  
-
 }
-
-
 .aboutmenu {
   display: none;
   position: absolute;
@@ -150,25 +134,58 @@
   display: none;
   position: absolute;
   left: 0;
-  width: 1640px;
-  height: 644px;
+  width: 1540px;
   margin-top: 6px;
+  height: 644px;
+  margin-top: 2px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 20px 50px #00000026;
   border-radius: 25px;
   z-index: 1;
-  
 }
-
-
 
 .servicescontainer:hover .servicesmenu {
   display: block;
 }
 
+.aboutcontainer:hover .menu_btn {
+  color: #027ab7;
+  font-weight: 500;
+  margin-inline-end: 20px;
+  border-bottom: 3px solid;
+  border-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(239, 2, 32, 1) 30%,
+    rgba(239, 2, 32, 1) 50%,
+    rgba(239, 2, 32, 1) 70%,
+    rgba(255, 255, 255, 0) 70%
+  );
+
+  border-image-slice: 1;
+  padding-bottom: 3px;
+}
+
+.servicescontainer:hover .menu_btn {
+  color: #027ab7;
+  font-weight: 500;
+  margin-inline-end: 20px;
+  border-bottom: 3px solid;
+  border-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(239, 2, 32, 1) 30%,
+    rgba(239, 2, 32, 1) 50%,
+    rgba(239, 2, 32, 1) 70%,
+    rgba(255, 255, 255, 0) 70%
+  );
+
+  border-image-slice: 1;
+  padding-bottom: 3px;
+}
+
 .smcontent {
   display: flex;
-  
 }
 .smcontent {
   margin: 43px 65px 47px 65px;
@@ -202,7 +219,7 @@
   height: 18px;
 }
 
-.menti >.mentihe {
+.menti > .mentihe {
   color: #027ab7;
   font-size: 16px;
   font-weight: 500;

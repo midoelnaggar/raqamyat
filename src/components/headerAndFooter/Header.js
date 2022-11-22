@@ -11,7 +11,7 @@ function Header() {
         <div>
           <Link
             className={`${
-              location?.pathname === "/" ? "activeLink" : "inactiveLink"
+              location?.pathname === "/" ? "activeLink menu_btn" : "inactiveLink menu_btn"
             } `}
             to="/"
           >
@@ -21,11 +21,12 @@ function Header() {
         <span className="dot"></span>
         <div className="aboutcontainer">
           <Link
+          
             className={`${
               location?.pathname.startsWith("/about")
                 ? "activeLink"
                 : "inactiveLink"
-            }  aboutbtn`}
+            }  aboutbtn menu_btn`}
             to="/about"
           >
             About
@@ -87,79 +88,128 @@ function Header() {
         </div>
         <span className="dot"></span>
         <div className="servicescontainer">
-          <Link
+          <div
+          style={{cursor:"default"}}
             className={`${
-              location?.pathname.startsWith("/services")  ? "activeLink" : "inactiveLink"
-            }  servicesbtn`}
-            to=""
+              location?.pathname.startsWith("/services")
+                ? "activeLink"
+                : "inactiveLink"
+            }  servicesbtn menu_btn`}
           >
             Services
-          </Link>
+          </div>
           <div className="servicesmenu">
             <div className="smcontent">
               <div className="mencol">
                 <div className="menmti">Solutions</div>
               </div>
               <div className="mencol">
-                <div className="menti"><Link to="/services/solutions/development" className="mentihe">Development</Link></div>
-                <div>
-                  <Link to="/services/solutions/development/online-stores-development">Online Stores Development </Link>
+                <div className="menti">
+                  <Link
+                    to="/services/solutions/development"
+                    className="mentihe"
+                  >
+                    Development
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/development/consultation-and-maintenance">Consultation & Support </Link>
+                  <Link to="/services/solutions/development/online-stores-development">
+                    Online Stores Development{" "}
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/development/outsourcing">Outsourcing </Link>
+                  <Link to="/services/solutions/development/consultation-and-maintenance">
+                    Consultation & Maintenance{" "}
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/development/e-payment-integrations">E-Payment Integrations </Link>
+                  <Link to="/services/solutions/development/outsourcing">
+                    Outsourcing{" "}
+                  </Link>
+                </div>
+                <div>
+                  <Link to="/services/solutions/development/e-payment-integrations">
+                    E-Payment Integrations{" "}
+                  </Link>
                 </div>
               </div>
               <span className="seperator" />
               <div className="mencol">
-                <div className="menti"><Link to="/services/solutions/operation" className="mentihe">Operation</Link></div>
-                <div>
-                  <Link to="/services/solutions/operation/operations-solutions">Operations Solutions </Link>
+                <div className="menti">
+                  <Link to="/services/solutions/operations" className="mentihe">
+                    Operations
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/operation/technical-support-agents">Technical Support Agents </Link>
+                  <Link to="/services/solutions/operations/operations-solutions">
+                    Operations Solutions{" "}
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/operation/projects-operations-bot">Projects Operations (BOT) </Link>
+                  <Link to="/services/solutions/operation/technical-support-agents">
+                    Technical Support Agents{" "}
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/operation/logistics-management">Logistics Management </Link>
+                  <Link to="/services/solutions/operation/projects-operations-bot">
+                    Projects Operations (BOT){" "}
+                  </Link>
+                </div>
+                <div>
+                  <Link to="/services/solutions/operation/logistics-management">
+                    Logistics Management{" "}
+                  </Link>
                 </div>
               </div>
               <span className="seperator" />
               <div className="mencol">
-                <div className="menti"><Link to="/services/solutions/marketing"  className="mentihe">Marketing</Link></div>
-                <div>
-                  <Link to="/services/solutions/marketing/content-marketing">Content Marketing </Link>
+                <div className="menti">
+                  <Link to="/services/solutions/marketing" className="mentihe">
+                    Marketing
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/marketing/marketing-strategy">Marketing Strategy </Link>
+                  <Link to="/services/solutions/marketing/content-marketing">
+                    Content Marketing{" "}
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/marketing/market-analysis">Market Analysis </Link>
+                  <Link to="/services/solutions/marketing/marketing-strategy">
+                    Marketing Strategy{" "}
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/marketing/video-production">Video Production </Link>
+                  <Link to="/services/solutions/marketing/market-analysis">
+                    Market Analysis{" "}
+                  </Link>
+                </div>
+                <div>
+                  <Link to="/services/solutions/marketing/video-production">
+                    Video Production{" "}
+                  </Link>
                 </div>
               </div>
               <div className="mencol">
                 <div className="menti"></div>
                 <div>
-                  <Link to="/services/solutions/marketing/product-development">Content Marketing </Link>
+                  <Link to="/services/solutions/marketing/product-development">
+                    Content Marketing{" "}
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/marketing/integrated-marketing">Product Development </Link>
+                  <Link to="/services/solutions/marketing/integrated-marketing">
+                    Product Development{" "}
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/marketing/integrated-marketing">Integrated Marketing </Link>
+                  <Link to="/services/solutions/marketing/integrated-marketing">
+                    Integrated Marketing{" "}
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/marketing/outsourcing">Outsourcing </Link>
+                  <Link to="/services/solutions/marketing/outsourcing">
+                    Outsourcing{" "}
+                  </Link>
                 </div>
               </div>
             </div>
@@ -169,19 +219,29 @@ function Header() {
               </div>
               <div className="menlcol">
                 <div>
-                  <Link to="/services/business-type/business-type/retail-e-commerce">Retail E-Commerce </Link>
+                  <Link to="/services/business-type/business-type/retail-e-commerce">
+                    Retail E-Commerce{" "}
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/business-type/business-type/fmcg-and-restaurats-e-commerce">FMCG & Restaurants E-Commerce </Link>
+                  <Link to="/services/business-type/business-type/fmcg-and-restaurats-e-commerce">
+                    FMCG & Restaurants E-Commerce{" "}
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/business-type/business-type/healthcare-e-commerce">Healthcare E-Commerce </Link>
+                  <Link to="/services/business-type/business-type/healthcare-e-commerce">
+                    Healthcare E-Commerce{" "}
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/business-type/business-type/education-e-commerce">Education E-Commerce </Link>
+                  <Link to="/services/business-type/business-type/education-e-commerce">
+                    Education E-Commerce{" "}
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/services/business-type/business-type/e-commerce-for-special-projects">E-Commerce for Special Projects </Link>
+                  <Link to="/services/business-type/business-type/e-commerce-for-special-projects">
+                    E-Commerce for Special Projects{" "}
+                  </Link>
                 </div>
               </div>
             </div>
@@ -191,7 +251,7 @@ function Header() {
         <div>
           <Link
             className={`${
-              location?.pathname === "/blog" ? "activeLink" : "inactiveLink"
+              location?.pathname === "/blog" ? "activeLink menu_btn" : "inactiveLink menu_btn"
             } `}
             to="/blog"
           >
@@ -202,7 +262,7 @@ function Header() {
         <div>
           <Link
             className={`${
-              location?.pathname === "/media" ? "activeLink" : "inactiveLink"
+              location?.pathname === "/media" ? "activeLink menu_btn" : "inactiveLink menu_btn"
             } `}
             to="/media"
           >

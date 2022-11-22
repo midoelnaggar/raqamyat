@@ -7,8 +7,8 @@ export default function OperationPage({ data }) {
     <div>
       <div className="head_bg">
         <PageHeader
-          title="Operation"
-          breadcrumbs={"Services / Solutions / Operation"}
+          title="Operations"
+          breadcrumbs={"Services / Solutions / Operations"}
         />
       </div>
       <Solution data={data} />

@@ -1,0 +1,133 @@
+.first_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 170px;
+}
+.first_section > span {
+  position: relative;
+  padding-top: 30px;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  z-index: 0;
+}
+
+.first_section > span > span {
+  position: absolute;
+  background-color: #0093de;
+  opacity: 55%;
+  height: 20px;
+  width: 102.5px;
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+}
+.sub_container_osd {
+  margin: 0;
+  justify-content: center;
+}
+.sub_container_osd > div {
+  padding-inline: 100px;
+  justify-content: center;
+}
+.sub_container_osd > div > * {
+  max-width: 1800px;
+}
+
+.sub_container_osd > div > div > h1 {
+  padding: 0;
+  margin: 0;
+  max-width: 500px;
+}
+.sub_container_osd > .sub {
+  border: none;
+}
+.sub_container_osd > div > div > .lp {
+  max-width: 500px;
+}
+.sub_container_osd > .sub > div > img {
+  margin-inline-start: 100px;
+}
+.sub_container_osd > .sub_inverted > div > img {
+  margin-inline-end: 100px;
+}
+.sub_container_osd > div >div> .lmbtn {
+  width:160px
+}
+.last_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 170px;
+}
+.last_section > span {
+  position: relative;
+  padding-top: 30px;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  max-width: 472px;
+  z-index: 0;
+}
+
+.last_section > span > span {
+  position: absolute;
+  background-color: #0093de;
+  opacity: 55%;
+  height: 20px;
+  width: 102.5px;
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+}
+.last_section_sub {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-inline: 350px
+}
+
+.last_section_sub_card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 534px;
+  height: 153px;
+  background: transparent linear-gradient(295deg, #ffffff 0%, #effaff 100%) 0%
+    0% no-repeat padding-box;
+  box-shadow: -10px 10px 50px #0093de1a;
+  border-radius: 50px 25px;
+  margin: 25px;
+  padding-block: 50px;
+  border-radius: 50px;
+  z-index: 0;
+}
+.last_section_sub_card_number {
+  position: absolute;
+  color:  #CEEEFF ;
+  font-size: 92px;
+  letter-spacing: -4.14px;
+  font-weight: 600;  
+  top:0;
+  left: 15px;
+  z-index: -1;
+}
+.last_section_sub_card_title {
+  padding-inline: 50px;
+  font-size: 32px;
+  letter-spacing: -1.44px;
+  font-weight: 600;
+}
+
+.last_section_sub_card_subtitle {
+  color: #2A2A2A;
+  padding-inline: 50px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}

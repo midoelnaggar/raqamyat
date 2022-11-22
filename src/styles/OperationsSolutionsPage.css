@@ -1,0 +1,27 @@
+
+.last_section > h1   {
+max-width: 860px;
+text-align: center;
+}
+.last_section >h1> span {
+  position: relative;
+  padding-top: 30px;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  max-width: 472px;
+  z-index: 0;
+}
+
+.last_section > h1> span > span {
+  position: absolute;
+  background-color: #0093de;
+  opacity: 55%;
+  height: 20px;
+  width: 102.5px;
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+}

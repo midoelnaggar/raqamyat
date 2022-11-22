@@ -1,18 +1,18 @@
 import React from "react";
-import "../../../../styles/OnlineStoresDevelopmentPage.css";
+import "../../../../styles/OperationsSolutionsPage.css";
 import PageHeader from "../../../PageHeader";
 import Service from "../../Service";
 import { Link } from "react-router-dom";
 import arrow from "../../../../img/Icon ionic-ios-arrow-round-forward.png";
 
-export default function OnlineStoresDevelopmentPage({ data }) {
+export default function OperationsSolutionsPage({ data }) {
   return (
     <div>
       <PageHeader
-        title="Development"
+        title="Operations"
         breadcrumbs={
-          "Services / Solutions / Development / Online Stores Development"
-        }
+          "Services / Solutions / Operations / Operations Solutions"
+        } 
       />
       <Service data={data} />
       {Array.isArray(data?.sub) &&
@@ -45,18 +45,20 @@ export default function OnlineStoresDevelopmentPage({ data }) {
               </div>
             </div>
           ) : index === data.sub.length - 1 ? (
-            <div style={{ backgroundColor: `${index % 2 !== 0 && `white`}`}} className="last_section">
-              <span>
+            <div style={{paddingTop:0}} className="last_section">
+              <h1>
+              <span style={{maxWidth:"860px"}}>
                 {section?.title}
-                <span />
+                <span  />
               </span>
+              </h1>
+              <div style={{maxWidth:"980px",paddingBottom:"35px",textAlign:"center"}} className="last_section_sub_subtitle">
+                {section?.description}
+              </div>
               <div className="last_section_sub">
                 {section?.sub.map((card,index)=>{
                   return(
                     <div className="last_section_sub_card">
-                      <div className="last_section_sub_card_number">
-                        {("0"+(index+1)).slice(-2)}
-                      </div>
                       <div className="last_section_sub_card_title">
                         {card?.title}
                       </div>

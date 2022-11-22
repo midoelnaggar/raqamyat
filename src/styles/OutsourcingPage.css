@@ -1,0 +1,84 @@
+.outsourcing_sections {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-block-start: 170px;
+  padding-inline: 278px;
+}
+
+.outsourcing_sections > h1 {
+  padding-inline-end: 50px;
+  max-width: 800px;
+  font-size: 14px;
+}
+.outsourcing_sections > p {
+  color: #2a2a2a;
+  font-weight: 500;
+  max-width: 1000px;
+}
+
+.outsourcing_sections > h1 > span {
+  position: relative;
+  padding-top: 30px;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  z-index: 0;
+}
+
+.outsourcing_sections > h1 > span > span {
+  position: absolute;
+  background-color: #0093de;
+  opacity: 55%;
+  height: 20px;
+  width: 102.5px;
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+}
+
+.outsourcing_sections > .cards {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  max-width: none;
+  align-self: center;
+  flex-wrap: wrap;
+}
+
+.outsourcing_sections > .cards > .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 362px;
+  height: 255px;
+  background: transparent linear-gradient(304deg, #ffffff 0%, #effaff 100%) 0%
+    0% no-repeat padding-box;
+  box-shadow: -10px 10px 50px #0093de1a;
+  border-radius: 50px 25px;
+  text-align: center;
+  margin: 8px;
+}
+
+.outsourcing_sections > .cards > .card > img {
+  margin-top: 29px;
+}
+.outsourcing_sections > .cards > .card > h1 {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #2a2a2a;
+  max-width: 120px;
+}
+
+.outsourcing_sections > .cards > .card > p {
+  margin-top: 6.5px;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 400;
+  color: #a2a2a2;
+}

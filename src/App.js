@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import axios from "axios";
 import { Route, Routes, useLocation } from "react-router-dom";
 import WebinarContext from "./context/WebinarContext";
@@ -24,6 +24,10 @@ import NoPage from "./components/NoPage";
 import DevelopmentPage from "./components/services/solutions/development/DevelopmentPage";
 import OperationPage from "./components/services/solutions/operation/OperationPage";
 import OnlineStoresDevelopmentPage from "./components/services/solutions/development/OnlineStoresDevelopmentPage";
+import ConsultationAndMaintenancePage from "./components/services/solutions/development/ConsultationAndMaintenancePage";
+import OutsourcingPage from "./components/services/solutions/development/OutsourcingPage";
+import EPaymentIntegrationsPage from "./components/services/solutions/development/EPaymentIntegrationsPage";
+import OperationsSolutionsPage from "./components/services/solutions/operation/OperationsSolutionsPage";
 
 function App() {
   const location = useLocation();
@@ -109,22 +113,63 @@ function App() {
       setIsFetching(true);
       SetBgColor("insidebg");
     } else if (
-      location.pathname === "/services/solutions/development/online-stores-development") {
+      location.pathname ===
+      "/services/solutions/development/online-stores-development"
+    ) {
       setLoading(true);
       setApiUrl(
         "https://newraq.raqamyat.com/public/api/services?slug=online-stores-development"
       );
       setIsFetching(true);
       SetBgColor("contactbg");
+    } else if (
+      location.pathname ===
+      "/services/solutions/development/consultation-and-maintenance"
+    ) {
+      setLoading(true);
+      setApiUrl(
+        "https://newraq.raqamyat.com/public/api/services?slug=consultation-and-maintenance"
+      );
+      setIsFetching(true);
+      SetBgColor("contactbg");
+    } else if (
+      location.pathname === "/services/solutions/development/outsourcing"
+    ) {
+      setLoading(true);
+      setApiUrl(
+        "https://newraq.raqamyat.com/public/api/services?slug=outsourcing"
+      );
+      setIsFetching(true);
+      SetBgColor("contactbg");
+    } else if (
+      location.pathname ===
+      "/services/solutions/development/e-payment-integrations"
+    ) {
+      setLoading(true);
+      setApiUrl(
+        "https://newraq.raqamyat.com/public/api/services?slug=e-payment-integrations"
+      );
+      setIsFetching(true);
+      SetBgColor("contactbg");
     }
     ////operation
-    else if (location.pathname === "/services/solutions/operation") {
+    else if (location.pathname === "/services/solutions/operations") {
       setLoading(true);
       setApiUrl(
         "https://newraq.raqamyat.com/public/api/services?slug=operation"
       );
       setIsFetching(true);
       SetBgColor("insidebg");
+    } else if (
+      location.pathname ===
+      "/services/solutions/operations/operations-solutions"
+    ) {
+      setLoading(true);
+      setApiUrl(
+        "https://newraq.raqamyat.com/public/api/services?slug=operations-solutions"
+      );
+      setIsFetching(true);
+      SetBgColor("contactbg");
     }
   }, [location.pathname]);
 
@@ -161,86 +206,110 @@ function App() {
               <Loading />
             ) : (
               <div className="outlet">
-                <Routes>
-                  <Route location={location} key={location.pathname}>
-                    <Route index element={<HomePage data={data}></HomePage>} />
-                    <Route path="*" element={<NoPage />} />
-                    <Route
-                      path="contact-us"
-                      element={<ContactUsPage data={data} />}
-                    />
-                    <Route path="blog" element={<BlogPage data={data} />} />
-                  </Route>
-                  <Route path="about">
-                    <Route index element={<AboutUsPage data={data} />} />
-                    <Route
-                      path="our-company/stakeholders"
-                      element={<StakeholdersPage data={data} />}
-                    />
-                    <Route
-                      path="our-company/our-partners"
-                      element={<OurPartnersPage data={data} />}
-                    />
-                    <Route
-                      path="our-company/successful-cases"
-                      element={<SuccessfulCasesPage data={data} />}
-                    />
-                    <Route
-                      path="news/press"
-                      element={<PressPage data={data} />}
-                    />
-                    <Route
-                      path="webinars"
-                      element={<WebinarsPage data={data} />}
-                    />
-                    <Route
-                      path="webinars/:webinarName"
-                      element={<WebinarPage data={webinar} />}
-                    />
-                    <Route path="news/e-book" element={<EBookPage />} />
-                    <Route
-                      path="careers/jobs"
-                      element={<JobsPage data={data} />}
-                    />
-                  </Route>
-                  <Route path="services">
-                    <Route path="development"></Route>
-                  </Route>
-                  <Route path="services">
-                    <Route path="solutions">
-                      <Route path="development">
-                        <Route
-                          index
-                          element={<DevelopmentPage data={data} />}
-                        />
-                        <Route
-                          path="online-stores-development"
-                          element={<OnlineStoresDevelopmentPage data={data} />}
-                        />
-                        <Route path="consultation-and-maintenance" />
-                        <Route path="outsourcing" />
-                        <Route path="e-payment-integrations" />
-                      </Route>
-                      <Route path="operation">
-                        <Route index element={<OperationPage data={data} />} />
-                        <Route path="operations-solutions" />
-                        <Route path="technical-support-agents" />
-                        <Route path="projects-operations-bot" />
-                        <Route path="logistics-management" />
-                      </Route>
-                      <Route path="marketing">
-                        <Route path="content-marketing" />
-                        <Route path="marketing-strategy" />
-                        <Route path="market-analysis" />
-                        <Route path="video-production" />
-                        <Route path="integrated-marketing">
-                          <Route path="integrated-marketing" />
-                          <Route path="outsourcing" />
+                <Suspense fallback={<Loading />}>
+                  <Routes>
+                    <Route location={location} key={location.pathname}>
+                      <Route
+                        index
+                        element={<HomePage data={data}></HomePage>}
+                      />
+                      <Route path="*" element={<NoPage />} />
+                      <Route
+                        path="contact-us"
+                        element={<ContactUsPage data={data} />}
+                      />
+                      <Route path="blog" element={<BlogPage data={data} />} />
+                    </Route>
+                    <Route path="about">
+                      <Route index element={<AboutUsPage data={data} />} />
+                      <Route
+                        path="our-company/stakeholders"
+                        element={<StakeholdersPage data={data} />}
+                      />
+                      <Route
+                        path="our-company/our-partners"
+                        element={<OurPartnersPage data={data} />}
+                      />
+                      <Route
+                        path="our-company/successful-cases"
+                        element={<SuccessfulCasesPage data={data} />}
+                      />
+                      <Route
+                        path="news/press"
+                        element={<PressPage data={data} />}
+                      />
+                      <Route
+                        path="webinars"
+                        element={<WebinarsPage data={data} />}
+                      />
+                      <Route
+                        path="webinars/:webinarName"
+                        element={<WebinarPage data={webinar} />}
+                      />
+                      <Route path="news/e-book" element={<EBookPage />} />
+                      <Route
+                        path="careers/jobs"
+                        element={<JobsPage data={data} />}
+                      />
+                    </Route>
+                    <Route path="services">
+                      <Route path="development"></Route>
+                    </Route>
+                    <Route path="services">
+                      <Route path="solutions">
+                        <Route path="development">
+                          <Route
+                            index
+                            element={<DevelopmentPage data={data} />}
+                          />
+                          <Route
+                            path="online-stores-development"
+                            element={
+                              <OnlineStoresDevelopmentPage data={data} />
+                            }
+                          />
+                          <Route
+                            path="consultation-and-maintenance"
+                            element={
+                              <ConsultationAndMaintenancePage data={data} />
+                            }
+                          />
+                          <Route
+                            path="outsourcing"
+                            element={<OutsourcingPage data={data} />}
+                          />
+                          <Route
+                            path="e-payment-integrations"
+                            element={<EPaymentIntegrationsPage data={data} />}
+                          />
+                        </Route>
+                        <Route path="operations">
+                          <Route
+                            index
+                            element={<OperationPage data={data} />}
+                          />
+                          <Route
+                            path="operations-solutions"
+                            element={<OperationsSolutionsPage data={data} />}
+                          />
+                          <Route path="technical-support-agents" />
+                          <Route path="projects-operations-bot" />
+                          <Route path="logistics-management" />
+                        </Route>
+                        <Route path="marketing">
+                          <Route path="content-marketing" />
+                          <Route path="marketing-strategy" />
+                          <Route path="market-analysis" />
+                          <Route path="video-production" />
+                          <Route path="integrated-marketing">
+                            <Route path="integrated-marketing" />
+                            <Route path="outsourcing" />
+                          </Route>
                         </Route>
                       </Route>
                     </Route>
-                  </Route>
-                </Routes>
+                  </Routes>
+                </Suspense>
               </div>
             )}
           </SnackbarProvider>
