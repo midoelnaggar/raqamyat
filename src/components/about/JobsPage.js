@@ -4,7 +4,7 @@ import Motion from "../Motion";
 import { Link } from "react-router-dom";
 import arrow from "../../img/Icon ionic-ios-arrow-round-forward.png";
 import image from "../../img/Group 7.png";
-function JobsPage({ data }) {
+function JobsPage({ data, setJob }) {
   return (
     <>
       <Motion>
@@ -52,19 +52,23 @@ function JobsPage({ data }) {
               your career, you’ve come to the right place.
             </p>
             <div className="jobs">
-              {Array.isArray(data) && data?.map((job) => {
-                return (
-                  <div key={job?.title} className="job">
-                    <h1>{job?.title}</h1>
-                    <p>Please click Apply Now for more details.</p>
-                    <Link to={`/about/careers/job/${job?.job_slug}`}>
-                      <div className="btn">
-                        Apply Now <img src={arrow} alt="arrow" />
-                      </div>
-                    </Link>
-                  </div>
-                );
-              })}
+              {Array.isArray(data) &&
+                data?.map((job) => {
+                  return (
+                    <div key={job?.title} className="job">
+                      <h1>{job?.title}</h1>
+                      <p>Please click Apply Now for more details.</p>
+                      <Link
+                        onClick={setJob(job)}
+                        to={`/about/careers/jobs/${job?.slug}`}
+                      >
+                        <div className="btn">
+                          Apply Now <img src={arrow} alt="arrow" />
+                        </div>
+                      </Link>
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </div>

@@ -1,5 +1,4 @@
-import { useState, useEffect, useContext } from "react";
-import WebinarContext from "../../context/WebinarContext";
+import { useState, useEffect } from "react";
 import moment from "moment";
 import { Link } from "react-router-dom";
 import "../../styles/WebinarsPage.css";
@@ -7,8 +6,7 @@ import PageHeader from "../PageHeader";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import Motion from "../Motion";
 
-function WebinarsPage({ data }) {
-  const { setWebinar } = useContext(WebinarContext);
+function WebinarsPage({ data,setWebinar }) {
   const [upcomingWebinars, setUpcomingWebinars] = useState([]);
   const [previousWebinars, setPreviousWebinars] = useState([]);
 

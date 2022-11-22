@@ -186,7 +186,7 @@ function WebinarsPage({ data }) {
               </FormControl>
             </div>
           </div>
-          <div dangerouslySetInnerHTML={{__html: data.description}} />
+          <div dangerouslySetInnerHTML={{__html: data?.description}} />
             
         </div>
       </div>
