@@ -1,7 +1,9 @@
 .footer {
   background-color: white;
 }
-
+.footer_logo{
+  width: 134px;
+}
 .footer > .fourcols {
   display: flex;
   padding-inline: 400px;

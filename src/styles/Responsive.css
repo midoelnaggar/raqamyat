@@ -1,0 +1,158 @@
+/*App */
+@media (max-width: 1023px) {
+  .app {
+    width: 820px;
+  }
+
+  .outlet {
+    padding-top: 50px;
+  }
+
+  .outlet>div>div>div {
+    padding-inline: 45px;
+
+  }
+
+  .header {
+    padding-top: 50px;
+    scale: 0.9;
+    width: 100%;
+    transform-origin: top left;
+    justify-content: center;
+    align-items: center;
+  }
+
+/*Header */
+  .header > .logo {
+    text-align: left;
+    scale: 1.5;
+    transform-origin: top left;
+    padding-left: 10px;
+    display: block;
+  }
+
+.sideMenuSubtitle{
+    font-weight: 600;
+    
+}
+
+  .header > .navList {
+    display: none;
+  }
+
+  .header > .sideMenuBtn {
+    display: block;
+    text-align: left;
+  }
+
+  .sideMenuList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .sideMenuSection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .mentis{
+    padding-bottom: 0;
+  }
+
+  .side_menu_item_link {
+    text-decoration: none;
+    font-family: "Gotham";
+    color: "black";
+    padding: 15px;
+    font-weight: 500;
+    color: black;
+  }
+
+  .sideMenuLogo{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+  .sideMenuLogo > img {
+    width: 192px;
+    padding-block: 15px;
+  }
+
+
+  .drawer {
+    padding: 50px;
+    font-family: "Gotham";
+    
+  }
+  .side_menu_item_text {
+    color: black;
+  }
+
+/*Home Page */
+
+
+  .hero {
+    padding: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .hero > .leftSection  {
+    scale: 0.9;
+    transform-origin: top left;
+
+  }
+  .hero > div > .rightSection {
+    scale: 0.55;
+    transform-origin: top right;
+    margin: 130px -150px;
+  }
+
+.about_section_bg> .about{
+padding: 0;
+margin: 0;
+flex-direction: column-reverse;
+flex-wrap: wrap;
+}
+
+
+.about_section_bg{
+    padding: 0;
+    margin: 0;
+    }
+
+.about_section_bg> .about > .leftComp {
+    display: flex;
+    margin: 0;
+}
+
+.about_section_bg> .about > .rightComp {
+    margin: 0;
+    padding: 0;
+}
+
+.about_section_bg> .about > .leftComp > img{
+    width: 250px;
+    margin: 0;
+}
+
+.partnersBackground {
+    width: 100%;
+    height: none;
+    background-color: white;
+    padding-inline-start:  0;
+  }
+  
+  .partnersGroup {
+    padding-top:35px;
+    display: flex;
+    justify-content: space-between;
+  
+  }
+.partnersGroup > img {
+   padding: 0;
+  
+  }
+
+
+}

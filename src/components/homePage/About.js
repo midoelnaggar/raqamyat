@@ -18,8 +18,6 @@ function About({data}) {
             <span> Company<span /></span>
           </h1>
         <p>
-        </p>
-        <p>
         {data?.description}  
         </p>
       </div>

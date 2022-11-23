@@ -1,17 +1,145 @@
 import "../../styles/Header.css";
 import { useLocation, Link } from "react-router-dom";
-import logo from "../../img/logo.png";
+import logo from "../../img/logo.svg";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import Box from "@mui/material/Box";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import { useState } from "react";
 
 function Header() {
   let location = useLocation();
+  const [drawer, setDrawer] = useState(false);
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event &&
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setDrawer(open);
+  };
 
   return (
     <div className="header">
+      <div className="sideMenuBtn">
+        <IconButton onClick={toggleDrawer(true)}>
+          <MenuIcon
+            htmlColor="#027ab7"
+            edge="start"
+            fontSize="x-large"
+            sx={{ fontSize: "50px" }}
+          />
+        </IconButton>
+      </div>
+      <SwipeableDrawer
+        anchor={"top"}
+        color="danger"
+        open={drawer}
+        onClose={toggleDrawer(false)}
+        onOpen={toggleDrawer(true)}
+      >
+        <Box
+          role="presentation"
+          onClick={toggleDrawer(false)}
+          onKeyDown={toggleDrawer(false)}
+          className="drawer"
+        >
+          <Link to="/">
+            <div className="sideMenuLogo">
+            <img  src={logo} alt={"logo"} />
+            </div>
+          </Link>
+          <List className="sideMenuList">
+            <Divider textAlign="center">
+              <div className="menti mentis">Our Company</div>
+            </Divider>
+            <div className="sideMenuSection">
+              <Link className="side_menu_item_link" to="/about">
+                Who we are?
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/about/our-company/stakeholders"
+              >
+                Stakeholders
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/about/our-company/our-partners"
+              >
+                Our Partners
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/about/our-company/successful-cases"
+              >
+                Successful Cases
+              </Link>
+
+              <Link className="side_menu_item_link" to="/contact-us">
+                Contact Us
+              </Link>
+            </div>
+            <Divider textAlign="center">
+              <div className="menti mentis">News</div>
+            </Divider>
+            <div className="sideMenuSection">
+              <Link className="side_menu_item_link" to="/about/news/press">
+                Press
+              </Link>
+
+              <Link className="side_menu_item_link" to="/about/webinars">
+                Webinars
+              </Link>
+
+              <Link className="side_menu_item_link" to="/about/projects">
+                Projects
+              </Link>
+
+              <Link className="side_menu_item_link" to="/about/news/e-book">
+                E-Book
+              </Link>
+            </div>
+            <Divider textAlign="center">
+              <div className="menti mentis">Careers</div>
+            </Divider>
+            <div className="sideMenuSection">
+            <Link className="side_menu_item_link" to="/about/careers/jobs">
+                Jobs
+              </Link>
+              <Link
+                className="side_menu_item_link"
+                to="/about/careers/internships"
+              >
+                Internships
+              </Link>
+
+            </div>
+          </List>
+          <Divider />
+          <List>
+            {["All mail", "Trash", "Spam"].map((text, index) => (
+              <ListItem key={text} disablePadding></ListItem>
+            ))}
+          </List>
+        </Box>
+      </SwipeableDrawer>
       <div className="navList">
         <div>
           <Link
             className={`${
-              location?.pathname === "/" ? "activeLink menu_btn" : "inactiveLink menu_btn"
+              location?.pathname === "/"
+                ? "activeLink menu_btn"
+                : "inactiveLink menu_btn"
             } `}
             to="/"
           >
@@ -19,18 +147,18 @@ function Header() {
           </Link>
         </div>
         <span className="dot"></span>
+
         <div className="aboutcontainer">
-          <Link
-          
+          <div
+            style={{ cursor: "default" }}
             className={`${
               location?.pathname.startsWith("/about")
                 ? "activeLink"
                 : "inactiveLink"
             }  aboutbtn menu_btn`}
-            to="/about"
           >
             About
-          </Link>
+          </div>
           <div className="aboutmenu">
             <div className="smcontent">
               <div className="mencol">
@@ -40,17 +168,17 @@ function Header() {
                 </div>
                 <div>
                   <Link to="/about/our-company/stakeholders">
-                    Stakeholders{" "}
+                    Stakeholders
                   </Link>
                 </div>
                 <div>
                   <Link to="/about/our-company/our-partners">
-                    Our Partners{" "}
+                    Our Partners
                   </Link>
                 </div>
                 <div>
                   <Link to="/about/our-company/successful-cases">
-                    Successful Cases{" "}
+                    Successful Cases
                   </Link>
                 </div>
                 <div>
@@ -89,7 +217,7 @@ function Header() {
         <span className="dot"></span>
         <div className="servicescontainer">
           <div
-          style={{cursor:"default"}}
+            style={{ cursor: "default" }}
             className={`${
               location?.pathname.startsWith("/services")
                 ? "activeLink"
@@ -114,22 +242,22 @@ function Header() {
                 </div>
                 <div>
                   <Link to="/services/solutions/development/online-stores-development">
-                    Online Stores Development{" "}
+                    Online Stores Development
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/solutions/development/consultation-and-maintenance">
-                    Consultation & Maintenance{" "}
+                    Consultation & Maintenance
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/solutions/development/outsourcing">
-                    Outsourcing{" "}
+                    Outsourcing
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/solutions/development/e-payment-integrations">
-                    E-Payment Integrations{" "}
+                    E-Payment Integrations
                   </Link>
                 </div>
               </div>
@@ -142,22 +270,22 @@ function Header() {
                 </div>
                 <div>
                   <Link to="/services/solutions/operations/operations-solutions">
-                    Operations Solutions{" "}
+                    Operations Solutions
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/solutions/operation/technical-support-agents">
-                    Technical Support Agents{" "}
+                    Technical Support Agents
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/solutions/operation/projects-operations-bot">
-                    Projects Operations (BOT){" "}
+                    Projects Operations (BOT)
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/solutions/operation/logistics-management">
-                    Logistics Management{" "}
+                    Logistics Management
                   </Link>
                 </div>
               </div>
@@ -170,22 +298,22 @@ function Header() {
                 </div>
                 <div>
                   <Link to="/services/solutions/marketing/content-marketing">
-                    Content Marketing{" "}
+                    Content Marketing
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/solutions/marketing/marketing-strategy">
-                    Marketing Strategy{" "}
+                    Marketing Strategy
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/solutions/marketing/market-analysis">
-                    Market Analysis{" "}
+                    Market Analysis
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/solutions/marketing/video-production">
-                    Video Production{" "}
+                    Video Production
                   </Link>
                 </div>
               </div>
@@ -193,22 +321,22 @@ function Header() {
                 <div className="menti"></div>
                 <div>
                   <Link to="/services/solutions/marketing/product-development">
-                    Content Marketing{" "}
+                    Content Marketing
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/solutions/marketing/integrated-marketing">
-                    Product Development{" "}
+                    Product Development
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/solutions/marketing/integrated-marketing">
-                    Integrated Marketing{" "}
+                    Integrated Marketing
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/solutions/marketing/outsourcing">
-                    Outsourcing{" "}
+                    Outsourcing
                   </Link>
                 </div>
               </div>
@@ -220,27 +348,27 @@ function Header() {
               <div className="menlcol">
                 <div>
                   <Link to="/services/business-type/business-type/retail-e-commerce">
-                    Retail E-Commerce{" "}
+                    Retail E-Commerce
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/business-type/business-type/fmcg-and-restaurats-e-commerce">
-                    FMCG & Restaurants E-Commerce{" "}
+                    FMCG & Restaurants E-Commerce
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/business-type/business-type/healthcare-e-commerce">
-                    Healthcare E-Commerce{" "}
+                    Healthcare E-Commerce
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/business-type/business-type/education-e-commerce">
-                    Education E-Commerce{" "}
+                    Education E-Commerce
                   </Link>
                 </div>
                 <div>
                   <Link to="/services/business-type/business-type/e-commerce-for-special-projects">
-                    E-Commerce for Special Projects{" "}
+                    E-Commerce for Special Projects
                   </Link>
                 </div>
               </div>
@@ -251,7 +379,9 @@ function Header() {
         <div>
           <Link
             className={`${
-              location?.pathname === "/blog" ? "activeLink menu_btn" : "inactiveLink menu_btn"
+              location?.pathname === "/blog"
+                ? "activeLink menu_btn"
+                : "inactiveLink menu_btn"
             } `}
             to="/blog"
           >
@@ -262,7 +392,9 @@ function Header() {
         <div>
           <Link
             className={`${
-              location?.pathname === "/media" ? "activeLink menu_btn" : "inactiveLink menu_btn"
+              location?.pathname === "/media"
+                ? "activeLink menu_btn"
+                : "inactiveLink menu_btn"
             } `}
             to="/media"
           >

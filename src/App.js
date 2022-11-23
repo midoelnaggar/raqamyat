@@ -29,15 +29,21 @@ import EPaymentIntegrationsPage from "./components/services/solutions/developmen
 import OperationsSolutionsPage from "./components/services/solutions/operation/OperationsSolutionsPage";
 import usePathname from "./hooks/usePathname";
 import JobPage from "./components/about/JobPage";
-
+import useWindowSize from "./hooks/useWindowSize";
 function App() {
   const location = useLocation();
   const [data, setData] = useState(null);
   const [webinar, setWebinar] = useState({});
-const [job, setJob] = useState({});
-  const { isFetching, loading, apiUrl, bgColor, setIsFetching, setLoading,setApiUrl } =
-    usePathname({ location: location.pathname });
-
+  const [job, setJob] = useState({});
+  const {
+    isFetching,
+    loading,
+    apiUrl,
+    bgColor,
+    setIsFetching,
+    setLoading,
+  } = usePathname({ location: location.pathname });
+  const width = useWindowSize();
   useEffect(() => {
     if (apiUrl != null) {
       try {
@@ -61,7 +67,19 @@ const [job, setJob] = useState({});
   }, [isFetching, setLoading]);
 
   return (
-    <div className="app">
+    <div
+      className="app"
+      style={{
+        scale: (width >= 1024
+          ? width / 1903
+          : (width <= 1023) & (width > 768)
+          ? width / 820
+          : (width <= 767) & (width > 320)
+          ? width / 390
+          : width / 320
+        ).toString(),
+      }}
+    >
       <div className={bgColor} />
       <Header />
       <AnimatePresence>
@@ -114,8 +132,7 @@ const [job, setJob] = useState({});
                       <Route
                         index
                         element={<JobsPage data={data} setJob={setJob} />}
-                      >
-                      </Route>
+                      ></Route>
                       <Route path=":slug" element={<JobPage data={job} />} />
                     </Route>
                   </Route>

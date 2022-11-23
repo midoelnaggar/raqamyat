@@ -1,10 +1,13 @@
 .app {
-  position: relative;
+  position: absolute;
   font-family: "Gotham";
   padding: 0px;
   overflow-x: hidden;
+  width: 1903px;
+  transform-origin: top left;
 }
-.outlet{
+
+.outlet {
   padding-top: 140px;
 }
 .homebg {
@@ -16,7 +19,7 @@
   );
   position: absolute;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: -1;
@@ -50,22 +53,22 @@
     #f0f6ff 800px,
     #f0f6ff 100%
   );
-  background-color:     #f0f6ff  ;
+  background-color: #f0f6ff;
   border-radius: 0px 0px 180px 180px;
   position: absolute;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: -1;
 }
 
 .insidebg {
-  z-index: -1    ;
+  z-index: -1;
   background-color: #f0f6ff;
   position: absolute;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   top: 0;
   left: 0;
   animation: 0.25s ease-out cu_bg_fadin;

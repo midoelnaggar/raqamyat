@@ -95,43 +95,6 @@
     padding-box;
 }
 
-@media (max-width: 1622px) {
-  .fourImages {
-    display: none;
-  }
-  .hero {
-    padding-top: 0px;
-    padding-inline: 5vw;
-    margin-bottom: -150px;
-  }
-  .headline {
-    max-width: none;
-  }
-}
-
-@media (max-width: 629px) {
-  .headline {
-    font-size: 50px;
-    word-spacing: 2px;
-  }
-  .mark1 {
-    width: 100%;
-  }
-  .mark2 {
-    width: 76%;
-  }
-  .smallParagraph {
-    margin-top: 0px;
-    font-size: 15px;
-  }
-  .kmbtn {
-    margin-top: 0px;
-    width: 156px;
-    height: 48px;
-    font-size: 15px;
-  }
-}
-
 .rightSection {
   position: absolute;
   right: 150px;

@@ -18,7 +18,7 @@ function Footer() {
     <div className="footer">
       <div className="fourcols">
         <div>
-          <img src={logo} alt="logo" />
+          <img className="footer_logo" src={logo} alt="logo" />
           <p>
             Raqamyat is an Egyptian multimillion Fintech shareholding company
             licensed <a href="/">Read More</a>
