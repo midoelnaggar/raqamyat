@@ -1,3 +1,9 @@
+.webinar_page > .page_content {
+  padding-block: 79px;
+padding-inline: 270px;
+}
+
+
 .webinar_back{
   display: flex;
   align-items: center;

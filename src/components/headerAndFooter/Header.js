@@ -7,7 +7,6 @@ import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
 import { useState } from "react";
 
 function Header() {
@@ -52,7 +51,7 @@ function Header() {
         >
           <Link to="/">
             <div className="sideMenuLogo">
-            <img  src={logo} alt={"logo"} />
+              <img src={logo} alt={"logo"} />
             </div>
           </Link>
           <List className="sideMenuList">
@@ -101,7 +100,7 @@ function Header() {
                 Webinars
               </Link>
 
-              <Link className="side_menu_item_link" to="/about/projects">
+              <Link className="side_menu_item_link" to="/about/news/projects">
                 Projects
               </Link>
 
@@ -113,7 +112,7 @@ function Header() {
               <div className="menti mentis">Careers</div>
             </Divider>
             <div className="sideMenuSection">
-            <Link className="side_menu_item_link" to="/about/careers/jobs">
+              <Link className="side_menu_item_link" to="/about/careers/jobs">
                 Jobs
               </Link>
               <Link
@@ -122,15 +121,166 @@ function Header() {
               >
                 Internships
               </Link>
-
             </div>
           </List>
           <Divider />
-          <List>
-            {["All mail", "Trash", "Spam"].map((text, index) => (
-              <ListItem key={text} disablePadding></ListItem>
-            ))}
+          <div className="sideMenutitle">Services</div>
+          <List className="sideMenuList">
+            <Divider textAlign="center">
+              <div className="menti mentis">
+                {" "}
+                <Link to="/services/solutions/development" className="mentihe">
+                  Development
+                </Link>
+              </div>
+            </Divider>
+            <div className="sideMenuSection">
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/development/online-stores-development"
+              >
+                Online Stores Development
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/development/consultation-and-maintenance"
+              >
+                Consultation & Maintenance
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/development/outsourcing"
+              >
+                Outsourcing
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/development/e-payment-integrations"
+              >
+                E-Payment Integrations
+              </Link>
+            </div>
+            <Divider textAlign="center">
+              <div className="menti mentis">
+                {" "}
+                <Link to="/services/solutions/operations" className="mentihe">
+                  Operations
+                </Link>
+              </div>
+            </Divider>
+            <div className="sideMenuSection">
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/operations/operations-solutions"
+              >
+                Operations Solutions
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/operation/technical-support-agents"
+              >
+                Technical Support Agents
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/operation/projects-operations-bot"
+              >
+                Projects Operations (BOT)
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/operation/logistics-management"
+              >
+                Logistics Management
+              </Link>
+            </div>
+            <Divider textAlign="center">
+              <div className="menti mentis">
+                {" "}
+                <Link to="/services/solutions/marketing" className="mentihe">
+                  Marketing
+                </Link>
+              </div>
+            </Divider>
+
+            <div className="sideMenuSection">
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/marketing/content-marketing"
+              >
+                Content Marketing
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/marketing/marketing-strategy"
+              >
+                Marketing Strategy
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/marketing/market-analysis"
+              >
+                Market Analysis
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/marketing/video-production"
+              >
+                Video Production
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/marketing/integrated-marketing"
+              >
+                Product Development
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/marketing/integrated-marketing"
+              >
+                Integrated Marketing
+              </Link>
+
+              <Link
+                className="side_menu_item_link"
+                to="/services/solutions/marketing/outsourcing"
+              >
+                Outsourcing
+              </Link>
+            </div>
           </List>
+          <Divider />
+          <div className="sideMenuSection">
+            <div style={{padding:"15px"}} className="menti mentis">
+              {" "}
+              <Link to="/blog" className="mentihe">
+                Blog
+              </Link>
+            </div>
+            <div style={{padding:"15px"}} className="menti mentis">
+              {" "}
+              <Link className="mentihe">
+                -
+              </Link>
+            </div>
+            <div style={{padding:"15px"}} className="menti mentis">
+              {" "}
+              <Link to="/media" className="mentihe">
+                Media
+              </Link>
+            </div>
+          </div>
         </Box>
       </SwipeableDrawer>
       <div className="navList">
@@ -167,14 +317,10 @@ function Header() {
                   <Link to="/about">Who we are?</Link>
                 </div>
                 <div>
-                  <Link to="/about/our-company/stakeholders">
-                    Stakeholders
-                  </Link>
+                  <Link to="/about/our-company/stakeholders">Stakeholders</Link>
                 </div>
                 <div>
-                  <Link to="/about/our-company/our-partners">
-                    Our Partners
-                  </Link>
+                  <Link to="/about/our-company/our-partners">Our Partners</Link>
                 </div>
                 <div>
                   <Link to="/about/our-company/successful-cases">
@@ -195,7 +341,7 @@ function Header() {
                   <Link to="/about/webinars">Webinars </Link>
                 </div>
                 <div>
-                  <Link to="/about/projects">Projects </Link>
+                  <Link to="/about/news/projects">Projects </Link>
                 </div>
                 <div>
                   <Link to="/about/news/e-book">E-Book </Link>
@@ -319,11 +465,6 @@ function Header() {
               </div>
               <div className="mencol">
                 <div className="menti"></div>
-                <div>
-                  <Link to="/services/solutions/marketing/product-development">
-                    Content Marketing
-                  </Link>
-                </div>
                 <div>
                   <Link to="/services/solutions/marketing/integrated-marketing">
                     Product Development

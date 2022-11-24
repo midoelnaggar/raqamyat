@@ -5,8 +5,8 @@ function NoPage() {
 
   return (
     <Motion>
-        <div  style={{display:"flex",justifyContent:"center"}}>
-      <img src={NotFound} alt="404" />
+        <div   style={{display:"flex",justifyContent:"center"}}>
+      <img className="noPage" src={NotFound} alt="404" />
       </div>
     </Motion>
   );

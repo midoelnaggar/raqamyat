@@ -42,7 +42,8 @@
   margin-top: 30px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .maskImage {
@@ -54,6 +55,7 @@
   margin-inline: -6.5px;
   height: 328px;
   width: 362px;
+  margin: 9px;
 }
 
 .maskImage > .back {

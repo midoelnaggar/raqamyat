@@ -65,7 +65,6 @@
     rgba(239, 2, 32, 1) 70%,
     rgba(255, 255, 255, 0) 70%
   );
-
   border-image-slice: 1;
   padding-bottom: 3px;
 }
@@ -124,7 +123,7 @@
   left: 0;
   width: 831px;
   height: 362px;
-  margin-top: 6px;
+  margin-top: 2px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 20px 50px #00000026;
   border-radius: 25px;
@@ -140,7 +139,6 @@
   position: absolute;
   left: 0;
   width: 1540px;
-  margin-top: 6px;
   height: 644px;
   margin-top: 2px;
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -166,7 +164,7 @@
     rgba(239, 2, 32, 1) 70%,
     rgba(255, 255, 255, 0) 70%
   );
-
+  margin-top: 0px;
   border-image-slice: 1;
   padding-bottom: 3px;
 }

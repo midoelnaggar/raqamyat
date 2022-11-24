@@ -16,6 +16,7 @@ import EBookPage from "./components/about/EBookPage";
 import BlogPage from "./components/BlogPage";
 import PressPage from "./components/about/PressPage";
 import SuccessfulCasesPage from "./components/about/SuccessfulCasesPage";
+import ProjectsPage from "./components/about/ProjectsPage";
 import { SnackbarProvider } from "notistack";
 import WebinarsPage from "./components/about/WebinarsPage";
 import WebinarPage from "./components/about/WebinarPage";
@@ -35,14 +36,8 @@ function App() {
   const [data, setData] = useState(null);
   const [webinar, setWebinar] = useState({});
   const [job, setJob] = useState({});
-  const {
-    isFetching,
-    loading,
-    apiUrl,
-    bgColor,
-    setIsFetching,
-    setLoading,
-  } = usePathname({ location: location.pathname });
+  const { isFetching, loading, apiUrl, bgColor, setIsFetching, setLoading } =
+    usePathname({ location: location.pathname });
   const width = useWindowSize();
   useEffect(() => {
     if (apiUrl != null) {
@@ -70,12 +65,12 @@ function App() {
     <div
       className="app"
       style={{
-        scale: (width >= 1024
-          ? width / 1903
-          : (width <= 1023) & (width > 768)
+        scale: (width >= 1200
+          ? width / 1920
+          : (width <= 1199) & (width > 768)
           ? width / 820
           : (width <= 767) & (width > 320)
-          ? width / 390
+          ? width / 820
           : width / 320
         ).toString(),
       }}
@@ -108,6 +103,10 @@ function App() {
                     <Route
                       path="our-company/our-partners"
                       element={<OurPartnersPage data={data} />}
+                    />
+                    <Route
+                      path="news/projects"
+                      element={<ProjectsPage data={data} />}
                     />
                     <Route
                       path="our-company/successful-cases"

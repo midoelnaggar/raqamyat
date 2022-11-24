@@ -1,6 +1,5 @@
 .articles {
-  margin-top: 170px;
-  padding-bottom: 170px;
+  margin-block: 170px;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -10,8 +10,6 @@
   padding-bottom: 80px;
   border-top-right-radius: 5em;
   border-bottom-right-radius: 5em;
-
-
 }
 
 .leftComp {
@@ -59,7 +57,6 @@
 }
 
 .rightComp >p {
-    padding-top:-100px;
     max-width: 867px;
     font-size: 20px;
     font-weight: 400;

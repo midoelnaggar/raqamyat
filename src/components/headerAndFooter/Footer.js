@@ -1,4 +1,5 @@
 import "../../styles/Footer.css";
+import moment from "moment/moment";
 import Subscribe from "../homePage/Subscribe";
 import logo from "../../img/logo.png";
 import li from "../../img/Mask Group 5.png";
@@ -132,7 +133,7 @@ function Footer() {
       </div>
       <div className="divider" />
       <div className="cw">
-        <div>Copyright © 2022 All Rights Reserved</div>
+        <div>Copyright © {moment().year()} All Rights Reserved</div>
         <span>
           <a
             href="https://raqamyat.com/terms"

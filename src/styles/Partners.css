@@ -10,10 +10,8 @@
 .partnersGroup {
   padding-top:35px;
   display: flex;
-
 }
 
 .partnersGroup > img {
   padding-inline-end: 35px;
-
 }
