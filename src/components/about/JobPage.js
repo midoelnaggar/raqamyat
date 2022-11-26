@@ -1,11 +1,8 @@
 import "../../styles/JobsPage.css";
 import PageHeader from "../PageHeader";
 import Motion from "../Motion";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ArrowBack from "@mui/icons-material/ArrowBack";
-import { useEffect } from "react";
-import Loading from "../../Loading";
-
 function JobPage({ data }) {
   const navigate = useNavigate();
 

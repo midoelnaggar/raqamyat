@@ -181,21 +181,21 @@ function Header() {
 
               <Link
                 className="side_menu_item_link"
-                to="/services/solutions/operation/technical-support-agents"
+                to="/services/solutions/operations/technical-support-agents"
               >
                 Technical Support Agents
               </Link>
 
               <Link
                 className="side_menu_item_link"
-                to="/services/solutions/operation/projects-operations-bot"
+                to="/services/solutions/operations/projects-operations-bot"
               >
                 Projects Operations (BOT)
               </Link>
 
               <Link
                 className="side_menu_item_link"
-                to="/services/solutions/operation/logistics-management"
+                to="/services/solutions/operations/logistics-management"
               >
                 Logistics Management
               </Link>
@@ -420,17 +420,17 @@ function Header() {
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/operation/technical-support-agents">
+                  <Link to="/services/solutions/operations/technical-support-agents">
                     Technical Support Agents
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/operation/projects-operations-bot">
+                  <Link to="/services/solutions/operations/projects-operations-bot">
                     Projects Operations (BOT)
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/operation/logistics-management">
+                  <Link to="/services/solutions/operations/logistics-management">
                     Logistics Management
                   </Link>
                 </div>

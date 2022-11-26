@@ -1,3 +1,9 @@
+
+@media (min-width: 1200px) {
+  .drawer{
+    display: none;
+  }
+}
 /*App */
 @media (max-width: 1199px) {
   .app {
@@ -22,6 +28,8 @@
   }
 
   /*Header*/
+
+
   .header > .logo {
     text-align: left;
     scale: 1.5;
@@ -564,6 +572,7 @@ padding-inline: 45px;
 }
 
 
+
 /* Ebook*/
 
 
@@ -584,5 +593,152 @@ padding-inline: 45px;
   padding-bottom: 60px;
 }
 
+
+  /* Jobs */
+
+  .jobsTop {
+    justify-content: center;
+    align-items:flex-start;
+  }
+  .jobs-left {
+    padding: 0 !important;
+  }
+
+  .jobs-left > .lp {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #2a2a2a;
+    max-width: 450px;
+    margin-inline-end: 70px;
+    padding-bottom: 0px;
+    margin-bottom: 0;
+  }
+
+  .jobs-right {
+    padding: 0;
+  }
+  .jobs-right > img {
+    width: 350px;
+    
+  }
+
+
+  .sub_container {
+    margin-bottom: 50px;
+  }
+  .sub {
+    margin: 0;
+  }
+  .sub-left {
+    margin: 20px;
+  }
+
+  .sub-right > img {
+    margin: -50px;
+    width: 450px;
+  }
+
+
+  .jobsPage >.sub_container {
+    margin: 0;
+    padding: 20px 45px;
+  }
+  
+  .jobsPage >.sub_container > .jobs {
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Soluition */
+
+  .solution {
+    margin-block: 70px;
+    margin-inline: 0px;
+  }
+  
+  .solution_title_and_desc {
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: center;
+  }
+
+  .solution_desc {
+    margin-inline-start: 0px;
+    margin-block-start: 20px;
+    text-align: center;
+  }
+
+  .solution_subs {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    margin-inline: 80px;
+  }
+
+  .border {
+    margin: 25px;
+  }
+
+  .solution_sub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  width: 183px;
+  height: 179px;
+  background-color: #F0F6FF;
+  border-radius: 60px 20px;
+}
+
+
+/* Service */
+.service{
+  padding-inline: 0;
+}
+.service_hero {
+  justify-content: center;
+  align-items:flex-start;
+}
+.service-left {
+  padding: 0 !important;
+}
+
+.service-left > .lp {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #2a2a2a;
+  max-width: 450px;
+  margin-inline-end: 70px;
+  padding-bottom: 0px;
+  margin-bottom: 0;
+}
+
+.service-right {
+  padding: 0;
+}
+.service-right > img {
+  width: 350px;
+  margin-top: 125px;
+}
+
+
+.sub_container_osd > .sub > div > img {
+  margin-inline-start: 10px !important;
+}
+.sub_container_osd > .sub_inverted > div > img {
+  margin-inline-end: 10px;
+}
+
+
+/* Outsourcing */
+
+.outsourcing_sections {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-block-start: 170px;
+  padding-inline: 78px;
+}
 
 }

@@ -41,6 +41,7 @@
 
 .solution_subs {
   display: flex;
+  flex-wrap: wrap;
   margin-inline: -55px;
   justify-content: center;
   padding-top: 50px;
@@ -51,7 +52,7 @@
   height: 179px;
   background: transparent linear-gradient(180deg, #0034DE 0%, #0093DE 100%) 0% 0% no-repeat padding-box;
   border-radius: 60px 20px;
-  margin-inline: 55px;
+  margin: 25px;
   padding: 2px;
 }
 .solution_sub {

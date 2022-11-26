@@ -1,16 +1,16 @@
-import "../../../../styles/OnlineStoresDevelopmentPage.css";
+import "../../../../styles/TechnicalSupportAgentsPage.css";
 import PageHeader from "../../../PageHeader";
 import Service from "../../Service";
 import { Link } from "react-router-dom";
 import arrow from "../../../../img/Icon ionic-ios-arrow-round-forward.png";
 
-export default function OnlineStoresDevelopmentPage({ data }) {
+export default function TechnicalSupportAgentsPage({ data }) {
   return (
     <div>
       <PageHeader
-        title="Development"
+        title="Operations"
         breadcrumbs={
-          "Services / Solutions / Development / Online Stores Development"
+          "Services / Solutions / Operations / Technical Support Agents"
         }
       />
       <Service data={data} />
@@ -44,26 +44,44 @@ export default function OnlineStoresDevelopmentPage({ data }) {
               </div>
             </div>
           ) : index === data.sub.length - 1 ? (
-            <div style={{ backgroundColor: `${index % 2 !== 0 && `white`}`}} className="last_section">
+            <div
+              style={{ backgroundColor: `${index % 2 !== 0 && `white`}` }}
+              className="last_section"
+            >
               <span>
                 {section?.title}
                 <span />
               </span>
               <div className="last_section_sub">
-                {section?.sub.map((card,index)=>{
-                  return(
-                    <div className="last_section_sub_card">
-                      <div className="last_section_sub_card_number">
-                        {("0"+(index+1)).slice(-2)}
-                      </div>
-                      <div className="last_section_sub_card_title">
-                        {card?.title}
-                      </div>
-                      <div className="last_section_sub_card_subtitle">
-                        {card?.description}
-                      </div>
+                {section?.sub.map((card, index) => {
+                  return (
+                    <div style={{flexDirection:"row"}} className="first_section">
+                    <span>
+                      {section.title}
+                      <span />
+                    </span>
+                    <div className="solution_subs">
+                      {Array.isArray(section?.sub) &&
+                        section.sub.map((s) => {
+                          return (
+                            <div className="border">
+                              <div
+                                style={{ justifyContent: "center" }}
+                                className="solution_sub"
+                              >
+                                <img
+                                  style={{ marginTop: 0, marginBottom: "10px" }}
+                                  src={s?.image}
+                                  alt={s?.title}
+                                />
+                                <div style={{ fontWeight: 500 }}>{s?.title}</div>
+                              </div>
+                            </div>
+                          );
+                        })}
                     </div>
-                  )
+                  </div>
+                  );
                 })}
               </div>
             </div>
@@ -83,7 +101,7 @@ export default function OnlineStoresDevelopmentPage({ data }) {
                   <p className="lp">{section?.description}</p>
                   <button className="lmbtn">
                     <Link to="/contact-us">
-                      Let’s Talk! <img alt="ar" src={arrow} />
+                      Get Quote! <img alt="ar" src={arrow} />
                     </Link>
                   </button>
                 </div>

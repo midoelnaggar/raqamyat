@@ -13,76 +13,104 @@ function usePathname({ location }) {
       setIsFetching(true);
       setBgColor("homebg");
       document.title = "Raqamyat";
-    } else if (location === "/about") {
+    }
+    
+    else if (location === "/about") {
       setLoading(true);
       setApiUrl("https://newraq.raqamyat.com/public/api/about");
       setIsFetching(true);
       setBgColor("aboutbg");
       document.title = "About Us";
-    } else if (location === "/contact-us") {
+    }
+    
+    else if (location === "/contact-us") {
       setLoading(true);
       setApiUrl("https://newraq.raqamyat.com/public/api/contact");
       setIsFetching(true);
       setBgColor("contactbg");
       document.title = "Contact Us";
-    } else if (location === "/about/our-company/stakeholders") {
+    }
+    
+    else if (location === "/about/our-company/stakeholders") {
       setLoading(true);
       setApiUrl("https://newraq.raqamyat.com/public/api/stakeholders");
       setIsFetching(true);
       setBgColor("contactbg");
       document.title = "Stakeholders";
-    } else if (location === "/about/our-company/our-partners") {
+    }
+    
+    else if (location === "/about/our-company/our-partners") {
       setLoading(true);
       setApiUrl("https://newraq.raqamyat.com/public/api/partners");
       setIsFetching(true);
       setBgColor("contactbg");
       document.title = "Our Partners";
-    } else if (location === "/about/careers/jobs") {
+    }
+    
+    else if (location === "/about/careers/jobs") {
       setLoading(true);
       setApiUrl("https://newraq.raqamyat.com/public/api/jobs");
       setIsFetching(true);
       setBgColor("contactbg");
       document.title = "Jobs";
-    } else if (location === "/about/careers/jobs/:slug") {
+    }
+    
+    else if (location === "/about/careers/jobs/:slug") {
       setLoading(true);
       setIsFetching(true);
       setBgColor("contactbg");
       document.title = "Jobs";
-    } else if (location === "/blog") {
+    }
+    
+    else if (location === "/blog") {
       setLoading(true);
       setApiUrl("https://newraq.raqamyat.com/public/api/blogs");
       setIsFetching(true);
       setBgColor("insidebg");
       document.title = "Blog";
-    } else if (location === "/about/news/e-book") {
+    }
+    
+    else if (location === "/about/news/e-book") {
       setBgColor("contactbg");
       document.title = "E-Book";
-    } else if (location === "/about/news/press") {
+    }
+    
+    else if (location === "/about/news/press") {
       setLoading(true);
       setApiUrl("https://newraq.raqamyat.com/public/api/blogs");
       setIsFetching(true);
       setBgColor("insidebg");
       document.title = "Press";
-    } else if (location === "/about/our-company/successful-cases") {
+    }
+    
+    else if (location === "/about/our-company/successful-cases") {
       setBgColor("insidebg");
       document.title = "Successful Cases";
-    } else if (location === "/about/webinars") {
+    }
+    
+    else if (location === "/about/webinars") {
       setLoading(true);
       setApiUrl("https://newraq.raqamyat.com/public/api/webinars");
       setIsFetching(true);
       setBgColor("insidebg");
       document.title = "Webinars";
-    } else if (location === "/about/webinars/:webinarName") {
+    }
+    
+    else if (location === "/about/webinars/:webinarName") {
       setLoading(true);
       setApiUrl("https://newraq.raqamyat.com/public/api/webinars");
       setIsFetching(true);
       setBgColor("insidebg");
       document.title = "Webinars";
-    } else if (location === "/about/news/e-book") {
+    }
+    
+    else if (location === "/about/news/e-book") {
       setBgColor("contactbg");
       document.title = "E-Book";
     }
+
     //services
+    
     ////development
     else if (location === "/services/solutions/development") {
       setLoading(true);
@@ -91,7 +119,10 @@ function usePathname({ location }) {
       );
       setIsFetching(true);
       setBgColor("insidebg");
-    } else if (
+      document.title = "Development";
+    }
+    
+    else if (
       location === "/services/solutions/development/online-stores-development"
     ) {
       setLoading(true);
@@ -100,7 +131,10 @@ function usePathname({ location }) {
       );
       setIsFetching(true);
       setBgColor("contactbg");
-    } else if (
+      document.title = "Online Stores Development";
+    }
+    
+    else if (
       location ===
       "/services/solutions/development/consultation-and-maintenance"
     ) {
@@ -110,14 +144,21 @@ function usePathname({ location }) {
       );
       setIsFetching(true);
       setBgColor("contactbg");
-    } else if (location === "/services/solutions/development/outsourcing") {
+      document.title = "Consultation & Support";
+    }
+    
+    else if (location === "/services/solutions/development/outsourcing") {
       setLoading(true);
       setApiUrl(
         "https://newraq.raqamyat.com/public/api/services?slug=outsourcing"
       );
       setIsFetching(true);
       setBgColor("contactbg");
-    } else if (
+      document.title = "Outsourcing";
+
+    }
+    
+    else if (
       location === "/services/solutions/development/e-payment-integrations"
     ) {
       setLoading(true);
@@ -126,7 +167,10 @@ function usePathname({ location }) {
       );
       setIsFetching(true);
       setBgColor("contactbg");
+      document.title = "E-Payment Integrations";
     }
+
+
     ////operation
     else if (location === "/services/solutions/operations") {
       setLoading(true);
@@ -135,7 +179,11 @@ function usePathname({ location }) {
       );
       setIsFetching(true);
       setBgColor("insidebg");
-    } else if (
+      document.title = "Operations";
+
+    }
+    
+    else if (
       location === "/services/solutions/operations/operations-solutions"
     ) {
       setLoading(true);
@@ -144,8 +192,25 @@ function usePathname({ location }) {
       );
       setIsFetching(true);
       setBgColor("contactbg");
+      document.title = "Operations Solutions";
+
     }
-  }, [location, setApiUrl, setIsFetching, setLoading, setBgColor]);
+
+    else if (
+      location === "/services/solutions/operations/technical-support-agents"
+    ) {
+      setLoading(true);
+      setApiUrl(
+        "https://newraq.raqamyat.com/public/api/services?slug=technical-support-agents"
+      );
+      setIsFetching(true);
+      setBgColor("contactbg");
+      document.title = "Operations Solutions";
+
+    }
+
+
+  }, [location , setApiUrl, setIsFetching, setLoading, setBgColor]);
 
   return {
     isFetching,

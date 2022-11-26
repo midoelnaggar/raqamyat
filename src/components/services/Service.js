@@ -13,11 +13,7 @@ function Service({ data }) {
                   <span />
                 </span>
               <p className="lp">
-                Raqamyat is a growing, dynamic company that offers exciting
-                opportunities to its employees. At Raqamyat, every day brings
-                new challenges. Every day brings opportunities to learn and
-                thrive. Every day brings new chances to wow our clients. We work
-                hard but we play hard too.
+                {data?.description}
               </p>
               <button className="lmbtn">
                 <Link to="/contact-us">
