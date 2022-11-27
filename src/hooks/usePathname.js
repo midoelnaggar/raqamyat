@@ -209,6 +209,19 @@ function usePathname({ location }) {
 
     }
 
+    else if (
+      location === "/services/solutions/operations/projects-operations-bot"
+    ) {
+      setLoading(true);
+      setApiUrl(
+        "https://newraq.raqamyat.com/public/api/services?slug=projects-operations-bot"
+      );
+      setIsFetching(true);
+      setBgColor("contactbg");
+      document.title = "Projects Operations (BOT)";
+
+    }
+
 
   }, [location , setApiUrl, setIsFetching, setLoading, setBgColor]);
 

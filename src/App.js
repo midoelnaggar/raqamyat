@@ -32,6 +32,7 @@ import usePathname from "./hooks/usePathname";
 import JobPage from "./components/about/JobPage";
 import useWindowSize from "./hooks/useWindowSize";
 import TechnicalSupportAgentsPage from "./components/services/solutions/operation/TechnicalSupportAgentsPage";
+import ProjectsOperationsPage from "./components/services/solutions/operation/ProjectsOperationsPage";
 
 function App() {
   const location = useLocation();
@@ -53,7 +54,7 @@ function App() {
       } catch (err) {
         console.error(err);
       }
-    } 
+    }
   }, [location.pathname, setIsFetching, setLoading, apiUrl, loading]);
 
   useEffect(() => {
@@ -171,8 +172,14 @@ function App() {
                           path="operations-solutions"
                           element={<OperationsSolutionsPage data={data} />}
                         />
-                        <Route path="technical-support-agents" element={<TechnicalSupportAgentsPage data={data} />} />
-                        <Route path="projects-operations-bot" />
+                        <Route
+                          path="technical-support-agents"
+                          element={<TechnicalSupportAgentsPage data={data} />}
+                        />
+                        <Route
+                          path="projects-operations-bot"
+                          element={<ProjectsOperationsPage data={data} />}
+                        />
                         <Route path="logistics-management" />
                       </Route>
                       <Route path="marketing">

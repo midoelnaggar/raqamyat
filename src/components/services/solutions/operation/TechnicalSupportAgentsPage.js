@@ -17,7 +17,7 @@ export default function TechnicalSupportAgentsPage({ data }) {
       {Array.isArray(data?.sub) &&
         data.sub.map((section, index) => {
           return index === 0 ? (
-            <div className="first_section">
+            <div  className="first_section">
               <span>
                 {section.title}
                 <span />
@@ -44,47 +44,34 @@ export default function TechnicalSupportAgentsPage({ data }) {
               </div>
             </div>
           ) : index === data.sub.length - 1 ? (
-            <div
-              style={{ backgroundColor: `${index % 2 !== 0 && `white`}` }}
-              className="last_section"
-            >
-              <span>
-                {section?.title}
-                <span />
-              </span>
-              <div className="last_section_sub">
-                {section?.sub.map((card, index) => {
-                  return (
-                    <div style={{flexDirection:"row"}} className="first_section">
-                    <span>
-                      {section.title}
-                      <span />
-                    </span>
-                    <div className="solution_subs">
-                      {Array.isArray(section?.sub) &&
-                        section.sub.map((s) => {
-                          return (
-                            <div className="border">
-                              <div
-                                style={{ justifyContent: "center" }}
-                                className="solution_sub"
-                              >
-                                <img
-                                  style={{ marginTop: 0, marginBottom: "10px" }}
-                                  src={s?.image}
-                                  alt={s?.title}
-                                />
-                                <div style={{ fontWeight: 500 }}>{s?.title}</div>
-                              </div>
-                            </div>
-                          );
-                        })}
-                    </div>
-                  </div>
-                  );
-                })}
-              </div>
+            <div style={{ display:"flex",flexDirection:"row",justifyContent:"center",paddingInline:"280px"}} className="last_section">
+              <div className="last_section">
+            <span style={{maxWidth:"none"}}>
+              {section?.title}
+              <span />
+            </span>
+            <p style={{maxWidth:"880px"}} className="lp">{section?.description}</p>
             </div>
+            <div style={{marginInline:"0px"}} className="last_section_sub">
+              {section?.sub.map((s)=>{
+                return(
+                  <div className="border" style={{marginInline:"33px"}}>
+                        <div
+                          style={{ justifyContent: "center" }}
+                          className="solution_sub"
+                        >
+                          <img
+                            style={{ marginTop: 0, marginBottom: "10px" }}
+                            src={s?.image}
+                            alt={s?.title}
+                          />
+                          <div style={{ fontWeight: 500 }}>{s?.title}</div>
+                        </div>
+                      </div>
+                )
+              })}
+            </div>
+          </div>
           ) : (
             <div className="sub_container sub_container_osd">
               <div
