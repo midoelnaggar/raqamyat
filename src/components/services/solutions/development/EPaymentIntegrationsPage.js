@@ -4,9 +4,11 @@ import PageHeader from "../../../PageHeader";
 import Service from "../../Service";
 import { Link } from "react-router-dom";
 import arrow from "../../../../img/Icon ionic-ios-arrow-round-forward.png";
+import Motion from "../../../Motion";
 
 export default function EPaymentIntegrationsPage({ data }) {
   return (
+    <Motion>
     <div style={{ paddingBottom: "170px" }}>
       <PageHeader
         title="Development"
@@ -56,11 +58,12 @@ export default function EPaymentIntegrationsPage({ data }) {
             {Array.isArray(data.sub) &&
               data?.sub[1].sub.map((parterLogo) => {
                 return (
-                  <img className="partenerLogo" src={parterLogo?.image}  />               );
+                  <img className="partenerLogo" src={parterLogo?.image} alt="partenerLogo"  />               );
               })}
           </div>
         </div>
       )}
     </div>
+    </Motion>
   );
 }

@@ -202,7 +202,6 @@ function Header() {
             </div>
             <Divider textAlign="center">
               <div className="menti mentis">
-                {" "}
                 <Link to="/services/solutions/marketing" className="mentihe">
                   Marketing
                 </Link>
@@ -233,21 +232,21 @@ function Header() {
 
               <Link
                 className="side_menu_item_link"
-                to="/services/solutions/marketing/video-production"
+                to="/services/solutions/marketing/video-production-services"
               >
                 Video Production
               </Link>
 
               <Link
                 className="side_menu_item_link"
-                to="/services/solutions/marketing/integrated-marketing"
+                to="/services/solutions/marketing/product-development"
               >
                 Product Development
               </Link>
 
               <Link
                 className="side_menu_item_link"
-                to="/services/solutions/marketing/integrated-marketing"
+                to="/services/solutions/marketing/integrated-marketing-solutions"
               >
                 Integrated Marketing
               </Link>
@@ -260,21 +259,51 @@ function Header() {
               </Link>
             </div>
           </List>
-          <Divider />
+            <Divider textAlign="center">
+              <div className="menti mentis">
+                <Link
+                  to="/services/solutions/business-type/retail-e-commerce"
+                  className="mentihe"
+                >
+                  Business Type
+                </Link>
+              </div>
+            </Divider>
+            <div className="sideMenuSection">
+            <Link  className="side_menu_item_link" to="/services/business-type/retail-e-commerce">
+              Retail E-Commerce
+            </Link>
+
+            <Link  className="side_menu_item_link" to="/services/business-type/fmcg-and-restaurats-e-commerce">
+              FMCG & Restaurants E-Commerce
+            </Link>
+
+            <Link  className="side_menu_item_link" to="/services/business-type/healthcare-e-commerce">
+              Healthcare E-Commerce
+            </Link>
+
+            <Link  className="side_menu_item_link" to="/services/business-type/education-e-commerce">
+              Education E-Commerce
+            </Link>
+
+            <Link  className="side_menu_item_link" to="/services/business-type/e-commerce-for-special-projects">
+              E-Commerce for Special Projects
+            </Link>
+            </div>
+            <Divider />
+
           <div className="sideMenuSection">
-            <div style={{padding:"15px"}} className="menti mentis">
+            <div style={{ padding: "15px" }} className="menti mentis">
               {" "}
               <Link to="/blog" className="mentihe">
                 Blog
               </Link>
             </div>
-            <div style={{padding:"15px"}} className="menti mentis">
+            <div style={{ padding: "15px" }} className="menti mentis">
               {" "}
-              <Link className="mentihe">
-                -
-              </Link>
+              <Link className="mentihe">-</Link>
             </div>
-            <div style={{padding:"15px"}} className="menti mentis">
+            <div style={{ padding: "15px" }} className="menti mentis">
               {" "}
               <Link to="/media" className="mentihe">
                 Media
@@ -458,7 +487,7 @@ function Header() {
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/marketing/video-production">
+                  <Link to="/services/solutions/marketing/video-production-services">
                     Video Production
                   </Link>
                 </div>
@@ -466,12 +495,12 @@ function Header() {
               <div className="mencol">
                 <div className="menti"></div>
                 <div>
-                  <Link to="/services/solutions/marketing/integrated-marketing">
+                  <Link to="/services/solutions/marketing/product-development">
                     Product Development
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/marketing/integrated-marketing">
+                  <Link to="/services/solutions/marketing/integrated-marketing-solutions">
                     Integrated Marketing
                   </Link>
                 </div>
@@ -488,27 +517,27 @@ function Header() {
               </div>
               <div className="menlcol">
                 <div>
-                  <Link to="/services/business-type/business-type/retail-e-commerce">
+                  <Link to="/services/business-type/retail-e-commerce">
                     Retail E-Commerce
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/business-type/business-type/fmcg-and-restaurats-e-commerce">
+                  <Link to="/services/business-type/fmcg-and-restaurats-e-commerce">
                     FMCG & Restaurants E-Commerce
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/business-type/business-type/healthcare-e-commerce">
+                  <Link to="/services/business-type/healthcare-e-commerce">
                     Healthcare E-Commerce
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/business-type/business-type/education-e-commerce">
+                  <Link to="/services/business-type/education-e-commerce">
                     Education E-Commerce
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/business-type/business-type/e-commerce-for-special-projects">
+                  <Link to="/services/business-type/e-commerce-for-special-projects">
                     E-Commerce for Special Projects
                   </Link>
                 </div>

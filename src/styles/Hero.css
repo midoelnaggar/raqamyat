@@ -99,4 +99,5 @@
   position: absolute;
   right: 150px;
   top: 140px;
+  z-index: -1;
 }

@@ -33,105 +33,15 @@
   display: flex;
   justify-content: center;
   margin-top: 60px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-.articles>.posts>.post {
-  position: relative;
-  width: 474px;
-  height: 504px;
-  background: transparent linear-gradient(334deg, #ffffff 0%, #effaff 100%) 0% 0% no-repeat padding-box;
-  box-shadow: 0px 20px 50px #0093de17;
-  border-radius: 25px;
-  margin-inline: 44px;
+.articles>.posts> .post {
+margin-inline: 40px;
+
 }
 
-.articles>.posts>.post>.tag {
-  position: absolute;
-  background-color: #ff6b7e;
-  padding-top: -110px;
-  padding-inline: 11px;
-  left: 17px;
-  top: 19px;
-  border-radius: 8px;
-}
-
-.articles>.posts>.post>.tag>h1 {
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-size: 10px;
-  font-weight: 400;
-  color: white;
-}
-
-.articles>.posts>.post>.date {
-  color: #a2a2a2;
-  font-size: 12px;
-  font-weight: 400;
-  margin-left: 40px;
-  padding-top: 31px;
-}
-
-.articles>.posts>.post>.title {
-  max-width: 264px;
-  color: #2a2a2a;
-  font-size: 23px;
-  font-weight: 500;
-  line-height: 25px;
-  margin-left: 40px;
-  padding-top: 10px;
-}
-
-.articles>.posts>.post>.caption {
-  max-width: 394px;
-  color: #a2a2a2;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 15px;
-  margin-left: 40px;
-  padding-top: 10px;
-}
-
-.articles>.posts>.post>.footer {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-.articles>.posts>.post>.footer>div>.by {
-  margin-top: 20px;
-
-  color: #a2a2a2;
-  font-size: 12px;
-  margin-left: 40px;
-  font-weight: 400;
-}
-
-.articles>.posts>.post>.footer>div>.auther {
-  color: #2a2a2a;
-  font-size: 12px;
-  margin-left: 40px;
-  font-weight: 500;
-}
-
-.articles>.posts>.post>.footer>.rmb {
-  display: flex;
-  align-items: center;
-  padding-right: 40px;
-  text-decoration: none;
-}
-
-.articles>.posts>.post>.footer>.rmb>.readmore {
-  color: #027ab7;
-  font-size: 14px;
-  font-weight: 400;
-  padding-right: 5px;
-}
-
-.articles>.posts>.post>.footer>.rmb>.arrow {
-  width: 14px;
-  height: 9px;
-  padding-top: 2px;
-}
 
 .articles>.posts>.edged {
   opacity: 0.4;

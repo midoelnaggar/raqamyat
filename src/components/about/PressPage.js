@@ -1,4 +1,4 @@
-import React from "react";
+import {useState,useEffect} from "react";
 import "../../styles/BlogPage.css";
 import PageHeader from "../PageHeader";
 import { Link } from "react-router-dom";
@@ -7,6 +7,8 @@ import seachIcon from "../../img/search-icon.svg";
 import Motion from "../Motion";
 
 function PressPage({ data }) {
+  const [search, setSearch] = useState("");
+  const [filteredPosts, setFilteredPosts] = useState([]);
   const keywords = [
     "Retail Ecommerce",
     "Ecommerce Trends",
@@ -16,6 +18,23 @@ function PressPage({ data }) {
     "Mobile Wallets",
   ];
 
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  useEffect(() => {
+    if (Array.isArray(data)) {
+      setFilteredPosts(
+        data.filter((post) => {
+          return (
+            post.title.toLowerCase().includes(search.toLowerCase()) ||
+            post.details.toLowerCase().includes(search.toLowerCase())
+          );
+        })
+      );
+    }
+  }, [search,data]);
+
   return (
     <Motion>
       <div className="blog_page">
@@ -24,82 +43,58 @@ function PressPage({ data }) {
         </div>
         <div className="page_content">
           <div className="blog_left">
-            {Array.isArray(data) &&
-              data.map((post) => {
-                return (
-                  <div key={post?.title} className={"post"}>
-                    <img src={post.image} alt="post" />
-                    <div className="tag">
-                      <h1>{post.type}</h1>
-                    </div>
-                    <div className="date">{post.date}</div>
-                    <div className="title">{post.title}</div>
-                    <div className="caption">{post.details}</div>
-                    <div className="footer">
-                      <div>
-                        <div className="by">by</div>
-                        <div className="auther">{post.by}</div>
+            {Array.isArray(data) & (filteredPosts === [])
+              ? data.map((post) => {
+                  return (
+                    <div key={post?.title} className={"post"}>
+                      <img src={post.image} alt="post" />
+                      <div className="tag">
+                        <h1>{post.type}</h1>
                       </div>
-                      <Link to={`/article/${post.slug}`} className="rmb">
-                        <div className="readmore">Read more </div>
-                        <img className="arrow" src={BlueArrow} alt="arrow" />
-                      </Link>
-                    </div>
-                  </div>
-                );
-              })}
-            {Array.isArray(data) &&
-              data.map((post) => {
-                return (
-                  <div key={post?.title} className={"post"}>
-                    <img src={post.image} alt="post" />
-                    <div className="tag">
-                      <h1>{post.type}</h1>
-                    </div>
-                    <div className="date">{post.date}</div>
-                    <div className="title">{post.title}</div>
-                    <div className="caption">{post.details}</div>
-                    <div className="footer">
-                      <div>
-                        <div className="by">by</div>
-                        <div className="auther">{post.by}</div>
+                      <div className="date">{post.date}</div>
+                      <div className="title">{post.title}</div>
+                      <div className="caption">{post.details}</div>
+                      <div className="post_footer">
+                        <div>
+                          <div className="by">by</div>
+                          <div className="auther">{post.by}</div>
+                        </div>
+                        <Link to={`/article/${post.slug}`} className="rmb">
+                          <div className="readmore">Read more </div>
+                          <img className="arrow" src={BlueArrow} alt="arrow" />
+                        </Link>
                       </div>
-                      <Link to={`/article/${post.slug}`} className="rmb">
-                        <div className="readmore">Read more </div>
-                        <img className="arrow" src={BlueArrow} alt="arrow" />
-                      </Link>
                     </div>
-                  </div>
-                );
-              })}
-            {Array.isArray(data) &&
-              data.map((post) => {
-                return (
-                  <div key={post?.title} className={"post"}>
-                    <img src={post.image} alt="post" />
-                    <div className="tag">
-                      <h1>{post.type}</h1>
-                    </div>
-                    <div className="date">{post.date}</div>
-                    <div className="title">{post.title}</div>
-                    <div className="caption">{post.details}</div>
-                    <div className="footer">
-                      <div>
-                        <div className="by">by</div>
-                        <div className="auther">{post.by}</div>
+                  );
+                })
+              : Array.isArray(filteredPosts) & (filteredPosts !== []) &&
+                filteredPosts.map((post) => {
+                  return (
+                    <div key={post?.title} className={"post"}>
+                      <img src={post.image} alt="post" />
+                      <div className="tag">
+                        <h1>{post.type}</h1>
                       </div>
-                      <Link to={`/article/${post.slug}`} className="rmb">
-                        <div className="readmore">Read more </div>
-                        <img className="arrow" src={BlueArrow} alt="arrow" />
-                      </Link>
+                      <div className="date">{post.date}</div>
+                      <div className="title">{post.title}</div>
+                      <div className="caption">{post.details}</div>
+                      <div className="post_footer">
+                        <div>
+                          <div className="by">by</div>
+                          <div className="auther">{post.by}</div>
+                        </div>
+                        <Link to={`/article/${post.slug}`} className="rmb">
+                          <div className="readmore">Read more </div>
+                          <img className="arrow" src={BlueArrow} alt="arrow" />
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
           </div>
           <div className="blog_right">
             <div className="search">
-              <input placeholder="Search" />
+              <input onChange={handleSearch} placeholder="Search" />
               <img src={seachIcon} className="sbtn" alt="search" />
             </div>
             <div className="categories">

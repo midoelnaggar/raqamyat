@@ -97,7 +97,7 @@
   }
 
   .drawer {
-    padding: 50px;
+    padding: 20px;
     font-family: "Gotham";
     padding-bottom: 8px;
   }
@@ -741,4 +741,49 @@ padding-inline: 45px;
   padding-inline: 78px;
 }
 
+
+
+
+.business_type_hero {
+  display: flex;
+  margin-inline: 64px;
+  
 }
+
+.business_type_hero > h1 {
+
+  max-width: 803px;
+
+}
+
+
+.business_type_hero > div > .lp {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #2a2a2a;
+  max-width: 630px;
+  margin-inline-end: 0px;
+}
+
+.business_type_hero > div > .sp {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #2a2a2a;
+  max-width: 630px;
+  margin-inline-end: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+}
+
+

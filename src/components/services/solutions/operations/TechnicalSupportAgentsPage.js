@@ -3,9 +3,11 @@ import PageHeader from "../../../PageHeader";
 import Service from "../../Service";
 import { Link } from "react-router-dom";
 import arrow from "../../../../img/Icon ionic-ios-arrow-round-forward.png";
+import Motion from "../../../Motion";
 
 export default function TechnicalSupportAgentsPage({ data }) {
   return (
+    <Motion>
     <div>
       <PageHeader
         title="Operations"
@@ -100,5 +102,6 @@ export default function TechnicalSupportAgentsPage({ data }) {
           );
         })}
     </div>
+    </Motion>
   );
 }

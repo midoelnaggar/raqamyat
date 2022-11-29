@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import mark1 from "../../img/circle-note.png";
 import mark2 from "../../img/line.png";
 import lines from "../../img/(lines).png";
+import { Link } from "react-router-dom";
 
 function Hero({data}) {
   const [first, setFirst] = useState("");
@@ -37,10 +38,10 @@ function Hero({data}) {
           {rem}
         </p>
         <div className="kmbtn">
-          <a href="/">
+          <Link to="/about">
             <p>Know More</p>
             <div alt="ar" />
-          </a>
+          </Link>
         </div>
       </div>
       <div>

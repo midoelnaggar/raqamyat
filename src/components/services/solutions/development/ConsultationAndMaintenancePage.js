@@ -4,9 +4,11 @@ import PageHeader from "../../../PageHeader";
 import Service from "../../Service";
 import { Link } from "react-router-dom";
 import arrow from "../../../../img/Icon ionic-ios-arrow-round-forward.png";
+import Motion from "../../../Motion";
 
 export default function ConsultationAndMaintenancePage({ data }) {
   return (
+    <Motion>
     <div>
       <PageHeader
         title="Development"
@@ -44,5 +46,6 @@ export default function ConsultationAndMaintenancePage({ data }) {
         })
         }
     </div>
+    </Motion>
   );
 }

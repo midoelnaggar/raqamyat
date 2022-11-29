@@ -60,7 +60,7 @@
   box-shadow: -10px 10px 50px #0093de1a;
   border-radius: 50px 25px;
   text-align: center;
-  margin: 8px;
+  margin: 20px;
 }
 
 .outsourcing_sections > .cards > .card > img {
@@ -87,4 +87,75 @@
   margin: 40px;
   scale: 0.9;
 }
+
+.strategyDraw {
+  position: relative;
+  align-self: stretch;
+  height: 318px;
+  margin-top: -100px;
+  margin-bottom: 150px;
+  top: 0;
+
+}
+.firstArrow{
+  position: absolute;
+  left: -34.3px;
+}
+
+.strategyDraw_card {
+width: 170px;
+height: 77px;
+background: transparent linear-gradient(299deg, #FFFFFF 0%, #EFFAFF 100%) 0% 0% no-repeat padding-box;
+box-shadow: -10px 10px 50px #0093DE1A;
+border-radius: 50px 25px;
+font-size: 14px;
+color: #2A2A2A;
+line-height: 19px;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+font-weight: 500;
+padding: 25px;
+position: absolute;
+}
+
+.secondArrow{
+  position: absolute;
+  left: 570px;
+  bottom: 30px;
+
+}
+
+.thirdArrow {
+  position: absolute;
+  left: 790px;
+  bottom: 5px;
+  scale: 0.9;
+
+}
+
+.fourthArrow {
+  position: absolute;
+  left: 1020px;
+  bottom: 30px;
+
+
+}
+
+.fifthArrow {
+  position: absolute;
+  left: 1250px;
+  bottom: 5px;
+  scale: 0.9;
+
+
+}
+
+.lastArrow{
+  position: absolute;
+  left: 1464px;
+  top:30px
+}
+
 

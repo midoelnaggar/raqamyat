@@ -4,7 +4,7 @@ import Motion from "../Motion";
 import { Link } from "react-router-dom";
 import arrow from "../../img/Icon ionic-ios-arrow-round-forward.png";
 import image from "../../img/Group 7.png";
-function JobsPage({ data, setJob }) {
+function JobsPage({ data }) {
   return (
     <>
       <Motion>
@@ -59,7 +59,6 @@ function JobsPage({ data, setJob }) {
                       <h1>{job?.title}</h1>
                       <p>Please click Apply Now for more details.</p>
                       <Link
-                        onClick={setJob(job)}
                         to={`/about/careers/jobs/${job?.slug}`}
                       >
                         <div className="btn">

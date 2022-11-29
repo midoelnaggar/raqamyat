@@ -19,7 +19,7 @@ function Epayment ({ data }) {
         <p className="sp">{data?.sub_description}</p>
         <p className="lp">{data?.description}</p>
         <button className="lmbtn">
-          <Link to="">
+        <Link to="/about/our-company/our-partners">
             Learn More
             <img alt="ar" src={arrow} />
           </Link>

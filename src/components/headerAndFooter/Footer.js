@@ -1,4 +1,5 @@
 import "../../styles/Footer.css";
+import { Link } from "react-router-dom";
 import moment from "moment/moment";
 import Subscribe from "../homePage/Subscribe";
 import logo from "../../img/logo.png";
@@ -22,7 +23,7 @@ function Footer() {
           <img className="footer_logo" src={logo} alt="logo" />
           <p>
             Raqamyat is an Egyptian multimillion Fintech shareholding company
-            licensed <a href="/">Read More</a>
+            licensed <Link to="/">Read More</Link>
           </p>
           <div className="socialmedia">
             <a
@@ -69,19 +70,19 @@ function Footer() {
           </span>
           <div className="links">
             <div>
-              <a href="/">Blog</a>
+              <Link to="/blog">Blog</Link>
             </div>
             <div>
-              <a href="/">Media</a>
+              <Link to="/media">Media</Link>
             </div>
             <div>
-              <a href="/">Careers</a>
+              <Link to="/about/careers/jobs">Careers</Link>
             </div>
             <div>
-              <a href="/">Our Company</a>
+              <Link to="/about">Our Company</Link>
             </div>
             <div>
-              <a href="/">News</a>
+              <Link to="about//news/press">News</Link>
             </div>
           </div>
         </div>
@@ -92,13 +93,13 @@ function Footer() {
           </span>
           <div className="links">
             <div>
-              <a href="/">Development</a>
+              <Link to="/services/solutions/development">Development</Link>
             </div>
             <div>
-              <a href="/">Operations</a>
+              <Link to="/services/solutions/operations">Operations</Link>
             </div>
             <div>
-              <a href="/">Marketing</a>
+              <Link to="/services/solutions/marketing">Marketing</Link>
             </div>
           </div>
         </div>
@@ -135,20 +136,16 @@ function Footer() {
       <div className="cw">
         <div>Copyright © {moment().year()} All Rights Reserved</div>
         <span>
-          <a
-            href="https://raqamyat.com/terms"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/terms-and-privacy"
           >
             Terms
-          </a>
-          <a
-            href="https://raqamyat.com/policy"
-            target="_blank"
-            rel="noopener noreferrer"
+          </Link>
+          <Link
+            to="/terms-and-privacy"
           >
             Privacy
-          </a>
+          </Link>
         </span>
       </div>
     </div>

@@ -1,13 +1,15 @@
-import React from 'react'
-import PageHeader from '../../../PageHeader'
-import Solution from '../Solution'
+import React from "react";
+import Motion from "../../../Motion";
+import PageHeader from "../../../PageHeader";
+import Solution from "../Solution";
 
-export default function MarketingPage({data}) {
+export default function MarketingPage({ data }) {
   return (
-    <div>
-        <PageHeader title="Marketing" breadcrumbs={"Services / Solutions / Marketing"} />
-        <Solution data={data} />
-    </div>
-  )
+    <Motion>
+      <div className="head_bg">
+      <PageHeader title="Solutions" breadcrumbs={"Services / Solutions / Marketing"} />
+      </div>
+      <Solution data={data} />
+    </Motion>
+  );
 }
-

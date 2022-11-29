@@ -4,20 +4,22 @@ import PageHeader from "../../../PageHeader";
 import Service from "../../Service";
 import { Link } from "react-router-dom";
 import arrow from "../../../../img/Icon ionic-ios-arrow-round-forward.png";
+import Motion from "../../../Motion";
 
-export default function OutsourcingPage({ data }) {
+export default function OutsourcingMarketingPage({ data }) {
   return (
+    <Motion>
     <div style={{paddingBottom:"170px"}}>
       <PageHeader
-        title="Development"
-        breadcrumbs={"Services / Solutions / Development / Outsourcing"}
+        title="Marketing"
+        breadcrumbs={"Services / Solutions / Marketing / Outsourcing"}
       />
       <Service data={data} />
       {Array.isArray(data?.sub) &&
         data?.sub.map((section, index) => {
           return (
             <div className="outsourcing_sections">
-              <h1>
+              <h1 style={{maxWidth:"900px"}}>
                 <span>
                   {section?.title}
                   <span />
@@ -44,5 +46,6 @@ export default function OutsourcingPage({ data }) {
           );
         })}
     </div>
+    </Motion>
   );
 }

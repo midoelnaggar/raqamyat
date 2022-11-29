@@ -164,17 +164,6 @@ function WebinarsPage({ data, setWebinar }) {
                               {webinar.company}
                             </div>
                           </div>
-                          <div>
-                            <Link
-                              to={`/about/webinars/${webinar.name
-                                .replace(/\s+/g, "-")
-                                .toLowerCase()}`}
-                            >
-                              <button type="submit" className="sbtn">
-                                Register Now
-                              </button>
-                            </Link>
-                          </div>
                         </div>
                       </div>
                     </div>

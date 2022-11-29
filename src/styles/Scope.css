@@ -2,11 +2,13 @@
   position: relative;
   background-color: white;
   padding-bottom: 100px;
+  z-index: 0;
 }
 .scope > .shapes {
   position: absolute;
   top: 21px;
   left: 174px;
+  z-index: -1;
 }
 .scope > .head {
   position: relative;
@@ -101,7 +103,9 @@
   
   .lmbtn > a {
     color: white;
+    height: inherit;
     text-decoration: none;
+    align-items: center;
     display: flex;
     justify-content: center;
   }

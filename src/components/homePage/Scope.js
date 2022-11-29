@@ -24,8 +24,9 @@ function Scope({ data }) {
               <img src={card?.image} alt="Operations" />
               <h1>{card?.title}</h1>
               <p>{card?.description}</p>
+
               <button className="lmbtn">
-                <Link to="">
+                <Link to={"/services/solutions/"+card?.title.toLowerCase()}>
                   Learn More
                   <img alt="ar" src={arrow} />
                 </Link>

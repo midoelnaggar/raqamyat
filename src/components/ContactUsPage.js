@@ -89,6 +89,7 @@ function ContactUsPage({ data }) {
                     variant="standard"
                     style={{ paddingBlockEnd: "20px" }}
                     value={form.email}
+                    type="email"
                     onChange={handleEmailChange}
                   />
                   <TextField

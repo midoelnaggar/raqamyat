@@ -29,11 +29,9 @@ function Articles() {
                 <h1>{post.type}</h1>
               </div>
               <div className="date">{post.date}</div>
-              <div className="title">
-                {post.title}
-              </div>
+              <div className="title">{post.title}</div>
               <div className="caption">{post.details}</div>
-              <div className="footer">
+              <div className="post_footer">
                 <div>
                   <div className="by">by</div>
                   <div className="auther">{post.by}</div>
@@ -48,8 +46,8 @@ function Articles() {
         })}
       </div>
       <div className="kmbtn">
-        <Link>
-          <p>Know More</p>
+        <Link to="/blog">
+          <p>All Articles</p>
           <div alt="ar" />
         </Link>
       </div>

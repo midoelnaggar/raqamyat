@@ -1,0 +1,7 @@
+.terms_and_privacy{
+    padding: 120px 440px;
+}
+
+.terms_and_privacy > div {
+    padding-block-end: 50px;
+}
