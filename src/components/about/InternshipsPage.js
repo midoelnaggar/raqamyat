@@ -31,8 +31,7 @@ export default function InternshipsPage() {
   };
 
   const handleInternClick = () => {
-    window.scrollTo({top: 2450,  behavior: 'smooth'});
-
+document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",block:"start"})
   };
 
   const submit = (e) => {

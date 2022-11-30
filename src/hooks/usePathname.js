@@ -16,7 +16,7 @@ function usePathname({ location, setData }) {
 
   useEffect(() => {
     if(location.startsWith("/services/business-type/")) {
-      window.scrollTo({top: 1160,  behavior: 'smooth'});
+      document.querySelector(".singleBT").scrollIntoView({behavior:"smooth",block:"start"})
     }else{
       window.scrollTo({top: 0, behavior: 'smooth'});
     }
@@ -327,6 +327,19 @@ function usePathname({ location, setData }) {
       setIsFetching(true);
       setBgColor("insidebg");
       document.title = "Retail";
+    }
+
+    /* Media */
+    else if (
+      location === "/media"
+    ) {
+      setBtLoading(true);
+      setApiUrl(
+        "https://newraq.raqamyat.com/public/api/services?slug=media"
+      );
+      setIsFetching(true);
+      setBgColor("insidebg");
+      document.title = "Media";
     }
 
     /* Terms & Privacy */

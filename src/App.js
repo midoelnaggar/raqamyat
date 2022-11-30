@@ -45,6 +45,7 @@ import OutsourcingMarketingPage from "./components/services/solutions/marketing/
 import BusinessTypePage from "./components/services/BusinessType/BusinessTypePage";
 import SingleBusinessType from "./components/services/BusinessType/SingleBusinessType";
 import TermsAndPrivacyPage from "./components/TermsAndPrivacyPage";
+import MediaPage from "./components/MediaPage";
 
 function App() {
   const location = useLocation();
@@ -117,6 +118,8 @@ function App() {
                       element={<ContactUsPage data={data} />}
                     />
                     <Route path="blog" element={<BlogPage data={data} />} />
+                    <Route path="media" element={<MediaPage data={data} />} />
+
                     <Route
                       path="terms-and-privacy"
                       element={<TermsAndPrivacyPage data={data} />}

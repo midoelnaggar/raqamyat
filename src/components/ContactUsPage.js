@@ -1,4 +1,7 @@
 import "../styles/ContactUsPage.css";
+import { useState } from "react";
+import { useSnackbar } from "notistack";
+import axios from "axios";
 import {
   TextField,
   FormControl,
@@ -10,9 +13,13 @@ import img3 from "../img/Group 162641.png";
 import map from "../img/Mask Group 3.png";
 import PageHeader from "./PageHeader";
 import Motion from "./Motion";
-import { useState } from "react";
+
+
 
 function ContactUsPage({ data }) {
+
+  const { enqueueSnackbar } = useSnackbar();
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -47,6 +54,29 @@ function ContactUsPage({ data }) {
       message: e.target.value,
     });
   };
+
+  const submit = (e) => {
+    e.preventDefault();
+    try {
+      axios
+        .post("https://newraq.raqamyat.com/public/api/contactStore", form)
+        .then((res) => {
+          if (res.status === 200) {
+            enqueueSnackbar("Your message has been sen successfully", {
+              variant: "success",
+            });
+            setForm({});
+          } else {
+            enqueueSnackbar("Something went wrong!", {
+              variant: "error",
+            });
+          }
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
 
 
   return (
@@ -116,7 +146,7 @@ function ContactUsPage({ data }) {
                     onChange={handleMessageChange}
                   />
                 </FormControl>
-                <div className="sbtn">
+                <div className="sbtn" onClick={submit}>
                   <div>Submit</div>
                 </div>
               </div>

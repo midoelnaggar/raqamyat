@@ -21,10 +21,12 @@ export default function OperationsSolutionsPage({ data }) {
         data.sub.map((section, index) => {
           return index === 0 ? (
             <div className="first_section">
+              <h1>
               <span>
                 {section.title}
                 <span />
               </span>
+              </h1>
               <div className="solution_subs">
                 {Array.isArray(section?.sub) &&
                   section.sub.map((s) => {

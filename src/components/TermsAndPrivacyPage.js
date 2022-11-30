@@ -12,7 +12,7 @@ export default function TermsAndPrivacyPage({ data }) {
         />
       </div>
       <div className="terms_and_privacy">
-        {Array.isArray(data.sub) &&
+        {Array.isArray(data?.sub) &&
           data.sub.map((section) => {
             return (
               <div>
