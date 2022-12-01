@@ -46,11 +46,13 @@ import BusinessTypePage from "./components/services/BusinessType/BusinessTypePag
 import SingleBusinessType from "./components/services/BusinessType/SingleBusinessType";
 import TermsAndPrivacyPage from "./components/TermsAndPrivacyPage";
 import MediaPage from "./components/MediaPage";
+import SingleBlog from "./components/services/SingleBlog";
 
 function App() {
   const location = useLocation();
   const [data, setData] = useState(null);
   const [webinar, setWebinar] = useState({});
+  const [slug, setSlug] = useState("")
   const {
     btLoading,
     setBtLoading,
@@ -61,14 +63,14 @@ function App() {
     bgColor,
     setIsFetching,
     setLoading,
-  } = usePathname({ location: location.pathname, setData });
+  } = usePathname({ location: location.pathname, setData, slug });
 
   const width = useWindowSize();
 
   useEffect(() => {
     if (apiUrl != null) {
       try {
-        axios.get(apiUrl, { timeout: 500000 }).then((res) => {
+        axios.get(apiUrl).then((res) => {
           if (res.data.data) {
             setData(res.data.data);
             setIsFetching(false);
@@ -117,7 +119,11 @@ function App() {
                       path="contact-us"
                       element={<ContactUsPage data={data} />}
                     />
-                    <Route path="blog" element={<BlogPage data={data} />} />
+                    <Route path="blog" >
+                      <Route index element={<BlogPage data={data} setSlug={setSlug} />} />
+                      <Route path=":slug" element={<SingleBlog data={data}  />} />
+                    </Route>
+                    <Route path="media" element={<MediaPage data={data} />} />
                     <Route path="media" element={<MediaPage data={data} />} />
 
                     <Route

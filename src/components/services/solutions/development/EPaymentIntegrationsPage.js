@@ -17,7 +17,7 @@ export default function EPaymentIntegrationsPage({ data }) {
         }
       />
       <Service data={data} />
-      {data?.sub[0] && (
+      {Array.isArray(data?.sub) && Array.isArray(data?.sub) && data?.sub[0] &&  (
         <div className="outsourcing_sections">
           <h1>
             <span>
@@ -28,13 +28,13 @@ export default function EPaymentIntegrationsPage({ data }) {
           <p className="lp">{data?.sub[0].description}</p>
           <div className="cards">
             {Array.isArray(data.sub) &&
-              data?.sub[0].sub.map((card) => {
+              data?.sub[0]?.sub?.map((card) => {
                 return (
-                  <div key={card?.title} className="card">
+                  <div style={{position:"relative",padding:"20px 30px",width:"300px",height:"200px",justifyContent:"normal"}} key={card?.title} className="card">
                     <h1>{card?.title}</h1>
-                    <p>{card?.description}</p>
-                    <button className="lmbtn">
-                      <Link to="">
+                    <p style={{color:"#2a2a2a",marginTop:0}}>{card?.description}</p>
+                    <button style={{position:"absolute", bottom:"30px" }}  className="lmbtn">
+                      <Link  to="/contact-us">
                         Learn More
                         <img alt="ar" src={arrow} />
                       </Link>
@@ -49,14 +49,14 @@ export default function EPaymentIntegrationsPage({ data }) {
         <div style={{background:"white"}} className="outsourcing_sections">
           <h1>
             <span>
-              {data?.sub[1].title}
+              {data?.sub[1]?.title}
               <span />
             </span>
           </h1>
-          <p className="lp">{data?.sub[1].description}</p>
+          <p className="lp">{data?.sub[1]?.description}</p>
           <div  className="cards">
             {Array.isArray(data.sub) &&
-              data?.sub[1].sub.map((parterLogo) => {
+              data?.sub[1]?.sub?.map((parterLogo) => {
                 return (
                   <img className="partenerLogo" src={parterLogo?.image} alt="partenerLogo"  />               );
               })}

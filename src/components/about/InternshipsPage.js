@@ -77,7 +77,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                 Design, Video Production, and Content Creation initiatives.
               </p>
               <button className="lmbtn">
-                <Link to="">
+                <Link to="/contact-us">
                   Apply Now <img alt="ar" src={arrow} />
                 </Link>
               </button>

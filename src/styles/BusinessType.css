@@ -51,7 +51,7 @@
   flex-wrap: wrap;
   margin:15px;
   justify-content: center;
-  padding-bottom: 150px;
+  padding-block: 75px;
 }
 
 .business_type_tabs > a {

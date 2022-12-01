@@ -1,18 +1,12 @@
 import { useEffect, useState } from "react";
 
-function usePathname({ location, setData }) {
+function usePathname({ location, setData, slug }) {
   const [isFetching, setIsFetching] = useState(null);
   const [loading, setLoading] = useState(null);
   const [btLoading, setBtLoading] = useState(null);
   const [bgColor, setBgColor] = useState(null);
   const [apiUrl, setApiUrl] = useState(null);
 
-  useEffect(() => {
-    return () => {
-      setLoading(true);
-      setData(null);
-    };
-  }, [setData]);
 
   useEffect(() => {
     if(location.startsWith("/services/business-type/")) {
@@ -21,7 +15,8 @@ function usePathname({ location, setData }) {
       window.scrollTo({top: 0, behavior: 'smooth'});
     }
     
-
+    console.log("slug: "+ slug)
+    console.log(apiUrl)
     if (location === "/") {
       setLoading(true);
       setApiUrl("https://newraq.raqamyat.com/public/api/home");
@@ -68,7 +63,14 @@ function usePathname({ location, setData }) {
       document.title = "Internships";
     } else if (location === "/blog") {
       setLoading(true);
-      setApiUrl("https://newraq.raqamyat.com/public/api/blogs");
+      setApiUrl("https://newraq.raqamyat.com/public/api/jobs?type=blog");
+      setIsFetching(true);
+      setBgColor("insidebg");
+      document.title = "Blog";
+    } 
+    else if (location === `/blog/${slug}`) {
+      setLoading(true);
+      setApiUrl(`https://newraq.raqamyat.com/public/api/jobs/show?slug=${slug}`);
       setIsFetching(true);
       setBgColor("insidebg");
       document.title = "Blog";
@@ -77,7 +79,7 @@ function usePathname({ location, setData }) {
       document.title = "E-Book";
     } else if (location === "/about/news/press") {
       setLoading(true);
-      setApiUrl("https://newraq.raqamyat.com/public/api/blogs");
+      setApiUrl("https://newraq.raqamyat.com/public/api/jobs?type=press");
       setIsFetching(true);
       setBgColor("insidebg");
       document.title = "Press";
@@ -298,7 +300,7 @@ function usePathname({ location, setData }) {
       setIsFetching(true);
       setBgColor("insidebg");
 
-      document.title = "Retail";
+      document.title = "Restaurants";
     } else if (location === "/services/business-type/healthcare-e-commerce") {
       setBtLoading(true);
       setApiUrl(
@@ -307,7 +309,7 @@ function usePathname({ location, setData }) {
       setIsFetching(true);
       setBgColor("insidebg");
 
-      document.title = "Retail";
+      document.title = "Healthcare";
     } else if (location === "/services/business-type/education-e-commerce") {
       setBtLoading(true);
       setApiUrl(
@@ -316,7 +318,7 @@ function usePathname({ location, setData }) {
       setIsFetching(true);
       setBgColor("insidebg");
 
-      document.title = "Retail";
+      document.title = "Education";
     } else if (
       location === "/services/business-type/e-commerce-for-special-projects"
     ) {
@@ -326,7 +328,7 @@ function usePathname({ location, setData }) {
       );
       setIsFetching(true);
       setBgColor("insidebg");
-      document.title = "Retail";
+      document.title = "Special Projects";
     }
 
     /* Media */
@@ -357,7 +359,7 @@ function usePathname({ location, setData }) {
     }
 
 
-  }, [location, setData]);
+  }, [location, setData, slug, apiUrl]);
 
   return {
     isFetching,

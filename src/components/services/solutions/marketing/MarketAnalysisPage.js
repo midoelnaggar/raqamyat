@@ -15,7 +15,7 @@ export default function MarketAnalysisPage({ data }) {
           breadcrumbs={"Services / Solutions / Marketing / Market Analysis"}
         />
         <Service data={data} />
-        {data?.sub[0] && (
+        {Array.isArray(data?.sub) && data?.sub[0] &&  (
           <div className="outsourcing_sections">
             <h1 style={{ maxWidth: "none" }}>
               <span>
@@ -29,15 +29,15 @@ export default function MarketAnalysisPage({ data }) {
                 data?.sub[0].sub.map((card) => {
                   return (
                     <div
-                      style={{
-                        width: "534px",
-                        alignItems: "flex-start",
-                        textAlign: "start",
-                        padding: "15px 30px",
-                      }}
-                      key={card?.title}
-                      className="card"
-                    >
+                    style={{
+                      paddingInline: "50px",
+                      width: "434px",
+                      alignItems: "flex-start",
+                      textAlign: "start",
+                    }}
+                    key={card?.title}
+                    className="card"
+                  >
                       <h1
                         style={{
                           fontSize: "32px",
@@ -50,7 +50,7 @@ export default function MarketAnalysisPage({ data }) {
                       </h1>
                       <p>{card?.description}</p>
                       <button className="lmbtn">
-                        <Link to="">
+                        <Link to="/contact-us">
                           Learn More
                           <img alt="ar" src={arrow} />
                         </Link>

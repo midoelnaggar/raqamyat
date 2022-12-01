@@ -3,7 +3,7 @@ import Motion from "./Motion";
 import "../styles/MediaPage.css";
 import PageHeader from "./PageHeader";
 import ReactPlayer from "react-player";
-import { Modal, Box, Divider } from "@mui/material";
+import { Modal, Box } from "@mui/material";
 import playIcon from "../img/play.svg";
 
 export default function MediaPage({ data }) {
@@ -19,14 +19,14 @@ export default function MediaPage({ data }) {
     Array.isArray(data?.sub) &&
       setImages(
         (data?.sub?.filter((x) => {
-          if (x.title === "images") return true;
+         return x.title === "images" ? true : false
         }))[0]?.sub
       );
 
     Array.isArray(data?.sub) &&
       setVideos(
         (data?.sub?.filter((x) => {
-          if (x.title === "videos") return true;
+          return x.title === "videos" ? true : false
         }))[0]?.sub
       );
   }, [data]);
@@ -87,7 +87,7 @@ export default function MediaPage({ data }) {
       </div>
       <div className="media">
         <div style={{ display: "flex", flexWrap: "wrap" }} className="images">
-          {Array.isArray(images) & (selected !== "videos") &&
+          {Array.isArray(images) && (selected !== "videos") &&
             images.map((image) => {
               return (
                 <img
@@ -96,12 +96,13 @@ export default function MediaPage({ data }) {
                     handleOpenImageModal(image?.description);
                   }}
                   src={image?.image}
+                  alt="image_thumb"
                 />
               );
             })}
         </div>
         <div style={{ display: "flex", flexWrap: "wrap" }} className="videos">
-          {Array.isArray(videos) & (selected !== "images") &&
+          {Array.isArray(videos) && (selected !== "images") &&
             videos.map((video) => {
               return (
                 <div className="video_thumb_container">
@@ -112,7 +113,7 @@ export default function MediaPage({ data }) {
                       handleOpenVideoModal(video?.description);
                     }}
                     src={video?.image}
-                    alt={video?.description}
+                    alt="video_thumb"
                   />
                 </div>
               );

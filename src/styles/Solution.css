@@ -50,32 +50,69 @@
 .border {
   width: 183px;
   height: 179px;
-  background: transparent linear-gradient(180deg, #0034DE 0%, #0093DE 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #0034de 0%, #0093de 100%) 0%
+    0% no-repeat padding-box;
   border-radius: 60px 20px;
   margin: 34px;
   padding: 2px;
 }
 .solution_sub {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 183px;
   height: 179px;
-  background-color: #F0F6FF;
+  background-color: #f0f6ff;
   border-radius: 60px 20px;
 }
 
 .solution_sub > img {
   margin-block: 30px;
-  width: 56px;
+  height: 56px;
 }
 
 .solution_sub > div {
-    align-self: center;
-    text-align: center;
+  align-self: center;
+  text-align: center;
   color: #2a2a2a;
   font-size: 14px;
   line-height: 19px;
   font-weight: 500;
-  max-width: 130px;
+  max-width: 150px;
 }
+
+.bosta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding-block: 100px;
+  margin-block-end: 170px;
+}
+
+.bosta > .bosta_bg {
+  position: absolute;
+  height: 90%;
+}
+
+.bosta > h1 {
+font-size: 38px;
+letter-spacing: -1.7px;
+font-weight: 600;
+text-align: center;
+margin: 0;
+}
+ 
+
+.bosta > p {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+  margin-block: 25px;
+  max-width: 649px;
+  
+  }
+   

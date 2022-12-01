@@ -23,7 +23,7 @@ function Footer() {
           <img className="footer_logo" src={logo} alt="logo" />
           <p>
             Raqamyat is an Egyptian multimillion Fintech shareholding company
-            licensed <Link to="/">Read More</Link>
+            licensed <Link to="/about">Read More</Link>
           </p>
           <div className="socialmedia">
             <a
@@ -82,7 +82,7 @@ function Footer() {
               <Link to="/about">Our Company</Link>
             </div>
             <div>
-              <Link to="about//news/press">News</Link>
+              <Link to="about/news/press">News</Link>
             </div>
           </div>
         </div>
@@ -139,12 +139,7 @@ function Footer() {
           <Link
             to="/terms-and-privacy"
           >
-            Terms
-          </Link>
-          <Link
-            to="/terms-and-privacy"
-          >
-            Privacy
+            Terms - Privacy
           </Link>
         </span>
       </div>

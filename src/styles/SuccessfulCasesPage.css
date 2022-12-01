@@ -47,8 +47,13 @@
   display: flex;
   flex-direction: row-reverse;
 }
+.cases > div >img {
+  flex: 50%;
+}
 
-
+.cases > div > .case_info {
+  flex: 50%;
+}
 
 .case_info {
   padding: 122px 100px;

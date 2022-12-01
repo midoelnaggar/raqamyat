@@ -6,17 +6,13 @@ import BlueArrow from "../img/Icon ionic-ios-arrow-round-forwardb.png";
 import seachIcon from "../img/search-icon.svg";
 import Motion from "./Motion";
 
-function BlogPage({ data }) {
+function BlogPage({ data, setSlug }) {
   const [search, setSearch] = useState("");
-  const [filteredPosts, setFilteredPosts] = useState([]);
-  const keywords = [
-    "Retail Ecommerce",
-    "Ecommerce Trends",
-    "Online Shopping",
-    "Fintech Investment",
-    "Epayment",
-    "Mobile Wallets",
-  ];
+  const [filteredPosts, setFilteredPosts] = useState([]);  
+
+const handleReadMore = (a) =>{
+  setSlug(a)
+}
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -27,8 +23,8 @@ function BlogPage({ data }) {
       setFilteredPosts(
         data.filter((post) => {
           return (
-            post.title.toLowerCase().includes(search.toLowerCase()) ||
-            post.details.toLowerCase().includes(search.toLowerCase())
+            post?.title?.toLowerCase().includes(search?.toLowerCase()) ||
+            post?.details?.toLowerCase().includes(search?.toLowerCase())
           );
         })
       );
@@ -46,7 +42,7 @@ function BlogPage({ data }) {
             {Array.isArray(data) & (filteredPosts === [])
               ? data.map((post) => {
                   return (
-                    <div key={post?.title} className={"post"}>
+                    <div  key={post?.title} className={"post"}>
                       <img src={post.image} alt="post" />
                       <div className="tag">
                         <h1>{post.type}</h1>
@@ -59,7 +55,7 @@ function BlogPage({ data }) {
                           <div className="by">by</div>
                           <div className="auther">{post.by}</div>
                         </div>
-                        <Link to={`/article/${post.slug}`} className="rmb">
+                        <Link onClick={()=>handleReadMore(post.slug)} to={`/article/${post.slug}`} className="rmb">
                           <div className="readmore">Read more </div>
                           <img className="arrow" src={BlueArrow} alt="arrow" />
                         </Link>
@@ -83,7 +79,7 @@ function BlogPage({ data }) {
                           <div className="by">by</div>
                           <div className="auther">{post.by}</div>
                         </div>
-                        <Link to={`/article/${post.slug}`} className="rmb">
+                        <Link onClick={()=>handleReadMore(post.slug)} to={`/blog/${post.slug}`} className="rmb">
                           <div className="readmore">Read more </div>
                           <img className="arrow" src={BlueArrow} alt="arrow" />
                         </Link>
@@ -103,9 +99,10 @@ function BlogPage({ data }) {
                 <div className="category">
                   <div className="category_name">All</div>
                   <div className="category_count">
-                    <div>33</div>
+                    <div>{filteredPosts === [] ? data?.length  : filteredPosts?.length }</div>
                   </div>
                 </div>
+                {/* 
                 <div className="category">
                   <div className="category_name">EPayment</div>
                   <div className="category_count">
@@ -130,6 +127,7 @@ function BlogPage({ data }) {
                     </div>
                   );
                 })}
+                */}
               </div>
             </div>
           </div>

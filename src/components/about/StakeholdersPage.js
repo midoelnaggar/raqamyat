@@ -38,7 +38,7 @@ function StakeholdersPage({ data }) {
                 </h1>
                 <p className="lp">{sub?.description}</p>
                 <button className="lmbtn">
-                  <Link to="">
+                  <Link to="/contact-us">
                     Let’s Talk! <img alt="ar" src={arrow} />
                   </Link>
                 </button>

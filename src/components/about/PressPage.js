@@ -9,14 +9,7 @@ import Motion from "../Motion";
 function PressPage({ data }) {
   const [search, setSearch] = useState("");
   const [filteredPosts, setFilteredPosts] = useState([]);
-  const keywords = [
-    "Retail Ecommerce",
-    "Ecommerce Trends",
-    "Online Shopping",
-    "Fintech Investment",
-    "Epayment",
-    "Mobile Wallets",
-  ];
+
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -27,8 +20,8 @@ function PressPage({ data }) {
       setFilteredPosts(
         data.filter((post) => {
           return (
-            post.title.toLowerCase().includes(search.toLowerCase()) ||
-            post.details.toLowerCase().includes(search.toLowerCase())
+            post?.title?.toLowerCase().includes(search?.toLowerCase()) ||
+            post?.details?.toLowerCase().includes(search?.toLowerCase())
           );
         })
       );
@@ -97,15 +90,16 @@ function PressPage({ data }) {
               <input onChange={handleSearch} placeholder="Search" />
               <img src={seachIcon} className="sbtn" alt="search" />
             </div>
-            <div className="categories">
+                        <div className="categories">
               <div className="categories_title">CATEGORIES</div>
               <div className="categories_list">
                 <div className="category">
                   <div className="category_name">All</div>
                   <div className="category_count">
-                    <div>33</div>
+                    <div>{filteredPosts === [] ? data?.length  : filteredPosts?.length }</div>
                   </div>
                 </div>
+                {/* 
                 <div className="category">
                   <div className="category_name">EPayment</div>
                   <div className="category_count">
@@ -130,6 +124,7 @@ function PressPage({ data }) {
                     </div>
                   );
                 })}
+                */}
               </div>
             </div>
           </div>

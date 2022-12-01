@@ -15,12 +15,12 @@ function WebinarsPage({ data, setWebinar }) {
       setUpcomingWebinars(
         data.filter((webinar) => {
           return moment(webinar.date, "DD-MM-YYYY HH:mm:SS") > Date.now();
-        })
+        }).sort((a,b)=>{return((a?.date < b?.date) ? -1 : (a?.date > b?.date) ? 1 : 0)})
       );
       setPreviousWebinars(
         data.filter((webinar) => {
-          return Date.parse(webinar.date) < Date.now();
-        })
+          return moment(webinar.date, "DD-MM-YYYY HH:mm:SS") < Date.now();
+        }).sort((a,b)=>{return((a?.date < b?.date) ? 1 : (a?.date > b?.date) ? -1 : 0)})
       );
     }
   }, [data]);
@@ -46,7 +46,7 @@ function WebinarsPage({ data, setWebinar }) {
               </span>
               <div>
                 <div className="webinars">
-                  {upcomingWebinars.map((webinar) => {
+                  { Array.isArray(upcomingWebinars) && upcomingWebinars.map((webinar) => {
                     return (
                       <div className="webinar" key={webinar?.id}>
                         <img src={webinar?.image} alt={webinar?.name} />
@@ -110,7 +110,7 @@ function WebinarsPage({ data, setWebinar }) {
               </div>
             </div>
           )}
-          {previousWebinars.length > 0 && (
+          { previousWebinars.length > 0 && (
             <div
               className="webinars_container"
               style={{
@@ -123,7 +123,7 @@ function WebinarsPage({ data, setWebinar }) {
                 <span />
               </span>
               <div className="webinars">
-                {previousWebinars.map((webinar) => {
+                { Array.isArray(previousWebinars) && previousWebinars.map((webinar) => {
                   return (
                     <div className="webinar" key={webinar?.id}>
                       <img src={webinar?.image} alt={webinar?.name} />

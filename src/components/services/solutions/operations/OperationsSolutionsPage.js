@@ -62,11 +62,11 @@ export default function OperationsSolutionsPage({ data }) {
               <div className="last_section_sub">
                 {section?.sub.map((card,index)=>{
                   return(
-                    <div className="last_section_sub_card">
+                    <div style={{height:"130px"}} className="last_section_sub_card">
                       <div className="last_section_sub_card_title">
                         {card?.title}
                       </div>
-                      <div className="last_section_sub_card_subtitle">
+                      <div style={{paddingTop:"10px"}} className="last_section_sub_card_subtitle">
                         {card?.description}
                       </div>
                     </div>

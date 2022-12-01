@@ -29,7 +29,7 @@ function JobsPage({ data }) {
                 hard but we play hard too.
               </p>
               <button className="lmbtn">
-                <Link to="">
+                <Link to="/contact-us">
                   Apply Now <img alt="ar" src={arrow} />
                 </Link>
               </button>

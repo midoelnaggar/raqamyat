@@ -21,7 +21,7 @@ export default function MarketingStrategyPage({ data }) {
         />
         <Service data={data} />
 
-        {data?.sub[0] && (
+        {Array.isArray(data?.sub) && data?.sub[0] &&  (
           <div
             style={{ padding: 0, alignItems: "center" , marginTop:"170px" }}
             className="outsourcing_sections"
@@ -110,7 +110,7 @@ export default function MarketingStrategyPage({ data }) {
                       </h1>
                       <p>{card?.description}</p>
                       <button className="lmbtn">
-                        <Link to="">
+                        <Link to="/contact-us">
                           Learn More
                           <img alt="ar" src={arrow} />
                         </Link>

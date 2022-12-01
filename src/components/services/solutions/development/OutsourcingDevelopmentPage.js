@@ -33,7 +33,7 @@ export default function OutsourcingDevelopmentPage({ data }) {
                       <h1>{card?.title}</h1>
                       <p>{""}</p>
                       <button className="lmbtn">
-                        <Link to="">
+                        <Link to="/contact-us">
                           Learn More
                           <img alt="ar" src={arrow} />
                         </Link>
