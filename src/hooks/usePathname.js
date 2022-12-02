@@ -10,7 +10,7 @@ function usePathname({ location, setData, slug }) {
 
   useEffect(() => {
     if(location.startsWith("/services/business-type/")) {
-      document.querySelector(".singleBT").scrollIntoView({behavior:"smooth",block:"start"})
+      document.querySelector(".singleBT")?.scrollIntoView({behavior:"smooth",block:"start"})
     }else{
       window.scrollTo({top: 0, behavior: 'smooth'});
     }

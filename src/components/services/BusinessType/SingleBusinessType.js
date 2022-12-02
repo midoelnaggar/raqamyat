@@ -2,7 +2,7 @@ import Motion from "../../Motion";
 import { Link } from "react-router-dom";
 import arrow from "../../../img/Icon ionic-ios-arrow-round-forward.png";
 
-export default function SingleBusinessType({ data }) {
+ function SingleBusinessType({ data }) {
   return (
     <Motion>
       <div className="singleBT">
@@ -75,3 +75,5 @@ export default function SingleBusinessType({ data }) {
     </Motion>
   );
 }
+
+export default SingleBusinessType

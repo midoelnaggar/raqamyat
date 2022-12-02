@@ -8,7 +8,7 @@ import Restaurants from "../../../img/resturant.svg";
 import SpecialProjects from "../../../img/Special Projects.svg";
 import { Link, useLocation } from "react-router-dom";
 
-export default function BusinessTypePage() {
+function BusinessTypePage() {
   const location = useLocation();
   return (
     <Motion>
@@ -78,3 +78,5 @@ export default function BusinessTypePage() {
     </Motion>
   );
 }
+
+export default BusinessTypePage

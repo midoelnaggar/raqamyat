@@ -5,17 +5,21 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import "./styles/Responsive.css";
+import './styles/master.css'
+
 
 //import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   //<React.StrictMode>
-  <SnackbarProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </SnackbarProvider>
+  <React.Suspense fallback={<h1>Loading...</h1>}>
+    <SnackbarProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </SnackbarProvider>
+  </React.Suspense>
   // </React.StrictMode>
 );
 
