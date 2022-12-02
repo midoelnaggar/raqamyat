@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Motion from "./Motion";
-import "../styles/MediaPage.css";
 import PageHeader from "./PageHeader";
 import ReactPlayer from "react-player";
 import { Modal, Box } from "@mui/material";

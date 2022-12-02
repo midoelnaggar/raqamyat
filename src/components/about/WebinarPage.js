@@ -1,4 +1,3 @@
-import "../../styles/WebinarPage.css";
 import Motion from "../Motion";
 import { useState } from "react";
 import axios from "axios";

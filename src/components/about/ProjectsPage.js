@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/SuccessfulCasesPage.css";
 import PageHeader from "../PageHeader";
 import Motion from "../Motion";
 import case_image from "../../img/case.png";

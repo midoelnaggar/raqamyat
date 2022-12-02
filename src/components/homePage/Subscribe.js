@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import "../../styles/Subscribe.css";
 import axios from "axios";
 import { useSnackbar } from "notistack";
 

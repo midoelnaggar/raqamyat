@@ -1,4 +1,3 @@
-import "../../../styles/Solution.css";
 
 function Solution({ data }) {
   return (

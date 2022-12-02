@@ -1,4 +1,3 @@
-import "../../styles/Profile.css";
 import Back from "../../img/Mask Group 2.png";
 
 function Profile({data}) {

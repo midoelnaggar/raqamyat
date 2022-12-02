@@ -1,5 +1,5 @@
-import { lazy } from "react";
 import About from "./About";
+import Articles from "./Articles";
 import Hero from "./Hero";
 import Partners from "./Partners";
 import Profile from "./Profile";
@@ -7,7 +7,6 @@ import Scope from "./Scope";
 import Ecommerce from "./Ecommerce";
 import Epayment from "./Epayment";
 import Motion from "../Motion";
-const Articles =  lazy(()=>import("./Articles"));
 
 const HomePage = ({ data }) => {
   

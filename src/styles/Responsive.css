@@ -782,3 +782,21 @@ margin-left: -150px;
 
 
 }
+
+
+@media (max-width: 500px) {
+  .smallParagraph {
+    font-size: 180%;
+  }
+
+
+  .logo-img{
+    scale: 1.3;
+    margin-left: 20px;
+  }
+
+  .cubtn{
+    scale: 1.15;
+    font-weight: 500;
+  }
+}

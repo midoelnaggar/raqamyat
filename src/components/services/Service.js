@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../../styles/Service.css";
 import arrow from "../../img/Icon ionic-ios-arrow-round-forward.png";
 
 

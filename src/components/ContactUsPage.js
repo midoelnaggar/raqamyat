@@ -1,4 +1,3 @@
-import "../styles/ContactUsPage.css";
 import { useState } from "react";
 import { useSnackbar } from "notistack";
 import axios from "axios";

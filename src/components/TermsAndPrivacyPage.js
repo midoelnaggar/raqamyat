@@ -1,4 +1,3 @@
-import "../styles/TermsAndPrivacyPage.css";
 import Motion from "./Motion";
 import PageHeader from "./PageHeader";
 

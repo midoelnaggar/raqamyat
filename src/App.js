@@ -1,11 +1,12 @@
-import "./App.css";
+import "./App.css"
+import "./styles"
 import { useState, useEffect, lazy, Suspense } from "react";
 import axios from "axios";
 import { Route, Routes, useLocation, Outlet } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import useWindowSize from "./hooks/useWindowSize";
 import usePathname from "./hooks/usePathname";
-const Loading =  lazy(()=>import("./Loading")) ;
+const Loading = lazy(() => import("./Loading"));
 const Footer = lazy(() => import("./components/headerAndFooter/Footer"));
 const Header = lazy(() => import("./components/headerAndFooter/Header"));
 const HomePage = lazy(() => import("./components/homePage"));
@@ -152,26 +153,27 @@ function App() {
   }, [isFetching, setLoading, setBtLoading]);
 
   return (
-      <div
-        className="app"
-        style={{
-          scale: (width >= 1200
-            ? width / 1920
-            : (width <= 1199) & (width > 768)
-            ? width / 820
-            : (width <= 767) & (width > 320)
-            ? width / 820
-            : width / 320
-          ).toString(),
-        }}
-      >
-        <div className={bgColor} />
-        <Header />
-        <AnimatePresence>
-          {loading ? (
-            <Loading />
-          ) : (
-            <div className="outlet">
+    <div
+      className="app"
+      style={{
+        scale: (width >= 1200
+          ? width / 1920
+          : (width <= 1199) & (width > 768)
+          ? width / 820
+          : (width <= 767) & (width > 320)
+          ? width / 820
+          : width / 320
+        ).toString(),
+      }}
+    >
+      <div className={bgColor} />
+      <Header />
+      <AnimatePresence>
+        {loading ? (
+          <Loading />
+        ) : (
+          <div className="outlet">
+            <Suspense fallback={<Loading />}>
               <Routes>
                 <Route location={location} key={location.pathname}>
                   <Route index element={<HomePage data={data}></HomePage>} />
@@ -349,11 +351,12 @@ function App() {
                   </Route>
                 </Route>
               </Routes>
-            </div>
-          )}
-        </AnimatePresence>
-        <Footer />
-      </div>
+            </Suspense>
+          </div>
+        )}
+      </AnimatePresence>
+      <Footer />
+    </div>
   );
 }
 

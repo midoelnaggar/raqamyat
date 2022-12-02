@@ -1,4 +1,3 @@
-import "../styles/PageHeader.css";
 
 function PageHeader({ title, breadcrumbs }) {
   return (

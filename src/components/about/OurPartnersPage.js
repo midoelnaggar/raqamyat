@@ -1,4 +1,3 @@
-import "../../styles/OurPartnersPage.css";
 import PageHeader from "../PageHeader";
 import Motion from "../Motion";
 

@@ -1,4 +1,3 @@
-import "../../styles/Header.css";
 import { useLocation, Link } from "react-router-dom";
 import logo from "../../img/logo.svg";
 import IconButton from "@mui/material/IconButton";

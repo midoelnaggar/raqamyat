@@ -1,4 +1,3 @@
-import "./../../styles/AboutUsPage.css";
 import About from "../homePage/About";
 import Profile from "../homePage/Profile";
 import Motion from "../Motion";

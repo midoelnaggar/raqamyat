@@ -1,5 +1,4 @@
 import {useState,useEffect} from "react";
-import "../../styles/BlogPage.css";
 import PageHeader from "../PageHeader";
 import { Link } from "react-router-dom";
 import BlueArrow from "../../img/Icon ionic-ios-arrow-round-forwardb.png";

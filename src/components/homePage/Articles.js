@@ -1,4 +1,3 @@
-import "../../styles/Articles.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import BlueArrow from "../../img/Icon ionic-ios-arrow-round-forwardb.png";

@@ -1,4 +1,3 @@
-import "../../styles/Scope.css";
 import Shapes from "../../img/shapes.png";
 import { Link } from "react-router-dom";
 import arrow from "../../img/Icon ionic-ios-arrow-round-forward.png";

@@ -1,5 +1,4 @@
 import React from "react";
-import "../../../../styles/OperationsSolutionsPage.css";
 import PageHeader from "../../../PageHeader";
 import Service from "../../Service";
 import { Link } from "react-router-dom";

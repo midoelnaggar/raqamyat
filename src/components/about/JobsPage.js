@@ -1,4 +1,3 @@
-import "../../styles/JobsPage.css";
 import PageHeader from "../PageHeader";
 import Motion from "../Motion";
 import { Link } from "react-router-dom";

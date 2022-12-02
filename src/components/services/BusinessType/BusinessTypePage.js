@@ -1,4 +1,3 @@
-import "../../../styles/BusinessType.css";
 import Motion from "../../Motion";
 import PageHeader from "../../PageHeader";
 import Retail from "../../../img/Retail.svg";

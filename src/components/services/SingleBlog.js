@@ -1,4 +1,3 @@
-import "../../styles/WebinarPage.css";
 import Motion from "../Motion";
 import moment from "moment";
 import ArrowBack from "@mui/icons-material/ArrowBack";

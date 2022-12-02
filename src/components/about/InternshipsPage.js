@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import "../../styles/JobsPage.css";
 import axios from "axios";
 import PageHeader from "../PageHeader";
 import Motion from "../Motion";

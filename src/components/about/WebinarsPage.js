@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import moment from "moment";
 import { Link } from "react-router-dom";
-import "../../styles/WebinarsPage.css";
 import PageHeader from "../PageHeader";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import Motion from "../Motion";
