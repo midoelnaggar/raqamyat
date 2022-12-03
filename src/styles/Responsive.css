@@ -345,18 +345,17 @@
     margin-top: 0;
   }
 
-  
   .articles {
     scale: 1;
     margin-block: 0px;
     padding: 0;
   }
 
-  .articles > .post >.post {
-    scale: 0.50;
-    margin: -100%
+  .articles > .post > .post {
+    scale: 0.5;
+    margin: -100%;
   }
-  
+
   .articles > div {
     padding: 0 !important;
   }
@@ -522,7 +521,7 @@
   }
   /* Press And Blog */
 
-  .blog_page  {
+  .blog_page {
     margin-top: 20px;
   }
 
@@ -545,7 +544,6 @@
     justify-content: center;
     margin-block: 50px;
     padding-block: 40%;
-
   }
 
   /* No Page */
@@ -736,8 +734,7 @@
     padding-inline: 78px;
   }
 
-
-    /* Business Type */
+  /* Business Type */
 
   .business_type_hero {
     display: flex;
@@ -766,37 +763,190 @@
     margin-inline-end: 0px;
   }
 
-  .terms_and_privacy{
+  .terms_and_privacy {
     padding: 80px 0 0px 0;
   }
 
-      /* Marketing Strategy */
+  /* Marketing Strategy */
 
-
-.strategyDraw{
-  transform-origin: left;
-scale: 0.60;
-margin-bottom: -150px;
-margin-left: -150px;
+  .strategyDraw {
+    transform-origin: left;
+    scale: 0.6;
+    margin-bottom: -150px;
+    margin-left: -150px;
+  }
 }
-
-
-}
-
 
 @media (max-width: 500px) {
   .smallParagraph {
-    font-size: 180%;
+    font-size: 36px;
   }
 
+  .logo-img {
+    scale: 1.5;
+    margin-left: 30px;
+  }
 
-  .logo-img{
+  .cubtn {
+    scale: 1.25;
+    transform-origin: right;
+  }
+
+  .kmbtn {
     scale: 1.3;
-    margin-left: 20px;
+    transform-origin: bottom left;
   }
 
-  .cubtn{
-    scale: 1.15;
-    font-weight: 500;
+  .partnersGroup > img {
+    width: 120px;
+    padding-inline-end: 30px;
   }
+
+  .rightComp > h1 {
+    font-size: 68px;
+  }
+  .rightComp > h1 > span {
+    font-size: 100%;
+  }
+  .rightComp > h1 > span {
+    font-size: 100%;
+  }
+
+  .rightComp > p {
+    font-size: 150%;
+    line-height: 120%;
+  }
+
+  .leftComp > img {
+    width: 25% !important;
+  }
+
+  .leftComp > p {
+    font-size: 22px !important;
+    line-height: 26px !important;
+  }
+
+  
+    
+  .profile> .top > h1 {
+    font-size: 52px;
+    margin-inline-end: 50px;
+  }
+
+  .profile> .top > p {
+    font-size: 28px;
+    line-height: 32px;
+  }
+.profile> .bottom {
+  scale:1.2;
+  margin-block: 150px;
+}
+.maskImage {
+height: 280px;
+
+}
+
+.maskImage > p {
+  font-size: 20px;
+  line-height: 26px;
+  
+  }
+
+
+.scope > .head > h1 {
+  font-size: 60px ;
+}
+
+.scope > .head > h1>span {
+  font-size: 100% ;
+}
+
+.scope > .cards {
+scale: 1.75;
+margin-block: 450px;
+} 
+
+.ecommerce {
+  align-items: flex-start;
+}
+
+.ecommerce-right > h1 {
+  font-size: 42px;
+  line-height: 42px;
+}
+
+.ecommerce-right > .sp {
+  font-size: 28px;
+  line-height: 32px;
+}
+
+
+.ecommerce-right > .lp {
+  font-size: 28px;
+  line-height: 32px;
+  margin-left: -350px;
+  max-width: none;
+}
+
+.ecommerce-right > .lmbtn{
+  scale: 1.2;
+  margin-left: -350px;
+  transform-origin: left bottom;
+}
+
+.epayment {
+  align-items: flex-start;
+}
+
+.epayment-left > h1 {
+  font-size: 42px;
+  line-height: 42px;
+}
+
+.epayment-left > .sp {
+  font-size: 28px;
+  line-height: 32px;
+}
+
+
+.epayment-left > .lp {
+  font-size: 28px;
+  line-height: 32px;
+  margin-top: 50px;
+  margin-right: -350px;
+  max-width: none;
+}
+
+.epayment-left > .lmbtn{
+  scale: 1.2;
+  margin-right: -350px;
+  transform-origin: left bottom;
+}
+
+.articles {
+  margin-block: 50px;
+}
+
+.articles > h1 {
+  font-size: 50px;
+}
+
+.articles > div>div>div {
+  scale:2;
+  margin-block: 50px;
+}
+.articles > div>div>div>div>.post {
+  scale:0.5;
+}
+.subscribe {
+  display: none;
+}
+
+.footer > .fourcols {
+  display: none;
+}
+.footer > .cw * {
+  font-size: 22px;
+  padding-block: 15px;
+}
 }
