@@ -18,7 +18,7 @@ export default function LogisticsManagementPage({ data }) {
       {Array.isArray(data?.sub) &&
         data.sub.map((section, index) => {
           return index === 0 ? (
-            <div className="first_section">
+            <div  key={index} className="first_section">
               <h1>
               <span>
                 {section.title}
@@ -29,7 +29,7 @@ export default function LogisticsManagementPage({ data }) {
                 {Array.isArray(section?.sub) &&
                   section.sub.map((s) => {
                     return (
-                      <div className="border">
+                      <div key={s?.title} className="border">
                         <div
                           style={{ justifyContent: "center" }}
                           className="solution_sub"

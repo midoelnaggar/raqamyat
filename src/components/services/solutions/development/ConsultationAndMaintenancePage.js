@@ -17,7 +17,7 @@ export default function ConsultationAndMaintenancePage({ data }) {
       />
       <Service data={data} />
       {Array.isArray(data?.sub) && data?.sub.map((section,index)=>{ return(
-            <div className="sub_container sub_container_osd">
+            <div key={index} className="sub_container sub_container_osd">
               <div
                 key={section?.title}
                 className={(index + 1) % 2 === 0 ? "sub" : "sub_inverted"}

@@ -5,8 +5,12 @@ import { useSnackbar } from "notistack";
 function Subscribe() {
   const emailRef = useRef("");
   const { enqueueSnackbar } = useSnackbar();
+  
+const validRegEx = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+
   const submit = (e) => {
     e.preventDefault();
+    if (emailRef?.current?.value.match(validRegEx)){
     try {
       axios
         .post(
@@ -24,9 +28,16 @@ function Subscribe() {
               variant: "error",
             });
           }
-        });
+        }
+       
+      );
     } catch (err) {
       console.log(err);
+    }}
+    else {
+      enqueueSnackbar("Invalid email.", {
+        variant: "error",
+      });
     }
   };
 

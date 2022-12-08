@@ -781,14 +781,19 @@
   .smallParagraph {
     font-size: 36px;
   }
+  
+  .sideMenuBtn{
+    scale: 1.5;
+    transform-origin: left;
+  }
 
   .logo-img {
-    scale: 1.5;
-    margin-left: 30px;
+    scale: 1.75;
+    margin-left: 60px;
   }
 
   .cubtn {
-    scale: 1.25;
+    scale: 1.35;
     transform-origin: right;
   }
 
@@ -938,6 +943,23 @@ margin-block: 450px;
 .articles > div>div>div>div>.post {
   scale:0.5;
 }
+
+.lp {
+  font-size: 24px !important;
+  line-height: normal !important;
+}
+
+.breadcrumbs {
+  font-size: 20px;
+}
+
+
+.page_title {
+  font-size: 45px;
+}
+
+
+
 .subscribe {
   display: none;
 }
@@ -945,8 +967,14 @@ margin-block: 450px;
 .footer > .fourcols {
   display: none;
 }
+
+
+
+
 .footer > .cw * {
   font-size: 22px;
   padding-block: 15px;
 }
+
+
 }

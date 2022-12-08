@@ -12,9 +12,9 @@ export default function TermsAndPrivacyPage({ data }) {
       </div>
       <div className="terms_and_privacy">
         {Array.isArray(data?.sub) &&
-          data.sub.map((section) => {
+          data.sub.map((section,index) => {
             return (
-              <div>
+              <div key={index}>
                 <h1>{section?.title}</h1>
                 <p>{section?.description}</p>
               </div>

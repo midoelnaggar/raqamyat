@@ -17,7 +17,7 @@ export default function OutsourcingMarketingPage({ data }) {
       {Array.isArray(data?.sub) &&
         data?.sub.map((section, index) => {
           return (
-            <div className="outsourcing_sections">
+            <div  key={index} className="outsourcing_sections">
               <h1 style={{maxWidth:"900px"}}>
                 <span>
                   {section?.title}

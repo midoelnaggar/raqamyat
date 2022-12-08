@@ -14,9 +14,6 @@ function usePathname({ location, setData, slug }) {
     }else{
       window.scrollTo({top: 0, behavior: 'smooth'});
     }
-    
-    console.log("slug: "+ slug)
-    console.log(apiUrl)
     if (location === "/") {
       setLoading(true);
       setApiUrl("https://newraq.raqamyat.com/public/api/home");

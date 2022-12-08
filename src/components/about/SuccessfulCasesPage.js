@@ -53,7 +53,9 @@ function SuccessfulCasesPage({ data }) {
                   <div key={c.id}
                     className={(index + 1) % 2 === 0 ? "case_inverted" : "case"}
                   >
+                    <div className="imageContainer"> 
                     <img className="case_image" src={case_image} alt="case" />
+                    </div>
                     <div className="case_info">
                       <div className="case_title">{c.title}</div>
                       <div className="case_type">{c.type}</div>

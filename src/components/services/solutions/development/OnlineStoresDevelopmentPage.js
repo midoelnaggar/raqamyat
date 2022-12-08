@@ -18,7 +18,7 @@ export default function OnlineStoresDevelopmentPage({ data }) {
       {Array.isArray(data?.sub) &&
         data.sub.map((section, index) => {
           return index === 0 ? (
-            <div className="first_section">
+            <div key={index} className="first_section">
               <h1>
               <span>
                 {section.title}
@@ -47,7 +47,7 @@ export default function OnlineStoresDevelopmentPage({ data }) {
               </div>
             </div>
           ) : index === data.sub.length - 1 ? (
-            <div style={{ backgroundColor: `${index % 2 !== 0 && `white`}`}} className="last_section">
+            <div  key={index} style={{ backgroundColor: `${index % 2 !== 0 && `white`}`}} className="last_section">
               <span>
                 {section?.title}
                 <span />
@@ -71,7 +71,7 @@ export default function OnlineStoresDevelopmentPage({ data }) {
               </div>
             </div>
           ) : (
-            <div className="sub_container sub_container_osd">
+            <div key={index} className="sub_container sub_container_osd">
               <div
                 key={section?.title}
                 className={(index + 1) % 2 === 0 ? "sub" : "sub_inverted"}

@@ -55,9 +55,9 @@ export default function EPaymentIntegrationsPage({ data }) {
           <p className="lp">{data?.sub[1]?.description}</p>
           <div  className="cards">
             {Array.isArray(data.sub) &&
-              data?.sub[1]?.sub?.map((parterLogo) => {
+              data?.sub[1]?.sub?.map((parterLogo,index) => {
                 return (
-                  <img className="partenerLogo" src={parterLogo?.image} alt="partenerLogo"  />               );
+                  <img key={index} className="partenerLogo" src={parterLogo?.image} alt="partenerLogo"  />               );
               })}
           </div>
         </div>

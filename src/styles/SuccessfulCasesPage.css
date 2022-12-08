@@ -46,13 +46,27 @@
 .ss_page > .page_content > .cases > .case_inverted {
   display: flex;
   flex-direction: row-reverse;
-}
-.cases > div >img {
-  flex: 50%;
+} 
+
+.cases.div {
+  margin: 0;
 }
 
+.cases > div > .imageContainer {
+  width: 50%;
+}
+.cases > div > .imageContainer>img {
+  height: 100%;
+  width: 100%;
+}
+
+
 .cases > div > .case_info {
-  flex: 50%;
+  width: 50%;
+  padding-block: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .case_info {

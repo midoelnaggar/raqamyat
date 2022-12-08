@@ -87,9 +87,10 @@ export default function MediaPage({ data }) {
       <div className="media">
         <div style={{ display: "flex", flexWrap: "wrap" }} className="images">
           {Array.isArray(images) && (selected !== "videos") &&
-            images.map((image) => {
+            images.map((image,index) => {
               return (
                 <img
+                key={index}
                   className="image_thumb"
                   onClick={() => {
                     handleOpenImageModal(image?.description);
@@ -102,9 +103,9 @@ export default function MediaPage({ data }) {
         </div>
         <div style={{ display: "flex", flexWrap: "wrap" }} className="videos">
           {Array.isArray(videos) && (selected !== "images") &&
-            videos.map((video) => {
+            videos.map((video,index) => {
               return (
-                <div className="video_thumb_container">
+                <div key={index} className="video_thumb_container">
                   <img src={playIcon} alt="playIcon" className="playIcon" />
                   <img
                     className="video_thumb"

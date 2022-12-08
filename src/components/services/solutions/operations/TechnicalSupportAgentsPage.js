@@ -18,7 +18,7 @@ export default function TechnicalSupportAgentsPage({ data }) {
         {Array.isArray(data?.sub) &&
           data.sub.map((section, index) => {
             return index === 0 ? (
-              <div className="first_section">
+              <div  key={index} className="first_section">
                 <h1>
                   <span>
                     {section.title}
@@ -29,7 +29,7 @@ export default function TechnicalSupportAgentsPage({ data }) {
                   {Array.isArray(section?.sub) &&
                     section.sub.map((s) => {
                       return (
-                        <div className="border">
+                        <div  key={s?.title} className="border">
                           <div
                             style={{ justifyContent: "center" }}
                             className="solution_sub"
@@ -55,6 +55,7 @@ export default function TechnicalSupportAgentsPage({ data }) {
                   paddingInline: "280px",
                 }}
                 className="last_section"
+                key={index}
               >
                 <div className="last_section">
                   <span style={{ maxWidth: "none" }}>
@@ -71,7 +72,7 @@ export default function TechnicalSupportAgentsPage({ data }) {
                 >
                   {section?.sub.map((s) => {
                     return (
-                      <div className="border" style={{ marginInline: "33px" }}>
+                      <div key={s?.title} className="border" style={{ marginInline: "33px" }}>
                         <div
                           style={{ justifyContent: "center" }}
                           className="solution_sub"
@@ -89,7 +90,7 @@ export default function TechnicalSupportAgentsPage({ data }) {
                 </div>
               </div>
             ) : (
-              <div className="sub_container sub_container_osd">
+              <div  key={index} className="sub_container sub_container_osd">
                 <div
                   key={section?.title}
                   className={(index + 1) % 2 === 0 ? "sub" : "sub_inverted"}

@@ -41,10 +41,10 @@ import arrow from "../../../img/Icon ionic-ios-arrow-round-forward.png";
       {Array.isArray(data?.sub) &&
         data.sub.map((section) => {
           return (
-            <div style={{padding:"150px 150px 0px 150px"}} className="first_section">
+            <div key={section?.title} style={{padding:"150px 150px 0px 150px"}} className="first_section">
               <h1>
               <span>
-                {section.title}
+                {section?.title}
                 <span />
               </span>
               </h1>
@@ -52,7 +52,7 @@ import arrow from "../../../img/Icon ionic-ios-arrow-round-forward.png";
                 {Array.isArray(section?.sub) &&
                   section.sub.map((s) => {
                     return (
-                      <div className="border">
+                      <div key={s?.title} className="border">
                         <div
                           style={{ justifyContent: "center" }}
                           className="solution_sub"

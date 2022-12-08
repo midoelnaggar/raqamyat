@@ -20,7 +20,7 @@ function Solution({ data }) {
         {Array.isArray(data?.sub) &&
           data.sub.map((s) => {
             return (
-              <div className="border">
+              <div key={s?.title} className="border">
                 <div className="solution_sub">
                   <img src={s?.image} alt={s?.title} />
                   <div>{s?.title}</div>

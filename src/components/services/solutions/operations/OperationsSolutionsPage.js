@@ -19,7 +19,7 @@ export default function OperationsSolutionsPage({ data }) {
       {Array.isArray(data?.sub) &&
         data.sub.map((section, index) => {
           return index === 0 ? (
-            <div className="first_section">
+            <div  key={index} className="first_section">
               <h1>
               <span>
                 {section.title}
@@ -30,7 +30,7 @@ export default function OperationsSolutionsPage({ data }) {
                 {Array.isArray(section?.sub) &&
                   section.sub.map((s) => {
                     return (
-                      <div className="border">
+                      <div  key={s?.title} className="border">
                         <div
                           style={{ justifyContent: "center" }}
                           className="solution_sub"
@@ -48,7 +48,7 @@ export default function OperationsSolutionsPage({ data }) {
               </div>
             </div>
           ) : index === data.sub.length - 1 ? (
-            <div style={{paddingTop:0}} className="last_section">
+            <div  key={index} style={{paddingTop:0}} className="last_section">
               <h1>
               <span style={{maxWidth:"860px"}}>
                 {section?.title}
@@ -61,7 +61,7 @@ export default function OperationsSolutionsPage({ data }) {
               <div className="last_section_sub">
                 {section?.sub.map((card,index)=>{
                   return(
-                    <div style={{height:"130px"}} className="last_section_sub_card">
+                    <div  key={index} style={{height:"130px"}} className="last_section_sub_card">
                       <div className="last_section_sub_card_title">
                         {card?.title}
                       </div>
@@ -74,7 +74,7 @@ export default function OperationsSolutionsPage({ data }) {
               </div>
             </div>
           ) : (
-            <div className="sub_container sub_container_osd">
+            <div  key={index} className="sub_container sub_container_osd">
               <div
                 key={section?.title}
                 className={(index + 1) % 2 === 0 ? "sub" : "sub_inverted"}

@@ -22,7 +22,7 @@ export default function ProductDevelopmentPage({ data }) {
             <div className="last_section_sub">
               {data?.sub[0]?.sub.map((card, index) => {
                 return (
-                  <div className="last_section_sub_card">
+                  <div  key={index} className="last_section_sub_card">
                     <div className="last_section_sub_card_number">
                       {("0" + (index + 1)).slice(-2)}
                     </div>

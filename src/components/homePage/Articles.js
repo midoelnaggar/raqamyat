@@ -35,10 +35,10 @@ function Articles() {
         modules={[Pagination]}
         className="mySwiper"
       >
-          {articles.map((post) => {
+          {Array.isArray(articles) && articles.map((post,index) => {
             return (
-              <SwiperSlide>
-                <div style={{marginInline:0}} key={post?.title} className={"post"}>
+              <SwiperSlide key={index}>
+                <div style={{marginInline:0}} className={"post"}>
                   <img src={post.image} alt="post" />
                   <div className="tag">
                     <h1>{post.type}</h1>

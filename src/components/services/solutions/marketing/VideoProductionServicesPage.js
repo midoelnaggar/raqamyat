@@ -18,7 +18,7 @@ export default function VideoProductionServicesPage({ data }) {
         {Array.isArray(data?.sub) &&
           data.sub.map((section, index) => {
             return index === 0 ? (
-              <div className="outsourcing_sections">
+              <div  key={index} className="outsourcing_sections">
                 <h1>
                   <span>
                     {section?.title}
