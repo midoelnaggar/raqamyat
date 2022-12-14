@@ -142,7 +142,7 @@ function WebinarsPage({ data }) {
               <div className="head">
                 <h1>
                   <span>
-                    Reserve a spot <span />
+                    {moment(data.date, "DD-MM-YYYY HH:mm:SS") < Date.now() ? `Get Recordings` : `Reserve a spot`} <span />
                   </span>
                 </h1>
               </div>

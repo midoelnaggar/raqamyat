@@ -90,7 +90,7 @@ function WebinarsPage({ data, setWebinar }) {
                             </div>
                             <div>
                               <Link
-                                onClick={setWebinar(webinar)}
+                                onClick={()=>setWebinar(webinar)}
                                 to={`/about/webinars/${webinar.name
                                   .replace(/\s+/g, "-")
                                   .toLowerCase()}`}
@@ -163,6 +163,18 @@ function WebinarsPage({ data, setWebinar }) {
                               {webinar.company}
                             </div>
                           </div>
+                          <div>
+                              <Link
+                                onClick={()=>setWebinar(webinar)}
+                                to={`/about/webinars/${webinar.name
+                                  .replace(/\s+/g, "-")
+                                  .toLowerCase()}`}
+                              >
+                                <button type="submit" className="sbtn">
+                                  Get Recordings
+                                </button>
+                              </Link>
+                            </div>
                         </div>
                       </div>
                     </div>
