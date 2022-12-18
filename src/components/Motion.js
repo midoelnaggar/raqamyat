@@ -5,9 +5,8 @@ function Motion({children}) {
   return (
 <motion.div
       className="contact_us_page"
-      initial={{ scale: 0 }}
-      animate={{ scale: 1,transition:{duration:0.7} }}
-      exit={{scale:0}}
+      initial={{ opacity:0,marginLeft:"-500px" }}
+      animate={{ opacity: 1 ,marginLeft:"0px",transition:{duration:0.5} }}
       >
         {children}
       </motion.div>  )

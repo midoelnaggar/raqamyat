@@ -28,9 +28,9 @@ function JobsPage({ data }) {
                 hard but we play hard too.
               </p>
               <button className="lmbtn">
-                <Link to="/contact-us">
+                <a href="mailto:hr@raqamyat.com">
                   Apply Now <img alt="ar" src={arrow} />
-                </Link>
+                </a>
               </button>
             </div>
             <div className="jobs-right">

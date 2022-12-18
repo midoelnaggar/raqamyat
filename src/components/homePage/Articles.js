@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import BlueArrow from "../../img/Icon ionic-ios-arrow-round-forwardb.png";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Navigation,Mousewheel } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
-    axios("https://newraq.raqamyat.com/public/api/blogs").then((response) => {
-      setArticles(response.data.data);
+    axios("https://newraq.raqamyat.com/public/api/jobs?type=blog").then((response) => {
+      setArticles(response.data.item.data);
     });
   }, []);
   return (
@@ -25,20 +25,18 @@ function Articles() {
       </h1>
       <div>
       <Swiper
-        slidesPerView={4}
-        initialSlide={4}
-        centeredSlides={true}
+      slidesPerView={4}
+        initialSlide={2}
         spaceBetween={200}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
+        mousewheel={true}
+        navigation={true}
+        modules={[Navigation,Mousewheel]}
         className="mySwiper"
       >
           {Array.isArray(articles) && articles.map((post,index) => {
             return (
               <SwiperSlide key={index}>
-                <div style={{marginInline:0}} className={"post"}>
+                <div style={{marginInlineStart:"-70px"}} className={"post"}>
                   <img src={post.image} alt="post" />
                   <div className="tag">
                     <h1>{post.type}</h1>
@@ -49,9 +47,9 @@ function Articles() {
                   <div className="post_footer">
                     <div>
                       <div className="by">by</div>
-                      <div className="auther">{post.by}</div>
+                      <div className="auther">{post?.auther_name ? (post?.auther_name !== "-" ? post?.auther_name:"Raqamyat") :"Raqamyat"}</div>
                     </div>
-                    <Link to={`/article/${post.slug}`} className="rmb">
+                    <Link to={`/blog/${post?.slug}`} className="rmb">
                       <div className="readmore">Read more </div>
                       <img className="arrow" src={BlueArrow} alt="arrow" />
                     </Link>

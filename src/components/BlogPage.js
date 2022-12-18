@@ -5,22 +5,27 @@ import BlueArrow from "../img/Icon ionic-ios-arrow-round-forwardb.png";
 import seachIcon from "../img/search-icon.svg";
 import Motion from "./Motion";
 
-function BlogPage({ data, setSlug }) {
+function BlogPage({ data,setLoading }) {
   const [search, setSearch] = useState("");
-  const [filteredPosts, setFilteredPosts] = useState([]);  
-
-const handleReadMore = (a) =>{
-  setSlug(a)
-}
+  const [filteredPosts, setFilteredPosts] = useState([]);
+  const [loadedPosts, setLoadedPosts] = useState([]);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
 
   useEffect(() => {
-    if (Array.isArray(data)) {
+   setLoading(false) 
+  });
+
+useEffect(() => {
+  setLoadedPosts(data?.item?.data)
+}, []);
+
+  useEffect(() => {
+    if (Array.isArray(data?.item?.data)) {
       setFilteredPosts(
-        data.filter((post) => {
+        data?.item?.data.filter((post) => {
           return (
             post?.title?.toLowerCase().includes(search?.toLowerCase()) ||
             post?.details?.toLowerCase().includes(search?.toLowerCase())
@@ -28,7 +33,7 @@ const handleReadMore = (a) =>{
         })
       );
     }
-  }, [search,data]);
+  }, [search,data?.item?.data]);
 
   return (
     <Motion>
@@ -38,52 +43,52 @@ const handleReadMore = (a) =>{
         </div>
         <div className="page_content">
           <div className="blog_left">
-            {Array.isArray(data) & (filteredPosts === [])
-              ? data.map((post) => {
+            {Array.isArray(loadedPosts) & (filteredPosts === [])
+              ? data?.item?.data.map((post) => {
                   return (
-                    <div  key={post?.title} className={"post"}>
-                      <img src={post.image} alt="post" />
-                      <div className="tag">
-                        <h1>{post.type}</h1>
-                      </div>
-                      <div className="date">{post.date}</div>
-                      <div className="title">{post.title}</div>
-                      <div className="caption">{post.details}</div>
-                      <div className="post_footer">
-                        <div>
-                          <div className="by">by</div>
-                          <div className="auther">{post.by}</div>
-                        </div>
-                        <Link onClick={()=>handleReadMore(post.slug)} to={`/article/${post.slug}`} className="rmb">
-                          <div className="readmore">Read more </div>
-                          <img className="arrow" src={BlueArrow} alt="arrow" />
-                        </Link>
-                      </div>
+                    <div key={post?.title} className={"post"}>
+                    <img src={post.image} alt="post" />
+                    <div className="tag">
+                      <h1>{post.type}</h1>
                     </div>
+                    <div className="date">{post.date}</div>
+                    <div className="title">{post.title}</div>
+                    <div className="caption">{post.details}</div>
+                    <div className="post_footer">
+                      <div>
+                        <div className="by">by</div>
+                        <div className="auther">{post?.auther_name ? (post?.auther_name !== "-" ? post?.auther_name:"Raqamyat") :"Raqamyat"}</div>
+                      </div>
+                      <Link to={`/blog/${post?.slug}`} className="rmb">
+                        <div className="readmore">Read more </div>
+                        <img className="arrow" src={BlueArrow} alt="arrow" />
+                      </Link>
+                    </div>
+                  </div>
                   );
                 })
               : Array.isArray(filteredPosts) & (filteredPosts !== []) &&
                 filteredPosts.map((post) => {
                   return (
                     <div key={post?.title} className={"post"}>
-                      <img src={post.image} alt="post" />
-                      <div className="tag">
-                        <h1>{post.type}</h1>
-                      </div>
-                      <div className="date">{post.date}</div>
-                      <div className="title">{post.title}</div>
-                      <div className="caption">{post.details}</div>
-                      <div className="post_footer">
-                        <div>
-                          <div className="by">by</div>
-                          <div className="auther">{post.by}</div>
-                        </div>
-                        <Link onClick={()=>handleReadMore(post.slug)} to={`/blog/${post.slug}`} className="rmb">
-                          <div className="readmore">Read more </div>
-                          <img className="arrow" src={BlueArrow} alt="arrow" />
-                        </Link>
-                      </div>
+                    <img src={post.image} alt="post" />
+                    <div className="tag">
+                      <h1>{post.type}</h1>
                     </div>
+                    <div className="date">{post.date}</div>
+                    <div className="title">{post.title}</div>
+                    <div className="caption">{post.details}</div>
+                    <div className="post_footer">
+                      <div>
+                        <div className="by">by</div>
+                        <div className="auther">{post?.auther_name ? (post?.auther_name !== "-" ? post?.auther_name:"Raqamyat") :"Raqamyat"}</div>
+                      </div>
+                      <Link to={`/blog/${post?.slug}`} className="rmb">
+                        <div className="readmore">Read more </div>
+                        <img className="arrow" src={BlueArrow} alt="arrow" />
+                      </Link>
+                    </div>
+                  </div>
                   );
                 })}
           </div>
@@ -98,7 +103,7 @@ const handleReadMore = (a) =>{
                 <div className="category">
                   <div className="category_name">All</div>
                   <div className="category_count">
-                    <div>{filteredPosts === [] ? data?.length  : filteredPosts?.length }</div>
+                    <div>{filteredPosts === [] ? data?.item?.data?.length  : filteredPosts?.length }</div>
                   </div>
                 </div>
                 {/* 

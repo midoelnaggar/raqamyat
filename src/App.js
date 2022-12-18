@@ -6,6 +6,7 @@ import { Route, Routes, useLocation, Outlet } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import useWindowSize from "./hooks/useWindowSize";
 import usePathname from "./hooks/usePathname";
+import Seo from "./components/Seo";
 const Loading = lazy(() => import("./Loading"));
 const Footer = lazy(() => import("./components/headerAndFooter/Footer"));
 const Header = lazy(() => import("./components/headerAndFooter/Header"));
@@ -115,43 +116,37 @@ function App() {
   const location = useLocation();
   const [data, setData] = useState(null);
   const [webinar, setWebinar] = useState({});
-  const [slug, setSlug] = useState("");
   const {
-    btLoading,
-    setBtLoading,
-    isFetching,
     loading,
     apiUrl,
     setApiUrl,
     bgColor,
-    setIsFetching,
     setLoading,
-  } = usePathname({ location: location.pathname, setData, slug });
+  } = usePathname({ location: location.pathname, setData });
 
   const width = useWindowSize();
 
   useEffect(() => {
-    if (apiUrl != null) {
+    const  getData = async () =>{
       try {
-        axios.get(apiUrl).then((res) => {
-          if (res.data.data) {
-            setData(res.data.data);
-            setIsFetching(false);
+       const res = await axios.get(apiUrl)
+       if ( await res.data.data) {
+            setData( await res.data.data);
+            setLoading(false);
           }
-        });
+          else if ( await res.data.item.data) {
+            setData(await res.data);
+            setLoading(false);
+          }
+        
       } catch (err) {
         console.error(err);
-      }
     }
-  }, [location.pathname, setIsFetching, setLoading, apiUrl, loading]);
+  }
+  getData();
+  }, [apiUrl,setLoading]);
 
-  useEffect(() => {
-    if (isFetching === false) {
-      setLoading(false);
-      setBtLoading(false);
-    }
-  }, [isFetching, setLoading, setBtLoading]);
-
+  
   return (
     <div
       className="app"
@@ -166,13 +161,12 @@ function App() {
         ).toString(),
       }}
     >
+      <Seo description={data?.seo_description} />
       <div className={bgColor} />
       <Header />
       <AnimatePresence>
-        {loading ? (
-          <Loading />
-        ) : (
-          <div className="outlet">
+        {loading && <Loading />}
+          <div style={{display:`${loading ? "none" : "block"}`}} className="outlet">
             <Suspense fallback={<Loading />}>
               <Routes>
                 <Route location={location} key={location.pathname}>
@@ -185,9 +179,9 @@ function App() {
                   <Route path="blog">
                     <Route
                       index
-                      element={<BlogPage data={data} setSlug={setSlug} />}
+                      element={<BlogPage data={data} setLoading={setLoading} />}
                     />
-                    <Route path=":slug" element={<SingleBlog data={data} />} />
+                    <Route path=":slug" element={<SingleBlog />} />
                   </Route>
                   <Route path="media" element={<MediaPage data={data} />} />
                   <Route path="media" element={<MediaPage data={data} />} />
@@ -324,7 +318,7 @@ function App() {
                     element={
                       <>
                         <BusinessTypePage />{" "}
-                        {btLoading ? <Loading /> : <Outlet />}{" "}
+                        {loading ? <Loading /> : <Outlet />}{" "}
                       </>
                     }
                   >
@@ -353,7 +347,7 @@ function App() {
               </Routes>
             </Suspense>
           </div>
-        )}
+        
       </AnimatePresence>
       <Footer />
     </div>

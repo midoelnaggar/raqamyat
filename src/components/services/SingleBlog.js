@@ -3,13 +3,24 @@ import moment from "moment";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import PageHeader from "../PageHeader";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useHref } from "react-router-dom";
 import avatar from "../../img/avatar.png";
+import axios from "axios";
+import { useEffect } from "react";
+import { useState } from "react";
 
-export default function SingleBlog({ data }) {
+export default function SingleBlog({setLoading}) {
+  const [data, setData] = useState();
+  const href = useHref().split("/");
+  const slug = href[href?.length - 1]
   const navigate = useNavigate();
-
-
+  useEffect(() => {
+     const getBlog = async ()=> {
+      const res = await axios.get(`https://newraq.raqamyat.com/public/api/jobs/show?slug=${slug}`)
+      setData(await res.data.data);
+    }
+    getBlog();
+  }, [slug]);
   return (
     <Motion>
       <div className="webinar_page">
@@ -48,7 +59,7 @@ export default function SingleBlog({ data }) {
             Written by
           </div>
           <div style={{ display: "flex" }}>
-            <img src={avatar} alt="avatar"></img>
+            <img src={data?.auther_image ? (data?.auther_image !== "https://newraq.raqamyat.com/public/storage/-" ? data?.auther_image:avatar) :avatar} alt="avatar"></img>
             <div
               style={{
                 display: "flex",
@@ -57,7 +68,7 @@ export default function SingleBlog({ data }) {
                 paddingLeft: "10px",
               }}
             >
-              <div className="webinar_speaker">{data?.speker}</div>
+              <div className="webinar_speaker">{data?.auther_name ? (data?.auther_name !== "-" ? data?.auther_name:"Raqamyat") :"Raqamyat"}</div>
               <div className="speaker_position">{data?.position}</div>
               <div className="speaker_company">{data?.company}</div>
             </div>

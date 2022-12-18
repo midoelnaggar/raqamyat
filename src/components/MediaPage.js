@@ -4,6 +4,7 @@ import PageHeader from "./PageHeader";
 import ReactPlayer from "react-player";
 import { Modal, Box } from "@mui/material";
 import playIcon from "../img/play.svg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function MediaPage({ data }) {
   const [selected, setSelected] = useState("all");
@@ -89,7 +90,9 @@ export default function MediaPage({ data }) {
           {Array.isArray(images) && (selected !== "videos") &&
             images.map((image,index) => {
               return (
-                <img
+                <LazyLoadImage
+                placeholder={<h1>asdasd</h1>}
+                loading="lazy"
                 key={index}
                   className="image_thumb"
                   onClick={() => {
