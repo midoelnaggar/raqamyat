@@ -126,6 +126,21 @@
   padding-top: 2px;
 }
 
+.loadMoreBtn {
+  display: flex;
+  width: 150px;
+  height: 50px;
+  background: linear-gradient(249deg, #0093de, #3c6fae);
+  color: white;
+  font-family: "Gotham";
+  font-size: large;
+  font-weight: 300;
+  border-radius: 30px;
+  border-style: hidden;
+  cursor: pointer;
+}
+
+
 .blog_page > .page_content > .blog_left > .edged {
   opacity: 0.4;
 }
@@ -145,13 +160,13 @@
 }
 
 .blog_page > .page_content > .blog_right > .search > input {
-  width: 260px;
+  width: 240px;
   height: 52px;
   border-radius: 99px;
   border-style: none;
   font-family: "Gotham";
   padding-inline-start: 20px;
-  padding-inline-end: 50px;
+  padding-inline-end: 70px;
   color: #000000;
   font-size: 16px;
   font-weight: 400;

@@ -18,9 +18,10 @@ export default function SingleBlog({setLoading}) {
      const getBlog = async ()=> {
       const res = await axios.get(`https://newraq.raqamyat.com/public/api/jobs/show?slug=${slug}`)
       setData(await res.data.data);
+      setLoading(false);
     }
     getBlog();
-  }, [slug]);
+  }, [slug,setLoading]);
   return (
     <Motion>
       <div className="webinar_page">

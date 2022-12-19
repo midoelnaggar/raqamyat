@@ -4,7 +4,6 @@ import PageHeader from "./PageHeader";
 import ReactPlayer from "react-player";
 import { Modal, Box } from "@mui/material";
 import playIcon from "../img/play.svg";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function MediaPage({ data }) {
   const [selected, setSelected] = useState("all");
@@ -14,6 +13,7 @@ export default function MediaPage({ data }) {
   const [imageUrl, setImageUrl] = useState("");
   const [openImageModal, setOpenImageModal] = useState(false);
   const [openVideoModal, setOpenVideoModal] = useState(false);
+
 
   useEffect(() => {
     Array.isArray(data?.sub) &&
@@ -86,25 +86,23 @@ export default function MediaPage({ data }) {
         </div>
       </div>
       <div className="media">
-        <div style={{ display: "flex", flexWrap: "wrap" }} className="images">
           {Array.isArray(images) && (selected !== "videos") &&
             images.map((image,index) => {
               return (
-                <LazyLoadImage
-                placeholder={<h1>asdasd</h1>}
+                <div className="image_thumb_container">  
+                <img
                 loading="lazy"
                 key={index}
                   className="image_thumb"
                   onClick={() => {
-                    handleOpenImageModal(image?.description);
+                    handleOpenImageModal(image?.image);
                   }}
                   src={image?.image}
                   alt="image_thumb"
                 />
+                </div>
               );
             })}
-        </div>
-        <div style={{ display: "flex", flexWrap: "wrap" }} className="videos">
           {Array.isArray(videos) && (selected !== "images") &&
             videos.map((video,index) => {
               return (
@@ -113,7 +111,7 @@ export default function MediaPage({ data }) {
                   <img
                     className="video_thumb"
                     onClick={() => {
-                      handleOpenVideoModal(video?.description);
+                      handleOpenVideoModal(video?.title);
                     }}
                     src={video?.image}
                     alt="video_thumb"
@@ -121,7 +119,6 @@ export default function MediaPage({ data }) {
                 </div>
               );
             })}
-        </div>
       </div>
       <Modal open={openImageModal} onClick={handleCloseImageModal}>
         <Box

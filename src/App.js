@@ -181,7 +181,7 @@ function App() {
                       index
                       element={<BlogPage data={data} setLoading={setLoading} />}
                     />
-                    <Route path=":slug" element={<SingleBlog />} />
+                    <Route path=":slug" element={<SingleBlog setLoading={setLoading} />} />
                   </Route>
                   <Route path="media" element={<MediaPage data={data} />} />
                   <Route path="media" element={<MediaPage data={data} />} />

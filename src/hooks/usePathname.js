@@ -55,7 +55,7 @@ function usePathname({ location }) {
       setApiUrl("https://newraq.raqamyat.com/public/api/jobs?type=blog");
       setBgColor("insidebg");
       document.title = "Blog";
-    }  else if (location === "/about/news/e-book") {
+    } else if (location === "/about/news/e-book") {
       setBgColor("contactbg");
       document.title = "E-Book";
     } else if (location === "/about/news/press") {
@@ -293,6 +293,21 @@ function usePathname({ location }) {
       );
       setBgColor("insidebg");
       document.title = "Retail";
+    }
+    if (
+      (document.getElementsByClassName("aboutmenu").length > 0) &
+      (document.getElementsByClassName("servicesmenu").length > 0)
+    ) {
+      document.getElementsByClassName("aboutmenu")[0].style.visibility =
+        "hidden";
+      document.getElementsByClassName("servicesmenu")[0].style.visibility =
+        "hidden";
+      setTimeout(() => {
+        document.getElementsByClassName("aboutmenu")[0].style.visibility =
+          "visible";
+        document.getElementsByClassName("servicesmenu")[0].style.visibility =
+          "visible";
+      }, 100);
     }
   }, [location, apiUrl]);
 

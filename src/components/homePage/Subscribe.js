@@ -4,12 +4,12 @@ import { useSnackbar } from "notistack";
 
 function Subscribe() {
   const emailRef = useRef("");
+  const submitBtnRef = useRef(null);
   const { enqueueSnackbar } = useSnackbar();
   
-const validRegEx = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-
-  const submit = (e) => {
-    e.preventDefault();
+const validRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
+  const submit = () => {
+    submitBtnRef.current.disabled = true;
     if (emailRef?.current?.value.match(validRegEx)){
     try {
       axios
@@ -28,16 +28,21 @@ const validRegEx = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0
               variant: "error",
             });
           }
+          submitBtnRef.current.disabled = false;
         }
        
       );
     } catch (err) {
       console.log(err);
+      submitBtnRef.current.disabled = false;
+
     }}
     else {
       enqueueSnackbar("Invalid email.", {
         variant: "error",
       });
+      submitBtnRef.current.disabled = false;
+
     }
   };
 
@@ -50,9 +55,9 @@ const validRegEx = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0
         </div>
         <div className="email">
           <input type="email" ref={emailRef} placeholder="email" />
-          <div onClick={submit} style={{ cursor: "pointer" }} className="sbtn">
-            <p>Subscribe</p>
-          </div>
+          <button ref={submitBtnRef} onClick={()=>submit()} style={{ border:"none" ,cursor: "pointer" ,display:"flex",alignItems:"center" }} className="sbtn">
+            Subscribe
+          </button>
         </div>
       </div>
     </div>

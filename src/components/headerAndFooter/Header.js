@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import { useState } from "react";
+import { useEffect } from "react";
 
 function Header() {
   let location = useLocation();
@@ -19,9 +20,20 @@ function Header() {
     ) {
       return;
     }
-
     setDrawer(open);
   };
+
+  useEffect(() => {
+    if(document.querySelectorAll(`a[href='${location.pathname}']`).length >0){
+    document.querySelectorAll(`a[href='${location.pathname}']`)[0].style.fontWeight = 600
+    }
+    return()=> {
+      if(document.querySelectorAll(`a[href='${location.pathname}']`).length >0){
+      document.querySelectorAll(`a[href='${location.pathname}']`)[0].style.fontWeight = 400
+      }
+
+    }
+  }, [location.pathname]);
 
   return (
     <div className="header">
@@ -48,7 +60,7 @@ function Header() {
           onKeyDown={toggleDrawer(false)}
           className="drawer"
         >
-          <Link to="/">
+          <Link  to="/">
             <div className="sideMenuLogo">
               <img src={logo} alt={"logo"} />
             </div>
@@ -58,32 +70,32 @@ function Header() {
               <div className="menti mentis">Our Company</div>
             </Divider>
             <div className="sideMenuSection">
-              <Link className="side_menu_item_link" to="/about">
+              <Link  className="side_menu_item_link" to="/about">
                 Who we are?
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/about/our-company/stakeholders"
               >
                 Stakeholders
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/about/our-company/our-partners"
               >
                 Our Partners
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/about/our-company/successful-cases"
               >
                 Successful Cases
               </Link>
 
-              <Link className="side_menu_item_link" to="/contact-us">
+              <Link  className="side_menu_item_link" to="/contact-us">
                 Contact Us
               </Link>
             </div>
@@ -91,19 +103,19 @@ function Header() {
               <div className="menti mentis">News</div>
             </Divider>
             <div className="sideMenuSection">
-              <Link className="side_menu_item_link" to="/about/news/press">
+              <Link  className="side_menu_item_link" to="/about/news/press">
                 Press
               </Link>
 
-              <Link className="side_menu_item_link" to="/about/webinars">
+              <Link  className="side_menu_item_link" to="/about/webinars">
                 Webinars
               </Link>
 
-              <Link className="side_menu_item_link" to="/about/news/projects">
+              <Link  className="side_menu_item_link" to="/about/news/projects">
                 Projects
               </Link>
 
-              <Link className="side_menu_item_link" to="/about/news/e-book">
+              <Link  className="side_menu_item_link" to="/about/news/e-book">
                 E-Book
               </Link>
             </div>
@@ -111,10 +123,10 @@ function Header() {
               <div className="menti mentis">Careers</div>
             </Divider>
             <div className="sideMenuSection">
-              <Link className="side_menu_item_link" to="/about/careers/jobs">
+              <Link  className="side_menu_item_link" to="/about/careers/jobs">
                 Jobs
               </Link>
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/about/careers/internships"
               >
@@ -128,34 +140,34 @@ function Header() {
             <Divider textAlign="center">
               <div className="menti mentis">
                 {" "}
-                <Link to="/services/solutions/development" className="mentihe">
+                <Link  to="/services/solutions/development" className="mentihe">
                   Development
                 </Link>
               </div>
             </Divider>
             <div className="sideMenuSection">
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/development/online-stores-development"
               >
                 Online Stores Development
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/development/consultation-and-maintenance"
               >
                 Consultation & Maintenance
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/development/outsourcing"
               >
                 Outsourcing
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/development/e-payment-integrations"
               >
@@ -165,34 +177,34 @@ function Header() {
             <Divider textAlign="center">
               <div className="menti mentis">
                 {" "}
-                <Link to="/services/solutions/operations" className="mentihe">
+                <Link  to="/services/solutions/operations" className="mentihe">
                   Operations
                 </Link>
               </div>
             </Divider>
             <div className="sideMenuSection">
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/operations/operations-solutions"
               >
                 Operations Solutions
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/operations/technical-support-agents"
               >
                 Technical Support Agents
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/operations/projects-operations-bot"
               >
                 Projects Operations (BOT)
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/operations/logistics-management"
               >
@@ -201,56 +213,56 @@ function Header() {
             </div>
             <Divider textAlign="center">
               <div className="menti mentis">
-                <Link to="/services/solutions/marketing" className="mentihe">
+                <Link  to="/services/solutions/marketing" className="mentihe">
                   Marketing
                 </Link>
               </div>
             </Divider>
 
             <div className="sideMenuSection">
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/marketing/content-marketing"
               >
                 Content Marketing
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/marketing/marketing-strategy"
               >
                 Marketing Strategy
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/marketing/market-analysis"
               >
                 Market Analysis
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/marketing/video-production-services"
               >
                 Video Production
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/marketing/product-development"
               >
                 Product Development
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/marketing/integrated-marketing-solutions"
               >
                 Integrated Marketing
               </Link>
 
-              <Link
+              <Link 
                 className="side_menu_item_link"
                 to="/services/solutions/marketing/outsourcing"
               >
@@ -260,7 +272,7 @@ function Header() {
           </List>
             <Divider textAlign="center">
               <div className="menti mentis">
-                <Link
+                <Link 
                   to="/services/solutions/business-type/retail-e-commerce"
                   className="mentihe"
                 >
@@ -269,23 +281,23 @@ function Header() {
               </div>
             </Divider>
             <div className="sideMenuSection">
-            <Link  className="side_menu_item_link" to="/services/business-type/retail-e-commerce">
+            <Link   className="side_menu_item_link" to="/services/business-type/retail-e-commerce">
               Retail E-Commerce
             </Link>
 
-            <Link  className="side_menu_item_link" to="/services/business-type/fmcg-and-restaurats-e-commerce">
+            <Link   className="side_menu_item_link" to="/services/business-type/fmcg-and-restaurats-e-commerce">
               FMCG & Restaurants E-Commerce
             </Link>
 
-            <Link  className="side_menu_item_link" to="/services/business-type/healthcare-e-commerce">
+            <Link   className="side_menu_item_link" to="/services/business-type/healthcare-e-commerce">
               Healthcare E-Commerce
             </Link>
 
-            <Link  className="side_menu_item_link" to="/services/business-type/education-e-commerce">
+            <Link   className="side_menu_item_link" to="/services/business-type/education-e-commerce">
               Education E-Commerce
             </Link>
 
-            <Link  className="side_menu_item_link" to="/services/business-type/e-commerce-for-special-projects">
+            <Link   className="side_menu_item_link" to="/services/business-type/e-commerce-for-special-projects">
               E-Commerce for Special Projects
             </Link>
             </div>
@@ -294,17 +306,17 @@ function Header() {
           <div className="sideMenuSection">
             <div style={{ padding: "15px" }} className="menti mentis">
               {" "}
-              <Link to="/blog" className="mentihe">
+              <Link  to="/blog" className="mentihe">
                 Blog
               </Link>
             </div>
             <div style={{ padding: "15px" }} className="menti mentis">
               {" "}
-              <Link className="mentihe">-</Link>
+              <Link  className="mentihe">-</Link>
             </div>
             <div style={{ padding: "15px" }} className="menti mentis">
               {" "}
-              <Link to="/media" className="mentihe">
+              <Link  to="/media" className="mentihe">
                 Media
               </Link>
             </div>
@@ -313,7 +325,7 @@ function Header() {
       </SwipeableDrawer>
       <div className="navList">
         <div>
-          <Link
+          <Link 
             className={`${
               location?.pathname === "/"
                 ? "activeLink menu_btn"
@@ -342,47 +354,47 @@ function Header() {
               <div className="mencol">
                 <div className="menti">Our Company</div>
                 <div>
-                  <Link to="/about">Who we are?</Link>
+                  <Link  to="/about">Who we are?</Link>
                 </div>
                 <div>
-                  <Link to="/about/our-company/stakeholders">Stakeholders</Link>
+                  <Link  to="/about/our-company/stakeholders">Stakeholders</Link>
                 </div>
                 <div>
-                  <Link to="/about/our-company/our-partners">Our Partners</Link>
+                  <Link  to="/about/our-company/our-partners">Our Partners</Link>
                 </div>
                 <div>
-                  <Link to="/about/our-company/successful-cases">
+                  <Link  to="/about/our-company/successful-cases">
                     Successful Cases
                   </Link>
                 </div>
                 <div>
-                  <Link to="/contact-us">Contact Us </Link>
+                  <Link  to="/contact-us">Contact Us </Link>
                 </div>
               </div>
               <span className="seperator" />
               <div className="mencol">
                 <div className="menti">News</div>
                 <div>
-                  <Link to="/about/news/press">Press </Link>
+                  <Link  to="/about/news/press">Press </Link>
                 </div>
                 <div>
-                  <Link to="/about/webinars">Webinars </Link>
+                  <Link  to="/about/webinars">Webinars </Link>
                 </div>
                 <div>
-                  <Link to="/about/news/projects">Projects </Link>
+                  <Link  to="/about/news/projects">Projects </Link>
                 </div>
                 <div>
-                  <Link to="/about/news/e-book">E-Book </Link>
+                  <Link  to="/about/news/e-book">E-Book </Link>
                 </div>
               </div>
               <span className="seperator" />
               <div className="mencol">
                 <div className="menti">Careers</div>
                 <div>
-                  <Link to="/about/careers/jobs">Jobs </Link>
+                  <Link  to="/about/careers/jobs">Jobs </Link>
                 </div>
                 <div>
-                  <Link to="/about/careers/internships">Internships </Link>
+                  <Link  to="/about/careers/internships">Internships </Link>
                 </div>
               </div>
             </div>
@@ -407,7 +419,7 @@ function Header() {
               </div>
               <div className="mencol">
                 <div className="menti">
-                  <Link
+                  <Link 
                     to="/services/solutions/development"
                     className="mentihe"
                   >
@@ -415,22 +427,22 @@ function Header() {
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/development/online-stores-development">
+                  <Link  to="/services/solutions/development/online-stores-development">
                     Online Stores Development
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/development/consultation-and-maintenance">
+                  <Link  to="/services/solutions/development/consultation-and-maintenance">
                     Consultation & Maintenance
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/development/outsourcing">
+                  <Link  to="/services/solutions/development/outsourcing">
                     Outsourcing
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/development/e-payment-integrations">
+                  <Link  to="/services/solutions/development/e-payment-integrations">
                     E-Payment Integrations
                   </Link>
                 </div>
@@ -438,27 +450,27 @@ function Header() {
               <span className="seperator" />
               <div className="mencol">
                 <div className="menti">
-                  <Link to="/services/solutions/operations" className="mentihe">
+                  <Link  to="/services/solutions/operations" className="mentihe">
                     Operations
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/operations/operations-solutions">
+                  <Link  to="/services/solutions/operations/operations-solutions">
                     Operations Solutions
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/operations/technical-support-agents">
+                  <Link  to="/services/solutions/operations/technical-support-agents">
                     Technical Support Agents
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/operations/projects-operations-bot">
+                  <Link  to="/services/solutions/operations/projects-operations-bot">
                     Projects Operations (BOT)
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/operations/logistics-management">
+                  <Link  to="/services/solutions/operations/logistics-management">
                     Logistics Management
                   </Link>
                 </div>
@@ -466,27 +478,27 @@ function Header() {
               <span className="seperator" />
               <div className="mencol">
                 <div className="menti">
-                  <Link to="/services/solutions/marketing" className="mentihe">
+                  <Link  to="/services/solutions/marketing" className="mentihe">
                     Marketing
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/marketing/content-marketing">
+                  <Link  to="/services/solutions/marketing/content-marketing">
                     Content Marketing
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/marketing/marketing-strategy">
+                  <Link  to="/services/solutions/marketing/marketing-strategy">
                     Marketing Strategy
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/marketing/market-analysis">
+                  <Link  to="/services/solutions/marketing/market-analysis">
                     Market Analysis
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/marketing/video-production-services">
+                  <Link  to="/services/solutions/marketing/video-production-services">
                     Video Production
                   </Link>
                 </div>
@@ -494,17 +506,17 @@ function Header() {
               <div className="mencol">
                 <div className="menti"></div>
                 <div>
-                  <Link to="/services/solutions/marketing/product-development">
+                  <Link  to="/services/solutions/marketing/product-development">
                     Product Development
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/marketing/integrated-marketing-solutions">
+                  <Link  to="/services/solutions/marketing/integrated-marketing-solutions">
                     Integrated Marketing
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/solutions/marketing/outsourcing">
+                  <Link  to="/services/solutions/marketing/outsourcing">
                     Outsourcing
                   </Link>
                 </div>
@@ -516,27 +528,27 @@ function Header() {
               </div>
               <div className="menlcol">
                 <div>
-                  <Link to="/services/business-type/retail-e-commerce">
+                  <Link  to="/services/business-type/retail-e-commerce">
                     Retail E-Commerce
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/business-type/fmcg-and-restaurats-e-commerce">
+                  <Link  to="/services/business-type/fmcg-and-restaurats-e-commerce">
                     FMCG & Restaurants E-Commerce
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/business-type/healthcare-e-commerce">
+                  <Link  to="/services/business-type/healthcare-e-commerce">
                     Healthcare E-Commerce
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/business-type/education-e-commerce">
+                  <Link  to="/services/business-type/education-e-commerce">
                     Education E-Commerce
                   </Link>
                 </div>
                 <div>
-                  <Link to="/services/business-type/e-commerce-for-special-projects">
+                  <Link  to="/services/business-type/e-commerce-for-special-projects">
                     E-Commerce for Special Projects
                   </Link>
                 </div>
@@ -546,7 +558,7 @@ function Header() {
         </div>
         <span className="dot"></span>
         <div>
-          <Link
+          <Link 
             className={`${
               location?.pathname === "/blog"
                 ? "activeLink menu_btn"
@@ -559,7 +571,7 @@ function Header() {
         </div>
         <span className="dot"></span>
         <div>
-          <Link
+          <Link 
             className={`${
               location?.pathname === "/media"
                 ? "activeLink menu_btn"
@@ -572,13 +584,13 @@ function Header() {
         </div>
       </div>
       <div className="logo">
-        <Link to="/">
+        <Link  to="/">
           <img alt="logo" className="logo-img" src={logo} />
         </Link>
       </div>
       <div className="contact-us">
         <button className="cubtn">
-          <Link to="/contact-us">Contact Us</Link>
+          <Link  to="/contact-us">Contact Us</Link>
         </button>
       </div>
     </div>
