@@ -2,7 +2,7 @@ import "./App.css"
 import "./styles"
 import { useState, useEffect, lazy, Suspense } from "react";
 import axios from "axios";
-import { Route, Routes, useLocation, Outlet } from "react-router-dom";
+import { Route, Routes, useLocation, Outlet, useNavigationType } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import useWindowSize from "./hooks/useWindowSize";
 import usePathname from "./hooks/usePathname";
@@ -113,9 +113,9 @@ const MediaPage = lazy(() => import("./components/MediaPage"));
 const SingleBlog = lazy(() => import("./components/services/SingleBlog"));
 
 function App() {
+  const navigationType = useNavigationType();
   const location = useLocation();
   const [data, setData] = useState(null);
-  const [webinar, setWebinar] = useState({});
   const {
     loading,
     apiUrl,
@@ -146,7 +146,13 @@ function App() {
   getData();
   }, [apiUrl,setLoading]);
 
-  
+  useEffect(() => {
+    if (navigationType === "POP") {
+      setLoading(false)
+    }
+    }, [navigationType,setLoading]);
+
+
   return (
     <div
       className="app"
@@ -170,7 +176,7 @@ function App() {
             <Suspense fallback={<Loading />}>
               <Routes>
                 <Route location={location} key={location.pathname}>
-                  <Route index element={<HomePage data={data}></HomePage>} />
+                  <Route index element={<HomePage data={data} setLoading={setLoading}></HomePage>} />
                   <Route path="*" element={<NoPage />} />
                   <Route
                     path="contact-us"
@@ -211,17 +217,17 @@ function App() {
                   />
                   <Route
                     path="news/press"
-                    element={<PressPage data={data} />}
+                    element={<PressPage data={data} setLoading={setLoading} />}
                   />
                   <Route
                     path="webinars"
                     element={
-                      <WebinarsPage data={data} setWebinar={setWebinar} />
+                      <WebinarsPage data={data}  />
                     }
                   />
                   <Route
-                    path="webinars/:webinarName"
-                    element={<WebinarPage data={webinar} />}
+                    path="webinars/:id"
+                    element={<WebinarPage  setLoading={setLoading} />}
                   />
                   <Route path="news/e-book" element={<EBookPage />} />
                   <Route path="careers/jobs">

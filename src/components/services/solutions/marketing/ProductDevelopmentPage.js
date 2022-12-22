@@ -13,14 +13,14 @@ export default function ProductDevelopmentPage({ data }) {
           }
         />
         <Service data={data} />
-        {Array.isArray(data?.sub[0]?.sub) && (
+        {Array.isArray(data?.sub) && Array.isArray(data?.sub[0]?.sub) && (
           <div className="last_section">
             <span>
               {data?.sub[0]?.title}
               <span />
             </span>
             <div className="last_section_sub">
-              {data?.sub[0]?.sub.map((card, index) => {
+              { Array.isArray(data?.sub) && Array.isArray(data?.sub[0]?.sub) && data?.sub[0]?.sub.map((card, index) => {
                 return (
                   <div  key={index} className="last_section_sub_card">
                     <div className="last_section_sub_card_number">

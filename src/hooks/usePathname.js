@@ -40,7 +40,7 @@ function usePathname({ location }) {
       document.title = "Our Partners";
     } else if (location === "/about/careers/jobs") {
       setLoading(true);
-      setApiUrl("https://newraq.raqamyat.com/public/api/jobs");
+      setApiUrl("https://newraq.raqamyat.com/public/api/jobs?type=job");
       setBgColor("contactbg");
       document.title = "Jobs";
     } else if (location === "/about/careers/jobs/:slug") {
@@ -55,7 +55,8 @@ function usePathname({ location }) {
       setApiUrl("https://newraq.raqamyat.com/public/api/jobs?type=blog");
       setBgColor("insidebg");
       document.title = "Blog";
-    } else if (location === "/about/news/e-book") {
+    }
+     else if (location === "/about/news/e-book") {
       setBgColor("contactbg");
       document.title = "E-Book";
     } else if (location === "/about/news/press") {
@@ -71,9 +72,9 @@ function usePathname({ location }) {
       setApiUrl("https://newraq.raqamyat.com/public/api/webinars");
       setBgColor("insidebg");
       document.title = "Webinars";
-    } else if (location === "/about/webinars/:webinarName") {
+    } else if (location.startsWith("/about/webinars/")) {
       setLoading(true);
-      setApiUrl("https://newraq.raqamyat.com/public/api/webinars");
+      setApiUrl("");
       setBgColor("insidebg");
       document.title = "Webinars";
     } else if (location === "/about/news/e-book") {

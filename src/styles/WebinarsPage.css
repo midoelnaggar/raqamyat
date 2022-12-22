@@ -64,7 +64,9 @@
   width: 260px;
   height: 260px;
   object-fit: cover;
-  object-position: 0% 50%;
+  object-position: 50% 50%;
+  border-radius: 25px 0px 0px 25px;
+
 }
 .webinar > div {
   display: flex;

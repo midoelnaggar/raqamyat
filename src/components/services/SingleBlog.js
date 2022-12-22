@@ -8,6 +8,7 @@ import avatar from "../../img/avatar.png";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import fallback from "../../img/fallbackSingleBlog.png"
 
 export default function SingleBlog({setLoading}) {
   const [data, setData] = useState();
@@ -34,7 +35,7 @@ export default function SingleBlog({setLoading}) {
         <div className="page_content">
         <div
             onClick={() => {
-              navigate(-1, { replace: true });
+              navigate(-1)
             }}
             className="webinar_back"
           >
@@ -60,7 +61,7 @@ export default function SingleBlog({setLoading}) {
             Written by
           </div>
           <div style={{ display: "flex" }}>
-            <img src={data?.auther_image ? (data?.auther_image !== "https://newraq.raqamyat.com/public/storage/-" ? data?.auther_image:avatar) :avatar} alt="avatar"></img>
+            <img onError={(e)=> e.target.src = avatar } src={data?.auther_image} alt="avatar"></img>
             <div
               style={{
                 display: "flex",
@@ -77,10 +78,12 @@ export default function SingleBlog({setLoading}) {
           <div
             style={{
               display: "flex",
-              paddingTop: "50px",
+              paddingBlock: "50px",
               alignItems: "center",
             }}
-          ></div>
+          >
+            <img onError={(e)=> e.target.src = fallback } src={data?.image} alt="blogImage" className="blogImage" />
+          </div>
           <div dangerouslySetInnerHTML={{__html: data?.description}} />            
         </div>
       </div>

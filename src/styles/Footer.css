@@ -37,6 +37,11 @@
 .footer > .fourcols > div > .socialmedia > a {
   padding-inline-end: 10px;
 }
+
+.footer > .fourcols > div > .socialmedia > a > img{
+  width: 24px;
+}
+
 .footer > .fourcols > div > .footertitle {
   position: relative;
   color: #2a2a2a;
@@ -63,7 +68,11 @@
 .footer > .fourcols > div >.links> div{
     margin-bottom: 15px;
     display: flex;
+}
 
+.footer > .fourcols > div >.links :nth-child(3){
+
+  align-items: flex-start;
 }
 
 .footer > .fourcols > div >.links> div >a {
@@ -75,7 +84,8 @@
 
 .footer > .fourcols > div >.links> div>img  {
     padding-inline-end:8px ;
-    height: 0%
+    object-fit: contain;
+    width: 14px;
 }
 .footer > .fourcols > div >.links> div>.em  {
     padding-top:3px ;

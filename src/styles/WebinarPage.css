@@ -1,61 +1,91 @@
 .webinar_page > .page_content {
   padding-block: 79px;
-padding-inline: 270px;
+  padding-inline: 270px;
 }
 
-
-.webinar_back{
+.webinar_back {
   display: flex;
   align-items: center;
-  color: #0093DE;
+  color: #0093de;
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;
   padding-bottom: 15px;
-
 }
 
-.webinar_page
-> .page_content 
-> .webinar_zoom{
-color: #2A2A2A;
-font-size:  18px;
-font-weight: 600;
-padding-top: 15px;
+.webinar_page > .page_content > div > .webinarCoverImage {
+  width: 679px;
+  height: 555px;
+  object-fit: cover;
+  border-radius: 4%;
 }
 
-.webinar_page
-> .page_content 
-> .webinar_title{
-max-width: 958px;
-font-size:  65px;
-font-weight: 600;
-line-height: 72px;
-letter-spacing: -3px;
-padding-top: 15px;
-
+.webinar_page > .page_content > .webinar_zoom {
+  color: #2a2a2a;
+  font-size: 18px;
+  font-weight: 600;
+  padding-top: 15px;
 }
 
-.webinar_page > .page_content > div  > .contactform  {
+.webinar_page > .page_content > .webinar_title {
+  max-width: 958px;
+  font-size: 65px;
+  font-weight: 600;
+  line-height: 72px;
+  letter-spacing: -3px;
+  padding-top: 15px;
+}
+
+.webinar_page > .page_content > div > .contactform {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   background-color: white;
   width: 475px;
   margin: 0;
-  height: 467px; 
+  height: 475px;
   box-shadow: none;
   border-radius: 8%;
   padding-top: 40px;
-  padding-bottom: 10px;
-
+  padding-bottom: 40px;
 }
 
-.webinar_page > .page_content > div  > .contactform > div>h1 {
-margin: 0;
-padding: 0;
+.webinar_page > .page_content > div > .contactform > .contactformHead > h1 {
+  position: relative;
+  letter-spacing: -0.5px;
+  font-size: 36px;
+  font-weight: 600;
+}
+.webinar_page
+  > .page_content
+  > div
+  > .contactform
+  > .contactformHead
+  > h1
+  > span {
+  position: relative;
+  letter-spacing: -0.5px;
+  z-index: 0;
+}
+.webinar_page
+  > .page_content
+  > div
+  > .contactform
+  > .contactformHead
+  > h1
+  > span
+  > span {
+  position: absolute;
+  background-color: #0093de;
+  opacity: 55%;
+  height: 20px;
+  width: 95px;
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
 }
 
-.webinar_page > .page_content > div  > .contactform >div >.sbtn {
+.webinar_page > .page_content > div > .contactform > div > .sbtn {
   display: flex;
   background: linear-gradient(249deg, #0093de, #3c6fae);
   justify-content: center;
@@ -71,10 +101,16 @@ padding: 0;
   font-family: "Gotham";
 }
 
-.webinar_page > .page_content > div  > .contactform > div >.sbtn > div {
+.webinar_page > .page_content > div > .contactform > div > .sbtn > div {
   text-align: center;
   color: white;
   font-size: 18px;
   font-weight: 300;
 }
 
+.blogImage {
+  width: 1780px;
+  height: 500px;
+  margin-left: -270px;
+  object-fit: cover;
+}

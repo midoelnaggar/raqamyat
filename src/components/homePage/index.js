@@ -8,7 +8,7 @@ import Ecommerce from "./Ecommerce";
 import Epayment from "./Epayment";
 import Motion from "../Motion";
 
-const HomePage = ({ data }) => {
+const HomePage = ({ data, setLoading }) => {
   
   return (
     <Motion>
@@ -19,8 +19,7 @@ const HomePage = ({ data }) => {
       <Scope data={data?.our_scope} />
       <Ecommerce data={data?.ecommerce_solutions} />
       <Epayment data={data?.epayment_services} />
-      {/*<Articles data={data?.top_articles} />*/}
-      <Articles />
+      <Articles setLoading={setLoading} />
     </Motion>
     
   );

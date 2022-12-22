@@ -26,7 +26,7 @@ export default function EPaymentIntegrationsPage({ data }) {
           </h1>
           <p className="lp">{data?.sub[0].description}</p>
           <div className="cards">
-            {Array.isArray(data.sub) &&
+            {Array.isArray(data?.sub) &&
               data?.sub[0]?.sub?.map((card) => {
                 return (
                   <div style={{position:"relative",padding:"20px 30px",width:"300px",height:"200px",justifyContent:"normal"}} key={card?.title} className="card">
@@ -44,7 +44,7 @@ export default function EPaymentIntegrationsPage({ data }) {
           </div>
         </div>
       )}
-      {data?.sub[1] && (
+      {Array.isArray(data?.sub) && data?.sub[1] && (
         <div style={{background:"white"}} className="outsourcing_sections">
           <h1>
             <span>

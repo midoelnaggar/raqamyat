@@ -51,8 +51,8 @@ function JobsPage({ data }) {
               your career, you’ve come to the right place.
             </p>
             <div className="jobs">
-              {Array.isArray(data) &&
-                data?.map((job) => {
+              {Array.isArray(data?.item?.data) &&
+                data?.item?.data.map((job) => {
                   return (
                     <div key={job?.title} className="job">
                       <h1>{job?.title}</h1>

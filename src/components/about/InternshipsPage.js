@@ -75,10 +75,11 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                 build skills and gain experience in Digital Marketing, Creative
                 Design, Video Production, and Content Creation initiatives.
               </p>
-              <button className="lmbtn">
-                <Link to="/contact-us">
-                  Apply Now <img alt="ar" src={arrow} />
-                </Link>
+              <button onClick={handleInternClick} style={{display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}} className="lmbtn">
+                <div style={{marginRight:"7px"}}>
+                  Apply Now 
+                </div>
+                <img alt="ar" src={arrow} />
               </button>
             </div>
             <div className="jobs-right">

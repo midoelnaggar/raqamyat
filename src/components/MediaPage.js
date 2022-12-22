@@ -4,6 +4,7 @@ import PageHeader from "./PageHeader";
 import ReactPlayer from "react-player";
 import { Modal, Box } from "@mui/material";
 import playIcon from "../img/play.svg";
+import fallback from "../img/fallbackWebinar.jpg";
 
 export default function MediaPage({ data }) {
   const [selected, setSelected] = useState("all");
@@ -14,19 +15,18 @@ export default function MediaPage({ data }) {
   const [openImageModal, setOpenImageModal] = useState(false);
   const [openVideoModal, setOpenVideoModal] = useState(false);
 
-
   useEffect(() => {
     Array.isArray(data?.sub) &&
       setImages(
         (data?.sub?.filter((x) => {
-         return x.title === "images" ? true : false
+          return x.title === "images" ? true : false;
         }))[0]?.sub
       );
 
     Array.isArray(data?.sub) &&
       setVideos(
         (data?.sub?.filter((x) => {
-          return x.title === "videos" ? true : false
+          return x.title === "videos" ? true : false;
         }))[0]?.sub
       );
   }, [data]);
@@ -62,7 +62,7 @@ export default function MediaPage({ data }) {
           className={
             selected === "all" ? "media_tab_active" : "media_tab_inactive"
           }
-        onClick={()=>setSelected("all")}
+          onClick={() => setSelected("all")}
         >
           All
         </div>
@@ -70,8 +70,7 @@ export default function MediaPage({ data }) {
           className={
             selected === "images" ? "media_tab_active" : "media_tab_inactive"
           }
-          onClick={()=>setSelected("images")}
-
+          onClick={() => setSelected("images")}
         >
           Images
         </div>
@@ -79,20 +78,21 @@ export default function MediaPage({ data }) {
           className={
             selected === "videos" ? "media_tab_active" : "media_tab_inactive"
           }
-          onClick={()=>setSelected("videos")}
-
+          onClick={() => setSelected("videos")}
         >
           Videos
         </div>
       </div>
       <div className="media">
-          {Array.isArray(images) && (selected !== "videos") &&
-            images.map((image,index) => {
-              return (
-                <div className="image_thumb_container">  
+        {Array.isArray(images) &&
+          selected !== "videos" &&
+          images.map((image, index) => {
+            return (
+              <div className="image_thumb_container">
                 <img
-                loading="lazy"
-                key={index}
+                  onError={(e) => (e.target.src = fallback)}
+                  loading="lazy"
+                  key={index}
                   className="image_thumb"
                   onClick={() => {
                     handleOpenImageModal(image?.image);
@@ -100,25 +100,27 @@ export default function MediaPage({ data }) {
                   src={image?.image}
                   alt="image_thumb"
                 />
-                </div>
-              );
-            })}
-          {Array.isArray(videos) && (selected !== "images") &&
-            videos.map((video,index) => {
-              return (
-                <div key={index} className="video_thumb_container">
-                  <img src={playIcon} alt="playIcon" className="playIcon" />
-                  <img
-                    className="video_thumb"
-                    onClick={() => {
-                      handleOpenVideoModal(video?.title);
-                    }}
-                    src={video?.image}
-                    alt="video_thumb"
-                  />
-                </div>
-              );
-            })}
+              </div>
+            );
+          })}
+        {Array.isArray(videos) &&
+          selected !== "images" &&
+          videos.map((video, index) => {
+            return (
+              <div key={index} className="video_thumb_container">
+                <img src={playIcon} alt="playIcon" className="playIcon" />
+                <img
+                  onError={(e) => (e.target.src = fallback)}
+                  className="video_thumb"
+                  onClick={() => {
+                    handleOpenVideoModal(video?.title);
+                  }}
+                  src={video?.image}
+                  alt="video_thumb"
+                />
+              </div>
+            );
+          })}
       </div>
       <Modal open={openImageModal} onClick={handleCloseImageModal}>
         <Box

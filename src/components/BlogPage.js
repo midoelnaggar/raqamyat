@@ -6,6 +6,8 @@ import BlueArrow from "../img/Icon ionic-ios-arrow-round-forwardb.png";
 import seachIcon from "../img/search-icon.svg";
 import Motion from "./Motion";
 import axios from "axios";
+import fallback from "../img/fallbackBlog.png"
+
 
 function BlogPage({ data, setLoading }) {
   const [searchLoading, setSearchLoading] = useState(false);
@@ -106,7 +108,7 @@ useEffect(() => {
                 return (
                   <Link onClick={()=>{setLoading(true)}} to={`/blog/${post?.slug}`} style={{textDecoration:"none"}}>
                   <div key={index} className={"post"}>
-                    <img src={post?.image} alt="post" />
+                    <img onError={(e)=> e.target.src = fallback } src={post?.image} alt="post" />
                     {post?.type &&<div className="tag">
                       <h1>{post?.type}</h1>
                     </div>}

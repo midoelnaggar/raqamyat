@@ -1,5 +1,5 @@
 import Motion from "../Motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useSnackbar } from "notistack";
 import { TextField, FormControl } from "@mui/material";
@@ -9,19 +9,39 @@ import moment from "moment";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import PageHeader from "../PageHeader";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import avatar from "../../img/avatar.png";
+import fallback from "../../img/fallbackWebinar.jpg";
 
-function WebinarsPage({ data }) {
+function WebinarPage({ setLoading }) {
+  const { id } = useParams();
   const navigate = useNavigate();
+  const [data, setData] = useState({});
   const [form, setForm] = useState({
     first_name: "",
     email: "",
     mobile: "",
     job_title: "",
-    webinar_id: data.id,
+    webinar_id: data?.id,
   });
   const { enqueueSnackbar } = useSnackbar();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios.get(
+        "https://newraq.raqamyat.com/public/api/webinars"
+      );
+      if ((await res.status) === 200) {
+        setData(
+          await res.data?.data?.filter((webinar) => {
+            return webinar.id == id ? true : false;
+          })[0]
+        );
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, [id]);
 
   const handleNameChange = (e) => {
     setForm({
@@ -68,7 +88,9 @@ function WebinarsPage({ data }) {
           }
         });
     } catch (err) {
-      console.log(err);
+      enqueueSnackbar(err?.message, {
+        variant: "error",
+      });
     }
   };
 
@@ -78,7 +100,7 @@ function WebinarsPage({ data }) {
         <div className="head_bg">
           <PageHeader
             title="Webinars"
-            breadcrumbs={`Home / About / Webinars / ${data.name}`}
+            breadcrumbs={`Home / About / Webinars / ${data?.name}`}
           />
         </div>
         <div className="page_content">
@@ -94,15 +116,15 @@ function WebinarsPage({ data }) {
           <div className="webinar_date">
             <DateRangeIcon fontSize="small" style={{ opacity: 0.5 }} />
             <div>
-              {moment(data.date, "DD-MM-YYYY").format("DD MMM[.] YYYY")}
+              {moment(data?.date, "DD-MM-YYYY").format("DD MMM[.] YYYY")}
             </div>
             <div>|</div>
             <div>
-              {moment(data.date, "DD-MM-YYYY HH:mm:SS").format("hh[:]mm A")}
+              {moment(data?.date, "DD-MM-YYYY HH:mm:SS").format("hh[:]mm A")}
             </div>
           </div>
           <div className="webinar_zoom">Free Zoom Webinar</div>
-          <div className="webinar_title">{data.name}</div>
+          <div className="webinar_title">{data?.name}</div>
           <div
             style={{
               color: "#949494",
@@ -124,9 +146,9 @@ function WebinarsPage({ data }) {
                 paddingLeft: "10px",
               }}
             >
-              <div className="webinar_speaker">{data.speker}</div>
-              <div className="speaker_position">{data.position}</div>
-              <div className="speaker_company">{data.company}</div>
+              <div className="webinar_speaker">{data?.speker}</div>
+              <div className="speaker_position">{data?.position}</div>
+              <div className="speaker_company">{data?.company}</div>
             </div>
           </div>
           <div
@@ -136,22 +158,30 @@ function WebinarsPage({ data }) {
               alignItems: "center",
             }}
           >
-            <img src={data.image} alt={data.name} />
+            <img
+              onError={(e) => (e.target.src = fallback)}
+              className="webinarCoverImage"
+              src={data?.image}
+              alt={data?.name}
+            />
             <div className="contactform">
               <img src={formbg} alt="bg" />
-              <div className="head">
+              <div className="contactformHead">
                 <h1>
                   <span>
-                    {moment(data.date, "DD-MM-YYYY HH:mm:SS") < Date.now() ? `Get Recordings` : `Reserve a spot`} <span />
+                    {moment(data?.date, "DD-MM-YYYY HH:mm:SS") < Date.now()
+                      ? `Get Recordings`
+                      : `Reserve a spot`}
+                    <span />
                   </span>
                 </h1>
               </div>
-              <FormControl  fullWidth>
+              <FormControl fullWidth>
                 <TextField
                   id="name"
                   label="Your Name"
                   variant="standard"
-                  style={{ paddingBlockStart:0,paddingBlockEnd: "20px" }}
+                  style={{ paddingBlockStart: 0, paddingBlockEnd: "20px" }}
                   value={form.first_name}
                   onChange={handleNameChange}
                 />
@@ -185,12 +215,11 @@ function WebinarsPage({ data }) {
               </FormControl>
             </div>
           </div>
-          <div dangerouslySetInnerHTML={{__html: data?.description}} />
-            
+          <div dangerouslySetInnerHTML={{ __html: data?.description }} />
         </div>
       </div>
     </Motion>
   );
 }
 
-export default WebinarsPage;
+export default WebinarPage;

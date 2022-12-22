@@ -74,7 +74,7 @@ export default function MarketingStrategyPage({ data }) {
            
           </div>
         )}
-        {data?.sub[1] && (
+        {Array.isArray(data?.sub) && data?.sub[1] && (
           <div className="outsourcing_sections">
             <h1 style={{ maxWidth: "none" }}>
               <span>

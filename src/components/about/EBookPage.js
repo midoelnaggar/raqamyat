@@ -52,11 +52,12 @@ function EBookPage() {
             });
           }
         });
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      enqueueSnackbar(error?.message, {
+        variant: "error",
+      });
     }
   };
-
   return (
     <Motion>
       <div className="ebook_bg">

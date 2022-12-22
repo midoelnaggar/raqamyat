@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 function Solution({ data }) {
   return (
@@ -20,12 +21,14 @@ function Solution({ data }) {
         {Array.isArray(data?.sub) &&
           data.sub.map((s) => {
             return (
+              <Link style={{textDecoration:"none"}} to={s?.title.toLowerCase().replace("&","and").replace("(","").replace(")","").split(" ").join("-")}>
               <div key={s?.title} className="border">
                 <div className="solution_sub">
                   <img src={s?.image} alt={s?.title} />
                   <div>{s?.title}</div>
                 </div>
               </div>
+              </Link>
             );
           })}
       </div>

@@ -65,6 +65,7 @@
 
 
 .subscribe>.subcard>.email>.sbtn {
+    font-family: Gotham;
     position: absolute;
     background: linear-gradient(249deg, #0093de, #3c6fae);
     color: white;
