@@ -6,9 +6,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import fallback from "../../img/fallbackBlog.png"
+import useWindowSize from "../../hooks/useWindowSize";
 
 
 function Articles({setLoading}) {
+  const width = useWindowSize();
   const [articles, setArticles] = useState([]);
   const [aciveSlideIndex, setAciveSlideIndex] = useState(null);
 
@@ -34,7 +36,7 @@ function Articles({setLoading}) {
       <div>
         <Swiper
           onSlideChange={(e)=>setAciveSlideIndex(e.activeIndex)}
-          slidesPerView={4}
+          slidesPerView={width <= 767 ? 1 : 4}
           initialSlide={2}
           spaceBetween={200}
           mousewheel={true}
@@ -44,7 +46,7 @@ function Articles({setLoading}) {
           {Array.isArray(articles) &&
             articles.map((post, index) => {
               return (
-                <SwiperSlide style={{opacity: aciveSlideIndex === index || aciveSlideIndex + 3 === index  ? 0.5 : 1}} key={index}>
+                <SwiperSlide style={{opacity: width <= 767 ? 1 : aciveSlideIndex === index || aciveSlideIndex + 3 === index  ? 0.5 : 1}} key={index}>
                   <Link
                     onClick={() => {
                       setLoading(true);

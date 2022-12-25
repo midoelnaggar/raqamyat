@@ -4,7 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import './styles/Responsive.css'
+import './styles/Responsive.scss'
 
 
 

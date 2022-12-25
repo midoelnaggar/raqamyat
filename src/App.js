@@ -162,7 +162,7 @@ function App() {
           : (width <= 1199) & (width > 768)
           ? width / 820
           : (width <= 767) & (width > 320)
-          ? width / 820
+          ? width / 375
           : width / 320
         ).toString(),
       }}

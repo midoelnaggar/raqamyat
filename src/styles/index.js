@@ -29,4 +29,4 @@ import "./TechnicalSupportAgentsPage.css";
 import "./TermsAndPrivacyPage.css";
 import "./WebinarPage.css";
 import "./WebinarsPage.css";
-import "./Responsive.css";
+import "./Responsive.scss";
