@@ -24,7 +24,7 @@ function BusinessTypePage() {
             <span />
           </span>
         </h1>
-        <div>
+        <div className="sp_lp">
           <p className="sp">
             We Offer a Comprehensive Range of E-Commerce Solutions & Services
             for any Industries

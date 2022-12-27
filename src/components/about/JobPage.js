@@ -2,6 +2,7 @@ import PageHeader from "../PageHeader";
 import Motion from "../Motion";
 import { useNavigate,useParams } from "react-router-dom";
 import ArrowBack from "@mui/icons-material/ArrowBack";
+import arrow from "../../img/Icon ionic-ios-arrow-round-forward.png";
 import { useEffect } from "react";
 function JobPage({data ,setApiUrl}) {
   const navigate = useNavigate();
@@ -32,6 +33,11 @@ function JobPage({data ,setApiUrl}) {
           <div className="page_content">
             <div dangerouslySetInnerHTML={{ __html: data?.description }} />
           </div>
+          <button className="lmbtn">
+                <a href="mailto:hr@raqamyat.com">
+                  Apply Now <img alt="ar" src={arrow} />
+                </a>
+              </button>
         </div>
       </div>
     </Motion>

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useSnackbar } from "notistack";
 import { TextField, FormControl } from "@mui/material";
-import { MuiTelInput } from "mui-tel-input";
+import { MuiTelInput, matchIsValidTel } from "mui-tel-input";
 import formbg from "../../img/Group 162805.png";
 import moment from "moment";
 import ArrowBack from "@mui/icons-material/ArrowBack";
@@ -17,14 +17,20 @@ function WebinarPage({ setLoading }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const [data, setData] = useState({});
-  const [form, setForm] = useState({
-    first_name: "",
-    email: "",
-    mobile: "",
-    job_title: "",
-    webinar_id: data?.id,
-  });
+  const [form, setForm] = useState({});
+
+  useEffect(() => {
+    setForm({
+      first_name: "",
+      email: "",
+      mobile: "",
+      job_title: "",
+      webinar_id: data?.id,
+    });
+  }, [data]);
+
   const { enqueueSnackbar } = useSnackbar();
+  const validRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -73,6 +79,23 @@ function WebinarPage({ setLoading }) {
 
   const submit = (e) => {
     e.preventDefault();
+    if (form?.first_name === undefined ||form?.first_name === "" || form?.job_title === undefined ||form?.job_title === "" || form?.email === undefined ||form?.email === "" || form?.mobile === undefined ||form?.mobile === "") {
+      enqueueSnackbar("Please complete all fields.", {
+        variant: "warning",
+      });
+    }
+    else if (!form?.email?.match(validRegEx)) {
+      enqueueSnackbar("Invalid email.", {
+        variant: "warning",
+      });
+    } 
+    
+    else if (!matchIsValidTel(form?.mobile)) {
+      enqueueSnackbar("Invalid mobile number.", {
+        variant: "warning",
+      });
+    } 
+    else {
     try {
       axios
         .post("https://newraq.raqamyat.com/public/api/webinarStore", form)
@@ -80,6 +103,13 @@ function WebinarPage({ setLoading }) {
           if (res.status === 200) {
             enqueueSnackbar("Your spot is reserved successfully!", {
               variant: "success",
+            });
+            setForm({
+              first_name:"",
+              email: "",
+              mobile:"",
+              job_title:"",
+              webinar_id: data?.id
             });
           } else {
             enqueueSnackbar("Something went wrong!", {
@@ -92,6 +122,7 @@ function WebinarPage({ setLoading }) {
         variant: "error",
       });
     }
+  }
   };
 
   return (
@@ -137,8 +168,7 @@ function WebinarPage({ setLoading }) {
             Hosted by
           </div>
           <div style={{ display: "flex" }}>
-            <img src={avatar} alt="avatar"></img>
-            <div
+            <img src={avatar} alt="avatar" style={{width:"24px",height:"24px",borderRadius:"8px"}} />            <div
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -152,6 +182,7 @@ function WebinarPage({ setLoading }) {
             </div>
           </div>
           <div
+          className="webinarImgAndForm"
             style={{
               display: "flex",
               paddingTop: "50px",

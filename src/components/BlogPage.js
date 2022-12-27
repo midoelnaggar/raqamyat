@@ -17,6 +17,7 @@ function BlogPage({ data, setLoading }) {
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [categories, setCategories] = useState([]);
+  const [keywords, setKeywords] = useState([]);
 
   useEffect(() => {
     setCurrentData(data);
@@ -25,15 +26,11 @@ function BlogPage({ data, setLoading }) {
   useEffect(() => {
     setLoadedPosts(currentData?.item?.data);
     setCategories(currentData?.types);
+    setKeywords(currentData?.keywords);
     setCurrentPage(currentData?.item?.meta?.pagination?.current_page);
     setTotalPages(currentData?.item?.meta?.pagination?.total_pages);
   }, [currentData]);
 
-useEffect(() => {
-  if(loadedPosts !==  []){
-  setLoading(false)
-}
-}, [loadedPosts,setLoading]);
 
   const handleSearch = (e) => {
     setSearchLoading(true);
@@ -53,7 +50,7 @@ useEffect(() => {
     setTimeout(searchPosts,1000)
   };
 
-  const handleFilter = async (categoryTitle) => {
+  const handleCategoryFilter = async (categoryTitle) => {
     setSearchLoading(true);
     const filterPosts = async () => {
       try {
@@ -70,7 +67,23 @@ useEffect(() => {
 
     filterPosts();
   }
+  const handleKeywordFilter = async (keyword) => {
+    setSearchLoading(true);
+    const filterPosts = async () => {
+      try {
+        const res = await axios.get(
+          `https://newraq.raqamyat.com/public/api/jobs?type=blog&tag=${keyword}`
+        );
+        setCurrentData(await res?.data);
+        setSearchLoading(false);
+      } catch (error) {
+        console.log(error);
+        setSearchLoading(false);
+      }
+    };    
 
+    filterPosts();
+  }
 
   const handleLoadMore = async () => {
     setLoadMoreLoading(true);
@@ -171,19 +184,31 @@ useEffect(() => {
             <div className="categories">
               <div className="categories_title">CATEGORIES</div>
               <div className="categories_list">
-                <div onClick={()=>handleFilter("")} className="category">
+                <div onClick={()=>handleCategoryFilter("")} className="category">
                   <div className="category_name">All</div>
                   <div className="category_count">
                     <div>{data?.item?.meta?.pagination?.total}</div>
                   </div>
                 </div>
-                {categories?.map((category, index) => {
+                { Array.isArray(categories) && categories?.map((category, index) => {
                   return (
-                    <div key={index} onClick={()=>handleFilter(category?.title)} className="category">
+                    <div key={index} onClick={()=>handleCategoryFilter(category?.title)} className="category">
                       <div  className="category_name">{category?.title}</div>
                       <div className="category_count">
                         <div>{category?.count}</div>
                       </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="keywords">
+              <div className="keywords_title">Keywords</div>
+              <div className="keywords_list">
+                { Array.isArray(keywords) && keywords?.map((keyword, index) => {
+                  return (
+                    <div key={index} onClick={()=>handleKeywordFilter(keyword)} className="keyword">
+                      <div  className="keyword_name">{keyword}</div>
                     </div>
                   );
                 })}

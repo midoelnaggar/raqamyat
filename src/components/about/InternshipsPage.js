@@ -30,7 +30,9 @@ export default function InternshipsPage() {
   };
 
   const handleInternClick = () => {
-document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",block:"start"})
+    document
+      .querySelector(".internshipsThird ")
+      .scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const submit = (e) => {
@@ -63,10 +65,12 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
             breadcrumbs="Home / About Us / Careers / Internships"
           />
           <div className="jobsTop">
-            <div className="jobs-left">
+            <div className="jobs-left intern-left">
               <h1 style={{ maxWidth: "none" }}>
-                <span>
-                  Internships & Training for Digital Media & Production <span />
+              <span>
+
+              Internships & Training for Digital Media & Production
+                  <span />
                 </span>
               </h1>
               <p className="lp">
@@ -75,10 +79,17 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                 build skills and gain experience in Digital Marketing, Creative
                 Design, Video Production, and Content Creation initiatives.
               </p>
-              <button onClick={handleInternClick} style={{display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}} className="lmbtn">
-                <div style={{marginRight:"7px"}}>
-                  Apply Now 
-                </div>
+              <button
+                onClick={handleInternClick}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                }}
+                className="lmbtn"
+              >
+                <div style={{ marginRight: "7px" }}>Apply Now</div>
                 <img alt="ar" src={arrow} />
               </button>
             </div>
@@ -131,10 +142,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                 <div>
                   <img src={intern1} alt="intetn1" />
                   <p>Creative Design</p>
-                  <button
-                    onClick={handleInternClick}
-                    className="anbtn"
-                  >
+                  <button onClick={handleInternClick} className="anbtn">
                     <div>
                       Apply Now <img alt="ar" src={arrow} />
                     </div>
@@ -143,10 +151,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                 <div>
                   <img src={intern2} alt="intetn2" />
                   <p>Digital Marketing</p>
-                  <button
-                    onClick={handleInternClick}
-                    className="anbtn"
-                  >
+                  <button onClick={handleInternClick} className="anbtn">
                     <div>
                       Apply Now <img alt="ar" src={arrow} />
                     </div>
@@ -156,7 +161,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                   <img src={intern3} alt="intetn3" />
                   <p>Content Creation</p>
                   <button
-                  name="Content Creation"
+                    name="Content Creation"
                     onClick={handleInternClick}
                     className="anbtn"
                   >
@@ -168,10 +173,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                 <div>
                   <img src={intern4} alt="intetn4" />
                   <p>Video Production</p>
-                  <button
-                    onClick={handleInternClick}
-                    className="anbtn"
-                  >
+                  <button onClick={handleInternClick} className="anbtn">
                     <div>
                       Apply Now <img alt="ar" src={arrow} />
                     </div>
@@ -190,6 +192,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
               <div className="internshipsForm">
                 <img src={shapes3} alt="shapes" />
                 <TextField
+                  className="textField"
                   id="name"
                   name="name"
                   label="Full Name"
@@ -198,6 +201,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                   style={{ margin: "20px", width: "500px" }}
                 />
                 <TextField
+                  className="textField"
                   id="date"
                   name="date"
                   label="Date of Birth"
@@ -209,6 +213,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                   style={{ margin: "20px", width: "500px" }}
                 />
                 <TextField
+                  className="textField"
                   id="email"
                   name="email"
                   label="Email Address"
@@ -219,6 +224,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                   style={{ margin: "20px", width: "500px" }}
                 />
                 <TextField
+                  className="textField"
                   id="address"
                   name="current_address"
                   label="Current Address"
@@ -228,6 +234,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                   style={{ margin: "20px", width: "500px" }}
                 />
                 <TextField
+                  className="textField"
                   id="mobile"
                   label="Cell Number"
                   name="cell_number"
@@ -238,6 +245,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                   style={{ margin: "20px", width: "500px" }}
                 />
                 <TextField
+                  className="textField"
                   id="phone"
                   name="home_phone"
                   label="Home Phone (If any)"
@@ -248,6 +256,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                   style={{ margin: "20px", width: "500px" }}
                 />
                 <TextField
+                  className="textField"
                   id="education"
                   name="current_level_of_education"
                   label="Current Level of Education"
@@ -257,6 +266,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                   style={{ margin: "20px", width: "500px" }}
                 />
                 <TextField
+                  className="textField"
                   id="school"
                   name="school_university"
                   label="School / University"
@@ -266,6 +276,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                   style={{ margin: "20px", width: "500px" }}
                 />
                 <TextField
+                  className="textField"
                   id="gpa"
                   name="gpa"
                   label="GPA"
@@ -275,6 +286,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                   style={{ margin: "20px", width: "500px" }}
                 />
                 <TextField
+                  className="textField"
                   id="degree"
                   name="degree"
                   label="Degree"
@@ -284,6 +296,7 @@ document.querySelector(".internshipsThird ").scrollIntoView({behavior:"smooth",b
                   style={{ margin: "20px", width: "500px" }}
                 />
                 <TextField
+                  className="textField"
                   id="major-subjects"
                   name="major_subjects"
                   label="Major Subjects"

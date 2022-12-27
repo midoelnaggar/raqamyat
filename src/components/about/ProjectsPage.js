@@ -2,34 +2,9 @@ import React from "react";
 import PageHeader from "../PageHeader";
 import Motion from "../Motion";
 import case_image from "../../img/case.png";
-import arrow from "../../img/Icon ionic-ios-arrow-round-forward.png";
+// import arrow from "../../img/Icon ionic-ios-arrow-round-forward.png";
 
-function SuccessfulCasesPage({ data }) {
-  const cases = [
-    {
-      title: "Project Name",
-      type: "Project Type",
-      desc: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-      keywords: ["Ecommerce", "Online Payment", "Mobile App"],
-      image: "../img/case.png",
-      id:1
-    },
-    {
-      title: "Project Name",
-      type: "Project Type",
-      desc: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-      keywords: ["Ecommerce", "Online Payment", "Mobile App"],
-      id:2
-        },
-    {
-      title: "Project Name",
-      type: "Project Type",
-      desc: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-      keywords: ["Ecommerce", "Online Payment", "Mobile App"],
-      id:3
-    },
-  ];
-
+function ProjectsPage({ data }) {
   return (
     <Motion>
       <div className="ss_page">
@@ -47,20 +22,21 @@ function SuccessfulCasesPage({ data }) {
             </div>
           </div>
           <div className="cases">
-            {Array.isArray(cases) &&
-              cases.map((c, index) => {
+            {Array.isArray(data?.item?.data) &&
+              data.item?.data?.map((c, index) => {
                 return (
-                  <div key={c.id}
+                  <div
+                    key={c.id}
                     className={(index + 1) % 2 === 0 ? "case_inverted" : "case"}
                   >
-                                       <div className="imageContainer"> 
- <img className="case_image" src={case_image} alt="case" />
- </div>
+                    <div className="imageContainer">
+                      <img className="case_image" src={case_image} alt="case" />
+                    </div>
                     <div className="case_info">
                       <div className="case_title">{c.title}</div>
-                      <div className="case_type">{c.type}</div>
+                      <div className="case_type">{c.details}</div>
                       <p className="case_desc">{c.desc}</p>
-                      <div className="case_keywords">
+                      {/*<div className="case_keywords">
                         {Array.isArray(c.keywords) &&
                           c.keywords.map((k) => {
                             return (
@@ -76,6 +52,7 @@ function SuccessfulCasesPage({ data }) {
                           <img src={arrow} alt="arrow" />
                         </div>
                       </button>
+                        */}
                     </div>
                   </div>
                 );
@@ -87,4 +64,4 @@ function SuccessfulCasesPage({ data }) {
   );
 }
 
-export default SuccessfulCasesPage;
+export default ProjectsPage;

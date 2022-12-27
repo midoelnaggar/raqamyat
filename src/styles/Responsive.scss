@@ -5,13 +5,14 @@
 }
 /*App */
 @media (max-width: 1199px) {
-
-      .sideMenuList {
-      .ListItemTextBold {
-        font-size: 16px !important;
-        *{color: red !important;}
+  .sideMenuList {
+    .ListItemTextBold {
+      font-size: 16px !important;
+      * {
+        color: red !important;
       }
     }
+  }
   .app {
     width: 820px;
   }
@@ -80,24 +81,26 @@
     text-decoration: none;
     padding-bottom: 3px;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 600 !important;
   }
   .side_menu_item_main {
     text-decoration: none;
     font-family: "Gotham";
     color: "black";
     font-weight: 500;
-    color: #027AB7;
+    color: #027ab7;
   }
   .side_menu_item_link {
     text-decoration: none;
-    font-family: "Gotham";
-    color: "black";
-    font-weight: 400;
-    color: #656565;
-    font-size: 14px;
+    * {
+      text-decoration: none!important;
+      font-family: "Gotham"!important;
+      color: "black"!important;
+      font-weight: 400!important;
+      color: #656565!important;
+      font-size: 14px!important;
+    }
   }
-
 
   .sideMenuLogo {
     display: flex;
@@ -115,15 +118,13 @@
     padding-inline: 9px;
     font-family: "Gotham";
     padding-bottom: 8px;
-    width: calc(100vw - 18px) ;
+    width: calc(100vw - 18px);
     height: 100%;
-    background: linear-gradient(307deg, white 0%, #f0f6ff 60%, );
+    background: linear-gradient(307deg, white 0%, #f0f6ff 60%);
 
     * {
       font-family: "Gotham" !important;
     }
-
-
 
     .ListItemTextLight {
       span {
@@ -133,20 +134,18 @@
       }
     }
 
-    
-      .sideMenuLogo {
-        padding-block: 60px;
-        padding-inline: 15px;
+    .sideMenuLogo {
+      padding-block: 60px;
+      padding-inline: 15px;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-        img {
-          width: 141px;
-        }
+      img {
+        width: 141px;
       }
-    
+    }
   }
   .side_menu_item_text {
     color: black;
@@ -590,10 +589,9 @@
     width: 80%;
   }
   .blog_page > .page_content > .blog_left {
-    scale: 1.1;
     flex: none;
     justify-content: center;
-    margin-block: 50px;
+    margin-block: -150px;
     padding-block: 40%;
   }
 
@@ -614,7 +612,7 @@
     margin-top: 100px;
   }
   .webinars_page > .page_content > .page_subtitle > div {
-    font-size: 30px !important;
+    font-size: 30px;
   }
 
   .webinars_container {
@@ -836,7 +834,7 @@
     background: linear-gradient(157deg, white 0%, #f0f6ff 2%, #f1f1ff 3%);
   }
   .header {
-    padding-top: 17px;
+    padding-top: 30px;
     width: 343px;
     scale: 1;
     padding-inline: 16px;
@@ -864,6 +862,7 @@
       flex-direction: column;
       justify-content: center;
       padding: 0;
+      margin-left: 5px;
       .logo-img {
         margin: 0;
         margin-bottom: -4px;
@@ -873,7 +872,7 @@
     }
 
     .cubtn {
-      scale: 1;
+      scale: 0.9;
       width: 90px;
       height: 35px;
       font-size: 12px;
@@ -883,7 +882,289 @@
       }
     }
   }
+  .page_subtitle {
+    margin-top: 50px !important;
+    div {
+      font-size: 24px !important;
+      line-height: 34px !important;
+    }
+  }
+  .webinars_container {
+    margin-top: 0 !important;
+    span {
+      font-size: 24px !important;
+      letter-spacing: -0.5px !important;
+      span {
+        width: 30% !important;
+        height: 50% !important;
+        bottom: 0 !important;
+      }
+    }
+  }
+  .page_subtitle {
+    margin-block: 50px !important;
+  }
+  .cases {
+    .case,
+    .case_inverted {
+      flex-direction: column !important;
+      .imageContainer {
+        width: 100%;
+      }
+      .case_info {
+        width: 100%;
+        .case_btn {
+          scale: 0.75;
+          transform-origin: left;
+          margin: 0;
+        }
+      }
+    }
+  }
+  .ebook_page {
+    padding-inline: 25px !important;
+    .formandinfo {
+      .ebook_title {
+        padding-top: 50px;
+        text-align: center;
+        font-size: 22px;
+        line-height: 28px;
+        letter-spacing: -1px;
+        .ebook_version {
+          display: none;
+        }
+      }
+      .ebook_subtitle {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      .ebook_img {
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .contactform {
+      justify-content: center;
+      height: 400px;
+      scale: 1;
+      border: 0;
+      width: calc(100% - 48px);
+      padding: 24px;
+      .head {
+        h1 {
+          margin: 0;
+          line-height: 28px !important;
 
+          span {
+            font-size: 22px !important;
+            line-height: 28px !important;
+            span {
+              width: 50px;
+              height: 13px;
+              line-height: 28px !important;
+            }
+          }
+        }
+      }
+      .sbtn {
+        scale: 0.8;
+        transform-origin: left;
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+  .blogImage {
+    width: 325px;
+    height: 325px;
+
+    margin-left: 0px;
+  }
+
+  .jobsTop {
+    flex-direction: column;
+    padding: 0;
+    padding-inline: 25px !important;
+    border-radius: 0px 0px 80px 80px;
+    .jobs-left {
+      h1 {
+        padding: 0;
+        scale: 0.5;
+        transform-origin: left top;
+        margin-bottom: -40px;
+      }
+      .lp {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      .lmbtn {
+        scale: 0.7;
+        transform-origin: left top;
+        margin-bottom: 50px;
+      }
+    }
+    .jobs-right {
+      margin-bottom: -100px;
+      img {
+        width: calc(100%);
+      }
+    }
+  }
+  .sub_container {
+    h1 {
+      scale: 0.75;
+      transform-origin: left;
+    }
+    padding: unset !important;
+    padding-inline: 25px !important;
+  }
+
+  .intern-left {
+    h1 {
+      width: 200% !important;
+    }
+  }
+
+  .internshipsThird {
+    padding: 0 !important;
+    padding-inline: 25px !important;
+    padding-bottom: 50px !important;
+    div {
+      h1 {
+        scale: 0.8;
+      }
+    }
+  }
+  .internshipsForm {
+    max-width: 100%;
+    .MuiFormControl-root {
+      width: 325px !important;
+    }
+  }
+  .media_tabs {
+    scale: 0.8;
+  }
+  .jobs {
+    margin-bottom: 100px;
+  }
+  .webinar_page {
+    .page_content {
+      padding-top: 30px;
+      * {
+        padding-top: 0px;
+      }
+      .webinar_title {
+        font-size: 32px;
+        line-height: normal;
+      }
+      .webinarImgAndForm {
+        margin-block: -175px;
+        scale: 0.7;
+        flex-direction: column;
+        img {
+          width: 140%;
+        }
+        .contactform {
+          div {
+            .MuiFormControl-root {
+              * {
+                font-size: 20px;
+              }
+            }
+          }
+          .sbtn {
+            div {
+              font-size: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .service {
+    padding: 0px !important;
+    padding-inline: 25px !important;
+    border-radius: 0px 0px 80px 80px;
+    .service_hero {
+      flex-direction: column;
+      .service-left {
+        margin-bottom: 50px;
+        position: relative;
+        span {
+          font-size: 22px;
+          span {
+            width: 55px;
+            height: 15px;
+            right: -5px;
+          }
+        }
+        .lp {
+          margin-top: 380px;
+          font-size: 14px;
+          line-height: 20px;
+          margin-inline: 0;
+        }
+        .lmbtn {
+          scale: 0.75;
+          transform-origin: left;
+        }
+      }
+      .service-right {
+        position: absolute;
+        top: 200px;
+
+        img {
+          margin-top: 50px;
+          width: 93% ;
+        }
+      }
+    }
+  }
+  .first_section {
+    padding: 25px !important;
+
+    h1 {
+      text-align: center;
+      span {
+        font-size: 22px;
+        letter-spacing: -1px;
+        span {
+          width: 50px;
+          height: 10px;
+        }
+      }
+    }
+  }
+
+  .last_section {
+    padding: 25px !important;
+    text-align: center;
+    span {
+      font-size: 22px;
+      line-height: 28px;
+      letter-spacing: 0px;
+      span {
+        width: 50px;
+        height: 15px;
+        right: 10px !important;
+      }
+    }
+
+    .last_section_sub_card {
+      height: 200px;
+      scale: 0.6;
+      margin-block: -20px;
+      .last_section_sub_card_title {
+        font-size: 36px;
+        line-height: 70px;
+        max-width: none;
+      }
+      .last_section_sub_card_subtitle {
+        font-size: 20px;
+      }
+    }
+  }
   .hero {
     scale: 1;
     margin: 0;
@@ -1350,9 +1631,12 @@
       .categories {
         margin-left: 0 !important;
       }
+      .keywords {
+        margin-left: 0 !important;
+      }
     }
     .blog_left {
-      margin-top: 200px !important;
+      margin-top: 50px !important;
       padding-block: 0 !important;
       a {
         .post {
@@ -1392,7 +1676,77 @@
       width: 260px;
     }
   }
+  .business_type_hero {
+    flex-direction: column;
+    margin: 0;
+    padding-top: 15px;
 
+    h1 {
+      font-size: 24px;
+      padding: 25px;
+      padding-bottom: 0px;
+    }
+    .sp_lp {
+      padding: 0px;
+      margin-inline: 25px;
+    }
+  }
+
+  .singleBT {
+    .last_section {
+      .sub,
+      .sub_inverted {
+        flex-direction: column;
+        .sub-left {
+          margin: 0;
+          padding-inline: 25px !important;
+
+          h1 {
+            margin: 0px !important;
+            margin-inline-end: 0px !important;
+            line-height: 24px;
+            max-width: fit-content;
+            span {
+              span {
+                width: 50px;
+                height: 15px;
+                right: -5px !important;
+              }
+            }
+          }
+          .lp {
+          }
+        }
+
+        .sub-right {
+          padding-inline: 25px !important;
+          img {
+            scale: 1;
+            margin: 0;
+            margin-top: 20px;
+            margin-bottom: -100px;
+            width: 325px;
+          }
+        }
+      }
+    }
+  }
+
+  .media {
+    flex-direction: column;
+    align-items: center;
+    margin-inline: 0px;
+    .image_thumb_container {
+      width: 325px;
+      height: 325px;
+      padding: 0;
+    }
+    .video_thumb_container {
+      width: 325px;
+      height: 325px;
+      padding: 0;
+    }
+  }
   /*
   .smallParagraph {
     font-size: 36px;

@@ -12,7 +12,12 @@
   padding-top: 100px;
   padding-bottom: 86px;
 }
-
+.textField {
+  font-family: "Gotham";
+}
+.textField > * {
+  font-family: "Gotham";
+}
 .jobs-right {
   height: 557px;
 }
@@ -26,10 +31,12 @@ a {
   line-height: 50px;
   letter-spacing: -2px;
   max-width: 303px;
+  position: relative;
+  z-index: 0;
 }
 .jobs-left > h1 > span {
   position: relative;
-  z-index: 0;
+  z-index: -1;
 }
 
 .jobs-left > h1 > span > span {
@@ -179,9 +186,7 @@ a {
 .internshipsSecond > .jobs-left > h1 {
   max-width: 470px;
   font-size: 38px;
-  
 }
-
 
 .internshipsSecond > .jobs-left > .lp {
   max-width: 951px;
@@ -207,13 +212,13 @@ a {
 }
 
 .internshipsList > div > img {
-width: 56px;
+  width: 56px;
 }
 
 .internshipsList > div > p {
   font-size: 18px;
   font-weight: 600;
-  }
+}
 
 .anbtn {
   width: 200px;
@@ -227,7 +232,6 @@ width: 56px;
   border-radius: 40px;
   border-style: hidden;
   cursor: pointer;
-  
 }
 
 .anbtn > div {
@@ -249,7 +253,7 @@ width: 56px;
   padding-block: 150px;
 }
 
-.internshipsForm  {
+.internshipsForm {
   position: relative;
   max-width: 1106px;
   display: flex;
@@ -257,12 +261,12 @@ width: 56px;
   z-index: 0;
 }
 
-.internshipsForm >img{
+.internshipsForm > img {
   position: absolute;
   z-index: -1;
 }
 
-.internshipsForm >.sbtn {
+.internshipsForm > .sbtn {
   display: flex;
   background: linear-gradient(249deg, #0093de, #3c6fae);
   justify-content: center;
@@ -278,7 +282,7 @@ width: 56px;
   margin-bottom: 30px;
 }
 
-.internshipsForm >.sbtn > div {
+.internshipsForm > .sbtn > div {
   text-align: center;
   color: white;
   font-size: 20px;
@@ -286,7 +290,13 @@ width: 56px;
 }
 
 .jobPage {
-
   margin-inline: 250px;
+}
 
+.jobPage > .page_content {
+  margin-block: 100px;
+}
+
+@-moz-document url-prefix() {
+ 
 }

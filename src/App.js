@@ -115,19 +115,20 @@ const SingleBlog = lazy(() => import("./components/services/SingleBlog"));
 function App() {
   const navigationType = useNavigationType();
   const location = useLocation();
+  const [slug, setSlug] = useState(null);
+  const [loading, setLoading] = useState(null);
   const [data, setData] = useState(null);
   const {
-    loading,
     apiUrl,
     setApiUrl,
     bgColor,
-    setLoading,
-  } = usePathname({ location: location.pathname, setData });
+  } = usePathname({ location: location.pathname, setData, slug });
 
   const width = useWindowSize();
 
   useEffect(() => {
     const  getData = async () =>{
+      setLoading(true);
       try {
        const res = await axios.get(apiUrl)
        if ( await res.data.data) {
@@ -139,12 +140,20 @@ function App() {
             setLoading(false);
           }
         
+          else if ( await res.data.data.data) {
+            setData(await res.data);
+            setLoading(false);
+          }
       } catch (err) {
         console.error(err);
     }
+    setLoading(false);
+
   }
   getData();
   }, [apiUrl,setLoading]);
+
+
 
   useEffect(() => {
     if (navigationType === "POP") {
@@ -187,7 +196,7 @@ function App() {
                       index
                       element={<BlogPage data={data} setLoading={setLoading} />}
                     />
-                    <Route path=":slug" element={<SingleBlog setLoading={setLoading} />} />
+                    <Route path=":slug" element={<SingleBlog setLoading={setLoading} setSlug={setSlug} />} />
                   </Route>
                   <Route path="media" element={<MediaPage data={data} />} />
                   <Route path="media" element={<MediaPage data={data} />} />
@@ -300,7 +309,7 @@ function App() {
                         element={<MarketAnalysisPage data={data} />}
                       />
                       <Route
-                        path="video-production-services"
+                        path="promotional-video-production"
                         element={<VideoProductionServicesPage data={data} />}
                       />
                       <Route

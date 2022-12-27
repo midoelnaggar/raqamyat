@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { TextField, FormControl } from "@mui/material";
-import { MuiTelInput } from "mui-tel-input";
+import { MuiTelInput, matchIsValidTel } from "mui-tel-input";
 import formbg from "../../img/Group 162805.png";
 import ebook from "../../img/e-book.png";
 import PageHeader from "../PageHeader";
@@ -12,7 +12,7 @@ function EBookPage() {
   const [form, setForm] = useState({});
   const { enqueueSnackbar } = useSnackbar();
 
-  const inputRef = useRef(null);
+  const validRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 
   const handleNameChange = (e) => {
     setForm({
@@ -37,25 +37,47 @@ function EBookPage() {
 
   const submit = (e) => {
     e.preventDefault();
-    try {
-      axios
-        .post("https://newraq.raqamyat.com/public/api/bookStore", form)
-        .then((res) => {
-          if (res.status === 200) {
-            enqueueSnackbar("E-book download link sent to your email!", {
-              variant: "success",
-            });
-            setForm({});
-          } else {
-            enqueueSnackbar("Something went wrong!", {
-              variant: "error",
-            });
-          }
-        });
-    } catch (error) {
-      enqueueSnackbar(error?.message, {
-        variant: "error",
+    if (form?.name === undefined ||form?.name === "" || form?.email === undefined ||form?.email === "" || form?.mobile === undefined ||form?.mobile === "") {
+      enqueueSnackbar("Please complete all fields.", {
+        variant: "warning",
       });
+    }
+    else if (!form?.email?.match(validRegEx)) {
+      enqueueSnackbar("Invalid email.", {
+        variant: "warning",
+      });
+    } 
+    
+    else if (!matchIsValidTel(form?.mobile)) {
+      enqueueSnackbar("Invalid mobile number.", {
+        variant: "warning",
+      });
+    } 
+    else {
+      try {
+        axios
+          .post("https://newraq.raqamyat.com/public/api/bookStore", form)
+          .then((res) => {
+            if (res.status === 200) {
+              enqueueSnackbar("E-book download link sent to your email!", {
+                variant: "success",
+              });
+              setForm({
+                name:"",
+                email: "",
+                mobile:""
+              });
+            } else {
+              enqueueSnackbar("Something went wrong!", {
+                variant: "error",
+              });
+            }
+          });
+      } catch (error) {
+        enqueueSnackbar(error?.message, {
+          variant: "error",
+        });
+      }
     }
   };
   return (
@@ -89,7 +111,6 @@ function EBookPage() {
                 </div>
                 <FormControl fullWidth>
                   <TextField
-                    ref={inputRef}
                     id="name"
                     label="Your Name"
                     variant="standard"
@@ -119,7 +140,6 @@ function EBookPage() {
                   </button>
                 </FormControl>
               </div>
-              <div className="ebook_right"></div>
             </div>
             <img className="ebook_img" src={ebook} alt="ebook" />
           </div>
