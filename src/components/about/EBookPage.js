@@ -11,9 +11,8 @@ import { useSnackbar } from "notistack";
 function EBookPage() {
   const [form, setForm] = useState({});
   const { enqueueSnackbar } = useSnackbar();
-
-  const validRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-
+  const validNameRegEx = /^([^0-9]*)$/ ;
+  const validEmailRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
   const handleNameChange = (e) => {
     setForm({
       ...form,
@@ -42,12 +41,16 @@ function EBookPage() {
         variant: "warning",
       });
     }
-    else if (!form?.email?.match(validRegEx)) {
+    else if (!form?.name?.match(validNameRegEx)) {
+      enqueueSnackbar("Invalid name.", {
+        variant: "warning",
+      });
+    } 
+    else if (!form?.email?.match(validEmailRegEx)) {
       enqueueSnackbar("Invalid email.", {
         variant: "warning",
       });
     } 
-    
     else if (!matchIsValidTel(form?.mobile)) {
       enqueueSnackbar("Invalid mobile number.", {
         variant: "warning",

@@ -30,7 +30,7 @@ function WebinarPage({ setLoading }) {
   }, [data]);
 
   const { enqueueSnackbar } = useSnackbar();
-  const validRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+  const validEmailRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -84,7 +84,7 @@ function WebinarPage({ setLoading }) {
         variant: "warning",
       });
     }
-    else if (!form?.email?.match(validRegEx)) {
+    else if (!form?.email?.match(validEmailRegEx)) {
       enqueueSnackbar("Invalid email.", {
         variant: "warning",
       });

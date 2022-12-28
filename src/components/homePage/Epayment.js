@@ -15,6 +15,7 @@ function Epayment ({ data }) {
             <span />
           </span>
         </h1>
+        <img className="mOnlyImg" src={data?.image} alt="back" />
         <p className="sp">{data?.sub_description}</p>
         <p className="lp">{data?.description}</p>
         <button className="lmbtn">
@@ -24,7 +25,7 @@ function Epayment ({ data }) {
           </Link>
         </button>
       </div>
-      <div className="epayment-right">
+      <div className="epayment-right dOnly">
         <img src={data?.image} alt="back" />
       </div>
     </div>

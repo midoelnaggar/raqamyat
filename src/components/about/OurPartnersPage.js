@@ -16,9 +16,10 @@ function OurPartnersPage({ data }) {
               <span />
             </span>
           </h1>
+                    <img className="mOnlyImg" src={data?.image} alt="back" />
           <p className="lp">{data?.description}</p>
         </div>
-        <div className="ourPartners-right">
+        <div className="ourPartners-right dOnly">
           <img src={data?.image} alt="back" />
         </div>
       </div>
@@ -33,9 +34,10 @@ function OurPartnersPage({ data }) {
                     <span className="ops"/>
                   </span>
                 </h1>
+                <img className="mOnlyImg" src={sub?.image} alt={sub?.title} />
                 <p className="lp">{sub?.description}</p>
               </div>
-              <div className="sub-right">
+              <div className="sub-right  dOnly">
                 <img src={sub?.image} alt={sub?.title} />
               </div>
             </div>

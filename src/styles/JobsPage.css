@@ -257,6 +257,7 @@ a {
   position: relative;
   max-width: 1106px;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   z-index: 0;
 }
@@ -266,7 +267,32 @@ a {
   z-index: -1;
 }
 
-.internshipsForm > .sbtn {
+.positionSelectLabel{
+  margin-top: 23px !important;
+
+  margin-left: 8px;
+}
+
+.positionSelect{
+margin: 20px;
+margin-top: 36px !important;
+width: 500px;
+}
+
+
+.internshipQtns {
+  padding: 25px;
+}
+
+.internshipDMAnswars{
+  flex-direction: row !important;
+}
+
+.internshipDMAnswar{
+  flex: 49%;
+}
+
+.internshipsThird > .jobs-left > .sbtn {
   display: flex;
   background: linear-gradient(249deg, #0093de, #3c6fae);
   justify-content: center;
@@ -282,7 +308,7 @@ a {
   margin-bottom: 30px;
 }
 
-.internshipsForm > .sbtn > div {
+.internshipsThird > .jobs-left  > .sbtn > div {
   text-align: center;
   color: white;
   font-size: 20px;

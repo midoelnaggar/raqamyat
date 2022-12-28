@@ -20,6 +20,7 @@ function JobsPage({ data }) {
                   <span />
                 </span>
               </h1>
+              <img className="mOnlyImg" src={image} alt="back" />
               <p className="lp">
                 Raqamyat is a growing, dynamic company that offers exciting
                 opportunities to its employees. At Raqamyat, every day brings
@@ -33,7 +34,7 @@ function JobsPage({ data }) {
                 </a>
               </button>
             </div>
-            <div className="jobs-right">
+            <div className="jobs-right dOnly">
               <img src={image} alt="back" />
             </div>
           </div>

@@ -18,9 +18,10 @@ function StakeholdersPage({ data }) {
               <span />
             </span>
           </h1>
+          <img className="mOnlyImg" src={data?.image} alt="back" />
           <p className="lp">{data?.description}</p>
         </div>
-        <div className="stakeholders-right">
+        <div className="stakeholders-right dOnly">
           <img src={data?.image} alt="back" />
         </div>
       </div>
@@ -35,6 +36,8 @@ function StakeholdersPage({ data }) {
                     <span />
                   </span>
                 </h1>
+                <img className="mOnlyImg" src={sub?.image} alt={sub?.title} />
+
                 <p className="lp">{sub?.description}</p>
                 <button className="lmbtn">
                   <Link to="/contact-us">
@@ -42,7 +45,7 @@ function StakeholdersPage({ data }) {
                   </Link>
                 </button>
               </div>
-              <div className="sub-right">
+              <div className="sub-right dOnly">
                 <img src={sub?.image} alt={sub?.title} />
               </div>
             </div>

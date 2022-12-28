@@ -24,6 +24,7 @@ import arrow from "../../../img/Icon ionic-ios-arrow-round-forward.png";
                 <span />
               </span>
             </h1>
+            <img className="mOnlyImg" src={data?.image} alt={data?.title} />
             <p className="lp" style={{ maxWidth: "none" }}>
               {data?.description}
             </p>
@@ -33,7 +34,7 @@ import arrow from "../../../img/Icon ionic-ios-arrow-round-forward.png";
               </Link>
             </button>
           </div>
-          <div className="sub-right">
+          <div className="sub-right dOnly">
             <img src={data?.image} alt={data?.title} />
           </div>
         </div>

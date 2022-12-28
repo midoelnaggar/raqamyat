@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 function usePathname({ location, slug }) {
-  const [loading, setLoading] = useState(null);
   const [bgColor, setBgColor] = useState(null);
   const [apiUrl, setApiUrl] = useState(null);
 
@@ -35,7 +34,7 @@ function usePathname({ location, slug }) {
       document.title = "Our Partners";
     } else if (location === "/about/our-company/our-partners") {
       setApiUrl("https://newraq.raqamyat.com/public/api/partners");
-      setBgColor("aboutbg");
+      setBgColor("contactbg");
       document.title = "Projects";
     } else if (location === "/about/careers/jobs") {
       setApiUrl("https://newraq.raqamyat.com/public/api/jobs?type=job");
@@ -63,7 +62,7 @@ function usePathname({ location, slug }) {
       setBgColor("insidebg");
       document.title = "Press";
     } else if (location === "/about/our-company/successful-cases") {
-      setApiUrl("https://newraq.raqamyat.com/public/api/partners");
+      setApiUrl("https://newraq.raqamyat.com/public/api/jobs?type=project");
       setBgColor("insidebg");
       document.title = "Successful Cases";
     } else if (location === "/about/webinars") {

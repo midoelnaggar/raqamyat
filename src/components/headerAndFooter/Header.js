@@ -74,7 +74,19 @@ function Header() {
           `.mentihe[href='${location.pathname}']`
         )[0].style.fontWeight = 600;
       }
+
+      if (
+        document.querySelectorAll(`.menu_btn[href='${location.pathname}']`)
+          .length > 0
+      ) {
+        document.querySelectorAll(
+          `.menu_btn[href='${location.pathname}']`
+        )[0].style.fontWeight = "300";
+      }
     };
+
+    
+
   }, [location.pathname]);
 
   return (
@@ -107,7 +119,7 @@ function Header() {
           <List className="sideMenuList">
             <Link className="side_menu_item_main" to="/">
               <ListItemButton>
-                <ListItemText classname="ListItemTextBold">
+                <ListItemText>
                   <div className="side_menu_item_main">Home</div>
                 </ListItemText>
               </ListItemButton>
@@ -116,7 +128,7 @@ function Header() {
               <ListItemText
                 color="#027AB7"
                 style={{ fontWeight: "600 !important" }}
-                classname="ListItemTextBold"
+              
               >
                 <div className="side_menu_item_main">Our Company</div>{" "}
               </ListItemText>
@@ -169,7 +181,7 @@ function Header() {
               <ListItemText
                 color="#027AB7"
                 style={{ fontWeight: "600 !important" }}
-                classname="ListItemTextBold"
+              
               >
                 <div className="side_menu_item_main">News</div>{" "}
               </ListItemText>
@@ -203,20 +215,20 @@ function Header() {
                 </Link>
               </List>
             </Collapse>
-            <Collapse textAlign="center">
+            <Collapse>
               <div className="menti mentis">Our Company</div>
             </Collapse>
-            <Collapse textAlign="center">
+            <Collapse>
               <div className="menti mentis">News</div>
             </Collapse>
-            <Collapse textAlign="center">
+            <Collapse>
               <div className="menti mentis">Careers</div>
             </Collapse>
             <ListItemButton onClick={() => setCareersOpen(!careersOpen)}>
               <ListItemText
                 color="#027AB7"
                 style={{ fontWeight: "600 !important" }}
-                classname="ListItemTextBold"
+              
               >
                 <div className="side_menu_item_main">Careers</div>
               </ListItemText>
@@ -247,7 +259,7 @@ function Header() {
               <ListItemText
                 color="#027AB7"
                 style={{ fontWeight: "600 !important" }}
-                classname="ListItemTextBold"
+              
               >
                 <div className="side_menu_item_main">Development</div>{" "}
               </ListItemText>
@@ -305,7 +317,7 @@ function Header() {
               <ListItemText
                 color="#027AB7"
                 style={{ fontWeight: "600 !important" }}
-                classname="ListItemTextBold"
+              
               >
                 <div className="side_menu_item_main">Operations</div>{" "}
               </ListItemText>
@@ -364,7 +376,7 @@ function Header() {
               <ListItemText
                 color="#027AB7"
                 style={{ fontWeight: "600 !important" }}
-                classname="ListItemTextBold"
+              
               >
                 <div className="side_menu_item_main">Marketing</div>{" "}
               </ListItemText>
@@ -446,7 +458,7 @@ function Header() {
               <ListItemText
                 color="#027AB7"
                 style={{ fontWeight: "600 !important" }}
-                classname="ListItemTextBold"
+              
               >
                 <div className="side_menu_item_main">Business Type</div>{" "}
               </ListItemText>
@@ -502,14 +514,14 @@ function Header() {
             </Collapse>
             <Link className="side_menu_item_main" to="/blog">
               <ListItemButton>
-                <ListItemText classname="ListItemTextBold">
+                <ListItemText>
                   <div className="side_menu_item_main">Blog</div>
                 </ListItemText>
               </ListItemButton>
             </Link>
             <Link className="side_menu_item_main" to="/media">
               <ListItemButton>
-                <ListItemText classname="ListItemTextBold">
+                <ListItemText>
                   <div className="side_menu_item_main">Media</div>
                 </ListItemText>
               </ListItemButton>

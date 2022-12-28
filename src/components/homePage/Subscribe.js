@@ -7,10 +7,10 @@ function Subscribe() {
   const submitBtnRef = useRef(null);
   const { enqueueSnackbar } = useSnackbar();
   
-const validRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
+const validEmailRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
   const submit = () => {
     submitBtnRef.current.disabled = true;
-    if (emailRef?.current?.value.match(validRegEx)){
+    if (emailRef?.current?.value.match(validEmailRegEx)){
     try {
       axios
         .post(

@@ -59,6 +59,7 @@ export default function LogisticsManagementPage({ data }) {
                       <span />
                     </span>
                   </h1>
+                  <img className="mOnlyImg" src={section?.image} alt={section?.title} />
                   <p className="lp">{section?.description}</p>
                   <button className="lmbtn">
                     <Link to="/contact-us">
@@ -66,7 +67,7 @@ export default function LogisticsManagementPage({ data }) {
                     </Link>
                   </button>
                 </div>
-                <div className="sub-right">
+                <div className="sub-right dOnly">
                   <img src={section?.image} alt={section?.title} />
                 </div>
               </div>

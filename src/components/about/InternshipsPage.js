@@ -1,14 +1,20 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import axios from "axios";
 import PageHeader from "../PageHeader";
 import Motion from "../Motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   TextField,
   Select,
   MenuItem,
   InputLabel,
   FormControl,
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  FormLabel,
+  Checkbox,
+  FormGroup,
 } from "@mui/material";
 import arrow from "../../img/Icon ionic-ios-arrow-round-forward.png";
 import image from "../../img/Internships.png";
@@ -21,38 +27,155 @@ import intern4 from "../../img/04.png";
 import { useSnackbar } from "notistack";
 
 export default function InternshipsPage() {
-  const positionRef = useRef("");
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({
+    select_position: "",
+    questionCC: null,
+    questionDM: {
+      ContentCreation: false,
+      DigitalCopywriting: false,
+      ContentWriting: false,
+      CopyWriting: false,
+      SocialMediaMarketing: false,
+      SEO: false,
+      StrategiesPlanning: false,
+      EmailMarketing: false,
+      CommunityManagement: false,
+    },
+    questionVP: {
+      MotionGraphic: false,
+      VideoEditing: false,
+    },
+    questionCD: "",
+  });
   const { enqueueSnackbar } = useSnackbar();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
-  const handleInternClick = () => {
-    document
-      .querySelector(".internshipsThird ")
-      .scrollIntoView({ behavior: "smooth", block: "start" });
+  const {
+    ContentCreation,
+    DigitalCopywriting,
+    ContentWriting,
+    CopyWriting,
+    SocialMediaMarketing,
+    SEO,
+    StrategiesPlanning,
+    EmailMarketing,
+    CommunityManagement,
+  } = form.questionDM;
+  const { MotionGraphic, VideoEditing } = form.questionDM;
+  const navigate = useNavigate();
+
+  const handleDMChange = (event) => {
+    setForm({
+      ...form,
+      questionDM: {
+        ...form.questionDM,
+        [event.target.name]: event.target.checked,
+      },
+    });
+  };
+  const handleVPChange = (event) => {
+    setForm({
+      ...form,
+      questionVP: {
+        ...form.questionVP,
+        [event.target.name]: event.target.checked,
+      },
+    });
   };
 
+  const handleInternClick = (clicked) => {
+    document
+      .querySelector(".internshipsThird")
+      .scrollIntoView({ behavior: "smooth", block: "start" });
+    setForm({ ...form, select_position: clicked });
+  };
+  
+  const validNameRegEx = /^([^0-9]*)$/ ;
+  const validEmailRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+  const validPhoneRegEx = /^\d+$/;
+
   const submit = (e) => {
+    console.log(form?.home_phone)
     e.preventDefault();
-    try {
-      axios
-        .post("https://newraq.raqamyat.com/public/api/internship", form)
-        .then((res) => {
-          if (res.status === 200) {
-            enqueueSnackbar("Applied Successfuly!", {
-              variant: "success",
-            });
-          } else {
-            enqueueSnackbar("Something went wrong!", {
-              variant: "error",
-            });
-          }
-        });
-    } catch (err) {
-      console.log(err);
+    if (
+      form?.name === undefined ||
+      form?.name === "" ||
+      form?.email === undefined ||
+      form?.email === "" ||
+      form?.date === undefined ||
+      form?.date === "" ||
+      form?.current_address === undefined ||
+      form?.current_address === "" ||
+      form?.cell_number === undefined ||
+      form?.cell_number === "" ||
+      form?.current_level_of_education === undefined ||
+      form?.current_level_of_education === "" ||
+      form?.school_university === undefined ||
+      form?.school_university === "" ||
+      form?.gpa === undefined ||
+      form?.gpa === "" ||
+      form?.degree === undefined ||
+      form?.degree === "" ||
+      form?.major_subjects === undefined ||
+      form?.major_subjects === ""
+    ) {
+      enqueueSnackbar("Please complete all required fields.", {
+        variant: "warning",
+      });
+    } 
+    else if (!form?.name?.match(validNameRegEx)) {
+      enqueueSnackbar("Invalid name.", {
+        variant: "warning",
+      });
+    } 
+    else if (!form?.email?.match(validEmailRegEx)) {
+      enqueueSnackbar("Invalid email.", {
+        variant: "warning",
+      });
+    } 
+    else if (!form?.cell_number?.match(validPhoneRegEx)) {
+      enqueueSnackbar("Invalid cell number.", {
+        variant: "warning",
+      });
+    } 
+    else if (!(form?.home_phone === undefined || form?.home_phone === "")) {
+      if (!form?.home_phone?.match(validPhoneRegEx)) {
+      enqueueSnackbar("Invalid home phone number.", {
+        variant: "warning",
+      });
+    } }
+    else if (
+      form?.select_position === undefined ||
+      form?.select_position === ""
+    ) 
+    {
+      enqueueSnackbar("Please select the position.", {
+        variant: "warning",
+      });
+    } else {
+      try {
+        axios
+          .post("https://newraq.raqamyat.com/public/api/internship", form)
+          .then((res) => {
+            if (res.status === 200) {
+              enqueueSnackbar("Applied Successfuly!", {
+                variant: "success",
+              });
+              setTimeout(() => {
+                navigate("/");
+              }, 1000);
+            } else {
+              enqueueSnackbar("Something went wrong!", {
+                variant: "error",
+              });
+            }
+          });
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
@@ -67,20 +190,21 @@ export default function InternshipsPage() {
           <div className="jobsTop">
             <div className="jobs-left intern-left">
               <h1 style={{ maxWidth: "none" }}>
-              <span>
-
-              Internships & Training for Digital Media & Production
+                <span>
+                  Internships & Training for Digital Media & Production
                   <span />
                 </span>
               </h1>
+              <img className="mOnlyImg" src={image} alt="back" />
               <p className="lp">
                 Accelerate your career with our internship programs. This is a
                 great opportunity for a creative, resourceful individual to
                 build skills and gain experience in Digital Marketing, Creative
                 Design, Video Production, and Content Creation initiatives.
               </p>
+              
               <button
-                onClick={handleInternClick}
+                onClick={() => handleInternClick("Creative Design")}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -93,7 +217,7 @@ export default function InternshipsPage() {
                 <img alt="ar" src={arrow} />
               </button>
             </div>
-            <div className="jobs-right">
+            <div className="jobs-right dOnly">
               <img src={image} alt="back" />
             </div>
           </div>
@@ -106,6 +230,7 @@ export default function InternshipsPage() {
                     <span />
                   </span>
                 </h1>
+                <img className="mOnlyImg" src={image2} alt="image2" style={{ margin: 0 }} />
                 <p className="lp">
                   Become an Intern or Trainee in Raqamyat and enjoy building the
                   foundation of your career. Begin your professional journey of
@@ -119,7 +244,7 @@ export default function InternshipsPage() {
                   </Link>
                 </button>
               </div>
-              <div className="sub-right" style={{ margin: 0 }}>
+              <div className="sub-right dOnly" style={{ margin: 0 }}>
                 <img src={image2} alt="image2" style={{ margin: 0 }} />
               </div>
             </div>
@@ -142,7 +267,10 @@ export default function InternshipsPage() {
                 <div>
                   <img src={intern1} alt="intetn1" />
                   <p>Creative Design</p>
-                  <button onClick={handleInternClick} className="anbtn">
+                  <button
+                    onClick={() => handleInternClick("Creative Design")}
+                    className="anbtn"
+                  >
                     <div>
                       Apply Now <img alt="ar" src={arrow} />
                     </div>
@@ -151,7 +279,10 @@ export default function InternshipsPage() {
                 <div>
                   <img src={intern2} alt="intetn2" />
                   <p>Digital Marketing</p>
-                  <button onClick={handleInternClick} className="anbtn">
+                  <button
+                    onClick={() => handleInternClick("Digital Marketing")}
+                    className="anbtn"
+                  >
                     <div>
                       Apply Now <img alt="ar" src={arrow} />
                     </div>
@@ -161,8 +292,7 @@ export default function InternshipsPage() {
                   <img src={intern3} alt="intetn3" />
                   <p>Content Creation</p>
                   <button
-                    name="Content Creation"
-                    onClick={handleInternClick}
+                    onClick={() => handleInternClick("Content Creation")}
                     className="anbtn"
                   >
                     <div>
@@ -173,7 +303,10 @@ export default function InternshipsPage() {
                 <div>
                   <img src={intern4} alt="intetn4" />
                   <p>Video Production</p>
-                  <button onClick={handleInternClick} className="anbtn">
+                  <button
+                    onClick={() => handleInternClick("Video Production")}
+                    className="anbtn"
+                  >
                     <div>
                       Apply Now <img alt="ar" src={arrow} />
                     </div>
@@ -307,25 +440,20 @@ export default function InternshipsPage() {
                 />
                 <FormControl>
                   <InputLabel
+                    className="positionSelectLabel"
                     id="position-label"
-                    style={{ paddingLeft: "8px", marginTop: "20px" }}
                   >
                     Select Position
                   </InputLabel>
                   <Select
-                    inputRef={positionRef}
-                    id="position"
+                    className="positionSelect"
+                    id="select_position"
                     labelId="position-label"
                     name="select_position"
                     label="Select Position"
                     variant="standard"
                     value={form.select_position}
                     onChange={handleChange}
-                    style={{
-                      margin: "20px",
-                      width: "500px",
-                      marginTop: "36px",
-                    }}
                   >
                     <MenuItem value="Creative Design">Creative Design</MenuItem>
                     <MenuItem value="Digital Marketing">
@@ -339,10 +467,205 @@ export default function InternshipsPage() {
                     </MenuItem>
                   </Select>
                 </FormControl>
-                <button type="submit" className="sbtn" onClick={submit}>
-                  <div style={{ fontFamily: "Gotham" }}>Submit</div>
-                </button>
+                {form?.select_position === "Creative Design" ? (
+                  <div className="internshipQtns">
+                    <FormControl fullWidth>
+                      <FormLabel component="legend">
+                        What design programs are you most comfortable with?
+                      </FormLabel>
+                      <TextField
+                        fullWidth
+                        className="textField"
+                        id="questionCD"
+                        name="questionCD"
+                        variant="standard"
+                        value={form.questionCD}
+                        onChange={handleChange}
+                      />
+                    </FormControl>{" "}
+                  </div>
+                ) : form?.select_position === "Digital Marketing" ? (
+                  <div className="internshipQtns">
+                    <FormControl>
+                      <FormLabel component="legend">
+                        Please select the Digital Marketing skills that you
+                        excel on:
+                      </FormLabel>
+                      <FormGroup className="internshipDMAnswars">
+                        <FormControlLabel
+                          className="internshipDMAnswar"
+                          control={
+                            <Checkbox
+                              checked={ContentCreation}
+                              onChange={handleDMChange}
+                              name="ContentCreation"
+                            />
+                          }
+                          label="Content Creation"
+                        />
+                        <FormControlLabel
+                          className="internshipDMAnswar"
+                          control={
+                            <Checkbox
+                              checked={DigitalCopywriting}
+                              onChange={handleDMChange}
+                              name="DigitalCopywriting"
+                            />
+                          }
+                          label="Digital Copywriting"
+                        />
+                        <FormControlLabel
+                          className="internshipDMAnswar"
+                          control={
+                            <Checkbox
+                              checked={ContentWriting}
+                              onChange={handleDMChange}
+                              name="ContentWriting"
+                            />
+                          }
+                          label="ContentWriting"
+                        />
+                        <FormControlLabel
+                          className="internshipDMAnswar"
+                          control={
+                            <Checkbox
+                              checked={CopyWriting}
+                              onChange={handleDMChange}
+                              name="CopyWriting"
+                            />
+                          }
+                          label="Copy Writing"
+                        />
+                        <FormControlLabel
+                          className="internshipDMAnswar"
+                          control={
+                            <Checkbox
+                              checked={SocialMediaMarketing}
+                              onChange={handleDMChange}
+                              name="SocialMediaMarketing"
+                            />
+                          }
+                          label="Social Media Marketing"
+                        />
+                        <FormControlLabel
+                          className="internshipDMAnswar"
+                          control={
+                            <Checkbox
+                              checked={SEO}
+                              onChange={handleDMChange}
+                              name="SEO"
+                            />
+                          }
+                          label="SEO"
+                        />
+                        <FormControlLabel
+                          className="internshipDMAnswar"
+                          control={
+                            <Checkbox
+                              checked={StrategiesPlanning}
+                              onChange={handleDMChange}
+                              name="StrategiesPlanning"
+                            />
+                          }
+                          label="Strategies Planning"
+                        />
+                        <FormControlLabel
+                          className="internshipDMAnswar"
+                          control={
+                            <Checkbox
+                              checked={EmailMarketing}
+                              onChange={handleDMChange}
+                              name="EmailMarketing"
+                            />
+                          }
+                          label="Email Marketing"
+                        />
+                        <FormControlLabel
+                          className="internshipDMAnswar"
+                          control={
+                            <Checkbox
+                              checked={CommunityManagement}
+                              onChange={handleDMChange}
+                              name="CommunityManagement"
+                            />
+                          }
+                          label="Community Management"
+                        />
+                      </FormGroup>
+                    </FormControl>
+                  </div>
+                ) : form?.select_position === "Content Creation" ? (
+                  <div className="internshipQtns">
+                    <FormControl>
+                      <FormLabel id="demo-controlled-radio-buttons-group">
+                        Which language do you prefer in writing blogs / articles
+                        in Internship? (In order of preference)
+                      </FormLabel>
+                      <RadioGroup
+                        name="questionCC"
+                        value={form?.questionCC}
+                        onChange={handleChange}
+                      >
+                        <FormControlLabel
+                          value="Arabic"
+                          control={<Radio />}
+                          label="Arabic"
+                        />
+                        <FormControlLabel
+                          value="English"
+                          control={<Radio />}
+                          label="English"
+                        />
+                        <FormControlLabel
+                          value="Both"
+                          control={<Radio />}
+                          label="Both"
+                        />
+                      </RadioGroup>
+                    </FormControl>{" "}
+                  </div>
+                ) : (
+                  form?.select_position === "Video Production" && (
+                    <div className="internshipQtns">
+                      <FormControl>
+                        <FormControl>
+                          <FormLabel component="legend">
+                            Please select the Digital Marketing skills that you
+                            excel on:
+                          </FormLabel>
+                          <FormGroup className="internshipDMAnswars">
+                            <FormControlLabel
+                              className="internshipDMAnswar"
+                              control={
+                                <Checkbox
+                                  checked={MotionGraphic}
+                                  onChange={handleVPChange}
+                                  name="MotionGraphic"
+                                />
+                              }
+                              label="Motion Graphic"
+                            />
+                            <FormControlLabel
+                              className="internshipDMAnswar"
+                              control={
+                                <Checkbox
+                                  checked={VideoEditing}
+                                  onChange={handleVPChange}
+                                  name="VideoEditing"
+                                />
+                              }
+                              label="Video Editing"
+                            />
+                          </FormGroup>
+                        </FormControl>
+                      </FormControl>{" "}
+                    </div>
+                  )
+                )}
               </div>
+              <button type="submit" className="sbtn" onClick={submit}>
+                <div style={{ fontFamily: "Gotham" }}>Submit</div>
+              </button>
             </div>
           </div>
         </div>

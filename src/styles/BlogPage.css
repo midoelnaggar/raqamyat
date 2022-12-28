@@ -62,12 +62,11 @@
 }
 
 .post> .title {
-  max-width: 264px;
   color: #2a2a2a;
   font-size: 23px;
   font-weight: 500;
   line-height: 25px;
-  margin-left: 40px;
+  margin-inline: 40px;
   padding-top: 10px;
 }
 
@@ -222,10 +221,12 @@
   > .categories_list
   > .category
   > .category_name {
+  text-transform: capitalize;
   color: #2a2a2a;
   font-size: 16px;
   font-weight: 400;
   padding-inline-end: 10px;
+  z-index: -1;
 }
 .blog_page
   > .page_content
@@ -245,6 +246,8 @@
   border-radius: 50%;
   text-align: center;
   justify-content: center;
+  z-index: -1;
+
 }
 
 .blog_page
@@ -292,6 +295,12 @@
   padding: 10px 15px;
   border-radius: 99px;
 }
+.noResults {
+  width: 100%;
+  font-size: 32px;
+  margin-top: 10px;
+  text-align: center;
+}
 
 .blog_page
   > .page_content
@@ -303,4 +312,5 @@
   color: #0034de;
   font-size: 14px;
   font-weight: 500;
+  pointer-events: none
 }

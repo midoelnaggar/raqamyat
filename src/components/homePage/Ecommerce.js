@@ -4,7 +4,7 @@ import arrow from "../../img/Icon ionic-ios-arrow-round-forward.png";
 function Ecommerce({ data }) {
   return (
     <div className="ecommerce">
-      <div className="ecommerce-left">
+      <div className="ecommerce-left dOnly">
         <img src={data?.image} alt="back" />
       </div>
       <div className="ecommerce-right">
@@ -16,6 +16,7 @@ function Ecommerce({ data }) {
             <span />
           </span>
         </h1>
+        <img className="mOnlyImg" src={data?.image} alt="back" />
         <p className="sp">{data?.sub_description}</p>
         <p className="lp">{data?.description}</p>
         <button className="lmbtn">

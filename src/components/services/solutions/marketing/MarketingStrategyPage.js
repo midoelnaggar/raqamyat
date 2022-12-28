@@ -23,7 +23,7 @@ export default function MarketingStrategyPage({ data }) {
         {Array.isArray(data?.sub) && data?.sub[0] &&  (
           <div
             style={{ padding: 0, alignItems: "center" , marginTop:"170px" }}
-            className="outsourcing_sections"
+            className="outsourcing_sections dOnly"
           >
             <h1 style={{ textAlign: "center",maxWidth:"524px" }}>
               <span>
@@ -32,7 +32,7 @@ export default function MarketingStrategyPage({ data }) {
               </span>
             </h1>
             <p className="lp">{data?.sub[0].description}</p>
-            <div className="strategyDraw">
+            <div className="strategyDraw dOnly">
             <img className="lastArrow" src={rightArrow} alt="arrow" />
             <img className="fifthArrow" src={upArrow} alt="arrow" />
             <img className="fourthArrow" src={downArrow} alt="arrow" />
@@ -83,7 +83,7 @@ export default function MarketingStrategyPage({ data }) {
               </span>
             </h1>
             <p className="lp">{data?.sub[1].description}</p>
-            <div className="cards">
+            <div className="cards msCards">
               {Array.isArray(data.sub) &&
                 data?.sub[1].sub.map((card) => {
                   return (
@@ -95,7 +95,7 @@ export default function MarketingStrategyPage({ data }) {
                         padding: "15px 30px",
                       }}
                       key={card?.title}
-                      className="card"
+                      className="card msCard"
                     >
                       <h1
                         style={{

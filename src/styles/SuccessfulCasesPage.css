@@ -22,14 +22,14 @@
   }
 }
 .ss_page > .page_content {
-  margin-block: 170px;
+  margin-block: 70px !important;
 }
 
 .ss_page > .page_content > .page_subtitle {
   display: flex;
   justify-content: center;
   color: #000000;
-  margin-block: 170px;
+  margin-bottom: 170px;
 }
 .ss_page > .page_content > .page_subtitle > div {
   text-align: center;
@@ -58,32 +58,35 @@
 .cases > div > .imageContainer>img {
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 
 
 .cases > div > .case_info {
-  width: 50%;
-  padding-block: 0;
+  width: 751.5px; 
+  padding: 122px 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.case_info {
-  padding: 122px 100px;
-  max-width: 420px;
-}
+
 
 .case_title {
   font-size: 45px;
   font-weight: 600;
   letter-spacing: -2px;
 }
+.case_types {
+display: flex;
+}
+
 
 .case_type {
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0;
+  margin-inline-end: 10px;
 }
 
 .case_desc {

@@ -23,7 +23,7 @@ export default function MarketAnalysisPage({ data }) {
               </span>
             </h1>
             <p className="lp">{data?.sub[0].description}</p>
-            <div className="cards">
+            <div className="cards msCards">
               {Array.isArray(data.sub) &&
                 data?.sub[0].sub.map((card) => {
                   return (
@@ -35,7 +35,7 @@ export default function MarketAnalysisPage({ data }) {
                       textAlign: "start",
                     }}
                     key={card?.title}
-                    className="card"
+                    className="card msCard"
                   >
                       <h1
                         style={{

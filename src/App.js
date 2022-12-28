@@ -1,8 +1,14 @@
-import "./App.css"
-import "./styles"
+import "./App.css";
+import "./styles";
 import { useState, useEffect, lazy, Suspense } from "react";
 import axios from "axios";
-import { Route, Routes, useLocation, Outlet, useNavigationType } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  useLocation,
+  Outlet,
+  useNavigationType,
+} from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import useWindowSize from "./hooks/useWindowSize";
 import usePathname from "./hooks/usePathname";
@@ -118,49 +124,44 @@ function App() {
   const [slug, setSlug] = useState(null);
   const [loading, setLoading] = useState(null);
   const [data, setData] = useState(null);
-  const {
-    apiUrl,
-    setApiUrl,
-    bgColor,
-  } = usePathname({ location: location.pathname, setData, slug });
+  const { apiUrl, setApiUrl, bgColor } = usePathname({
+    location: location.pathname,
+    setData,
+    slug,
+  });
 
   const width = useWindowSize();
 
   useEffect(() => {
-    const  getData = async () =>{
+    const getData = async () => {
       setLoading(true);
-      try {
-       const res = await axios.get(apiUrl)
-       if ( await res.data.data) {
-            setData( await res.data.data);
+      if (apiUrl !== "" || apiUrl === null || apiUrl === undefined) {
+        try {
+          const res = await axios.get(apiUrl);
+          if (await res.data.data) {
+            setData(await res.data.data);
             setLoading(false);
-          }
-          else if ( await res.data.item.data) {
+          } else if (await res.data.item.data) {
+            setData(await res.data);
+            setLoading(false);
+          } else if (await res.data.data.data) {
             setData(await res.data);
             setLoading(false);
           }
-        
-          else if ( await res.data.data.data) {
-            setData(await res.data);
-            setLoading(false);
-          }
-      } catch (err) {
-        console.error(err);
-    }
-    setLoading(false);
-
-  }
-  getData();
-  }, [apiUrl,setLoading]);
-
-
+        } catch (err) {
+          console.error(err);
+        }
+      }
+      setLoading(false);
+    };
+    getData();
+  }, [apiUrl, setLoading]);
 
   useEffect(() => {
     if (navigationType === "POP") {
-      setLoading(false)
+      setLoading(false);
     }
-    }, [navigationType,setLoading]);
-
+  }, [navigationType, setLoading]);
 
   return (
     <div
@@ -181,188 +182,192 @@ function App() {
       <Header />
       <AnimatePresence>
         {loading && <Loading />}
-          <div style={{display:`${loading ? "none" : "block"}`}} className="outlet">
-            <Suspense fallback={<Loading />}>
-              <Routes>
-                <Route location={location} key={location.pathname}>
-                  <Route index element={<HomePage data={data} setLoading={setLoading}></HomePage>} />
-                  <Route path="*" element={<NoPage />} />
+        <div
+          style={{ display: `${loading ? "none" : "block"}` }}
+          className="outlet"
+        >
+          <Suspense fallback={<Loading />}>
+            <Routes>
+              <Route location={location} key={location.pathname}>
+                <Route
+                  index
+                  element={
+                    <HomePage data={data} setLoading={setLoading}></HomePage>
+                  }
+                />
+                <Route path="*" element={<NoPage />} />
+                <Route
+                  path="contact-us"
+                  element={<ContactUsPage data={data} />}
+                />
+                <Route path="blog">
                   <Route
-                    path="contact-us"
-                    element={<ContactUsPage data={data} />}
+                    index
+                    element={<BlogPage data={data} setLoading={setLoading} />}
                   />
-                  <Route path="blog">
-                    <Route
-                      index
-                      element={<BlogPage data={data} setLoading={setLoading} />}
-                    />
-                    <Route path=":slug" element={<SingleBlog setLoading={setLoading} setSlug={setSlug} />} />
-                  </Route>
-                  <Route path="media" element={<MediaPage data={data} />} />
-                  <Route path="media" element={<MediaPage data={data} />} />
+                  <Route
+                    path=":slug"
+                    element={
+                      <SingleBlog setLoading={setLoading} setSlug={setSlug} />
+                    }
+                  />
+                </Route>
+                <Route path="media" element={<MediaPage data={data} />} />
+                <Route path="media" element={<MediaPage data={data} />} />
 
+                <Route
+                  path="terms-and-privacy"
+                  element={<TermsAndPrivacyPage data={data} />}
+                />
+              </Route>
+              <Route path="about">
+                <Route index element={<AboutUsPage data={data} />} />
+                <Route
+                  path="our-company/stakeholders"
+                  element={<StakeholdersPage data={data} />}
+                />
+                <Route
+                  path="our-company/our-partners"
+                  element={<OurPartnersPage data={data} />}
+                />
+                <Route
+                  path="news/projects"
+                  element={<ProjectsPage data={data} />}
+                />
+                <Route
+                  path="our-company/successful-cases"
+                  element={<SuccessfulCasesPage data={data} />}
+                />
+                <Route
+                  path="news/press"
+                  element={<PressPage data={data} setLoading={setLoading} />}
+                />
+                <Route path="webinars" element={<WebinarsPage data={data} />} />
+                <Route
+                  path="webinars/:id"
+                  element={<WebinarPage setLoading={setLoading} />}
+                />
+                <Route path="news/e-book" element={<EBookPage />} />
+                <Route path="careers/jobs">
+                  <Route index element={<JobsPage data={data} />}></Route>
                   <Route
-                    path="terms-and-privacy"
-                    element={<TermsAndPrivacyPage data={data} />}
+                    path=":slug"
+                    element={<JobPage data={data} setApiUrl={setApiUrl} />}
                   />
                 </Route>
-                <Route path="about">
-                  <Route index element={<AboutUsPage data={data} />} />
-                  <Route
-                    path="our-company/stakeholders"
-                    element={<StakeholdersPage data={data} />}
-                  />
-                  <Route
-                    path="our-company/our-partners"
-                    element={<OurPartnersPage data={data} />}
-                  />
-                  <Route
-                    path="news/projects"
-                    element={<ProjectsPage data={data} />}
-                  />
-                  <Route
-                    path="our-company/successful-cases"
-                    element={<SuccessfulCasesPage data={data} />}
-                  />
-                  <Route
-                    path="news/press"
-                    element={<PressPage data={data} setLoading={setLoading} />}
-                  />
-                  <Route
-                    path="webinars"
-                    element={
-                      <WebinarsPage data={data}  />
-                    }
-                  />
-                  <Route
-                    path="webinars/:id"
-                    element={<WebinarPage  setLoading={setLoading} />}
-                  />
-                  <Route path="news/e-book" element={<EBookPage />} />
-                  <Route path="careers/jobs">
-                    <Route index element={<JobsPage data={data} />}></Route>
+                <Route
+                  path="careers/internships"
+                  element={<InternshipsPage />}
+                />
+              </Route>
+              <Route path="services">
+                <Route path="development"></Route>
+              </Route>
+              <Route path="services">
+                <Route path="solutions">
+                  <Route path="development">
+                    <Route index element={<DevelopmentPage data={data} />} />
                     <Route
-                      path=":slug"
-                      element={<JobPage data={data} setApiUrl={setApiUrl} />}
+                      path="online-stores-development"
+                      element={<OnlineStoresDevelopmentPage data={data} />}
+                    />
+                    <Route
+                      path="consultation-and-maintenance"
+                      element={<ConsultationAndMaintenancePage data={data} />}
+                    />
+                    <Route
+                      path="outsourcing"
+                      element={<OutsourcingDevelopmentPage data={data} />}
+                    />
+                    <Route
+                      path="e-payment-integrations"
+                      element={<EPaymentIntegrationsPage data={data} />}
                     />
                   </Route>
-                  <Route
-                    path="careers/internships"
-                    element={<InternshipsPage />}
-                  />
-                </Route>
-                <Route path="services">
-                  <Route path="development"></Route>
-                </Route>
-                <Route path="services">
-                  <Route path="solutions">
-                    <Route path="development">
-                      <Route index element={<DevelopmentPage data={data} />} />
-                      <Route
-                        path="online-stores-development"
-                        element={<OnlineStoresDevelopmentPage data={data} />}
-                      />
-                      <Route
-                        path="consultation-and-maintenance"
-                        element={<ConsultationAndMaintenancePage data={data} />}
-                      />
-                      <Route
-                        path="outsourcing"
-                        element={<OutsourcingDevelopmentPage data={data} />}
-                      />
-                      <Route
-                        path="e-payment-integrations"
-                        element={<EPaymentIntegrationsPage data={data} />}
-                      />
-                    </Route>
-                    <Route path="operations">
-                      <Route index element={<OperationsPage data={data} />} />
-                      <Route
-                        path="operations-solutions"
-                        element={<OperationsSolutionsPage data={data} />}
-                      />
-                      <Route
-                        path="technical-support-agents"
-                        element={<TechnicalSupportAgentsPage data={data} />}
-                      />
-                      <Route
-                        path="projects-operations-bot"
-                        element={<ProjectsOperationsPage data={data} />}
-                      />
-                      <Route
-                        path="logistics-management"
-                        element={<LogisticsManagementPage data={data} />}
-                      />
-                    </Route>
-                    <Route path="marketing">
-                      <Route index element={<MarketingPage data={data} />} />
-                      <Route
-                        path="content-marketing"
-                        element={<ContentMarketingPage data={data} />}
-                      />
-                      <Route
-                        path="marketing-strategy"
-                        element={<MarketingStrategyPage data={data} />}
-                      />
-                      <Route
-                        path="market-analysis"
-                        element={<MarketAnalysisPage data={data} />}
-                      />
-                      <Route
-                        path="promotional-video-production"
-                        element={<VideoProductionServicesPage data={data} />}
-                      />
-                      <Route
-                        path="product-development"
-                        element={<ProductDevelopmentPage data={data} />}
-                      />
-                      <Route
-                        path="integrated-marketing-solutions"
-                        element={
-                          <IntegratedMarketingSolutionsPage data={data} />
-                        }
-                      />
-                      <Route
-                        path="outsourcing"
-                        element={<OutsourcingMarketingPage data={data} />}
-                      />
-                    </Route>
+                  <Route path="operations">
+                    <Route index element={<OperationsPage data={data} />} />
+                    <Route
+                      path="operations-solutions"
+                      element={<OperationsSolutionsPage data={data} />}
+                    />
+                    <Route
+                      path="technical-support-agents"
+                      element={<TechnicalSupportAgentsPage data={data} />}
+                    />
+                    <Route
+                      path="projects-operations-bot"
+                      element={<ProjectsOperationsPage data={data} />}
+                    />
+                    <Route
+                      path="logistics-management"
+                      element={<LogisticsManagementPage data={data} />}
+                    />
                   </Route>
-                  <Route
-                    path="business-type"
-                    element={
-                      <>
-                        <BusinessTypePage />{" "}
-                        {loading ? <Loading /> : <Outlet />}{" "}
-                      </>
-                    }
-                  >
+                  <Route path="marketing">
+                    <Route index element={<MarketingPage data={data} />} />
                     <Route
-                      path="retail-e-commerce"
-                      element={<SingleBusinessType data={data} />}
+                      path="content-marketing"
+                      element={<ContentMarketingPage data={data} />}
                     />
                     <Route
-                      path="fmcg-and-restaurats-e-commerce"
-                      element={<SingleBusinessType data={data} />}
+                      path="marketing-strategy"
+                      element={<MarketingStrategyPage data={data} />}
                     />
                     <Route
-                      path="healthcare-e-commerce"
-                      element={<SingleBusinessType data={data} />}
+                      path="market-analysis"
+                      element={<MarketAnalysisPage data={data} />}
                     />
                     <Route
-                      path="education-e-commerce"
-                      element={<SingleBusinessType data={data} />}
+                      path="promotional-video-production"
+                      element={<VideoProductionServicesPage data={data} />}
                     />
                     <Route
-                      path="e-commerce-for-special-projects"
-                      element={<SingleBusinessType data={data} />}
+                      path="product-development"
+                      element={<ProductDevelopmentPage data={data} />}
+                    />
+                    <Route
+                      path="integrated-marketing-solutions"
+                      element={<IntegratedMarketingSolutionsPage data={data} />}
+                    />
+                    <Route
+                      path="outsourcing"
+                      element={<OutsourcingMarketingPage data={data} />}
                     />
                   </Route>
                 </Route>
-              </Routes>
-            </Suspense>
-          </div>
-        
+                <Route
+                  path="business-type"
+                  element={
+                    <>
+                      <BusinessTypePage /> {loading ? <Loading /> : <Outlet />}{" "}
+                    </>
+                  }
+                >
+                  <Route
+                    path="retail-e-commerce"
+                    element={<SingleBusinessType data={data} />}
+                  />
+                  <Route
+                    path="fmcg-and-restaurats-e-commerce"
+                    element={<SingleBusinessType data={data} />}
+                  />
+                  <Route
+                    path="healthcare-e-commerce"
+                    element={<SingleBusinessType data={data} />}
+                  />
+                  <Route
+                    path="education-e-commerce"
+                    element={<SingleBusinessType data={data} />}
+                  />
+                  <Route
+                    path="e-commerce-for-special-projects"
+                    element={<SingleBusinessType data={data} />}
+                  />
+                </Route>
+              </Route>
+            </Routes>
+          </Suspense>
+        </div>
       </AnimatePresence>
       <Footer />
     </div>

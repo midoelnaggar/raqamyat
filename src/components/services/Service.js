@@ -11,6 +11,7 @@ function Service({ data }) {
                   {data?.title}
                   <span />
                 </span>
+                <img className="mOnlyImg" src={data?.image} alt={data?.title} />
               <p className="lp">
                 {data?.description}
               </p>
@@ -20,7 +21,7 @@ function Service({ data }) {
                 </Link>
               </button>
             </div>
-            <div className="service-right">
+            <div className="service-right dOnly">
               <img src={data?.image} alt={data?.title} />
             </div>
       </div>

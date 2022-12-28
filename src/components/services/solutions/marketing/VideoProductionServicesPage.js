@@ -51,6 +51,7 @@ export default function VideoProductionServicesPage({ data }) {
                   className={(index + 1) % 2 === 0 ? "sub" : "sub_inverted"}
                 >
                   <div className="sub-left">
+                  <img className="mOnlyImg" src={section?.image} alt={section?.title} />
                     <p className="lp">{section?.description}</p>
                     <button className="lmbtn">
                       <Link to="/contact-us">
@@ -58,7 +59,7 @@ export default function VideoProductionServicesPage({ data }) {
                       </Link>
                     </button>
                   </div>
-                  <div className="sub-right">
+                  <div className="sub-right dOnly">
                     <img src={section?.image} alt={section?.title} />
                   </div>
                 </div>

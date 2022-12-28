@@ -30,12 +30,22 @@ function SuccessfulCasesPage({ data }) {
                     className={(index + 1) % 2 === 0 ? "case_inverted" : "case"}
                   >
                     <div className="imageContainer">
-                      <img className="case_image" src={case_image} alt="case" />
+                      <img
+                        onError={(e) => (e.target.src = case_image)}
+                        className="case_image"
+                        src={c?.image}
+                        alt="case"
+                      />
                     </div>
                     <div className="case_info">
                       <div className="case_title">{c.title}</div>
-                      <div className="case_type">{c.details}</div>
-                      <p className="case_desc">{c.desc}</p>
+                      <div className="case_types">
+                        {Array.isArray(c?.project_type) &&
+                          c?.project_type.map((t) => {
+                            return <div className="case_type">{t}</div>;
+                          })}
+                      </div>
+                      <p className="case_desc">{c.details}</p>
                       {/*<div className="case_keywords">
                         {Array.isArray(c.keywords) &&
                           c.keywords.map((k) => {
