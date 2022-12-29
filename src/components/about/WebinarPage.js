@@ -19,6 +19,7 @@ function WebinarPage({ setLoading }) {
   const [data, setData] = useState({});
   const [form, setForm] = useState({});
 
+
   useEffect(() => {
     setForm({
       first_name: "",
@@ -79,50 +80,55 @@ function WebinarPage({ setLoading }) {
 
   const submit = (e) => {
     e.preventDefault();
-    if (form?.first_name === undefined ||form?.first_name === "" || form?.job_title === undefined ||form?.job_title === "" || form?.email === undefined ||form?.email === "" || form?.mobile === undefined ||form?.mobile === "") {
+    if (
+      form?.first_name === undefined ||
+      form?.first_name === "" ||
+      form?.job_title === undefined ||
+      form?.job_title === "" ||
+      form?.email === undefined ||
+      form?.email === "" ||
+      form?.mobile === undefined ||
+      form?.mobile === ""
+    ) {
       enqueueSnackbar("Please complete all fields.", {
         variant: "warning",
       });
-    }
-    else if (!form?.email?.match(validEmailRegEx)) {
+    } else if (!form?.email?.match(validEmailRegEx)) {
       enqueueSnackbar("Invalid email.", {
         variant: "warning",
       });
-    } 
-    
-    else if (!matchIsValidTel(form?.mobile)) {
+    } else if (!matchIsValidTel(form?.mobile)) {
       enqueueSnackbar("Invalid mobile number.", {
         variant: "warning",
       });
-    } 
-    else {
-    try {
-      axios
-        .post("https://newraq.raqamyat.com/public/api/webinarStore", form)
-        .then((res) => {
-          if (res.status === 200) {
-            enqueueSnackbar("Your spot is reserved successfully!", {
-              variant: "success",
-            });
-            setForm({
-              first_name:"",
-              email: "",
-              mobile:"",
-              job_title:"",
-              webinar_id: data?.id
-            });
-          } else {
-            enqueueSnackbar("Something went wrong!", {
-              variant: "error",
-            });
-          }
+    } else {
+      try {
+        axios
+          .post("https://newraq.raqamyat.com/public/api/webinarStore", form)
+          .then((res) => {
+            if (res.status === 200) {
+              enqueueSnackbar("Your spot is reserved successfully!", {
+                variant: "success",
+              });
+              setForm({
+                first_name: "",
+                email: "",
+                mobile: "",
+                job_title: "",
+                webinar_id: data?.id,
+              });
+            } else {
+              enqueueSnackbar("Something went wrong!", {
+                variant: "error",
+              });
+            }
+          });
+      } catch (err) {
+        enqueueSnackbar(err?.message, {
+          variant: "error",
         });
-    } catch (err) {
-      enqueueSnackbar(err?.message, {
-        variant: "error",
-      });
+      }
     }
-  }
   };
 
   return (
@@ -168,7 +174,12 @@ function WebinarPage({ setLoading }) {
             Hosted by
           </div>
           <div style={{ display: "flex" }}>
-            <img src={avatar} alt="avatar" style={{width:"24px",height:"24px",borderRadius:"8px"}} />            <div
+            <img
+              src={avatar}
+              alt="avatar"
+              style={{ width: "54px", height: "54px", borderRadius: "8px" }}
+            />{" "}
+            <div
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -182,7 +193,7 @@ function WebinarPage({ setLoading }) {
             </div>
           </div>
           <div
-          className="webinarImgAndForm"
+            className="webinarImgAndForm"
             style={{
               display: "flex",
               paddingTop: "50px",
@@ -194,6 +205,10 @@ function WebinarPage({ setLoading }) {
               className="webinarCoverImage"
               src={data?.image}
               alt={data?.name}
+            />
+            <div
+              className="mOnlyImg"
+              dangerouslySetInnerHTML={{ __html: data?.description }}
             />
             <div className="contactform">
               <img src={formbg} alt="bg" />
@@ -246,7 +261,10 @@ function WebinarPage({ setLoading }) {
               </FormControl>
             </div>
           </div>
-          <div dangerouslySetInnerHTML={{ __html: data?.description }} />
+          <div
+            className="dOnly"
+            dangerouslySetInnerHTML={{ __html: data?.description }}
+          />
         </div>
       </div>
     </Motion>

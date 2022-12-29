@@ -12,8 +12,8 @@ function Solution({ data }) {
         </div>
         <div className="solution_desc">
           <div>{data?.description}</div>
-          
-          <div style={{paddingTop:"20px"}}>{data?.sub_description}</div>
+
+          <div style={{ paddingTop: "20px" }}>{data?.sub_description}</div>
         </div>
       </div>
 
@@ -21,14 +21,23 @@ function Solution({ data }) {
         {Array.isArray(data?.sub) &&
           data.sub.map((s) => {
             return (
-              <Link style={{textDecoration:"none"}} to={s?.title.toLowerCase().replace("&","and").replace("(","").replace(")","").split(" ").join("-")}>
               <div key={s?.title} className="border">
-                <div className="solution_sub">
-                  <img src={s?.image} alt={s?.title} />
-                  <div>{s?.title}</div>
-                </div>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={s?.title
+                    .toLowerCase()
+                    .replace("&", "and")
+                    .replace("(", "")
+                    .replace(")", "")
+                    .split(" ")
+                    .join("-")}
+                >
+                  <div className="solution_sub">
+                    <img src={s?.image} alt={s?.title} />
+                    <div>{s?.title}</div>
+                  </div>
+                </Link>
               </div>
-              </Link>
             );
           })}
       </div>

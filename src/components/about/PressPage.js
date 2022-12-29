@@ -8,7 +8,7 @@ import Motion from ".././Motion";
 import axios from "axios";
 import fallback from "../../img/fallbackBlog.png";
 
-function PressPage({ data, setLoading }) {
+function PressPage({ data }) {
   const [searchLoading, setSearchLoading] = useState(false);
   const [loadMoreLoading, setLoadMoreLoading] = useState(false);
   const [currentData, setCurrentData] = useState(null);
@@ -33,8 +33,7 @@ function PressPage({ data, setLoading }) {
   const handleSearch = (e) => {
     setSearchLoading(true);
 
-    document.getElementById("inputSearch").value=""
-
+    
     const cats = document.getElementsByClassName("category_name");
     for (let i = 0; i < cats.length; i++) {
       cats[i].style.fontWeight = 400;
@@ -96,6 +95,8 @@ function PressPage({ data, setLoading }) {
 
   const handleKeywordFilter = async (keyword, e) => {
     setSearchLoading(true);
+
+    document.getElementById("inputSearch").value=""
 
     const keys = document.getElementsByClassName("keyword");
     for (let i = 0; i < keys.length; i++) {
@@ -166,7 +167,7 @@ function PressPage({ data, setLoading }) {
               loadedPosts?.map((post, index) => {
                 return (
                   <Link
-                    to={`/blog/${post?.slug}`}
+                    to={`/about/news/press/${post?.slug}`}
                     style={{ textDecoration: "none" }}
                   >
                     <div key={index} className={"post"}>

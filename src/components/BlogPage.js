@@ -8,7 +8,7 @@ import Motion from "./Motion";
 import axios from "axios";
 import fallback from "../img/fallbackBlog.png";
 
-function BlogPage({ data, setLoading }) {
+function BlogPage({ data }) {
   const [searchLoading, setSearchLoading] = useState(false);
   const [loadMoreLoading, setLoadMoreLoading] = useState(false);
   const [currentData, setCurrentData] = useState(null);
@@ -33,7 +33,6 @@ function BlogPage({ data, setLoading }) {
   const handleSearch = (e) => {
     setSearchLoading(true);
    
-    document.getElementById("inputSearch").value=""
 
     const cats = document.getElementsByClassName("category_name");
     
@@ -98,6 +97,8 @@ function BlogPage({ data, setLoading }) {
 
   const handleKeywordFilter = async (keyword,e) => {
     setSearchLoading(true);
+
+    document.getElementById("inputSearch").value=""
 
     const keys = document.getElementsByClassName("keyword");
     for (let i = 0; i < keys.length; i++) {

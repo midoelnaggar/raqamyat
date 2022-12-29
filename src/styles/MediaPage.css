@@ -96,9 +96,11 @@ width: 100%;
 }
 
 .playIcon {
-  position: absolute;
-  bottom: 0;
-  right:  0;
+  position: absolute !important;
+  bottom: 0 !important;
+  right:  0 !important;
+  width: 57px !important;
+  height: 57px !important;
 }
 
 .video_thumb {

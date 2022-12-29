@@ -11,16 +11,28 @@
   .mOnlyImg {
     display: none;
   }
-  .sideMenuList {
-    .ListItemTextBold {
-      font-size: 16px !important;
-      * {
-        color: red !important;
-      }
-    }
-  }
+
   .app {
     width: 820px;
+  }
+
+  .webinar_page {
+    .page_content {
+      padding: 45px;
+      
+      .webinarImgAndForm{
+        flex-direction: column; 
+        .webinarCoverImage{
+          width: 820px;
+          object-fit: cover;
+          border-radius: 0;
+       
+      }
+      .contactform {
+        scale: 1 ;
+      }
+    }
+    }
   }
 
   .outlet {
@@ -850,33 +862,47 @@
     font-size: 20px;
     margin-top: 0px;
     margin-bottom: 500px;
-
   }
-  .jobPage{
+  .jobPage {
     margin: 0;
-    .page_content{
+    .page_content {
       margin-top: 10px;
       .page_content {
-      padding-inline: 0 !important;
-    }
-      .webinar_back{
+        padding-inline: 0 !important;
+      }
+      .webinar_back {
         padding-bottom: 0;
       }
     }
-    .lmbtn{
+    .lmbtn {
       margin-left: 80px;
     }
   }
+  .webinarImgAndForm{
+    flex-direction: column; 
+    scale: 1 !important;
+    margin-top: -40px !important;
 
-  .internshipsList{
+    .webinarCoverImage{
+      width: 325px !important;
+      object-fit: cover;
+      margin-bottom: 30px;
+  }
+  .contactform {
+    scale: 0.65 !important  ;
+    transform-origin: top;
+  }
+}
+
+  .internshipsList {
     div {
-      .anbtn{
+      .anbtn {
         scale: 0.85;
       }
     }
   }
 
-  .singleBT{
+  .singleBT {
     .first_section {
       h1 {
         span {
@@ -887,69 +913,68 @@
     .last_section {
       padding: 0 !important;
       padding-bottom: 50px !important;
-    .sub_inverted{
-      padding: 0;
-      .sub-left {
-        padding: 0 !important ;
+      .sub_inverted {
+        padding: 0;
+        .sub-left {
+          padding: 0 !important ;
+        }
       }
-    }
     }
   }
 
   .media_header {
-    h1{
+    h1 {
       margin: 25px;
       font-size: 24px;
     }
   }
-.outsourcing_sections{
-padding: 25px !important;
-h1 {
-  span {
-    font-size: 24px;
-    line-height: 28px;
-    span {
-      height: 15px;
-      width: 50px;
+  .outsourcing_sections {
+    padding: 25px !important;
+    h1 {
+      span {
+        font-size: 24px;
+        line-height: 28px;
+        span {
+          height: 15px;
+          width: 50px;
+        }
+      }
+    }
+    .cards {
+      .card {
+        scale: 0.9;
+      }
     }
   }
-}
-.cards {
-  .card {
-    scale:0.9
+  .strategyDraw {
+    display: none;
   }
-}
-}
-.strategyDraw {
-  display: none;
-}
 
   .msCards {
     .msCard {
       width: 325px !important;
       padding: 30px !important;
-      h1{
+      h1 {
         margin-top: 0px !important;
         line-height: 34px !important;
       }
     }
-  
-}
-.noPage {
-  width: 100%;
-}
-.solution_title_and_desc {
-  padding-inline: 25px !important;
-  .solution_title{
-    span {
-      font-size: 32px;
-      span{
-        height: 20px;
-        width: 70px;
+  }
+  .noPage {
+    width: 100%;
+  }
+  .solution_title_and_desc {
+    padding-inline: 25px !important;
+    .solution_title {
+      span {
+        font-size: 32px;
+        span {
+          height: 20px;
+          width: 70px;
+        }
       }
     }
   }
-}
 
   .header {
     padding-top: 30px;
@@ -1643,7 +1668,6 @@ h1 {
       padding-inline: 25px;
 
       img {
-
       }
     }
   }
@@ -1658,7 +1682,6 @@ h1 {
       position: relative;
       .sub-right {
         width: 87%;
-
       }
       .sub-left {
         h1 {

@@ -19,6 +19,10 @@ function ContactUsPage({ data }) {
 
   const { enqueueSnackbar } = useSnackbar();
 
+  const validNameRegEx = /^([^0-9]*)$/ ;
+  
+  const validEmailRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -56,6 +60,22 @@ function ContactUsPage({ data }) {
 
   const submit = (e) => {
     e.preventDefault();
+    if (form?.name === undefined ||form?.name === "" || form?.email === undefined ||form?.email === "" || form?.subject === undefined ||form?.subject === "" || form?.message === undefined ||form?.message === "") {
+      enqueueSnackbar("Please complete all fields.", {
+        variant: "warning",
+      });
+    }
+    else if (!form?.name?.match(validNameRegEx)) {
+      enqueueSnackbar("Invalid name.", {
+        variant: "warning",
+      });
+    } 
+    else if (!form?.email?.match(validEmailRegEx)) {
+      enqueueSnackbar("Invalid email.", {
+        variant: "warning",
+      });
+    } 
+    else {
     try {
       axios
         .post("https://newraq.raqamyat.com/public/api/contactStore", form)
@@ -64,7 +84,12 @@ function ContactUsPage({ data }) {
             enqueueSnackbar("Your message has been sen successfully", {
               variant: "success",
             });
-            setForm({});
+            setForm({
+              name: "",
+              email: "",
+              subject: "",
+              message: "",
+            });
           } else {
             enqueueSnackbar("Something went wrong!", {
               variant: "error",
@@ -74,6 +99,7 @@ function ContactUsPage({ data }) {
     } catch (err) {
       console.log(err);
     }
+  }
   };
 
 

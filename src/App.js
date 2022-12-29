@@ -117,6 +117,7 @@ const TermsAndPrivacyPage = lazy(() =>
 );
 const MediaPage = lazy(() => import("./components/MediaPage"));
 const SingleBlog = lazy(() => import("./components/services/SingleBlog"));
+const SinglePress = lazy(() => import("./components/services/SinglePress"));
 
 function App() {
   const navigationType = useNavigationType();
@@ -192,7 +193,7 @@ function App() {
                 <Route
                   index
                   element={
-                    <HomePage data={data} setLoading={setLoading}></HomePage>
+                    <HomePage data={data} ></HomePage>
                   }
                 />
                 <Route path="*" element={<NoPage />} />
@@ -203,18 +204,20 @@ function App() {
                 <Route path="blog">
                   <Route
                     index
-                    element={<BlogPage data={data} setLoading={setLoading} />}
+                    element={<BlogPage data={data}  />}
                   />
                   <Route
                     path=":slug"
                     element={
-                      <SingleBlog setLoading={setLoading} setSlug={setSlug} />
+                      <SingleBlog
+                        data={data}
+                        
+                        setSlug={setSlug}
+                      />
                     }
                   />
                 </Route>
                 <Route path="media" element={<MediaPage data={data} />} />
-                <Route path="media" element={<MediaPage data={data} />} />
-
                 <Route
                   path="terms-and-privacy"
                   element={<TermsAndPrivacyPage data={data} />}
@@ -239,14 +242,21 @@ function App() {
                   element={<SuccessfulCasesPage data={data} />}
                 />
                 <Route
-                  path="news/press"
-                  element={<PressPage data={data} setLoading={setLoading} />}
+                  path="news/press/:slug"
+                  element={<SinglePress data={data} setSlug={setSlug} />}
                 />
+                
+                <Route
+                  path="news/press"
+                  element={<PressPage data={data} />}
+                />
+                {/*
                 <Route path="webinars" element={<WebinarsPage data={data} />} />
                 <Route
                   path="webinars/:id"
-                  element={<WebinarPage setLoading={setLoading} />}
+                  element={<WebinarPage  setLoading={setLoading}/>}
                 />
+                */}
                 <Route path="news/e-book" element={<EBookPage />} />
                 <Route path="careers/jobs">
                   <Route index element={<JobsPage data={data} />}></Route>

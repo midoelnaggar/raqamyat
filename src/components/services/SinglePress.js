@@ -8,7 +8,7 @@ import avatar from "../../img/avatar.png";
 import { useEffect } from "react";
 import fallback from "../../img/fallbackSingleBlog.png";
 
-export default function SingleBlog({ data ,setSlug }) {
+export default function SinglePress({ data ,setSlug }) {
   const { slug } = useParams();
   const navigate = useNavigate();
   useEffect(() => {
@@ -19,8 +19,8 @@ export default function SingleBlog({ data ,setSlug }) {
       <div className="webinar_page">
         <div className="head_bg">
           <PageHeader
-            title="Blog"
-            breadcrumbs={`Home / Blog / ${data?.title}`}
+            title="Press"
+            breadcrumbs={`Home / About Us / News / Press / ${data?.title}`}
           />
         </div>
         <div className="page_content">

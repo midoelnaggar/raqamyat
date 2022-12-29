@@ -198,11 +198,13 @@ function Header() {
                     <ListItemText>Press</ListItemText>
                   </ListItemButton>
                 </Link>
+                {/* 
                 <Link className="side_menu_item_link" to="/about/webinars">
                   <ListItemButton sx={{ pl: 3 }}>
                     <ListItemText>Webinars</ListItemText>
                   </ListItemButton>
                 </Link>
+                */}
                 <Link className="side_menu_item_link" to="/about/news/projects">
                   <ListItemButton sx={{ pl: 3 }}>
                     <ListItemText>Projects</ListItemText>
@@ -583,9 +585,9 @@ function Header() {
                 <div>
                   <Link to="/about/news/press">Press </Link>
                 </div>
-                <div>
+                {/* <div>
                   <Link to="/about/webinars">Webinars </Link>
-                </div>
+                </div> */}
                 <div>
                   <Link to="/about/news/projects">Projects </Link>
                 </div>
@@ -766,7 +768,7 @@ function Header() {
         <div>
           <Link
             className={`${
-              location?.pathname === "/blog"
+              location?.pathname.startsWith("/blog")
                 ? "activeLink menu_btn"
                 : "inactiveLink menu_btn"
             } `}

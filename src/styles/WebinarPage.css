@@ -28,12 +28,13 @@
 }
 
 .webinar_page > .page_content > .webinar_title {
-  max-width: 958px;
+  max-width: 1850px;
   font-size: 65px;
   font-weight: 600;
   line-height: 72px;
   letter-spacing: -3px;
   padding-top: 15px;
+  margin: 0;
 }
 
 .webinar_page > .page_content > div > .contactform {

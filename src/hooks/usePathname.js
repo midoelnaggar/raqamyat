@@ -35,7 +35,7 @@ function usePathname({ location, slug }) {
     } else if (location === "/about/our-company/our-partners") {
       setApiUrl("https://newraq.raqamyat.com/public/api/partners");
       setBgColor("contactbg");
-      document.title = "Projects";
+      document.title = "Our Partners";
     } else if (location === "/about/careers/jobs") {
       setApiUrl("https://newraq.raqamyat.com/public/api/jobs?type=job");
       setBgColor("contactbg");
@@ -51,7 +51,9 @@ function usePathname({ location, slug }) {
       setBgColor("insidebg");
       document.title = "Blog";
     } else if (location === `/blog/${slug}`) {
-      setApiUrl("https://newraq.raqamyat.com/public/api/jobs?type=blog");
+      setApiUrl(
+        `https://newraq.raqamyat.com/public/api/jobs/show?slug=${slug}`
+      );
       setBgColor("insidebg");
       document.title = "Blog";
     } else if (location === "/about/news/e-book") {
@@ -61,11 +63,17 @@ function usePathname({ location, slug }) {
       setApiUrl("https://newraq.raqamyat.com/public/api/jobs?type=press");
       setBgColor("insidebg");
       document.title = "Press";
+    } else if (location === `/about/news/press/${slug}`) {
+      setApiUrl(
+        `https://newraq.raqamyat.com/public/api/jobs/show?slug=${slug}`
+      );
+      setBgColor("insidebg");
+      document.title = "Press";
     } else if (location === "/about/our-company/successful-cases") {
       setApiUrl("https://newraq.raqamyat.com/public/api/jobs?type=project");
       setBgColor("insidebg");
       document.title = "Successful Cases";
-    } else if (location === "/about/webinars") {
+    } /*else if (location === "/about/webinars") {
       setApiUrl("https://newraq.raqamyat.com/public/api/webinars");
       setBgColor("insidebg");
       document.title = "Webinars";
@@ -73,7 +81,7 @@ function usePathname({ location, slug }) {
       setApiUrl("");
       setBgColor("insidebg");
       document.title = "Webinars";
-    } else if (location === "/about/news/e-book") {
+    }*/ else if (location === "/about/news/e-book") {
       setBgColor("contactbg");
       document.title = "E-Book";
     }
