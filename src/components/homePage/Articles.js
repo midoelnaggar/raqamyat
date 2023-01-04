@@ -51,7 +51,7 @@ function Articles({setLoading}) {
                     onClick={() => {
                       setLoading(true);
                     }}
-                    to={`/blog/${post?.slug}`}
+                    to={`/articles/${post?.slug}`}
                     style={{ textDecoration: "none" }}
                   >
                     <div
@@ -76,7 +76,7 @@ function Articles({setLoading}) {
                               : "Raqamyat"}
                           </div>
                         </div>
-                        <Link to={`/blog/${post?.slug}`} className="rmb">
+                        <Link to={`/articles/${post?.slug}`} className="rmb">
                           <div className="readmore">Read more </div>
                           <img className="arrow" src={BlueArrow} alt="arrow" />
                         </Link>
@@ -89,7 +89,7 @@ function Articles({setLoading}) {
         </Swiper>
       </div>
       <div className="kmbtn">
-        <Link to="/blog">
+        <Link to="/articles">
           <p>All Articles</p>
           <div alt="ar" />
         </Link>

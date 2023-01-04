@@ -53,7 +53,7 @@
 .activeLink {
   text-decoration: none;
   color: #027ab7;
-  font-weight: 500;
+  font-weight: 500 !important;
   margin-inline-end: 20px;
   border-bottom: 3px solid;
   border-image: linear-gradient(

@@ -46,16 +46,16 @@ function usePathname({ location, slug }) {
     } else if (location === "/about/careers/internships") {
       setBgColor("contactbg");
       document.title = "Internships";
-    } else if (location === "/blog") {
+    } else if (location === "/articles") {
       setApiUrl("https://newraq.raqamyat.com/public/api/jobs?type=blog");
       setBgColor("insidebg");
-      document.title = "Blog";
-    } else if (location === `/blog/${slug}`) {
+      document.title = "Articles";
+    } else if (location === `/articles/${slug}`) {
       setApiUrl(
         `https://newraq.raqamyat.com/public/api/jobs/show?slug=${slug}`
       );
       setBgColor("insidebg");
-      document.title = "Blog";
+      document.title = "Articles";
     } else if (location === "/about/news/e-book") {
       setBgColor("contactbg");
       document.title = "E-Book";

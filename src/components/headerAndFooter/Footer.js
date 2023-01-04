@@ -69,7 +69,7 @@ function Footer() {
           </span>
           <div className="links">
             <div>
-              <Link to="/blog">Blog</Link>
+              <Link to="/articles">Articles</Link>
             </div>
             <div>
               <Link to="/media">Media</Link>

@@ -58,6 +58,13 @@ function Header() {
         `a[href='${location.pathname}']`
       )[0].style.fontWeight = 600;
     }
+    if(location.pathname.startsWith("/articles")) {
+      document.getElementsByClassName("blog_btn")[0].style.fontWeight = "500";
+    }
+    if(!location.pathname.startsWith("/articles")) {
+      document.getElementsByClassName("blog_btn")[0].style.fontWeight = "300";
+    }
+
     return () => {
       if (
         document.querySelectorAll(`a[href='${location.pathname}']`).length > 0
@@ -83,9 +90,9 @@ function Header() {
           `.menu_btn[href='${location.pathname}']`
         )[0].style.fontWeight = "300";
       }
+
     };
 
-    
 
   }, [location.pathname]);
 
@@ -514,10 +521,10 @@ function Header() {
                 </Link>
               </List>
             </Collapse>
-            <Link className="side_menu_item_main" to="/blog">
+            <Link className="side_menu_item_main" to="/articles">
               <ListItemButton>
                 <ListItemText>
-                  <div className="side_menu_item_main">Blog</div>
+                  <div className="side_menu_item_main">Articles</div>
                 </ListItemText>
               </ListItemButton>
             </Link>
@@ -768,13 +775,13 @@ function Header() {
         <div>
           <Link
             className={`${
-              location?.pathname.startsWith("/blog")
-                ? "activeLink menu_btn"
-                : "inactiveLink menu_btn"
+              location?.pathname.startsWith("/articles")
+                ? "activeLink menu_btn blog_btn"
+                : "inactiveLink menu_btn blog_btn"
             } `}
-            to="/blog"
+            to="/articles"
           >
-            Blog
+            Articles
           </Link>
         </div>
         <span className="dot"></span>

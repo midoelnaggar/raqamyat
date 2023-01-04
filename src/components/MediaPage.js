@@ -34,14 +34,22 @@ export default function MediaPage({ data }) {
           "https://newraq.raqamyat.com/public/api/services?slug=photos"
         );
         setImages(await imagesRes?.data?.data?.data);
-        setCurrentPageImages(await imagesRes?.data?.data?.meta?.pagination?.current_page);
-        setTotalPagesImages(await imagesRes?.data?.data?.meta?.pagination?.total_pages);
+        setCurrentPageImages(
+          await imagesRes?.data?.data?.meta?.pagination?.current_page
+        );
+        setTotalPagesImages(
+          await imagesRes?.data?.data?.meta?.pagination?.total_pages
+        );
         const videosRes = await axios.get(
           "https://newraq.raqamyat.com/public/api/services?slug=videos"
         );
         setVideos(await videosRes?.data?.data?.data);
-        setCurrentPageImages(await videosRes?.data?.data?.meta?.pagination?.current_page);
-        setTotalPagesVideos(await videosRes?.data?.data?.meta?.pagination?.total_pages);
+        setCurrentPageImages(
+          await videosRes?.data?.data?.meta?.pagination?.current_page
+        );
+        setTotalPagesVideos(
+          await videosRes?.data?.data?.meta?.pagination?.total_pages
+        );
       } catch (error) {
         console.log(error?.message);
       }
@@ -143,8 +151,8 @@ export default function MediaPage({ data }) {
         </div>
       </div>
       <div className="media">
-        {selected === "all"
-          ? Array.isArray(all) &&
+        {selected === "all" ? (
+          Array.isArray(all) && all.length > 0 ? (
             all.map((item, index) => {
               return (
                 <div className="image_thumb_container video_thumb_container">
@@ -180,8 +188,11 @@ export default function MediaPage({ data }) {
                 </div>
               );
             })
-          : selected === "images"
-          ? Array.isArray(images) &&
+          ) : (
+            <div style={{padding:0}} className="noResults">No Media Found.</div>
+          )
+        ) : selected === "images" ? (
+          Array.isArray(images) && images.length > 0 ? (
             images.map((image, index) => {
               return (
                 <div className="image_thumb_container">
@@ -199,8 +210,11 @@ export default function MediaPage({ data }) {
                 </div>
               );
             })
-          : selected === "videos" &&
-            Array.isArray(videos) &&
+          ) : (
+            <div style={{padding:0}} className="noResults">No Images Found.</div>
+          )
+        ) : selected === "videos" ? (
+          Array.isArray(videos) && videos.length > 0 ? (
             videos.map((video, index) => {
               return (
                 <div className="image_thumb_container video_thumb_container">
@@ -218,7 +232,13 @@ export default function MediaPage({ data }) {
                   />
                 </div>
               );
-            })}
+            })
+          ) : (
+            <div style={{padding:0}} className="noResults">No Videos Found.</div>
+          )
+        ) : (
+          <></>
+        )}
       </div>
       <div
         style={{

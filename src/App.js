@@ -201,7 +201,7 @@ function App() {
                   path="contact-us"
                   element={<ContactUsPage data={data} />}
                 />
-                <Route path="blog">
+                <Route path="articles">
                   <Route
                     index
                     element={<BlogPage data={data}  />}

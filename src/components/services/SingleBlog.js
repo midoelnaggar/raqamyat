@@ -19,8 +19,8 @@ export default function SingleBlog({ data ,setSlug }) {
       <div className="webinar_page">
         <div className="head_bg">
           <PageHeader
-            title="Blog"
-            breadcrumbs={`Home / Blog / ${data?.title}`}
+            title="Articles"
+            breadcrumbs={`Home / Articles / ${data?.title}`}
           />
         </div>
         <div className="page_content">
@@ -46,7 +46,7 @@ export default function SingleBlog({ data ,setSlug }) {
               onError={(e) => (e.target.src = avatar)}
               src={data?.auther_image}
               alt="avatar"
-              style={{ width: "54px", height: "54px", borderRadius: "15px" }}
+              style={{ width: "54px", height: "54px", borderRadius: "15px", objectFit:"cover" }}
             ></img>
             <div
               style={{
