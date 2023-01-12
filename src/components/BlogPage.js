@@ -7,6 +7,9 @@ import seachIcon from "../img/search-icon.svg";
 import Motion from "./Motion";
 import axios from "axios";
 import fallback from "../img/fallbackBlog.png";
+import { Typography } from "@mui/material";
+
+
 
 function BlogPage({ data }) {
   const [searchLoading, setSearchLoading] = useState(false);
@@ -27,18 +30,21 @@ function BlogPage({ data }) {
   }, [data]);
 
   useEffect(() => {
+    setSelectedCategory("");
+  }, [selectedSearch]);
+
+  useEffect(() => {
     setLoadedPosts(currentData?.item?.data);
     setCategories(currentData?.types);
     setKeywords(currentData?.keywords);
     setCurrentPage(currentData?.item?.meta?.pagination?.current_page);
     setTotalPages(currentData?.item?.meta?.pagination?.total_pages);
-    if (selectedCategory === ""){
-    setAllCount(currentData?.item?.meta?.pagination?.total);
-  }
-  else {
-    setAllCount(data?.item?.meta?.pagination?.total)
-  }
+
   }, [currentData]);
+
+useEffect(() => {
+  setAllCount(categories?.map((cat)=>{ return cat?.count})?.reduce((a, b) => a + b, 0))
+}, [categories]);
 
   useEffect(() => {
     setSearchLoading(true);
@@ -48,25 +54,23 @@ function BlogPage({ data }) {
       (selectedKeyword === "")
     ) {
       setCurrentData(data);
-      setSearchLoading(false)
+      setSearchLoading(false);
+    } else {
+      const searchPosts = async () => {
+        try {
+          const res = await axios.get(
+            `https://newraq.raqamyat.com/public/api/jobs?type=blog&title=${selectedSearch}&category=${selectedCategory}&tag=${selectedKeyword}`
+          );
+          setCurrentData(await res?.data);
+          setSearchLoading(false);
+        } catch (error) {
+          console.log(error);
+          setSearchLoading(false);
+        }
+      };
+      setTimeout(searchPosts, 1000);
     }
-    else {
-    const searchPosts = async () => {
-      try {
-        const res = await axios.get(
-          `https://newraq.raqamyat.com/public/api/jobs?type=blog&title=${selectedSearch}&category=${selectedCategory}&tag=${selectedKeyword}`
-        );
-        setCurrentData(await res?.data);
-        setSearchLoading(false);
-      } catch (error) {
-        console.log(error);
-        setSearchLoading(false);
-      }
-    };
-    setTimeout(searchPosts, 1000);
-  }
   }, [selectedSearch, selectedCategory, selectedKeyword]);
-
 
   /* const handleSearch = (e) => {
     setSearchLoading(true);
@@ -187,28 +191,30 @@ function BlogPage({ data }) {
         </div>
         <div className="page_content">
           <div className="blog_left">
-            {searchLoading ? (
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  width: "100%",
-                  paddingBottom: "500px",
-                }}
-              >
-                <CircleLoader
-                  color="#0093de"
-                  size="20vh"
-                  aria-label="Loading Spinner"
-                  data-testid="loader"
-                />
-              </div>
-            ) : Array.isArray(loadedPosts) && loadedPosts.length > 0 ? (
+            <div
+              style={{
+                display: searchLoading ? "flex" : "none",
+                justifyContent: "center",
+                width: "100%",
+                paddingBottom: "500px",
+              }}
+            >
+              <CircleLoader
+                color="#0093de"
+                size="20vh"
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              />
+            </div>
+            {Array.isArray(loadedPosts) && loadedPosts.length > 0 ? (
               loadedPosts?.map((post, index) => {
                 return (
                   <Link
                     to={`/articles/${post?.slug}`}
-                    style={{ textDecoration: "none" }}
+                    style={{
+                      textDecoration: "none",
+                      display: searchLoading ? "none" : "block",
+                    }}
                   >
                     <div key={index} className={"post"}>
                       <img
@@ -223,7 +229,10 @@ function BlogPage({ data }) {
                       )}
                       <div className="date">{post?.date}</div>
                       <div className="title">{post?.title}</div>
-                      <div className="caption">{post?.details}</div>
+                      <Typography variant="subtitle1" className="caption">
+                        {post?.details}
+
+                      </Typography>
                       <div className="post_footer">
                         <div>
                           <div className="by">by</div>

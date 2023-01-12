@@ -19,19 +19,18 @@
   .webinar_page {
     .page_content {
       padding: 45px;
-      
-      .webinarImgAndForm{
-        flex-direction: column; 
-        .webinarCoverImage{
+
+      .webinarImgAndForm {
+        flex-direction: column;
+        .webinarCoverImage {
           width: 820px;
           object-fit: cover;
           border-radius: 0;
-       
+        }
+        .contactform {
+          scale: 1;
+        }
       }
-      .contactform {
-        scale: 1 ;
-      }
-    }
     }
   }
 
@@ -239,9 +238,13 @@
 
   .partnersGroup {
     padding-top: 35px;
+    flex-wrap: wrap;
   }
-  .partnersGroup > img {
-    padding-inline-end: 60px;
+
+  .partnersGroup > div > img {
+    object-fit: contain;
+    width: 90px;
+    padding-inline-end: 30px;
   }
 
   .about_section_bg > .about {
@@ -878,21 +881,21 @@
       margin-left: 80px;
     }
   }
-  .webinarImgAndForm{
-    flex-direction: column; 
+  .webinarImgAndForm {
+    flex-direction: column;
     scale: 1 !important;
     margin-top: -40px !important;
 
-    .webinarCoverImage{
+    .webinarCoverImage {
       width: 325px !important;
       object-fit: cover;
       margin-bottom: 30px;
+    }
+    .contactform {
+      scale: 0.65 !important  ;
+      transform-origin: top;
+    }
   }
-  .contactform {
-    scale: 0.65 !important  ;
-    transform-origin: top;
-  }
-}
 
   .internshipsList {
     div {
@@ -1398,13 +1401,16 @@
 
   .partnersBackground {
     padding-inline: 24px !important;
+    padding-bottom: 35px !important;
+
     .partnersGroup {
       justify-content: space-between;
       width: 330px;
-
       * {
         padding: 0;
-        height: 13px;
+      }
+      div {
+        margin-block-end: 15px;
       }
     }
   }

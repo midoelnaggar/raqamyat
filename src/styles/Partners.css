@@ -10,8 +10,11 @@
 .partnersGroup {
   padding-top:35px;
   display: flex;
+  align-items: center;
 }
 
-.partnersGroup > img {
+.partnersGroup > div >img {
+  height: 20px;
+  width: 70px;
   padding-inline-end: 35px;
 }
